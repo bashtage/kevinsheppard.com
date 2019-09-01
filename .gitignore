@@ -1,0 +1,6 @@
+.idea/
+kevinsheppard.com/.doit.*
+kevinsheppard.com/cache/
+kevinsheppard.com/output/
+__pycache__
+
