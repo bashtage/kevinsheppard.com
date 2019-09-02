@@ -138,9 +138,23 @@ TRANSLATIONS_PATTERN = '{path}.{lang}.{ext}'
 
 NAVIGATION_LINKS = {
     DEFAULT_LANG: (
-        ("/archive.html", "Archive"),
-        ("/categories/", "Tags"),
-        ("/rss.xml", "RSS feed"),
+        ("/research/", 'Research'),
+        ((
+             ("/teaching/mfe/", "MFE"),
+             ("/teaching/python/", "Python"),
+             ("/teaching/matlab/", "MATLAB"),
+             ("/teaching/lyx/", "LyX"),
+             ("/teaching/other/", "Other")),
+         "Teaching"
+        ),
+        ("/photos/", 'Photos'),
+        ("/blog/", 'Blog'),
+        ((
+             ("/archive.html", "Archive"),
+             ("/categories/", "Tags"),
+             ("/rss.xml", "RSS feed"),
+         ),
+         'More')
     ),
 }
 
@@ -152,7 +166,7 @@ NAVIGATION_ALT_LINKS = {
 }
 
 # Name of the theme to use.
-THEME = "bootblog4"
+THEME = "kevinsheppard"
 
 # Primary color of your theme. This will be used to customize your theme.
 # Must be a HEX value.
@@ -177,8 +191,8 @@ THEME_CONFIG = {
         # Strip HTML from featured post text.
         'featured_strip_html': False,
         # Contents of the sidebar, If empty, the sidebar is not displayed.
-        'sidebar': ''
-    }
+        'sidebar': '',
+    },
 }
 
 # POSTS and PAGES contains (wildcard, destination, template) tuples.
@@ -227,7 +241,6 @@ PAGES = (
     ("pages/*.txt", "", "page.tmpl"),
     ("pages/*.html", "", "page.tmpl"),
 )
-
 
 # Below this point, everything is optional
 
@@ -735,13 +748,15 @@ GITHUB_COMMIT_SOURCE = True
 # Default is:
 # GALLERY_FOLDERS = {"galleries": "galleries"}
 # More gallery options:
-# THUMBNAIL_SIZE = 180
+THUMBNAIL_SIZE = 125
 # MAX_IMAGE_SIZE = 1280
 # USE_FILENAME_AS_TITLE = True
 # EXTRA_IMAGE_EXTENSIONS = []
 #
 # If set to False, it will sort by filename instead. Defaults to True
-# GALLERY_SORT_BY_DATE = True
+GALLERY_SORT_BY_DATE = False
+# If set to True, will produce square thumbnails in galleries
+GALLERY_SQUARE_THUMBNAIL = True
 
 # If set to True, EXIF data will be copied when an image is thumbnailed or
 # resized. (See also EXIF_WHITELIST)
@@ -1070,7 +1085,10 @@ PRETTY_URLS = True
 #       with the MarkdownExtension class and should not be added here.
 # Defaults are markdown.extensions.(fenced_code|codehilite|extra)
 # markdown.extensions.meta is required for Markdown metadata.
-MARKDOWN_EXTENSIONS = ['markdown.extensions.fenced_code', 'markdown.extensions.codehilite', 'markdown.extensions.extra']
+MARKDOWN_EXTENSIONS = ['markdown.extensions.fenced_code',
+                       'markdown.extensions.codehilite',
+                       'markdown.extensions.extra',
+                       'markdown.extensions.meta']
 
 # Options to be passed to markdown extensions (See https://python-markdown.github.io/reference/)
 # Default is {} (no config at all)
@@ -1289,7 +1307,7 @@ MARKDOWN_EXTENSIONS = ['markdown.extensions.fenced_code', 'markdown.extensions.c
 # Add the absolute paths to directories containing plugins to use them.
 # For example, the `plugins` directory of your clone of the Nikola plugins
 # repository.
-# EXTRA_PLUGINS_DIRS = []
+EXTRA_PLUGINS_DIRS = ['plugins']
 
 # Add the absolute paths to directories containing themes to use them.
 # For example, the `v7` directory of your clone of the Nikola themes

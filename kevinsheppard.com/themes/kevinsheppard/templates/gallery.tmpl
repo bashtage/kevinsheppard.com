@@ -1,0 +1,76 @@
+{#  -*- coding: utf-8 -*- #}
+{% extends 'base.tmpl' %}
+{% import 'comments_helper.tmpl' as comments with context %}
+{% import 'ui_helper.tmpl' as ui with context %}
+{% block sourcelink %}{% endblock %}
+{% block jumbotron %}{% endblock %}
+
+{% block content %}
+  <!-- The Gallery as lightbox dialog, should be a document body child element -->
+  <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
+    <div class="slides"></div>
+    <h3 class="title"></h3>
+    <a class="prev">‹</a>
+    <a class="next">›</a>
+    <a class="close">×</a>
+    <a class="play-pause"></a>
+    <ol class="indicator"></ol>
+  </div>
+
+
+  <div id="gallery_container"></div>
+  {% if photo_array %}
+    <div id="links">
+      {% for image in photo_array %}
+        <a href="{{ image['url'] }}" title="{{ image['title']|e }}">
+          <img src="{{ image['url_thumb'] }}" alt="{{ image['title']|e }}"/>
+        </a>
+      {% endfor %}
+    </div>
+  {% endif %}
+  {% if site_has_comments and enable_comments %}
+    {{ comments.comment_form(None, permalink, title) }}
+  {% endif %}
+{% endblock %}
+
+{% block extra_head %}
+  {{ super() }}
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
+  <link rel="stylesheet" href="/assets/css/blueimp-gallery.min.css"/>
+  <style type="text/css">
+    #gallery_container {
+      position: relative;
+    }
+
+    .image-block {
+      position: absolute;
+    }
+    body {
+      background-color: #212529 !important;
+    }
+  </style>
+  {% if translations|length > 1 %}
+    {% for langname in translations.keys() %}
+      {% if langname != lang %}
+        <link rel="alternate" hreflang="{{ langname }}"
+              href="{{ _link('gallery', gallery_path, langname) }}">
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+{% endblock %}
+
+{% block extra_js %}
+  <script src="/assets/js/blueimp-gallery.min.js"></script>
+  <!--<script src="/assets/js/justified-layout.min.js"></script>
+  <script src="/assets/js/gallery.min.js"></script>-->
+  <script>
+      document.getElementById('links').onclick = function (event) {
+          event = event || window.event;
+          var target = event.target || event.srcElement,
+              link = target.src ? target.parentNode : target,
+              options = {index: link, event: event},
+              links = this.getElementsByTagName('a');
+          blueimp.Gallery(links, options);
+      };
+  </script>
+{% endblock %}
