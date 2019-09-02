@@ -11,3 +11,9 @@
 
 This is the index.
 
+[Welcome](link://filename/pages/welcome.md)
+
+[Specimen](link://filename/pages/specimen.md)
+
+
+
