@@ -1,0 +1,17 @@
+/* Code fixups */
+main {
+  margin-top: 3.5rem;
+}
+
+body, wrapper {
+  min-height: 100vh;
+}
+
+.flex-fill {
+  flex: 1 1 auto;
+}
+
+
+a.contact {
+  color: #ffffff;
+}
