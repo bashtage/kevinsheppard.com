@@ -14,7 +14,16 @@ thumbnails = {}
 for d in dirs:
     name = os.path.split(d)[-1]
     file = sorted(glob.glob(d + '/*'))[0]
-    print(file)
+    out_name = name + '-' + file.split(os.path.sep)[-1]
+    out_name = os.path.join('./images', out_name)
+    if os.path.exists(out_name):
+        im = Image.open(out_name)
+        size = im.size
+        if size[0] <= THUMBMAX_SIZE and size[1] <= THUMBMAX_SIZE:
+            continue
+        else:
+            print(name, size)
+
     im = Image.open(file)
     size = im.size
     thumb_size = math.ceil(max(size) / min(size) * THUMBMAX_SIZE)
@@ -30,8 +39,7 @@ for d in dirs:
         upper, lower = math.floor(excess / 2.0), math.floor(
             lower - excess / 2.0)
     crop = im.crop((left, upper, right, lower))
-    out_name = name + '-' + file.split(os.path.sep)[-1]
-    crop.save('./images/' + out_name)
+    crop.save(out_name)
     dir_names.append((name, out_name))
 
 dir_names = sorted(dir_names,
