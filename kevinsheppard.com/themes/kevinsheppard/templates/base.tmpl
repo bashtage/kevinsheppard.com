@@ -14,7 +14,7 @@
 
 <!-- Menubar -->
 <wrapper class="d-flex flex-column">
-  <nav class="navbar navbar-expand-sm fixed-top py-3
+  <nav class="navbar navbar-expand-sm fixed-top
 {% if theme_config.get('navbar_light') %}
 navbar-light bg-light
 {% elif theme_config.get('navbar_dark') %}
@@ -24,7 +24,7 @@ navbar-dark bg-primary
 {% endif %}
 ">
     <div class="container"><!-- This keeps the margins nice -->
-      <a class="navbar-brand" href="{{ abs_link(_link("root", None, lang)) }}">
+      <a class="navbar-brand ml-2 mr-auto" href="{{ abs_link(_link("root", None, lang)) }}">
         {% if logo_url %}
           <img src="{{ logo_url }}" alt="{{ blog_title|e }}" id="logo"
                class="d-inline-block align-top">
@@ -34,13 +34,11 @@ navbar-dark bg-primary
           <span id="blog-title">{{ blog_title|e }}</span>
         {% endif %}
       </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-navbar"
-              aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler order-first" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-
       <div class="collapse navbar-collapse" id="bs-navbar">
-        <ul class="navbar-nav mr-auto">
+        <ul class="navbar-nav ml-auto">
           {{ base.html_navigation_links_entries(navigation_links) }}
           {{ template_hooks['menu']() }}
         </ul>

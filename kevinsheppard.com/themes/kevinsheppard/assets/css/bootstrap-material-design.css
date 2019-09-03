@@ -7128,7 +7128,6 @@ a.text-dark:hover, a.text-dark:focus {
     border-color: rgba(0, 0, 0, 0.06); } }
 
 body {
-  font-size: 1.1rem;
   font-weight: 400; }
 
 a:focus {
@@ -11470,7 +11469,7 @@ thead.thead-inverse th,
 
 .navbar-nav .nav-link {
   padding: 0.5321rem;
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: 400; }
 
 .nav-tabs,

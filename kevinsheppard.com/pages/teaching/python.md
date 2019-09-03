@@ -10,7 +10,11 @@
 .. type: text
 -->
 
-New material added to the third edition on January 3, 2017.
+# ![Python](/images/python/python.svg "Python") Python Notes 
+
+*Introduction to Python for Econometrics, Statistics and Numerical Analysis: Third Edition* 
+
+New material added to the third edition on January 3, 2018.
 {: .alert .alert-info}
 
 [Download the Notes](#notes)
