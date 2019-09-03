@@ -1088,6 +1088,7 @@ PRETTY_URLS = True
 MARKDOWN_EXTENSIONS = ['markdown.extensions.fenced_code',
                        'markdown.extensions.codehilite',
                        'markdown.extensions.extra',
+                       'markdown.extensions.admonition',
                        'markdown.extensions.meta']
 
 # Options to be passed to markdown extensions (See https://python-markdown.github.io/reference/)

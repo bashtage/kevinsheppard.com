@@ -15,7 +15,8 @@ for d in dirs:
     name = os.path.split(d)[-1]
     file = sorted(glob.glob(d + '/*'))[0]
     out_name = name + '-' + file.split(os.path.sep)[-1]
-    out_name = os.path.join('./images', out_name)
+    out_name = os.path.join('images', out_name)
+    dir_names.append((name, out_name))
     if os.path.exists(out_name):
         im = Image.open(out_name)
         size = im.size
@@ -40,7 +41,7 @@ for d in dirs:
             lower - excess / 2.0)
     crop = im.crop((left, upper, right, lower))
     crop.save(out_name)
-    dir_names.append((name, out_name))
+
 
 dir_names = sorted(dir_names,
                    key=lambda x: x[0].split('(')[-1].split(')')[0],
@@ -52,7 +53,7 @@ galleries = []
 for name, out_name in dir_names:
     g = gallery(url='/galleries/' + name + '/index.html',
                 name=name.replace('-', ' '),
-                thumbnail='/images/' + out_name)
+                thumbnail='/' + out_name)
     galleries.append(g)
 
 with open('generated_index.tmpl', 'r') as tmpl:
