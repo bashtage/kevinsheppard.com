@@ -7,6 +7,8 @@
 .. link: 
 .. description: 
 .. type: text
+.. masthead: /images/mastheads/bright-calm-calm-waters-757240.jpg
+.. masthead_height: 15
 -->
 
 Write your page here.

@@ -1,3 +1,4 @@
-[submodule "bootswatch"]
-	path = bootswatch
-	url = git@github.com:bashtage/bootswatch.git
+[submodule "bootstrap-material-design"]
+	path = bootstrap-material-design
+	url = https://github.com/bashtage/bootstrap-material-design.git
+
