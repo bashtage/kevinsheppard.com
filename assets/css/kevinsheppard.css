@@ -1,0 +1,30 @@
+/* Code fixups */
+main {
+    margin-top: 4.5rem;
+}
+
+body, wrapper {
+    min-height: 100vh;
+}
+
+.flex-fill {
+    flex: 1 1 auto;
+}
+
+
+a.contact {
+    color: #ffffff;
+}
+
+pre.code .hll, .highlight pre .hll {
+    background-color: rgba(255, 255, 0, 0.5);
+}
+
+a.headerlink {
+    color: #ffffff;
+}
+
+a.headerlink:hover {
+    color: #0a6ebd;
+    transition: 0.5s;
+}
