@@ -1,0 +1,40 @@
+language: python
+cache:
+  - pip
+  directories:
+    - kevinsheppard.com/output
+
+dist: bionic
+sudo: false
+
+env:
+  global:
+    # Doctr deploy key for bashtage/kevinsheppard.com
+    - secure: "6lnrWLAyt+5rzuX8UMiBgeTEP27IF2qph8Pd1GIWWranmZeiTGXWHmPIuulUSLA1J1Hud9vx4G9xAZcpjr2iEeiv8SULPL1eEJvGc0gpBS/TNohcnmRGrk1nKX7WUM+oZIHpxswe3s1FTIM/cl+lKtJMGVPy4TDy37K3K1/iYyf37D1T8/6S+7Gn7E+gr2aQ060d8mngWUecsEjWnT27q35YzEQjS3jut+zp+brDKmTq7WIQdRVHbhFVOJYSH/Ii/BEnw6BN74M9JKa9XV8y89BLs5weOSZS1WHYdJfrv7EEt6OwNYW65MfgkjwcqXA98Ubi69XYdisI8Yt9JM0SNxOlq8wqvENAeqsYpt5FD82IT33d/t4WNo4UF2cXkXVI05vEIoV5zcOUJOV9YzMskaVCguKAy0aKRg4HYqY0pJRXthLj1q23qL4La3J0fkb9iQN4+95qxcLpPWgPJbHaHidUCCK3pBbmJSqaEu/MgOiv8/XK12xO3juQx2HBpDYzZIuzX3U/f5Qn0RHpXSUdHh59dhcBE4wRULEA5fRm7sVpYP19qETldRg/Fpc6Y7/4WOrMZHWwEX5n6hzijbSvP9gNgSeMjfQHyuVpB8WNEO1rFkcvh1ykdyA0eKsex0eBxS+gzh4WtuEwL045HEwfRwy2QVG+8dXuVXfBFKcgwKs="
+
+addons:
+  apt:
+    packages:
+      - pandoc
+
+git:
+  depth: 1000
+
+matrix:
+  fast_finish: true
+  include:
+  - python: 3.7
+
+install:
+  - pip install pip --upgrade
+  - pip install -r requirements.txt -q
+  - cd kevinsheppard.com
+
+script: nikola build
+
+after_success:
+  - set -e
+  - cd ..
+  - pip install doctr
+  - doctr deploy --build-tags --built-docs kevinsheppard.com/output/ .
+

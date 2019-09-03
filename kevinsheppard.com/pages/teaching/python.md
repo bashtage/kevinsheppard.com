@@ -1,6 +1,7 @@
 <!--
 .. title: Python
 .. slug: python
+.. hidetitle: True 
 .. date: 2019-09-02 11:27:39 UTC+01:00
 .. tags: 
 .. category: 
@@ -12,7 +13,7 @@
 New material added to the third edition on January 3, 2017.
 {: .alert .alert-info}
 
-[Introduction to Python for Econometrics, Statistics and Numerical Analysis: Third Edition](python-introduction-2018.pdf)
+[Download the Notes](#notes)
 
 Python is a widely used general purpose programming language, which
 happens to be well suited to econometrics, data analysis and other more
@@ -79,6 +80,8 @@ of the beginning can be skipped).
 -   Numerous typos fixed.
 -   All code has been verified working against Anaconda 1.7.0.
 
-[New material added to the third edition on January 3, 2017]: NewContent
-[Introduction to Python for Econometrics, Statistics and Numerical Analysis: Third Edition](python-introduction-2018.pdf)
+## Notes
+
+[Introduction to Python for Econometrics, Statistics and Numerical Analysis: Third Edition](/files/teaching/python/python-introduction-2018.pdf)
+
 [Python Course](link://filename/pages/teaching/python/course.md)

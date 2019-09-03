@@ -192,6 +192,7 @@ THEME_CONFIG = {
         'featured_strip_html': False,
         # Contents of the sidebar, If empty, the sidebar is not displayed.
         'sidebar': '',
+        'navbar_dark': True,
     },
 }
 
@@ -283,7 +284,7 @@ TIMEZONE = "Europe/London"
 # One or more folders containing files to be copied as-is into the output.
 # The format is a dictionary of {source: relative destination}.
 # Default is:
-# FILES_FOLDERS = {'files': ''}
+FILES_FOLDERS = {'files': 'files'}
 # Which means copy 'files' into 'output'
 
 # One or more folders containing code listings to be processed and published on
@@ -1089,12 +1090,16 @@ MARKDOWN_EXTENSIONS = ['markdown.extensions.fenced_code',
                        'markdown.extensions.codehilite',
                        'markdown.extensions.extra',
                        'markdown.extensions.admonition',
-                       'markdown.extensions.meta']
+                       'markdown.extensions.meta',
+                       'markdown.extensions.toc']
 
 # Options to be passed to markdown extensions (See https://python-markdown.github.io/reference/)
 # Default is {} (no config at all)
-# MARKDOWN_EXTENSION_CONFIGS = {}
-
+MARKDOWN_EXTENSION_CONFIGS = {
+    DEFAULT_LANG: {
+        'markdown.extensions.toc': {'permalink': True}
+    }
+}
 
 # Extra options to pass to the pandoc command.
 # by default, it's empty, is a list of strings, for example

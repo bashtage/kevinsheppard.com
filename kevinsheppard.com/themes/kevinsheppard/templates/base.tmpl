@@ -14,7 +14,7 @@
 
 <!-- Menubar -->
 <wrapper class="d-flex flex-column">
-  <nav class="navbar navbar-expand-sm fixed-top
+  <nav class="navbar navbar-expand-sm fixed-top py-3
 {% if theme_config.get('navbar_light') %}
 navbar-light bg-light
 {% elif theme_config.get('navbar_dark') %}
@@ -68,7 +68,7 @@ navbar-dark bg-primary
   <main class="flex-fill" id="content" role="main">
     {% block masthead %}
       <div class="container">
-      <div class="row pt-4"></div>
+        <div class="row pt-4"></div>
       </div>
     {% endblock %}
     <div class="container">
@@ -81,7 +81,14 @@ navbar-dark bg-primary
       </div>
     </div>
   </main>
-  <footer class="container-fluid w-100 bg-primary text-light py-3">
+  <footer class="container-fluid w-100 text-light py-3 mt-4
+  {%- if theme_config.get('navbar_light') %}
+ bg-light
+{%- elif theme_config.get('navbar_dark') %}
+ bg-dark
+{%- else %}
+ bg-primary
+{%- endif %}">
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">

@@ -1,5 +1,6 @@
 <!--
 .. title: Specimen
+.. hidetitle: True 
 .. slug: specimen
 .. date: 2019-09-02 18:34:22 UTC+01:00
 .. tags: 
@@ -76,19 +77,19 @@ tincidunt. Aenean ullamcorper sit amet nulla at interdum.
   lectus dapibus, eleifend nulla varius, lobortis turpis. In ac hendrerit nisl,
   sit amet laoreet nibh.
 
-  ```js
-  var _extends = function(target) {
-    for (var i = 1; i < arguments.length; i++) {
-      var source = arguments[i];
-      for (var key in source) {
-        target[key] = source[key];
-      }
-    }
-    return target;
-  };
-  ```
+```js hl_lines="1 3"
+var _extends = function(target) {
+for (var i = 1; i < arguments.length; i++) {
+  var source = arguments[i];
+  for (var key in source) {
+    target[key] = source[key];
+  }
+}
+return target;
+};
+```
 
-  > > Praesent at `:::js return target`, sodales nibh vel, tempor felis. Fusce
+  > > Praesent at `return target`, sodales nibh vel, tempor felis. Fusce
       vel lacinia lacus. Suspendisse rhoncus nunc non nisi iaculis ultrices.
       Donec consectetur mauris non neque imperdiet, eget volutpat libero.
 
@@ -134,18 +135,18 @@ tincidunt. Aenean ullamcorper sit amet nulla at interdum.
       rutrum. Pellentesque aliquet quam enim, eu volutpat urna rutrum a. Sed
       aliquet, neque at rutrum mollis, neque nisi tincidunt nibh.
 
-    3. Pellentesque eget `:::js var _extends` ornare tellus, ut gravida mi.
-    ```js
-    var _extends = function(target) {
-      for (var i = 1; i < arguments.length; i++) {
-        var source = arguments[i];
-        for (var key in source) {
-          target[key] = source[key];
-        }
-      }
-      return target;
-    };
-    ```
+    3. Pellentesque eget `var _extends` ornare tellus, ut gravida mi.
+```js
+var _extends = function(target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i];
+    for (var key in source) {
+      target[key] = source[key];
+    }
+  }
+  return target;
+};
+```
 
 3. Vivamus id mi enim. Integer id turpis sapien. Ut condimentum lobortis
   sagittis. Aliquam purus tellus, faucibus eget urna at, iaculis venenatis
@@ -178,7 +179,7 @@ rutrum. Class aptent taciti sociosqu ad litora torquent per conubia nostra,
 per inceptos himenaeos. [`Pellentesque aliquet quam enim`](#), eu volutpat urna
 rutrum a.
 
-Nam vehicula nunc `:::js return target` mauris, a ultricies libero efficitur
+Nam vehicula nunc `return target` mauris, a ultricies libero efficitur
 sed. Sed molestie imperdiet consectetur. Vivamus a pharetra leo. Pellentesque
 eget ornare tellus, ut gravida mi. Fusce vel lacinia lacus.
 
@@ -236,7 +237,7 @@ Vestibulum vitae orci quis ante viverra ultricies ut eget turpis. Sed eu
 lectus dapibus, eleifend nulla varius, lobortis turpis. In ac hendrerit nisl,
 sit amet laoreet nibh.
 
-<table>
+<table class="table">
   <colgroup>
     <col width="30%">
     <col width="70%">

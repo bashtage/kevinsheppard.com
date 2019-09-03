@@ -1,0 +1,13 @@
+<div class="jumbotron"
+    {%- if post.meta('masthead') %}
+     style="background: center center no-repeat url({{ post.meta('masthead') }});background-size: cover;"
+    {%- endif %}>
+  <div class="container" {% if post.meta('masthead_height') %} style="min-height: {{ post.meta('masthead_height') ~ 'rem' }};" {% endif %}>
+    {% if post.meta('jumbotron') %}
+      <h1 class="display-3">{{ post.meta('jumbotron') }}</h1>
+    {% endif %}
+    {% if post.meta('jumbotron_text') %}
+      <p>{{ post.meta('jumbotron_text') }}</p>
+    {% endif %}
+  </div>
+</div>
