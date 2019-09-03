@@ -1,5 +1,6 @@
 <!--
 .. title: index
+.. hidetitle: True 
 .. slug: index
 .. date: 2019-09-01 23:52:31 UTC+01:00
 .. tags: 
@@ -9,7 +10,9 @@
 .. type: text
 -->
 
-This is the index.
+![Kevin Sheppard](/images/kevin-sheppard-stylized.png "Kevin Sheppard")
+{: .float-right}
+
 
 [Welcome](link://filename/pages/welcome.md)
 

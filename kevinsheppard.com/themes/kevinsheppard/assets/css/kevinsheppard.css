@@ -1,10 +1,11 @@
 /* Code fixups */
 main {
-    margin-top: 4.5rem;
+    margin-top: 3.5rem;
 }
 
 body, wrapper {
     min-height: 100vh;
+    font-feature-settings: "kern", "liga";
 }
 
 .flex-fill {
