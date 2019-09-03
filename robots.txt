@@ -1,4 +1,4 @@
-Sitemap: https://www.kevinsheppard.com/sitemapindex.xml
+Sitemap: https://bashtage.github.io/kevinsheppard.com/sitemapindex.xml
 
 User-Agent: *
-Host: www.kevinsheppard.com
+Host: bashtage.github.io
