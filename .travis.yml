@@ -1,4 +1,8 @@
 language: python
+cache:
+  pip: true
+  directories:
+    - kevinsheppard.com/output
 
 dist: bionic
 sudo: false
