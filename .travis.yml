@@ -37,4 +37,3 @@ after_success:
   - cd ..
   - pip install doctr
   - doctr deploy --build-tags --built-docs kevinsheppard.com/output/ .
-
