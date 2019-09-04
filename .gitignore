@@ -4,3 +4,5 @@ kevinsheppard.com/cache/
 kevinsheppard.com/output/
 __pycache__
 node_modules/
+*.exe
+**/*.exe

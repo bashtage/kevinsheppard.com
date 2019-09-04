@@ -30,7 +30,10 @@ install:
   - pip install -r requirements.txt -q
   - cd kevinsheppard.com
 
-script: nikola build
+script:
+  - python generate_index.py
+  - nikola build
+  - python generate_sqaure_thumbnails.py
 
 after_success:
   - set -e

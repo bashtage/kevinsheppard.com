@@ -15,7 +15,7 @@
 <!-- Menubar -->
 <wrapper class="d-flex flex-column {% block wrapperclass %}{% endblock %}">
 
-<nav class="navbar navbar-expand-sm fixed-top-sm justify-content-start flex-nowrap navbar-dark py-2 pl-1 {% block navbarbg %}bg-primary{% endblock %}">
+<nav class="navbar navbar-expand-sm fixed-top-sm justify-content-start flex-nowrap navbar-dark py-2 pl-1 nav-color-override {% block navbarbg %}bg-primary{% endblock %}">
   <div class="container">
     <a class="navbar-brand ml-2 mr-auto" href="{{ abs_link(_link("root", None, lang)) }}">
       {% if logo_url %}
@@ -38,7 +38,7 @@
     </div>
   </div>
 </nav>
-<nav class="navbar navbar-expand-sm {% block subnavbarbg %}bg-primary{% endblock %} navbar-dark pb-1">
+<nav class="navbar navbar-expand-sm nav-color-override {% block subnavbarbg %}bg-primary{% endblock %} navbar-dark pb-1">
     <div class="navbar-collapse collapse pt-2 pt-md-0" id="bs-navbar">
       <div class="container">
         <ul class="navbar-nav mr-auto">
