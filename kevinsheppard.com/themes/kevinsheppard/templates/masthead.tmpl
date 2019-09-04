@@ -2,7 +2,7 @@
     {%- if post.meta('masthead') %}
      style="background: center center no-repeat url({{ post.meta('masthead') }});background-size: cover;"
     {%- endif %}>
-  <div class="container" {% if post.meta('masthead_height') %} style="min-height: {{ post.meta('masthead_height') ~ 'rem' }};" {% endif %}>
+  <div class="container  {% if post.meta('jumbotron_dark') %}text-dark{% else %}text-light{% endif %}" {% if post.meta('masthead_height') %} style="min-height: {{ post.meta('masthead_height') ~ 'rem' }};" {% endif %}>
     {% if post.meta('jumbotron') %}
       <h1 class="display-3">{{ post.meta('jumbotron') }}</h1>
     {% endif %}

@@ -8,9 +8,10 @@
 .. link: 
 .. description: 
 .. type: text
+.. masthead: /images/teaching/mfe-financial-econometrics-logo.svg
+.. jumbotron: MFE Financial Econometrics
+.. jumbotron_text: Slides, problem sets and assignment for the core Financial Econometrics Course
+.. jumbotron_dark: True
 -->
-
-![MFE Financial Econometrics](/images/teaching/mfe-financial-econometrics-logo.png "MFE Financial Econometrics")
-{: .img-fluid }
 
 This is a place holder for the 2019/20 MFE Course content.
