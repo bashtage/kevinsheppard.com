@@ -1,0 +1,12 @@
+[Core]
+Name = responsive_table
+Module = responsive_table
+
+[Nikola]
+PluginCategory = LateTask
+
+[Documentation]
+Author = Kevin Sheppard
+Version = 0.0.1
+Website = http://bashtage.github.com
+Description = Fix tables
