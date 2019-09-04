@@ -1,1 +1,2 @@
 Nikola[extras]
+beautifulsoup4
