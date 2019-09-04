@@ -3,7 +3,7 @@ import os
 from PIL import Image
 import math
 
-THUMBMAX_SIZE = 125
+THUMBMAX_SIZE = 150
 
 images = glob.glob('./galleries/**/*.jpg', recursive=True)
 
@@ -16,6 +16,7 @@ for image in images:
         size = im.size
         if size[0] == size[1] == THUMBMAX_SIZE:
             continue
+    print(image)
     im = Image.open(image)
     size = im.size
     thumb_size = math.ceil(max(size) / min(size) * THUMBMAX_SIZE)

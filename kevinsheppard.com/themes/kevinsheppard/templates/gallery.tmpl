@@ -5,6 +5,10 @@
 {% block sourcelink %}{% endblock %}
 {% block jumbotron %}{% endblock %}
 
+{% block navbarbg %}bg-dark{% endblock %}
+{% block subnavbarbg %}bg-dark{% endblock %}
+{% block wrapperclass %}bg-darker{% endblock %}
+
 {% block content %}
   <!-- The Gallery as lightbox dialog, should be a document body child element -->
   <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
@@ -44,9 +48,6 @@
 
     .image-block {
       position: absolute;
-    }
-    body {
-      background-color: #424242 !important;
     }
   </style>
   {% if translations|length > 1 %}

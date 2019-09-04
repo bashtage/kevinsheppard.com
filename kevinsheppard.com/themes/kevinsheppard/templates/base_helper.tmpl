@@ -75,7 +75,7 @@ lang="{{ lang }}">
     {% else %}
         {% if not use_cdn %}
             <script src="/assets/js/jquery.min.js"></script>
-            <script src="/assets/js/popper.min.js"></script>
+            <script src="/assets/js/vendor/popper.min.js"></script>
             <script src="/assets/js/bootstrap.min.js"></script>
             <script src="/assets/js/baguetteBox.min.js"></script>
         {% endif %}
@@ -121,6 +121,7 @@ lang="{{ lang }}">
         <link href="/assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
     {% endif %}
      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" rel="stylesheet" type="text/css">
+     <link rel="stylesheet" type="text/css" href="/assets/css/tipuesearch.css">
 {% endmacro %}
 
 {% macro html_navigation_links() %}

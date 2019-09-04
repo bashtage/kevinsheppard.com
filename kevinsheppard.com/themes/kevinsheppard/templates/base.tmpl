@@ -13,59 +13,45 @@
 <a href="#content" class="sr-only sr-only-focusable">{{ messages("Skip to main content") }}</a>
 
 <!-- Menubar -->
-<wrapper class="d-flex flex-column">
-  <nav class="navbar navbar-expand-sm fixed-top
-{% if theme_config.get('navbar_light') %}
-navbar-light bg-light
-{% elif theme_config.get('navbar_dark') %}
-navbar-dark bg-dark
-{% else %}
-navbar-dark bg-primary
-{% endif %}
-">
-    <div class="container"><!-- This keeps the margins nice -->
-      <a class="navbar-brand ml-2 mr-auto" href="{{ abs_link(_link("root", None, lang)) }}">
-        {% if logo_url %}
-          <img src="{{ logo_url }}" alt="{{ blog_title|e }}" id="logo"
-               class="d-inline-block align-top">
-        {% endif %}
+<wrapper class="d-flex flex-column {% block wrapperclass %}{% endblock %}">
 
-        {% if show_blog_title %}
-          <span id="blog-title">{{ blog_title|e }}</span>
-        {% endif %}
-      </a>
-      <button class="navbar-toggler order-first" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="bs-navbar">
-        <ul class="navbar-nav ml-auto">
+<nav class="navbar navbar-expand-sm fixed-top-sm justify-content-start flex-nowrap navbar-dark py-2 pl-1 {% block navbarbg %}bg-primary{% endblock %}">
+  <div class="container">
+    <a class="navbar-brand ml-2 mr-auto" href="{{ abs_link(_link("root", None, lang)) }}">
+      {% if logo_url %}
+        <img src="{{ logo_url }}" alt="{{ blog_title|e }}" id="logo"
+             class="d-inline-block align-top">
+      {% endif %}
+
+      {% if show_blog_title %}
+        <span id="blog-title">{{ blog_title|e }}</span>
+      {% endif %}
+    </a>
+    <button class="navbar-toggler order-first" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-collapse collapse " id="bs-navbar">
+    <form class="form-inline my-2 my-lg-0 ml-auto" action="/search/">
+      <input class="form-control mr-sm-2 bg-light text-dark pl-2" type="search" placeholder="Search" aria-label="Search" id="tipue_search_input" name="q" autocomplete="off">
+      <button class="btn btn-outline-light my-1 my-sm-0" type="submit">Search</button>
+    </form>
+    </div>
+  </div>
+</nav>
+<nav class="navbar navbar-expand-sm {% block subnavbarbg %}bg-primary{% endblock %} navbar-dark pb-1">
+    <div class="navbar-collapse collapse pt-2 pt-md-0" id="bs-navbar">
+      <div class="container">
+        <ul class="navbar-nav mr-auto">
           {{ base.html_navigation_links_entries(navigation_links) }}
           {{ template_hooks['menu']() }}
         </ul>
         {% if search_form %}
           {{ search_form }}
         {% endif %}
+    </div>
+  </div>
+</nav>
 
-        <ul class="navbar-nav navbar-right">
-          {{ base.html_navigation_links_entries(navigation_alt_links) }}
-          {% block belowtitle %}
-            {% if translations|length > 1 %}
-              <li>{{ base.html_translations() }}</li>
-            {% endif %}
-          {% endblock %}
-          {% if show_sourcelink %}
-            {% block sourcelink %}{% endblock %}
-          {% endif %}
-          {{ template_hooks['menu_alt']() }}
-        </ul>
-        <form class="form-inline my-2 my-lg-0" action="/search/" role="search">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="q" autocomplete="off">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
-      </div><!-- /.navbar-collapse -->
-    </div><!-- /.container -->
-  </nav>
-  <!-- End of Menubar -->
 
   <main class="flex-fill" id="content" role="main">
     {% block masthead %}
