@@ -170,7 +170,7 @@ THEME = "kevinsheppard"
 
 # Primary color of your theme. This will be used to customize your theme.
 # Must be a HEX value.
-THEME_COLOR = '#5670d4'
+THEME_COLOR = '#07689F'
 
 # Theme configuration. Fully theme-dependent. (translatable)
 # Examples below are for bootblog4.
@@ -881,7 +881,7 @@ IMAGE_FOLDERS = {'images': 'images'}
 # If the following is True, a meta name="generator" tag is added to pages. The
 # generator tag is used to specify the software used to generate the page
 # (it promotes Nikola).
-# META_GENERATOR_TAG = True
+META_GENERATOR_TAG = False
 
 # Color scheme to be used for code blocks. If your theme provides
 # "assets/css/code.css" this is ignored. Leave empty to disable.
