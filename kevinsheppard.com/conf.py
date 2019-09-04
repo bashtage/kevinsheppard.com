@@ -235,12 +235,14 @@ POSTS = (
     ("posts/*.md", "blog", "post.tmpl"),
     ("posts/*.txt", "blog", "post.tmpl"),
     ("posts/*.html", "blog", "post.tmpl"),
+    ("posts/*.ipynb", "blog", "post.tmpl"),
 )
 PAGES = (
     ("pages/*.rst", "", "page.tmpl"),
     ("pages/*.md", "", "page.tmpl"),
     ("pages/*.txt", "", "page.tmpl"),
     ("pages/*.html", "", "page.tmpl"),
+    ("pages/*.ipynb", "", "page.tmpl"),
 )
 
 # Below this point, everything is optional

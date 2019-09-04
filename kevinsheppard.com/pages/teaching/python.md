@@ -8,9 +8,11 @@
 .. link: 
 .. description: 
 .. type: text
+.. masthead: /images/mastheads/python.svg
+.. masthead_height: 15
 -->
 
-# ![Python](/images/python/python.svg "Python") Python Notes 
+# Python Notes 
 
 *Introduction to Python for Econometrics, Statistics and Numerical Analysis: Third Edition* 
 

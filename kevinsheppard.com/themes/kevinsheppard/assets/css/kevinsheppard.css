@@ -29,3 +29,13 @@ a.headerlink:hover {
     color: #0a6ebd;
     transition: 0.5s;
 }
+
+.prompt {
+    min-width: 0;
+    padding: 0;
+}
+
+div.prompt {
+    padding: 0;
+    background-color: transparent;
+}
