@@ -1,2 +1,3 @@
 Nikola[extras]
 beautifulsoup4
+lxml
