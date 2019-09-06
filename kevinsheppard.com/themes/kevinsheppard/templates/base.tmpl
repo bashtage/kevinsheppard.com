@@ -30,7 +30,7 @@
     <button class="navbar-toggler order-first" type="button" data-toggle="collapse" data-target="#bs-navbar1, #bs-navbar2" aria-controls="bs-navbar1, bs-navbar2" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="navbar-collapse collapse {% block navdivbg %}bg-primary{% endblock %} nav-color-override" id="bs-navbar1">
+    <div class="navbar-collapse collapse " id="bs-navbar1">
     <form class="form-inline my-2 my-lg-0 ml-auto" action="/search/">
       <input class="form-control mr-sm-2 bg-light text-dark pl-2" type="search" placeholder="Search" aria-label="Search" id="tipue_search_input" name="q" autocomplete="off">
       <button class="btn btn-outline-light my-1 my-sm-0" type="submit">Search</button>
@@ -38,8 +38,8 @@
     </div>
   </div>
 </nav>
-<nav class="navbar navbar-expand-sm nav-color-override navbar-dark">
-    <div class="navbar-collapse collapse {% block subnavbarbg %}bg-primary{% endblock %} nav-color-override mt-5 mt-sm-0 pt-2 pt-sm-0" id="bs-navbar2">
+<nav class="navbar navbar-expand-sm nav-color-override {% block subnavbarbg %}bg-primary{% endblock %} navbar-dark pb-1">
+    <div class="navbar-collapse collapse pt-2 pt-sm-0" id="bs-navbar2">
       <div class="container">
         <ul class="navbar-nav mr-auto">
           {{ base.html_navigation_links_entries(navigation_links) }}
