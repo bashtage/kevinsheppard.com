@@ -33,7 +33,6 @@ install:
 script:
   - python generate_index.py
   - nikola build
-  - python generate_sqaure_thumbnails.py
 
 after_success:
   - set -e
