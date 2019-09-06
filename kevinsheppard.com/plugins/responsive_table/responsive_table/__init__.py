@@ -2,13 +2,14 @@
 """Wrap tables in responsive div."""
 
 import glob
+import math
 import os
 
+from PIL import Image
 from bs4 import BeautifulSoup
 from nikola import utils
 from nikola.plugin_categories import LateTask
-from PIL import Image
-import math
+
 
 class ResponsiveTable(LateTask):
     """Add div to make tables responsive."""
@@ -23,43 +24,56 @@ class ResponsiveTable(LateTask):
             with open(file_name) as html:
                 soup = BeautifulSoup(html.read(), features='lxml')
             tables = soup.findChildren('table', recursive=True)
+            first = True
             for table in tables:
-                utils.LOGGER.info('Found a table in ' + file_name)
                 if (table.parent.name == 'div'
                         and 'class' in table.parent.attrs
-                        and table.parent.attrs['class'] == ['table-responsive']):
-                    utils.LOGGER.info('Skipping table!!!')
+                        and table.parent.attrs['class'] == [
+                            'table-responsive']):
                     continue
-                table.wrap(
-                    soup.new_tag('div', **{'class': 'table-responsive'}))
+                if first:
+                    utils.LOGGER.info('Fixing tables in ' + file_name)
+                    first = False
+                div_responsive = soup.new_tag('div',
+                                              **{'class': 'table-responsive'})
+                table.wrap(div_responsive)
             with open(file_name, 'w') as html:
                 html.write(str(soup))
 
     def square_thumbnails(self):
+        THUMBNAIL_SIZE = self.site.config['THUMBNAIL_SIZE']
         path = os.path.join(self.kw['output_folder'],
-                            'galleries','**', '*.thumbnail.*')
+                            'galleries', '**', '*.thumbnail.*')
         thumbs = glob.glob(path, recursive=True)
         for thumb in thumbs:
-            if thumb.endswith('.svg'):
+            output = thumb
+            base, ext = os.path.splitext(thumb)
+            if ext == '.svg':
                 continue
             im = Image.open(thumb)
             size = im.size
-            if size[0] == size[1]:
+            if size[0] == size[1] == THUMBNAIL_SIZE:
                 continue
-            THUMBMAX_SIZE = min(size)
+            thumb = base[:-10] + ext
+            im = Image.open(thumb)
+            size = im.size
+            thumb_size = int(math.ceil(max(size) / min(size) * THUMBNAIL_SIZE))
+            im.thumbnail((thumb_size, thumb_size))
             left = upper = 0
             right, lower = im.size
-            if right > THUMBMAX_SIZE:
-                excess = right - THUMBMAX_SIZE
-                left, right = math.floor(excess / 2.0), math.floor(
-                    right - excess / 2.0)
-            if lower > THUMBMAX_SIZE:
-                excess = lower - THUMBMAX_SIZE
-                upper, lower = math.floor(excess / 2.0), math.floor(
-                    lower - excess / 2.0)
+            if right > THUMBNAIL_SIZE:
+                excess = right - THUMBNAIL_SIZE
+                left = math.floor(excess / 2.0)
+                right = math.floor(right - excess / 2.0)
+            if lower > THUMBNAIL_SIZE:
+                excess = lower - THUMBNAIL_SIZE
+                upper = math.floor(excess / 2.0)
+                lower = math.floor(lower - excess / 2.0)
             crop = im.crop((left, upper, right, lower))
-            utils.LOGGER.info('Resized ' + thumb)
-            crop.save(thumb)
+            utils.LOGGER.info('Resized ' + thumb +
+                              ' from ' + str(size) +
+                              ' to ' + str(crop.size))
+            crop.save(output)
 
     def gen_tasks(self):
         """Add div to make tables responsive."""
