@@ -17,7 +17,7 @@
 
 <nav class="navbar navbar-expand-sm fixed-top-sm justify-content-start flex-nowrap navbar-dark py-2 pl-1 nav-color-override {% block navbarbg %}bg-primary{% endblock %}">
   <div class="container">
-    <a class="navbar-brand ml-2 mr-auto" href="{{ abs_link(_link("root", None, lang)) }}">
+    <a class="navbar-brand ml-2 ml-sm-0 mr-auto" href="{{ abs_link(_link("root", None, lang)) }}">
       {% if logo_url %}
         <img src="{{ logo_url }}" alt="{{ blog_title|e }}" id="logo"
              class="d-inline-block align-top">
