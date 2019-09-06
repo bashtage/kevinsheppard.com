@@ -59,17 +59,17 @@ div.prompt {
     }
     .navbar-collapse.collapsing {
         height: auto;
-        -webkit-transition: left 0.2s ease;
-        -o-transition: left 0.2s ease;
-        -moz-transition: left 0.2s ease;
-        transition: left 0.2s ease;
+        -webkit-transition: left 0.3s ease;
+        -o-transition: left 0.3s ease;
+        -moz-transition: left 0.3s ease;
+        transition: left 0.3s ease;
         left: -100%;
     }
     .navbar-collapse.show {
         left: 0;
-        -webkit-transition: left 0.2s ease;
-        -o-transition: left 0.2s ease;
-        -moz-transition: left 0.2s ease;
-        transition: left 0.2s ease;
+        -webkit-transition: left 0.3s ease-in;
+        -o-transition: left 0.3s ease-in;
+        -moz-transition: left 0.3s ease-in;
+        transition: left 0.3s ease-in;
     }
 }
