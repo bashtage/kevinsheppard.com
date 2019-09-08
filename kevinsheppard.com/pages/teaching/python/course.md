@@ -13,11 +13,10 @@
 .. jumbotron_color: #FFE162
 -->
 
-!!! info
-    The introduction is available on [Github](https://github.com/bashtage/python-introduction). 
-    If you are happy to use git, you can download everything
-    using `git`, or for even fork the repo and save your progress to your own fork.
-
+The introduction is available on [Github](https://github.com/bashtage/python-introduction). 
+If you are happy to use git, you can download everything
+using `git`, or for even fork the repo and save your progress to your own fork.
+{: .alert .alert-info }
 
 * [Lesson 1](/teaching/python/course/lesson-1/) [(notebook)](/files/teaching/python/course/lesson-1.ipynb)
 * [Lesson 2](/teaching/python/course/lesson-2/) [(notebook)](/files/teaching/python/course/lesson-2.ipynb)
@@ -29,8 +28,8 @@
 * [Lesson 8](/teaching/python/course/lesson-8/) [(notebook)](/files/teaching/python/course/lesson-8.ipynb)
 * [Lesson 9](/teaching/python/course/lesson-9/) [(notebook)](/files/teaching/python/course/lesson-9.ipynb)
 
-!!! note
-    Right-click and select Download to save the notebook files to your computer.
+**Downloading**: Right-click and select Download to save the notebook files to your computer.
+{: .alert .alert-secondary }
 
 
 ## Data and Supporting Files
