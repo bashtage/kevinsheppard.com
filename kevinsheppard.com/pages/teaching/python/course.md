@@ -28,5 +28,8 @@ using `git`, or for even fork the repo and save your progress to your own fork.
 * [Lesson 8](/teaching/python/course/lesson-8/) [(notebook)](/files/teaching/python/course/lesson-8.ipynb)
 * [Lesson 9](/teaching/python/course/lesson-9/) [(notebook)](/files/teaching/python/course/lesson-9.ipynb)
 
+Right-click and select Download to save the notebook files to your computer. 
+{: .alert .alert-info }
+
 ## Data and Supporting Files
 [Data](/files/teaching/python/course/data.zip) <i class="primary far fa-file-archive"></i>
