@@ -97,7 +97,7 @@ of the beginning can be skipped).
 
 ## Notes
 
-[Introduction to Python for Econometrics, Statistics and Numerical Analysis: Third Edition](/files/teaching/python/notes/python-introduction-2019.pdf)
+[Introduction to Python for Econometrics, Statistics and Numerical Analysis: Third Edition](/files/teaching/python/notes/python_introduction_2019.pdf)
 
 ## Data and Notebooks
 
