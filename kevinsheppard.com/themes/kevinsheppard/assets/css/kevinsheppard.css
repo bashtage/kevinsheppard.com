@@ -43,3 +43,7 @@ div.prompt {
 .rendered_html table {
     font-size: 1rem;
 }
+
+.rendered_html pre, .rendered_html code, pre.code, .highlight pre {
+    background: #f0f0f0;
+}
