@@ -1,0 +1,13 @@
+[Core]
+Name = orphan
+Module = orphan
+
+[Nikola]
+PluginCategory = LateTask
+
+[Documentation]
+Author = Kevin Sheppard
+Version = 0.0.1
+Website = http://bashtage.github.com
+Description = Find 404 and Orphan files
+
