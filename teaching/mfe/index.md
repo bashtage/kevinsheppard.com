@@ -13,4 +13,9 @@
 .. jumbotron_text: Slides, problem sets and assignment for the core Financial Econometrics Course
 -->
 
-This is a place holder for the 2019/20 MFE Course content.
+This is a place holder for the 2019/20 MFE Course content. I lecture in Hilary term.
+
+# MATLAB
+
+The [companion course](/teaching/matlab/mfe-matlab/) is designed to accompany Financial Econometrics I and II and
+to provide tools needed in Empirical Asset pricing.  
