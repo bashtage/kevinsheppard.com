@@ -15,7 +15,7 @@
 <!-- Menubar -->
 <wrapper class="d-flex flex-column {% block wrapper_class %}{% endblock %}" {% block wrapper_style %}{% endblock %}>
 
-<nav class="navbar navbar-expand-sm fixed-top-sm justify-content-start flex-nowrap navbar-primary py-2 pl-1 nav-color-override {% block navbarbg %}{% endblock %}">
+<nav class="navbar navbar-expand-sm fixed-top-sm justify-content-start flex-nowrap py-2 pl-1 nav-color-override {% block navbarbg %}navbar-primary{% endblock %}">
   <div class="container">
     <a class="navbar-brand ml-2 ml-sm-0 mr-auto" href="{{ abs_link(_link("root", None, lang)) }}">
       {% if logo_url %}
@@ -32,8 +32,8 @@
     </button>
     <div class="navbar-collapse collapse " id="bs-navbar1">
     <form class="form-inline my-2 my-lg-0 ml-auto" action="/search/">
-      <input class="form-control mr-sm-2 bg-light text-dark pl-2" type="search" placeholder="Search" aria-label="Search" id="tipue_search_input" name="q" autocomplete="off">
-      <button class="btn btn-outline-primary bg-page my-1 my-sm-0" type="submit">Search</button>
+      <input class="form-control mr-sm-2 {% block search_box %}bg-light{% endblock %} text-dark pl-2" type="search" placeholder="Enter search..." aria-label="Search" id="tipue_search_input" name="q" autocomplete="off">
+      <button class="btn {% block search_button %}btn-outline-primary bg-page{% endblock %} my-1 my-sm-0" type="submit">Search</button>
     </form>
     </div>
   </div>
@@ -70,10 +70,10 @@
     </div>
   {% endblock %}
   </main>
-  <footer class="container-fluid w-100 text-light py-4 mt-4
-  {% block footer_bg %} bg-footer{% endblock %}">
-    <div class="container">
-      <div class="row">
+  <footer class="w-100 text-light py-4 mt-4 {% block footer_bg %} bg-footer {% endblock %}">
+    <div class="container-fluid">
+      <div class="container">
+        <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
           <ul class="list-inline text-center">
             <li class="list-inline-item">
@@ -111,8 +111,15 @@
           <!--<p class="copyright text-muted">Copyright © Your Website 2018</p>-->
         </div>
       </div>
-      {{ content_footer }}
-      {{ template_hooks['page_footer']() }}
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div class="container">
+        <div class="row">
+           {{ content_footer }}
+          {{ template_hooks['page_footer']() }}
+          </div>
+      </div>
     </div>
   </footer>
 </wrapper>

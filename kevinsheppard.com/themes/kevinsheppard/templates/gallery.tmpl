@@ -4,9 +4,11 @@
 {% import 'ui_helper.tmpl' as ui with context %}
 {% block sourcelink %}{% endblock %}
 {% block jumbotron %}{% endblock %}
+{% block search_button %}btn-outline-light {% endblock %}
+{% block search_box %}{% endblock %}
 
-{% block navbarbg %}bg-dark{% endblock %}
-{% block subnavbarbg %}bg-dark{% endblock %}
+{% block navbarbg %}bg-darker navbar-dark{% endblock %}
+{% block subnavbarbg %}bg-darker navbar-dark{% endblock %}
 {% block wrapper_class %}bg-darker{% endblock %}
 
 {% block content %}
@@ -49,13 +51,30 @@
     .image-block {
       position: absolute;
     }
+
+  body {
+    background-color: #212121 !important;
+  }
   nav  div.dropdown-menu {
-      background-color: #424242 !important;
+      background-color: #212121 !important;
   }
   nav a.dropdown-item:hover {
-    background-color: #505050 !important;
+    background-color: #303030 !important;
   }
-  </style>
+  nav a {
+    color: #f8f8f8 !important;
+  }
+  input.form-control, input.custom-file-control, input.form-control::placeholder, input.custom-file-control::placeholder {
+    color: #666 !important;
+  }
+ .form-control:focus {
+        border-color: #f8f8f8 !important;
+  }
+  .form-control, .custom-file-control, .is-focused .form-control, .is-focused .custom-file-control {
+    background-image: linear-gradient(to top, #f8f8f8 2px, rgba(9, 92, 159, 0) 2px), linear-gradient(to top, rgba(0, 0, 0, 0.26) 0, rgba(0, 0, 0, 0) 0);
+  }
+
+</style>
   {% if translations|length > 1 %}
     {% for langname in translations.keys() %}
       {% if langname != lang %}

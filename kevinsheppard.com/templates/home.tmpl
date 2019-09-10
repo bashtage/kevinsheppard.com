@@ -22,13 +22,24 @@
     .dropdown-menu .dropdown-item {
       color: rgba(255, 255, 255, 0.9);
     }
+    input.form-control, input.custom-file-control, input.form-control::placeholder, input.custom-file-control::placeholder {
+    color: #888888 !important;
+    }
+  .form-control:focus {
+        border-color: #B48457;
+  }
+    .form-control, .custom-file-control, .is-focused .form-control, .is-focused .custom-file-control {
+    background-image: linear-gradient(to top, #B48457 2px, rgba(9, 92, 159, 0) 2px), linear-gradient(to top, rgba(0, 0, 0, 0.26) 0, rgba(0, 0, 0, 0) 0);
+  }
+
   </style>
 {% endblock %}
-{% block navbarbg %}bg-index-nav{% endblock %}
-{% block subnavbarbg %}bg-index-nav{% endblock %}
+{% block navbarbg %}bg-index-nav navbar-dark{% endblock %}
+{% block subnavbarbg %}bg-index-nav  navbar-dark{% endblock %}
 {% block wrapper_class %}bg-yosemite{% endblock %}
 {% block wrapper_style %}style="background-image: url('/images/index/yosemite-waterfall-sm-opt.jpg');"{% endblock %}
-
+{% block search_button %}btn-outline-light{% endblock %}
+{% block search_box %}{% endblock %}
 {% block footer_bg %}bg-footer-nav{% endblock %}
 
 {% block masthead %}{% endblock %}
