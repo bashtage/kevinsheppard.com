@@ -15,7 +15,7 @@
 <!-- Menubar -->
 <wrapper class="d-flex flex-column {% block wrapper_class %}{% endblock %}" {% block wrapper_style %}{% endblock %}>
 
-<nav class="navbar navbar-expand-sm fixed-top-sm justify-content-start flex-nowrap navbar-dark py-2 pl-1 nav-color-override {% block navbarbg %}bg-primary{% endblock %}">
+<nav class="navbar navbar-expand-sm fixed-top-sm justify-content-start flex-nowrap navbar-primary py-2 pl-1 nav-color-override {% block navbarbg %}{% endblock %}">
   <div class="container">
     <a class="navbar-brand ml-2 ml-sm-0 mr-auto" href="{{ abs_link(_link("root", None, lang)) }}">
       {% if logo_url %}
@@ -33,12 +33,12 @@
     <div class="navbar-collapse collapse " id="bs-navbar1">
     <form class="form-inline my-2 my-lg-0 ml-auto" action="/search/">
       <input class="form-control mr-sm-2 bg-light text-dark pl-2" type="search" placeholder="Search" aria-label="Search" id="tipue_search_input" name="q" autocomplete="off">
-      <button class="btn btn-outline-light my-1 my-sm-0" type="submit">Search</button>
+      <button class="btn btn-outline-primary bg-page my-1 my-sm-0" type="submit">Search</button>
     </form>
     </div>
   </div>
 </nav>
-<nav class="navbar navbar-expand-sm nav-color-override {% block subnavbarbg %}bg-primary{% endblock %} navbar-dark pb-1">
+<nav class="navbar navbar-expand-sm nav-color-override {% block subnavbarbg %}{% endblock %} navbar-primary pb-1">
     <div class="navbar-collapse collapse pt-2 pt-sm-0" id="bs-navbar2">
       <div class="container">
         <ul class="navbar-nav mr-auto">
@@ -70,10 +70,8 @@
     </div>
   {% endblock %}
   </main>
-  <footer class="container-fluid w-100 text-light py-3 mt-4
-  {% block footer_bg %}
-  {%- if theme_config.get('navbar_light') %} bg-light {%- elif theme_config.get('navbar_dark') %} bg-dark {%- else %}  bg-primary {%- endif %}
-  {% endblock %}">
+  <footer class="container-fluid w-100 text-light py-4 mt-4
+  {% block footer_bg %} bg-footer{% endblock %}">
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
