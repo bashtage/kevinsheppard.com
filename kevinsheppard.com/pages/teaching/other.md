@@ -9,4 +9,8 @@
 .. type: text
 -->
 
-Write your page here.
+## Website-related content
+
+[Specimen](link://filename/pages/specimen.md)
+
+[Notebook Specimen](link://filename/pages/notebook-specimen.ipynb)

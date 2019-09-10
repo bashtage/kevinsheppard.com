@@ -8,16 +8,5 @@
 .. link: 
 .. description: 
 .. type: text
+.. template: home.tmpl
 -->
-
-![Kevin Sheppard](/images/kevin-sheppard-stylized.png "Kevin Sheppard")
-{: .float-right}
-
-
-[Welcome](link://filename/pages/welcome.md)
-
-[Specimen](link://filename/pages/specimen.md)
-
-[Notebook Specimen](link://filename/pages/notebook-specimen.ipynb)
-
-

@@ -13,7 +13,7 @@
 <a href="#content" class="sr-only sr-only-focusable">{{ messages("Skip to main content") }}</a>
 
 <!-- Menubar -->
-<wrapper class="d-flex flex-column {% block wrapperclass %}{% endblock %}">
+<wrapper class="d-flex flex-column {% block wrapper_class %}{% endblock %}" {% block wrapper_style %}{% endblock %}>
 
 <nav class="navbar navbar-expand-sm fixed-top-sm justify-content-start flex-nowrap navbar-dark py-2 pl-1 nav-color-override {% block navbarbg %}bg-primary{% endblock %}">
   <div class="container">
@@ -59,24 +59,21 @@
         <div class="row pt-4"></div>
       </div>
     {% endblock %}
+    {% block container %}
     <div class="container">
       <div class="body-content">
         <!--Body content-->
         {{ template_hooks['page_header']() }}
         {% block content %}{% endblock %}
         <!--End of body content-->
-
       </div>
     </div>
+  {% endblock %}
   </main>
   <footer class="container-fluid w-100 text-light py-3 mt-4
-  {%- if theme_config.get('navbar_light') %}
- bg-light
-{%- elif theme_config.get('navbar_dark') %}
- bg-dark
-{%- else %}
- bg-primary
-{%- endif %}">
+  {% block footer_bg %}
+  {%- if theme_config.get('navbar_light') %} bg-light {%- elif theme_config.get('navbar_dark') %} bg-dark {%- else %}  bg-primary {%- endif %}
+  {% endblock %}">
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
