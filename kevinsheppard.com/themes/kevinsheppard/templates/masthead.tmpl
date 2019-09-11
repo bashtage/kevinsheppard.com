@@ -4,7 +4,7 @@
     {%- elif post.meta('jumbotron_color') %}
      style="background-color: {{ post.meta('jumbotron_color') }};"
      {% endif %}>
-  <div class="container  {% if post.meta('jumbotron_light') %}text-light{% else %}text-dark{% endif %}" {% if post.meta('masthead_height') %} style="min-height: {{ post.meta('masthead_height') ~ 'rem' }};" {% endif %}>
+  <div class="container  {% if post.meta('jumbotron_light') %}text-light{% else %}text-dark{% endif %}" {% if post.meta('masthead_height') %} style="min-height: {{ post.meta('masthead_height')|trim }}rem;" {% endif %}>
     {% if post.meta('jumbotron') %}
       <h1 class="display-3">{{ post.meta('jumbotron') }}</h1>
     {% endif %}

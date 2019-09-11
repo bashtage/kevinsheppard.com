@@ -10,7 +10,8 @@
 .. type: text
 .. masthead: /images/teaching/mfe-financial-econometrics-logo.svg
 .. jumbotron: MFE Financial Econometrics
-.. jumbotron_text: Notes, assignment and solutions for the MATLAB companion course the accompanies Financial Econometrics I & II.  
+.. jumbotron_text: Notes, assignment and solutions for the MATLAB companion course the accompanies Financial Econometrics I & II.
+.. masthead_height: 15  
 -->
 
 
@@ -21,13 +22,9 @@ Live Scripts are only usable in recent versions of MATLAB.
 [TOC]
 
 # MATLAB Notes
-This set of notes is a detailed introduction of using MATLAB and covers virtually all aspects required to implement
-new models in MATLAB.  It assumes no knowledge of MATLAB and coverall everything required to complete econometric
-and statistical analysis in MATLAB.
 
-[MATLAB Notes for Econometric and Statistical Analysis](/files/teaching/matlab/course/matlab_notes_2019.pdf)
-
-[MATLAB Notes for Econometric and Statistical Analysis Data](/files/teaching/matlab/course/matlab_notes_data.zip)
+A [complete set of notes](/teaching/matlab/notes/) covering the core aspects of MATLAB used in
+econometric analysis serves as a reference for the companion course.
 
 # Introduction
 

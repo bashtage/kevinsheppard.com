@@ -7,28 +7,19 @@
 {% extends 'base.tmpl' %}
 
 {% block masthead %}
-{% if post.meta('masthead') %}
-    <header class="masthead" style="background-image: url('{{ post.meta('masthead') }}')">
-      <div class="overlay"></div>
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 col-md-10 mx-auto">
-            <div class="site-heading">
-              <!--<h1>Blog</h1>-->
-              <!--<span class="subheading">{{ description|e }}</span>-->
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
+{% if post.meta('jumbotron') or post.meta('masthead') %}
+{% include "masthead.tmpl" %}
 {% else %}
-    {{ super() }}
+  {{ super() }}
 {% endif %}
 {% endblock %}
 
-
 {% block extra_head %}
     {{ super() }}
+    {% block blog_style %}
+    <link href="https://fonts.googleapis.com/css?family=Bitter&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/blog.css" type="text/css">
+    {% endblock %}
     {% if post.meta('keywords') %}
     <meta name="keywords" content="{{ smartjoin(', ', post.meta('keywords'))|e }}">
     {% endif %}

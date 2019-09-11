@@ -48,117 +48,6 @@ div.prompt {
     background: #f0f0f0;
 }
 
-.bg-index-nav {
-    background-color: rgba(0, 0, 0, 0.6);
-}
-
-.bg-yosemite {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.bg-footer-nav {
-    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
-}
-
-.bg-footer-nav a {
-    color: #B48457;
-}
-
-.bg-footer-nav a:hover, .bg-footer-nav a:active {
-    color: #664B31;
-}
-
-.bg-footer-nav a.contact {
-    color: #fff;
-}
-
-.bg-footer-nav a.contact:hover, .bg-footer-nav a.contact:active {
-    color: #aaa;
-}
-
-.id-card {
-    float: none;
-    margin: 0 1rem 1rem auto;
-}
-
-@media (max-width: 575.98px) {
-    .id-card {
-        margin: 0 auto;
-    }
-}
-.course {
-    font-size: 1.5rem;
-    margin-bottom: 0;
-}
-.institution {
-    margin-left: 0.5rem;
-}
-.ul-edu i {
-    font-size: 2rem;
-    margin: 0 0 0 1rem;
-    padding-right: 1rem;
-}
-
-.interest {
-   font-size: 1.5rem;
-    margin-bottom: 0;
-}
-/* Index */
-.id-card img {
-    border-radius: 50%;
-    max-width: 15rem;
-}
-
-.id-card h2, .id-card h3, .id-card h4 {
-    margin: 0 0 5px;
-}
-
-.id-card h3, .id-card h4 {
-    color: #bbb;
-    margin: 0;
-
-}
-
-.id-card h3 {
-    font-size: 1.5rem;
-}
-
-.id-card h4 {
-    font-size: 1.25rem;
-}
-
-.id-card h4 i {
-    font-size: 1.25rem;
-    color: #bbb;
-}
-
-.id-card i {
-    display: inline-block;
-    font-size: 2rem;
-    color: #ffffff;
-    text-align: center;
-    width: 30px;
-    height: 30px;
-    line-height: 30px;
-    margin: 0 5px;
-}
-
-.id-card .icon-block a {
-    text-decoration: none;
-}
-
-.id-card i:hover, .id-card .icon-block a:hover {
-    color: #bbbbbb;
-    text-decoration: none;
-}
-
-section {
-    padding: 4rem 0;
-    color: #f0f0f0;
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
-}
 
 .bg-page {
     background-color: #f8f8f8 !important;
@@ -166,4 +55,24 @@ section {
 
 .bg-footer {
     background-color: #212121 !important;
+}
+
+
+.custom-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(7,104,159,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+.custom-toggler.navbar-toggler {
+  border-color: rgba(0,0,0,0);
+}
+
+.dropdown-menu {
+    background-color: #fafafa !important;
+}
+
+.dropdown-menu .dropdown-item.focus, .dropdown-menu .dropdown-item.hover, .dropdown-menu .dropdown-item:focus, .dropdown-menu .dropdown-item:hover {
+    background-color: #07689F !important;
+}
+
+.dropdown-menu .dropdown-item {
+    color: #07689F;
 }

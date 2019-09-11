@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import time
+import generate_index
 
 # !! This is the configuration of Nikola. !! #
 # !!  You should edit it to your liking.  !! #
@@ -148,7 +149,7 @@ NAVIGATION_LINKS = {
              ("/teaching/other/", "Other")),
          "Teaching"
         ),
-        ("/photos/", 'Photos'),
+        ("/galleries/", 'Photos'),
         ("/blog/", 'Blog'),
         ((
              ("/archive.html", "Archive"),
@@ -903,7 +904,7 @@ META_GENERATOR_TAG = False
 # )
 
 # Show teasers (instead of full posts) in indexes? Defaults to False.
-# INDEX_TEASERS = False
+INDEX_TEASERS = True
 
 # HTML fragments with the Read more... links.
 # The following tags exist and are replaced for you:
@@ -1362,7 +1363,7 @@ WARN_ABOUT_TAG_METADATA = False
 
 # Put in global_context things you want available on all your templates.
 # It can be anything, data, functions, modules, etc.
-GLOBAL_CONTEXT = {}
+GLOBAL_CONTEXT = {'galleries': generate_index.galleries}
 
 # Add functions here and they will be called with template
 # GLOBAL_CONTEXT as parameter when the template is about to be

@@ -3,6 +3,12 @@
 {% import 'annotation_helper.tmpl' as notes with context %}
 {{ set_locale(lang) }}
 {{ base.html_headstart() }}
+<style>
+    html, body {
+      font-family: 'Roboto', sans-serif;
+      background-color: {% block style_body_color %}#fafafa{% endblock %};
+    }
+</style>
 {% block extra_head %}
   {#  Leave this block alone. #}
 {% endblock %}
@@ -27,7 +33,7 @@
         <span id="blog-title">{{ blog_title|e }}</span>
       {% endif %}
     </a>
-    <button class="navbar-toggler order-first" type="button" data-toggle="collapse" data-target="#bs-navbar1, #bs-navbar2" aria-controls="bs-navbar1, bs-navbar2" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="custom-toggler navbar-toggler order-first" type="button" data-toggle="collapse" data-target="#bs-navbar1, #bs-navbar2" aria-controls="bs-navbar1, bs-navbar2" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="navbar-collapse collapse " id="bs-navbar1">
