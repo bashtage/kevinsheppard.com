@@ -1,5 +1,8 @@
 {% extends 'story.tmpl' %}
 
+{# Show subnav on posts and index #}
+{% block subnavbarbg %}{% endblock %}
+
 {% block masthead %}
 {% if post.meta('jumbotron') or post.meta('masthead') %}
 {% include "masthead.tmpl" %}

@@ -6,6 +6,9 @@
 {% import 'ui_helper.tmpl' as ui with context %}
 {% extends 'base.tmpl' %}
 
+{# Hide subnav on posts #}
+{% block subnavbarbg %}d-none{% endblock %}
+
 {% block masthead %}
 {% if post.meta('jumbotron') or post.meta('masthead') %}
 {% include "masthead.tmpl" %}

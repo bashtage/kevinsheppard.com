@@ -56,11 +56,15 @@ class Orphan(LateTask):
                             link_404.append((html_file, obj_path))
 
             orphans = set(files).difference(referenced)
-            orphans = [o for o in orphans if '.thumbnail.' not in o]
+            skip = ('/index.html', '/search/index.html')
+            orphans = [o for o in orphans if not ('.thumbnail.'in o or
+                                                  o.endswith('.src.html'))]
             for o in sorted(orphans):
                 if os.path.isdir(o):
                     continue
                 o = o.replace(os.path.abspath(output), '')
+                if o in skip:
+                    continue
                 warn = any([o.endswith(v) for v in ('.html',)])
                 if warn:
                     LOGGER.warn(f'ORPHAN file (CRUCIAL): {o}')

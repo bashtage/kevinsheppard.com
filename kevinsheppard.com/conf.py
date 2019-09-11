@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import time
+
 import generate_index
 
 # !! This is the configuration of Nikola. !! #
@@ -140,7 +141,13 @@ TRANSLATIONS_PATTERN = '{path}.{lang}.{ext}'
 
 NAVIGATION_LINKS = {
     DEFAULT_LANG: (
-        ("/research/", 'Research'),
+        ((
+             ("/research/cv/", "CV"),
+             ("/research/publications/", "Publications"),
+             ("/research/working-papers/", "Working Papers")
+         ),
+         "Research"
+        ),
         ((
              ("/teaching/mfe/", "MFE"),
              ("/teaching/python/", "Python"),

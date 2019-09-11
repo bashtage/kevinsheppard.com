@@ -3,6 +3,9 @@
 {% import 'annotation_helper.tmpl' as notes with context %}
 {{ set_locale(lang) }}
 {{ base.html_headstart() }}
+{% block theme_color %}
+<meta name="theme-color" content="{{ theme_color }}">
+{% endblock %}
 <style>
     html, body {
       font-family: 'Roboto', sans-serif;
@@ -67,11 +70,13 @@
     {% endblock %}
     {% block container %}
     <div class="container">
-      <div class="body-content">
-        <!--Body content-->
+      <div class="row">
+      <div class="col-xl-1"></div>
+      <div class="col-xl-10">
         {{ template_hooks['page_header']() }}
         {% block content %}{% endblock %}
-        <!--End of body content-->
+      </div>
+      <div class="col-xl-1"></div>
       </div>
     </div>
   {% endblock %}
@@ -120,7 +125,7 @@
       </div>
     </div>
     <div class="container-fluid">
-      <div class="container">
+      <div class="container d-flex justify-content-center">
         <div class="row">
            {{ content_footer }}
           {{ template_hooks['page_footer']() }}
