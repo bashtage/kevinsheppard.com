@@ -2,6 +2,19 @@ nav, h1, h2, h3, h4, h5, h6 {
     font-family: Bitter, serif;
 }
 
-h1, h2 {
+h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
+}
+
+.blog-tag-list {
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+.metadata .byline-name, .metadata .dateline, .metadata .sourceline {
+    font-family: Bitter, sans-serif;
+}
+
+.metadata .byline-name, .metadata .dateline {
+    font-weight: 700;
 }
