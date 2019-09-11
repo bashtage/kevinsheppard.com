@@ -15,6 +15,10 @@
 
 This is a place holder for the 2019/20 MFE Course content. I lecture in Hilary term.
 
+# Notes
+
+The [complete set of notes](/teaching/mfe/notes/) covers all aspects of the Financial Econometrics I and II courses. 
+
 # MATLAB
 
 The [companion course](/teaching/matlab/mfe-matlab/) is designed to accompany Financial Econometrics I and II and
