@@ -21,6 +21,8 @@
 {% endblock %}
 
 {% block content %}
+  <div class="row">
+  <div class="col-md-9">
   {% block content_header %}
     {{ feeds_translations.translation_link(kind) }}
   {% endblock %}
@@ -77,4 +79,22 @@
   {{ helper.html_pager() }}
   {{ comments.comment_link_script() }}
   {{ math.math_scripts_ifposts(posts) }}
+  </div>
+  <div class="col-md-3">
+  {% set counts, catcounts = count_tags(posts) %}
+  {% if counts %}
+  <h2 class="mt-4">Tags</h2>
+    {% for item in counts %}
+      <a class="blog-tag-list badge badge-primary" href="/categories/{{ item.tag }}/">{{ item.tag }}</a>
+     {% endfor %}
+  {% endif %}
+  {% if catcounts %}
+  <h2 class="mt-4">Categories</h2>
+    {% for item in catcounts %}
+      <a class="blog-tag-list badge badge-primary" href="/categories/cat_{{ item.category }}/">{{ item.category }}</a>
+     {% endfor %}
+  {% endif %}
+  <h4><a href="/rss.xml"><i class="fas fa-rss"></i> RSS</a></h4>
+  </div>
+  </div>
 {% endblock %}

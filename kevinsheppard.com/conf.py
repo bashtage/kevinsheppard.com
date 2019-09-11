@@ -273,11 +273,11 @@ TIMEZONE = "Europe/London"
 # Date format used to display post dates. (translatable)
 # Used by babel.dates, CLDR style: http://cldr.unicode.org/translation/date-time
 # You can also use 'full', 'long', 'medium', or 'short'
-# DATE_FORMAT = 'YYYY-MM-dd HH:mm'
+DATE_FORMAT = 'MMMM d, YYYY'
 
 # Date format used to display post dates, if local dates are used. (translatable)
 # Used by moment.js: https://momentjs.com/docs/#/displaying/format/
-# JS_DATE_FORMAT = 'YYYY-MM-DD HH:mm'
+JS_DATE_FORMAT = 'MMMM D, YYYY'
 
 # Date fanciness.
 #
@@ -1138,10 +1138,10 @@ MARKDOWN_EXTENSION_CONFIGS = {
 # """
 
 # Show link to source for the posts?
-# SHOW_SOURCELINK = True
+SHOW_SOURCELINK = False
 # Copy the source files for your pages?
 # Setting it to False implies SHOW_SOURCELINK = False
-# COPY_SOURCES = True
+COPY_SOURCES = False
 
 # Modify the number of Post per Index Page
 # Defaults to 10
@@ -1370,7 +1370,27 @@ WARN_ABOUT_TAG_METADATA = False
 
 # Put in global_context things you want available on all your templates.
 # It can be anything, data, functions, modules, etc.
-GLOBAL_CONTEXT = {'galleries': generate_index.galleries}
+
+
+def count_tags(posts):
+    from collections import Counter
+    count_tags = Counter()
+    count_cats = Counter()
+    for post in posts:
+        count_tags.update(post.tags)
+        category = post.meta('category')
+        if category:
+            count_cats.update([category])
+    tag_counts = [{'tag': tag, 'count': count}
+                  for tag, count in count_tags.items()]
+    cat_counts = [{'category': cat, 'count': count}
+                  for cat, count in count_cats.items()]
+
+    return tag_counts, cat_counts
+
+
+GLOBAL_CONTEXT = {'galleries': generate_index.galleries,
+                  'count_tags': count_tags}
 
 # Add functions here and they will be called with template
 # GLOBAL_CONTEXT as parameter when the template is about to be
