@@ -1,0 +1,14 @@
+[Core]
+Name = publication_list
+Module = publication_list
+Tests = test_publication_list
+
+[Nikola]
+PluginCategory = CompilerExtension
+Compiler = rest
+
+[Documentation]
+Author = Hong Xu
+Version = 0.7.1
+Website = https://www.topbug.net
+Description = Easily manage publication list.
