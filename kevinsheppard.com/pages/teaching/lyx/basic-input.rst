@@ -9,5 +9,4 @@
 
 .. youtube:: GfrLiMONTMg
    :align: center
-   :width: 100%
 
