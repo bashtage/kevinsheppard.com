@@ -8,7 +8,7 @@
 .. link: 
 .. description: Notes for a graduate course in Financial Econometrics 
 .. type: text
-.. masthead: /images/teaching/mfe-financial-econometrics-logo.svg
+.. jumbotron_color: #ffcc00
 .. jumbotron: MFE Financial Econometrics Notes
 .. jumbotron_text: Notes covering the material in Financial Econometrics I & II 
 -->

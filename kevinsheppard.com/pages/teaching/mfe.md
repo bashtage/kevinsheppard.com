@@ -8,7 +8,7 @@
 .. link: 
 .. description: 
 .. type: text
-.. masthead: /images/teaching/mfe-financial-econometrics-logo.svg
+.. jumbotron_color: #ffcc00
 .. jumbotron: MFE Financial Econometrics
 .. jumbotron_text: Slides, problem sets and assignment for the core Financial Econometrics Course
 -->

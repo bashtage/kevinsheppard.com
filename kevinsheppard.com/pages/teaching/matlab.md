@@ -9,6 +9,7 @@
 .. type: text
 .. masthead: /images/mastheads/matlab-masthead-opt.png
 .. masthead_height: 15
+.. masthead_color: #003144
 -->
 
 ## Under Construction

@@ -11,10 +11,29 @@ h1, h2, h3, h4, h5, h6 {
     text-transform: uppercase;
 }
 
+.listpage .postlist a, .listpage .postlist li,
+.metadata .feedlink a,
+.postlist .listdate, .postlist .listtitle,
 .metadata .byline-name, .metadata .dateline, .metadata .sourceline {
     font-family: Bitter, sans-serif;
 }
 
+.listpage .postlist a, .listpage .postlist li,
+.metadata .feedlink a,
+.postlist .listdate, .postlist .listtitle,
 .metadata .byline-name, .metadata .dateline {
     font-weight: 700;
+}
+
+.metadata .feedlink a {
+    font-size: 1.5rem;
+}
+
+.metadata .feedlink a::before {
+    font-family: "Font Awesome 5 Free", serif; font-weight: 700; content: "\f09e";
+    padding-right: 0.3rem;
+}
+
+.blog-nav {
+    visibility: visible;
 }

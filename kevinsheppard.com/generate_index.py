@@ -55,9 +55,3 @@ for name, out_name in dir_names:
                 name=name.replace('-', ' '),
                 thumbnail='/' + out_name)
     galleries.append(g)
-
-with open('generated_index.tmpl', 'r') as tmpl:
-    template = Template(tmpl.read())
-
-with open('./pages/photos.html', 'w') as index:
-    index.write(template.render(galleries=galleries))

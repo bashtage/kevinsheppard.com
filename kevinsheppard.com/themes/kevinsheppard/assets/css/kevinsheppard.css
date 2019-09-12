@@ -76,3 +76,17 @@ div.prompt {
 .dropdown-menu .dropdown-item {
     color: #07689F;
 }
+
+.masthead {
+    background-size: cover !important;
+}
+
+@media (min-width: 1199px) {
+    .masthead {
+        background-size: auto 100% !important;
+    }
+}
+
+.blog-nav {
+    visibility: hidden;
+}

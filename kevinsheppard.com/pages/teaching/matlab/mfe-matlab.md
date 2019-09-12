@@ -8,10 +8,9 @@
 .. link: 
 .. description: A complete course for learning MATLAB from novice to expert. 
 .. type: text
-.. masthead: /images/teaching/mfe-financial-econometrics-logo.svg
+.. jumbotron_color: #ffcc00
 .. jumbotron: MFE Financial Econometrics
 .. jumbotron_text: Notes, assignment and solutions for the MATLAB companion course the accompanies Financial Econometrics I & II.
-.. masthead_height: 15  
 -->
 
 

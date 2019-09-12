@@ -82,6 +82,8 @@
   </div>
   <div class="col-md-3">
   {% set counts, catcounts = count_tags(posts) %}
+  <h4><a href="/archive.html"><i class="fas fa-archive"></i> Archive</a></h4>
+  <h4><a href="/rss.xml"><i class="fas fa-rss"></i> RSS</a></h4>
   {% if counts %}
   <h2 class="mt-4">Tags</h2>
     {% for item in counts %}
@@ -94,7 +96,6 @@
       <a class="blog-tag-list badge badge-primary" href="/categories/cat_{{ item.category }}/">{{ item.category }}</a>
      {% endfor %}
   {% endif %}
-  <h4><a href="/rss.xml"><i class="fas fa-rss"></i> RSS</a></h4>
   </div>
   </div>
 {% endblock %}

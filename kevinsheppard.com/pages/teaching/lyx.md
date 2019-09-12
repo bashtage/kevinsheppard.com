@@ -9,6 +9,7 @@
 .. type: text
 .. masthead: /images/mastheads/lyx-masthead.svg
 .. masthead_height: 15
+.. masthead_color: #737b80
 -->
 
 [LyX](https://www.lyx.org/) is a powerful [WSYIWYG](https://en.wikipedia.org/wiki/WYSIWYG) editor

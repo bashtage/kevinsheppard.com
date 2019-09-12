@@ -9,6 +9,7 @@
 .. description: 
 .. type: text
 .. masthead: /images/mastheads/python.svg
+.. masthead_color: #565d64
 .. masthead_height: 15
 -->
 
