@@ -158,3 +158,7 @@ section {
 .dropdown-menu .dropdown-item:active {
     background-color: rgba(255,255,255,0.2);
 }
+
+a.headerlink {
+    display: none;
+}

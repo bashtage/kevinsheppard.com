@@ -156,8 +156,10 @@ NAVIGATION_LINKS = {
          "Teaching"),
         ((
              ("/code/matlab/mfe-toolbox/", "MFE Toolbox"),
-             ("https://github.com/bashtage/arch/", "arch"),
-             ("https://github.com/bashtage/linearmodels", "linearmodels"),
+             ("https://github.com/bashtage/arch/",
+              'arch &nbsp;<i class="fab fa-github"></i>'),
+             ("https://github.com/bashtage/linearmodels",
+              'linearmodels &nbsp;<i class="fab fa-github"></i>'),
              ("/code/matlab/ucsd-garch/", "UCSD GARCH"),
              ("https://github.com/bashtage/",
               'GitHub &nbsp;<i class="fab fa-github"></i>')),
