@@ -8,6 +8,6 @@ PluginCategory = LateTask
 [Documentation]
 Author = Kevin Sheppard
 Version = 0.0.1
-Website = http://bashtage.github.com
+Website = https://bashtage.github.io
 Description = Find 404 and Orphan files
 
