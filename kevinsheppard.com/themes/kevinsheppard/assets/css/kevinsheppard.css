@@ -69,12 +69,17 @@ div.prompt {
     background-color: #fafafa !important;
 }
 
-.dropdown-menu .dropdown-item.focus, .dropdown-menu .dropdown-item.hover, .dropdown-menu .dropdown-item:focus, .dropdown-menu .dropdown-item:hover {
-    background-color: #07689F !important;
-}
-
 .dropdown-menu .dropdown-item {
     color: #07689F;
+}
+
+.dropdown-menu .dropdown-item.active, .dropdown-menu .dropdown-item:active {
+    color: #07689F;
+    font-weight: 700;
+}
+
+.dropdown-menu .dropdown-item:active {
+    background-color: rgba(7,104,159,0.2);
 }
 
 .masthead {

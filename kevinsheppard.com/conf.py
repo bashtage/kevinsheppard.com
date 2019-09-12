@@ -146,24 +146,16 @@ NAVIGATION_LINKS = {
              ("/research/publications/", "Publications"),
              ("/research/working-papers/", "Working Papers")
          ),
-         "Research"
-        ),
+         "Research"),
         ((
              ("/teaching/mfe/", "MFE"),
              ("/teaching/python/", "Python"),
              ("/teaching/matlab/", "MATLAB"),
              ("/teaching/lyx/", "LyX"),
              ("/teaching/other/", "Other")),
-         "Teaching"
-        ),
+         "Teaching"),
         ("/galleries/", 'Photos'),
         ("/blog/", 'Blog'),
-        ((
-             ("/archive.html", "Archive"),
-             ("/categories/", "Tags"),
-             ("/rss.xml", "RSS feed"),
-         ),
-         'More')
     ),
 }
 
@@ -1362,6 +1354,7 @@ USE_TAG_METADATA = False
 # and 'private' tags are found in a post. Useful for checking that
 # migration was successful.
 WARN_ABOUT_TAG_METADATA = False
+
 
 # Templates will use those filters, along with the defaults.
 # Consult your engine's documentation on filters if you need help defining
