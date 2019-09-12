@@ -13,8 +13,8 @@
 .. jumbotron_color: #ffcc00
 -->
 
-* [Elective Presentation](/files/teaching/mfe/advanced-econometrics/course_outline.pdf)
-* [Course Outline](/files/teaching/mfe/advanced-econometrics/course_outline_handout.pdf)
+* [Elective Presentation](/files/teaching/mfe/advanced-econometrics/Course_outline.pdf)
+* [Course Outline](/files/teaching/mfe/advanced-econometrics/Course_outline_handout.pdf)
 
 #### Collected Slides
 These downloads contain complete slide sets from the course split into two parts.  The first covers material related to data snooping bias and multiple testing in the context of technical trading.  The second covers forecasting methodologies that are suitable with large number of predictors.
@@ -50,13 +50,13 @@ These downloads contain complete slide sets from the course split into two parts
 
 #### Readings
 ##### Week 1
-* [Chernick Ch 2](/files/teaching/mfe/advanced-econometrics/chernick_ch2.pdf)
-* [Chernick Ch 3](/files/teaching/mfe/advanced-econometrics/chernick_ch3.pdf)
-* [Chernick Ch 4 and 5](/files/teaching/mfe/advanced-econometrics/chernick_ch4-5.pdf)
-* [Lahiri Chs 2 and 7](/files/teaching/mfe/advanced-econometrics/lahiri_2and7.pdf)
-* [Politis and White](/files/teaching/mfe/advanced-econometrics/politiswhite.pdf)
-* [Patton, Politis and White](/files/teaching/mfe/advanced-econometrics/pattonpolitiswhite.pdf)
-* [Kreiss and Lahiri](/files/teaching/mfe/advanced-econometrics/kreiss_and_lahiri.pdf)
+* [Chernick Ch 2](/files/teaching/mfe/advanced-econometrics/Chernick_ch2.pdf)
+* [Chernick Ch 3](/files/teaching/mfe/advanced-econometrics/Chernick_ch3.pdf)
+* [Chernick Ch 4 and 5](/files/teaching/mfe/advanced-econometrics/Chernick_ch4-5.pdf)
+* [Lahiri Chs 2 and 7](/files/teaching/mfe/advanced-econometrics/Lahiri_2and7.pdf)
+* [Politis and White](/files/teaching/mfe/advanced-econometrics/Politiswhite.pdf)
+* [Patton, Politis and White](/files/teaching/mfe/advanced-econometrics/Pattonpolitiswhite.pdf)
+* [Kreiss and Lahiri](/files/teaching/mfe/advanced-econometrics/Kreiss_and_lahiri.pdf)
 
 ##### Week 2
 * [Brown & Jennings (1989)](/files/teaching/mfe/advanced-econometrics/Brown_Jennings.pdf)
