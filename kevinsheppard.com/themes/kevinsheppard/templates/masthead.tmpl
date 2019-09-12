@@ -4,13 +4,22 @@
      style="background: {{ masthead_color }} center center no-repeat url({{ post.meta('masthead') }});"
     {%- elif post.meta('jumbotron_color') %}
      style="background-color: {{ post.meta('jumbotron_color') }};"
-     {% endif %}>
-  <div class="container  {% if post.meta('jumbotron_light') %}text-light{% else %}text-dark{% endif %}" {% if post.meta('masthead_height') %} style="min-height: {{ post.meta('masthead_height')|trim }}rem;" {% endif %}>
-    {% if post.meta('jumbotron') %}
-      <h1 class="display-3">{{ post.meta('jumbotron') }}</h1>
-    {% endif %}
-    {% if post.meta('jumbotron_text') %}
-      <p>{{ post.meta('jumbotron_text') }}</p>
-    {% endif %}
+    {% endif %}>
+  <div
+      class="container  {% if post.meta('jumbotron_light') %}text-light{% else %}text-dark{% endif %}"
+      {% if post.meta('masthead_height') %}
+      style="min-height: {{ post.meta('masthead_height')|trim }}rem;" {% endif %}>
+    <div class="row">
+      <div class="col-sm-1"></div>
+      <div class="col-sm-10">
+        {% if post.meta('jumbotron') %}
+          <h1 class="display-3">{{ post.meta('jumbotron') }}</h1>
+        {% endif %}
+        {% if post.meta('jumbotron_text') %}
+          <p>{{ post.meta('jumbotron_text') }}</p>
+        {% endif %}
+      </div>
+      <div class="col-sm-1"></div>
+    </div>
   </div>
 </div>

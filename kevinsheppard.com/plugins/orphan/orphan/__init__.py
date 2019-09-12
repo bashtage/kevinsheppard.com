@@ -59,6 +59,7 @@ class Orphan(LateTask):
             skip = ('/index.html', '/search/index.html')
             orphans = [o for o in orphans if not ('.thumbnail.'in o or
                                                   o.endswith('.src.html'))]
+            warnings = []
             for o in sorted(orphans):
                 if os.path.isdir(o):
                     continue
@@ -67,9 +68,11 @@ class Orphan(LateTask):
                     continue
                 warn = any([o.endswith(v) for v in ('.html',)])
                 if warn:
-                    LOGGER.warn(f'ORPHAN file (CRUCIAL): {o}')
+                    warnings.append(o)
                 else:
                     LOGGER.info(f'ORPHAN file: {o}')
+            for orphan in warnings:
+                LOGGER.warn(f'ORPHAN file (CRUCIAL): {orphan}')
             for html_file, obj_path in link_404:
                 LOGGER.error(f'MISSING (404): {html_file}::{obj_path}')
 

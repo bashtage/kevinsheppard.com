@@ -86,12 +86,22 @@ div.prompt {
     background-size: cover !important;
 }
 
-@media (min-width: 1199px) {
+@media (min-width: 1999px) {
     .masthead {
-        background-size: auto 100% !important;
+        background-size: auto 150% !important;
     }
 }
 
 .blog-nav {
     visibility: hidden;
 }
+
+/* #Sets TOC depth level */
+div.toc>ul>li>ul>li>ul>li>ul {
+    display: none;
+}
+
+div.toc ul li {
+    margin-left: -1rem;
+}
+
