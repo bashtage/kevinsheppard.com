@@ -17,7 +17,7 @@ This course is an introduction to Python and programming aimed at students worki
 in Finance and Economics. The course is designed to be taught using the Jupyter notebooks
 that are in the course [GitHub repository](https://github.com/bashtage/python-introduction) and
 are linked below. The complete course is available for
-[download as a pdf](/files/teaching/python/course/python-introduction.pdf).
+[download as a pdf](https://github.com/bashtage/python-introduction/raw/master/python-introduction.pdf).
 
 ## GitHub
 
@@ -35,18 +35,18 @@ available in a [YouTube channel](https://www.youtube.com/playlist?list=PLVR_rJLc
 
 ## Notebooks
 
-| ﻿Lesson                                         | Link to Download                                          | Demonstration(s)                                  |                                                   |
-|-------------------------------------------------|-----------------------------------------------------------|---------------------------------------------------|---------------------------------------------------|
-| [Lesson 1](/teaching/python/course/lesson-1/)   | [Download](/files/teaching/python/course/lesson-1.ipynb)  | [Lesson 1](https://youtu.be/jpqjJYLQKUY)          |                                                   |
-| [Lesson 2](/teaching/python/course/lesson-2/)   | [Download](/files/teaching/python/course/lesson-2.ipynb)  | [Lesson 2: Part 1](https://youtu.be/Ad7LyDNi0gA), [Part 2](https://youtu.be/HA4IFknbYp8)    |
-| [Lesson 3](/teaching/python/course/lesson-3/)   | [Download](/files/teaching/python/course/lesson-3.ipynb)  | [Lesson 3](https://youtu.be/PCuFwtvAzfE)          |                                                   |
-| [Lesson 4](/teaching/python/course/lesson-4/)   | [Download](/files/teaching/python/course/lesson-4.ipynb)  |                                                   |                                                   |
-| [Lesson 5](/teaching/python/course/lesson-5/)   | [Download](/files/teaching/python/course/lesson-5.ipynb)  |                                                   |                                                   |
-| [Lesson 6](/teaching/python/course/lesson-6/)   | [Download](/files/teaching/python/course/lesson-6.ipynb)  |                                                   |                                                   |
-| [Lesson 7](/teaching/python/course/lesson-7/)   | [Download](/files/teaching/python/course/lesson-7.ipynb)  |                                                   |                                                   |
-| [Lesson 8](/teaching/python/course/lesson-8/)   | [Download](/files/teaching/python/course/lesson-8.ipynb)  |                                                   |                                                   |
-| [Lesson 9](/teaching/python/course/lesson-9/)   | [Download](/files/teaching/python/course/lesson-9.ipynb)  |                                                   |                                                   |
-| [Lesson 10](/teaching/python/course/lesson-10/) | [Download](/files/teaching/python/course/lesson-10.ipynb) |                                                   |                                                   |
+| ﻿Lesson                                               | Link to Download                                          | Demonstration(s)               |                                                   |
+|-------------------------------------------------------|-----------------------------------------------------------|--------------------------------|---------------------------------------------------|
+| [Installation](/teaching/python/course/installation/) | [Download](https://github.com/bashtage/python-introduction/raw/master/installation.ipynb)  | [Installation](https://youtu.be/jpqjJYLQKUY)          |                                                   |
+| [Lesson 1](/teaching/python/course/lesson-1/)         | [Download](https://github.com/bashtage/python-introduction/raw/master/lesson-1.ipynb)      | [Lesson 1: Part 1](https://youtu.be/Ad7LyDNi0gA), [Part 2](https://youtu.be/HA4IFknbYp8)    |
+| [Lesson 2](/teaching/python/course/lesson-2/)         | [Download](https://github.com/bashtage/python-introduction/raw/master/lesson-2.ipynb)      | [Lesson 2](https://youtu.be/PCuFwtvAzfE)          |                                                   |
+| [Lesson 3](/teaching/python/course/lesson-3/)         | [Download](https://github.com/bashtage/python-introduction/raw/master/lesson-3.ipynb)      |                                                   |                                                   |
+| [Lesson 4](/teaching/python/course/lesson-4/)         | [Download](https://github.com/bashtage/python-introduction/raw/master/lesson-4.ipynb)      |                                                   |                                                   |
+| [Lesson 5](/teaching/python/course/lesson-5/)         | [Download](https://github.com/bashtage/python-introduction/raw/master/lesson-5.ipynb)      |                                                   |                                                   |
+| [Lesson 6](/teaching/python/course/lesson-6/)         | [Download](https://github.com/bashtage/python-introduction/raw/master/lesson-6.ipynb)      |                                                   |                                                   |
+| [Lesson 7](/teaching/python/course/lesson-7/)         | [Download](https://github.com/bashtage/python-introduction/raw/master/lesson-7.ipynb)      |                                                   |                                                   |
+| [Lesson 8](/teaching/python/course/lesson-8/)         | [Download](https://github.com/bashtage/python-introduction/raw/master/lesson-8.ipynb)      |                                                   |                                                   |
+| [Lesson 9](/teaching/python/course/lesson-9/)         | [Download](https://github.com/bashtage/python-introduction/raw/master/lesson-9.ipynb)      |                                                   |                                                   |
 
 **Downloading**: Right-click and select Download to save the notebook files to your computer.
 {: .alert .alert-secondary }
