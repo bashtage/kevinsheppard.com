@@ -47,6 +47,12 @@ available in a [YouTube channel](https://www.youtube.com/playlist?list=PLVR_rJLc
 | [Lesson 7](/teaching/python/course/lesson-7/)         | [Download](https://github.com/bashtage/python-introduction/raw/master/lesson-7.ipynb)      |                                                   |                                                   |
 | [Lesson 8](/teaching/python/course/lesson-8/)         | [Download](https://github.com/bashtage/python-introduction/raw/master/lesson-8.ipynb)      |                                                   |                                                   |
 | [Lesson 9](/teaching/python/course/lesson-9/)         | [Download](https://github.com/bashtage/python-introduction/raw/master/lesson-9.ipynb)      |                                                   |                                                   |
+| [Lesson 10](/teaching/python/course/lesson-10/)       | [Download](https://github.com/bashtage/python-introduction/raw/master/lesson-10.ipynb)     |                                                   |                                                   |
+| [Lesson 11](/teaching/python/course/lesson-11/)       | [Download](https://github.com/bashtage/python-introduction/raw/master/lesson-11.ipynb)     |                                                   |                                                   |
+| [Lesson 12](/teaching/python/course/lesson-12/)       | [Download](https://github.com/bashtage/python-introduction/raw/master/lesson-12.ipynb)     |                                                   |                                                   |
+| [Lesson 13](/teaching/python/course/lesson-13/)       | [Download](https://github.com/bashtage/python-introduction/raw/master/lesson-13.ipynb)     |                                                   |                                                   |
+| [Lesson 14](/teaching/python/course/lesson-14/)       | [Download](https://github.com/bashtage/python-introduction/raw/master/lesson-14.ipynb)     |                                                   |                                                   |
+| [Lesson 15](/teaching/python/course/lesson-15/)       | [Download](https://github.com/bashtage/python-introduction/raw/master/lesson-15.ipynb)     |                                                   |                                                   |
 
 **Downloading**: Right-click and select Download to save the notebook files to your computer.
 {: .alert .alert-secondary }
