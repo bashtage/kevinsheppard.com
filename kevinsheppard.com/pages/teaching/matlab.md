@@ -12,6 +12,8 @@
 .. masthead_color: #003144
 -->
 
-## Under Construction
+# Notes and Course
 
-<i class="fas fa-wrench"></i> This content has not been ported from my other site.
+A set of notes and an introductory course that introduces MATLAB to new users.
+
+[MATLAB Notes and Course](/teaching/matlab/notes/)
