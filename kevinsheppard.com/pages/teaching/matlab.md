@@ -12,8 +12,18 @@
 .. masthead_color: #003144
 -->
 
-# Notes and Course
+# Introductory Notes and Course
 
-A set of notes and an introductory course that introduces MATLAB to new users.
+[MATLAB Notes and Course](/teaching/matlab/notes/) is a set of notes and an introductory
+MATLAB course designed for new users.
 
-[MATLAB Notes and Course](/teaching/matlab/notes/)
+# MFE Companion Course
+
+The [companion course](/teaching/matlab/mfe-matlab/) is designed to accompany
+Financial Econometrics I and II and to provide tools needed in Empirical Asset
+pricing.  
+
+# MFE Toolbox
+
+The [MFE Toolbox](/code/matlab/mfe-toolbox/) provides a large collection of
+MATLAB functions for analyzing financial time series.
