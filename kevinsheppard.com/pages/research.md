@@ -5,7 +5,7 @@
 .. tags: 
 .. category: 
 .. link: 
-.. description: 
+.. description: Kevin Sheppard's research articles and working papers
 .. type: text
 .. masthead: /images/mastheads/research.png
 .. masthead_height: 15
