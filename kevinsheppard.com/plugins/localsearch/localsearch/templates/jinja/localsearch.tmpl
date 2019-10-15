@@ -1,7 +1,15 @@
 {#  -*- coding: utf-8 -*- #}
 {% extends 'base.tmpl' %}
+
+{% block masthead %}
+{% if post.meta('jumbotron') or post.meta('masthead') %}
+{% include "masthead.tmpl" %}
+{% else %}
+  {{ super() }}
+{% endif %}
+{% endblock %}
+
 {% block content %}
-<h1>Results</h1>
 <noscript>Search requires JavaScript, sorry for the inconvenience.</noscript>
 <div id="tipue_search_content">Use the search box in the navigation bar to search.</div>
 {% endblock %}
