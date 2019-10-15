@@ -51,7 +51,7 @@
             <a class="nav-link" href="/blog/">Blog</a>
           </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0" action="/search/">
+        <form class="form-inline my-2 my-lg-0" action="/search/" role="search">
          <div class="input-group">
             <input
                 class="form-control mr-sm-2 {% block search_box %}bg-light{% endblock %} text-dark pl-2"
@@ -60,7 +60,7 @@
 
             <button
                 class="btn {% block search_button %}btn-primary{% endblock %} py-1"
-                type="submit"><i class="fa fa-search"></i>
+                type="submit" role="button"><i class="fa fa-search"></i>
             </button>
           </div>
         </form>

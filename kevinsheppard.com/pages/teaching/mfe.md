@@ -6,7 +6,7 @@
 .. tags: 
 .. category: 
 .. link: 
-.. description: 
+.. description: Material used in the Financial Econometrics course on the Master's in Financial Economics (MFE) at Oxford
 .. type: text
 .. jumbotron_color: #ffcc00
 .. jumbotron: MFE Financial Econometrics

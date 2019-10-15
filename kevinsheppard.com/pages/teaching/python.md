@@ -6,7 +6,7 @@
 .. tags: 
 .. category: 
 .. link: 
-.. description: 
+.. description: Resources for teaching Python to new programmers
 .. type: text
 .. masthead: /images/mastheads/python.svg
 .. masthead_color: #565d64
