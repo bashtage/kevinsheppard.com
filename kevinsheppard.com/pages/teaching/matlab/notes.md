@@ -8,6 +8,7 @@
 .. description: 
 .. type: text
 .. masthead: /images/mastheads/matlab-masthead-opt.png
+.. jumbotron_color: #013040
 .. masthead_height: 15
 -->
 
