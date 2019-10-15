@@ -2,3 +2,4 @@ Nikola[extras]
 beautifulsoup4
 lxml
 pybtex
+jupyter_contrib_nbextensions
