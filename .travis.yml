@@ -28,7 +28,7 @@ matrix:
 install:
   - pip install pip --upgrade
   - pip install -r requirements.txt -q
-  - cd kevinsheppard.com
+  - cd site
 
 script:
   - python generate_index.py
@@ -38,4 +38,4 @@ after_success:
   - set -e
   - cd ..
   - pip install doctr
-  - doctr deploy --build-tags --built-docs kevinsheppard.com/output/ .
+  - doctr deploy --build-tags --built-docs site/output/ .
