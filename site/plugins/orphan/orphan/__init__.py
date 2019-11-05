@@ -35,7 +35,7 @@ class Orphan(LateTask):
             for html_file in html_files:
                 base, _ = os.path.split(html_file)
                 with open(html_file, 'r', encoding='utf-8') as html:
-                    soup = BeautifulSoup(html, features='lxml')
+                    soup = BeautifulSoup(html.read(), features='lxml')
                 for tag, prop in tags:
                     tag_set = soup.find_all(tag, recursive='True')
                     for node in tag_set:

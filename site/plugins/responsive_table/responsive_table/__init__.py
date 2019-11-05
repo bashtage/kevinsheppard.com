@@ -21,7 +21,7 @@ class ResponsiveTable(LateTask):
             os.path.join(self.kw['output_folder'], '**', '*.html'),
             recursive=True)
         for file_name in html_files:
-            with open(file_name) as html:
+            with open(file_name, encoding="utf8") as html:
                 soup = BeautifulSoup(html.read(), features='lxml')
             tables = soup.findChildren('table', recursive=True)
             first = True
@@ -37,7 +37,7 @@ class ResponsiveTable(LateTask):
                 div_responsive = soup.new_tag('div',
                                               **{'class': 'table-responsive'})
                 table.wrap(div_responsive)
-            with open(file_name, 'w') as html:
+            with open(file_name, 'w', encoding="utf8") as html:
                 html.write(str(soup))
 
     def square_thumbnails(self):
