@@ -8,7 +8,7 @@
 .. description: Some experiences interviewing applicants for Economics and Management in 2019
 .. type: text
 .. has_math: true
-.. status: private
+.. status: published
 -->
 
 ![The McKinsey (2009) Marginal Abatement Cost Curve](/images/blog/mckinsey-abatement.png "The McKinsey (2009) Marginal Abatement Cost Curve")
