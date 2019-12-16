@@ -1,8 +1,10 @@
 .idea/
-kevinsheppard.com/.doit.*
-kevinsheppard.com/cache/
-kevinsheppard.com/output/
+site/.doit.*
+site/.doit.db.dat
+site/cache/
+site/output/
 __pycache__
 node_modules/
 *.exe
 **/*.exe
+
