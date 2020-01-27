@@ -7,6 +7,8 @@
 .. link: 
 .. description: Teaching resources for MFE Financial Econometrics II
 .. type: text
+.. jumbotron_color: #002147
+.. jumbotron_light: True
 .. jumbotron: MFE Financial Econometrics II
 .. jumbotron_text: The most-up-to-date information on MFE Financial Econometrics II
 -->
