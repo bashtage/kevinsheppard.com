@@ -30,3 +30,12 @@ right, and work through entering arrays and pandas DataFrame, selecting
 elements, basic looping and graphics.  
 
 [Introductory Course](/teaching/python/course/)
+
+# Financial Econometrics Python Course
+
+A course that accompanies the MFE Financial Econometrics teaching. It is
+designed to complement the lecture and provide the core set fo skills
+needed to analyze data and fit models. 
+
+[Companion Course](/teaching/python/companion-course/)
+
