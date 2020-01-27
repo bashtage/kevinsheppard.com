@@ -17,7 +17,7 @@ This course is an introduction to Python and programming aimed at students worki
 in Finance and Economics. The course is designed to be taught using the Jupyter notebooks
 that are in the course [GitHub repository](https://github.com/bashtage/python-introduction) and
 are linked below. The complete course is available for
-[download as a pdf](https://github.com/bashtage/python-introduction/raw/master/python-introduction.pdf).
+[download as a pdf](https://github.com/bashtage/python-introduction/raw/master/course/python-introduction.pdf).
 
 ## GitHub
 
