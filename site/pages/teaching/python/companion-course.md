@@ -41,7 +41,7 @@ git clone https://github.com/bashtage/python-introduction.git
 The complete list of lessons appears in the table below.  
 
 |  Lesson  |  Download  |  Solution  |
-|----------|------------|------------|
+| :--------| :----------| :----------|
 |  [Dataset Construction](https://github.com/bashtage/python-introduction/tree/master/course/autumn/data-dataset-construction.ipynb)                                                    |  [Download](https://raw.githubusercontent.com/bashtage/python-introduction/master/course/autumn/data-dataset-construction.ipynb)                          |  [Solution](https://github.com/bashtage/python-introduction/tree/master/course/autumn/data-dataset-construction.ipynb)                            |
 |  [Computing Expectations](https://github.com/bashtage/python-introduction/tree/master/course/autumn/data-expectations.ipynb)                                                          |  [Download](https://raw.githubusercontent.com/bashtage/python-introduction/master/course/autumn/data-expectations.ipynb)                                  |  [Solution](https://github.com/bashtage/python-introduction/tree/master/course/autumn/data-expectations.ipynb)                                    |
 |  [Simulation](https://github.com/bashtage/python-introduction/tree/master/course/autumn/data-simulation.ipynb)                                                                        |  [Download](https://raw.githubusercontent.com/bashtage/python-introduction/master/course/autumn/data-simulation.ipynb)                                    |  [Solution](https://github.com/bashtage/python-introduction/tree/master/course/autumn/data-simulation.ipynb)                                      |

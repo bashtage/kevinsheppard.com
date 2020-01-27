@@ -35,8 +35,8 @@ available in a [YouTube channel](https://www.youtube.com/playlist?list=PLVR_rJLc
 
 ## Notebooks
 
-| ﻿Lesson                                               | Link to Download                                          | Demonstration(s)               |                                                   |
-|-------------------------------------------------------|-----------------------------------------------------------|--------------------------------|---------------------------------------------------|
+| ﻿Lesson                                                | Link to Download                                          | Demonstration(s)               |
+| :---------------------------------------------------- | :---------------------------------------------------------| :------------------------------|
 | [Installation](/teaching/python/course/installation/) | [Download](https://github.com/bashtage/python-introduction/raw/master/course/introduction/installation.ipynb)  | [Installation](https://youtu.be/CH3IOVGLCAQ)     |                                                   |
 | [Lesson 1](/teaching/python/course/lesson-1/)         | [Download](https://github.com/bashtage/python-introduction/raw/master/course/introduction/lesson-1.ipynb)      | [Lesson 1: Part 1](https://youtu.be/UsMJhoD2sz8), [Part 2](https://youtu.be/1DfFJNEfXpY), [Part 3](https://youtu.be/0kxU6MIkvds)    |
 | [Lesson 2](/teaching/python/course/lesson-2/)         | [Download](https://github.com/bashtage/python-introduction/raw/master/course/introduction/lesson-2.ipynb)      | [Lesson 2](https://youtu.be/XYH318V76ng)          |                                                   |
