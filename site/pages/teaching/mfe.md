@@ -32,6 +32,7 @@ to provide tools needed in Empirical Asset pricing. This course is supported thr
 
 ## Python
 
-The [companion course (Python Version)](/teaching/python/course/) is designed to accompany Financial Econometrics I and II and
+The [introduction course](/teaching/python/course/) and [companion course](/teaching/python/course/)
+are designed to accompany Financial Econometrics I and II and
 to provide tools needed in Empirical Asset pricing. This course is mostly self-supported and is aimed at students who
 have some familiarity with Python (or are willing to learn).
