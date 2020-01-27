@@ -50,10 +50,7 @@ econometric analysis serves as a reference for the companion course.
 
 #### Solutions
 
-!!! primary "Solution Availability" 
-    Solutions are provided in the week when a module is taught.
 
-<!--
 ##### Data and Simulation
 * [Data Set Construction](/files/teaching/matlab/course/data_set_construction.mlx)
 * [Simulation](/files/teaching/matlab/course/simulation.mlx)
@@ -138,4 +135,3 @@ econometric analysis serves as a reference for the companion course.
 * [EUR-USD Exchange Rate](/files/teaching/matlab/course/EURUSD.mat)
 * [AUD-USD Exchange Rate](/files/teaching/matlab/course/AUDUSD.mat)
 * [JPY-USD Exchange Rate](/files/teaching/matlab/course/JPYUSD.mat)
--->
