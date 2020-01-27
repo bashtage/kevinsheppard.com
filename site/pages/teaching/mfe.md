@@ -13,8 +13,6 @@
 .. jumbotron_text: Slides, problem sets and assignment for the core Financial Econometrics Course
 -->
 
-This is a place holder for the 2019/20 MFE Course content. I lecture in Hilary term.
-
 # MFE Financial Econometrics II 
 
 The [course website](/teaching/mfe/hilary-term/) for Financial Econometrics II contains all material distributed in Hilary Term. 
