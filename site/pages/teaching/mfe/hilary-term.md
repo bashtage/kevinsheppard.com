@@ -43,3 +43,12 @@ There is a new quize each week on the [course canvas page](https://canvas.sbs.ox
 ## Notes
 
 See the [notes page](/teaching/mfe/notes/) for standard and tablet optimized versions of the course notes.
+
+## Computation
+
+See the [MATLAB course page](/teaching/matlab/course/) for assignments and data
+for the MATLAB introduction and companion course.
+
+See the [Python introduction](/teaching/pytohn/course/) and the
+[Python companion course](/teaching/python/companion-course/) page for
+code, data and links to video presentations.

@@ -3,8 +3,8 @@
 .. slug: python
 .. hidetitle: True 
 .. date: 2019-09-02 11:27:39 UTC+01:00
-.. tags: 
-.. category: 
+.. tags: python, teaching, mfe
+.. category: teaching
 .. link: 
 .. description: Resources for teaching Python to new programmers
 .. type: text
@@ -22,7 +22,7 @@ and some parts of SciPy and statsmdoels.
 
 [Python Notes](/teaching/python/notes/)
 
-# Introductory Python Course
+# Introductory Course
 
 A short course designed for people new to Python, and often new
 to programming.  Starts with the basics - getting the Python environemnt
@@ -31,11 +31,10 @@ elements, basic looping and graphics.
 
 [Introductory Course](/teaching/python/course/)
 
-# Financial Econometrics Python Course
+# MFE Companion Course
 
 A course that accompanies the MFE Financial Econometrics teaching. It is
 designed to complement the lecture and provide the core set fo skills
 needed to analyze data and fit models. 
 
 [Companion Course](/teaching/python/companion-course/)
-
