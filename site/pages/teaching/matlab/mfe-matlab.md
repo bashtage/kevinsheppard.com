@@ -116,7 +116,6 @@ econometric analysis serves as a reference for the companion course.
 ### Data Files (mat)
 #### Hilary
 * [S&P 500 (FRED)](/files/teaching/matlab/course/sp500.mat)
-* [USD/EUR Rate (FRED)](/files/teaching/matlab/course/usdeur.mat)
 * [Core CPI (FRED)](/files/teaching/matlab/course/cpi.mat)
 * [Term Premium (FRED)](/files/teaching/matlab/course/term.mat)
 * [Default Premium (FRED)](/files/teaching/matlab/course/def.mat)

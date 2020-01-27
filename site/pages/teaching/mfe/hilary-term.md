@@ -46,9 +46,9 @@ See the [notes page](/teaching/mfe/notes/) for standard and tablet optimized ver
 
 ## Computation
 
-See the [MATLAB course page](/teaching/matlab/course/) for assignments and data
+See the [MATLAB course page](/teaching/matlab/mfe-matlab/) for assignments and data
 for the MATLAB introduction and companion course.
 
-See the [Python introduction](/teaching/pytohn/course/) and the
+See the [Python introduction](/teaching/python/course/) and the
 [Python companion course](/teaching/python/companion-course/) page for
 code, data and links to video presentations.
