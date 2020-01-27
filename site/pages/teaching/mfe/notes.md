@@ -26,7 +26,7 @@ template that makes them more friendly for reading on a tablet or iPad.
 
 | Chapter | Print Optimized | Tablet Optimized |
 | :------ | :-------------- | :--------------- |
-Complete | [Financial Econometrics](/files/teaching/mfe/notes/financial-econometrics-2019-2020.pdf) | [Financial Econometrics](/files/teaching/mfe/notes/financial-econometrics-2019-2020.pdf) |
+Complete | [Financial Econometrics](/files/teaching/mfe/notes/financial-econometrics-2019-2020.pdf) | [Financial Econometrics](/files/teaching/mfe/notes/financial-econometrics-2019-2020-tablet.pdf) |
 1 | [Chapter 1](/files/teaching/mfe/notes/chapter-1.pdf)                                            | [Chapter 1](/files/teaching/mfe/notes/chapter-1-tablet.pdf)                              |
 2 | [Chapter 2](/files/teaching/mfe/notes/chapter-2.pdf)                                            | [Chapter 2](/files/teaching/mfe/notes/chapter-2-tablet.pdf)                              |
 3 | [Chapter 3](/files/teaching/mfe/notes/chapter-3.pdf)                                            | [Chapter 3](/files/teaching/mfe/notes/chapter-3-tablet.pdf)                              |

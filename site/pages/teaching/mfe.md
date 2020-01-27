@@ -15,11 +15,23 @@
 
 This is a place holder for the 2019/20 MFE Course content. I lecture in Hilary term.
 
+# MFE Financial Econometrics II 
+
+The [course website](/teaching/mfe/hilary-term/) for Financial Econometrics II contains all material distributed in Hilary Term. 
+
 # Notes
 
 The [complete set of notes](/teaching/mfe/notes/) covers all aspects of the Financial Econometrics I and II courses. 
 
-# MATLAB
+# Computation
+
+## MATLAB
 
 The [companion course](/teaching/matlab/mfe-matlab/) is designed to accompany Financial Econometrics I and II and
-to provide tools needed in Empirical Asset pricing.  
+to provide tools needed in Empirical Asset pricing. This course is supported through weekly sessions.
+
+## Python
+
+The [companion course (Python Version)](/teaching/python/course/) is designed to accompany Financial Econometrics I and II and
+to provide tools needed in Empirical Asset pricing. This course is mostly self-supported and is aimed at students who
+have some familiarity with Python (or are willing to learn).
