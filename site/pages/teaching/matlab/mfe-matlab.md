@@ -48,22 +48,30 @@ econometric analysis serves as a reference for the companion course.
 [MATLAB Companion Course (Complete)](/files/teaching/matlab/course/mfe_matlab_course_outline_2019.pdf)
 
 
-#### Solutions
+## Michaelmas Solutions
 
 
-##### Data and Simulation
-* [Data Set Construction](/files/teaching/matlab/course/data_set_construction.mlx)
-* [Simulation](/files/teaching/matlab/course/simulation.mlx)
-* [Expectations](/files/teaching/matlab/course/expectations.mlx)
-##### Estimation and Inference
-* [Method of Moments](/files/teaching/matlab/course/method_of_moments.mlx)
-* [Maximum Likelihood](/files/teaching/matlab/course/maximum_likelihood.mlx)
-* [Bias and Standard Errors](/files/teaching/matlab/course/standard_errors.mlx)
-##### Linear Regression
-* [Basic Linear Regression](/files/teaching/matlab/course/basic_linear_regression.mlx)
-* [Rolling Regressions](/files/teaching/matlab/course/rolling_and_recursive_ols.mlx)
-* [Cross-validation and Model Selection](/files/teaching/matlab/course/cross_validation.mlx)
-* [Model Selection and Out-of-Sample R2](/files/teaching/matlab/course/model_selection_and_out_of_sample_r2.mlx)
+### Data and Simulation
+| MATLAB Live Script (mlx)                                                         | MATLAB Script (m)                                                                |
+| :--------------------------------------------------------------------------------| :--------------------------------------------------------------------------------|
+| [Data Set Construction](/files/teaching/matlab/course/data_set_construction.mlx) | [Data Set Construction](/files/teaching/matlab/course/data_set_construction.m) |
+| [Simulation](/files/teaching/matlab/course/simulation.mlx)                       | [Simulation](/files/teaching/matlab/course/simulation.m)                       |
+| [Expectations](/files/teaching/matlab/course/expectations.mlx)                   | [Expectations](/files/teaching/matlab/course/expectations.m)                   |
+
+### Estimation and Inference
+| MATLAB Live Script (mlx)                                                       | MATLAB Script (m)                                                              |
+| :------------------------------------------------------------------------------| :------------------------------------------------------------------------------|
+| [Method of Moments](/files/teaching/matlab/course/method_of_moments.mlx)       | [Method of Moments](/files/teaching/matlab/course/method_of_moments.m)       |
+| [Maximum Likelihood](/files/teaching/matlab/course/maximum_likelihood.mlx)     | [Maximum Likelihood](/files/teaching/matlab/course/maximum_likelihood.m)     |
+| [Bias and Standard Errors](/files/teaching/matlab/course/standard_errors.mlx)  | [Bias and Standard Errors](/files/teaching/matlab/course/standard_errors.m)  |
+
+### Linear Regression
+| MATLAB Live Script (mlx)                                                                                       | MATLAB Script (m)                                                                                              |
+| :--------------------------------------------------------------------------------------------------------------| :--------------------------------------------------------------------------------------------------------------|
+| [Basic Linear Regression](/files/teaching/matlab/course/basic_linear_regression.mlx)                           | [Basic Linear Regression](/files/teaching/matlab/course/basic_linear_regression.m)                           |
+| [Rolling Regressions](/files/teaching/matlab/course/rolling_and_recursive_ols.mlx)                             | [Rolling Regressions](/files/teaching/matlab/course/rolling_and_recursive_ols.m)                             |
+| [Cross-validation and Model Selection](/files/teaching/matlab/course/cross_validation.mlx)                     | [Cross-validation and Model Selection](/files/teaching/matlab/course/cross_validation.m)                     |
+| [Model Selection and Out-of-Sample R2](/files/teaching/matlab/course/model_selection_and_out_of_sample_r2.mlx) | [Model Selection and Out-of-Sample R2](/files/teaching/matlab/course/model_selection_and_out_of_sample_r2.m) |
 
 #### Support Files
 * [Specific-to-General](/files/teaching/matlab/course/stg.m)
@@ -73,37 +81,52 @@ econometric analysis serves as a reference for the companion course.
 * [Information Criteria Calculation](/files/teaching/matlab/course/compute_ic.m)
 
 
-### Hilary Solutions
-#### Data
-* [Data Set Construction](/files/teaching/matlab/course/time_series_data.mlx)
-#### ARMA Models
-* [ARMA Model Estimation](/files/teaching/matlab/course/arma_estimation.mlx)
-* [ARMA Model Selection](/files/teaching/matlab/course/arma_model_selection.mlx)
-* [ARMA Diagnostics](/files/teaching/matlab/course/arma_residual_diagnostics.mlx)
-* [ARMA Forecasting](/files/teaching/matlab/course/arma_forecasting.mlx)
-* [Unit Root Testing](/files/teaching/matlab/course/arma_unit_roots.mlx)
-#### ARCH Models
-* [ARCH Model Estimation](/files/teaching/matlab/course/arch_model_estimation.mlx)
-* [ARCH Model Selection](/files/teaching/matlab/course/arch_model_selection.mlx)
-* [ARCH Model Forecasting](/files/teaching/matlab/course/arch_model_forecasting.mlx)
-#### Value-at-Risk
-* [Value-at-Risk using Historical Simulation](/files/teaching/matlab/course/VaR_historical_simulation.mlx)
-* [Value-at-Risk using Filtered HS](/files/teaching/matlab/course/VaR_filtered_historical_simulation.mlx)
-* [Value-at-Risk Evaluation](/files/teaching/matlab/course/VaR_forecast_evaluation.mlx)
+## Hilary Solutions
+
+### Data
+| MATLAB Live Script (mlx)                                                         | MATLAB Script (m)                                                                |
+| :--------------------------------------------------------------------------------| :--------------------------------------------------------------------------------|
+| [Data Set Construction](/files/teaching/matlab/course/time_series_data.mlx)      | [Data Set Construction](/files/teaching/matlab/course/time_series_data.m)      |
+
+### ARMA Models
+| MATLAB Live Script (mlx)                                                         | MATLAB Script (m)                                                                |
+| :--------------------------------------------------------------------------------| :--------------------------------------------------------------------------------|
+| [ARMA Model Estimation](/files/teaching/matlab/course/arma_estimation.mlx)       | [ARMA Model Estimation](/files/teaching/matlab/course/arma_estimation.m)       |
+| [ARMA Model Selection](/files/teaching/matlab/course/arma_model_selection.mlx)   | [ARMA Model Selection](/files/teaching/matlab/course/arma_model_selection.m)   |
+| [ARMA Diagnostics](/files/teaching/matlab/course/arma_residual_diagnostics.mlx)  | [ARMA Diagnostics](/files/teaching/matlab/course/arma_residual_diagnostics.m)  |
+| [ARMA Forecasting](/files/teaching/matlab/course/arma_forecasting.mlx)           | [ARMA Forecasting](/files/teaching/matlab/course/arma_forecasting.m)           |
+| [Unit Root Testing](/files/teaching/matlab/course/arma_unit_roots.mlx)           | [Unit Root Testing](/files/teaching/matlab/course/arma_unit_roots.m)           |
+
+### ARCH Models
+| MATLAB Live Script (mlx)                                                           | MATLAB Script (m)                                                                  |
+| :----------------------------------------------------------------------------------| :----------------------------------------------------------------------------------|
+| [ARCH Model Estimation](/files/teaching/matlab/course/arch_model_estimation.mlx)   | [ARCH Model Estimation](/files/teaching/matlab/course/arch_model_estimation.m)   |
+| [ARCH Model Selection](/files/teaching/matlab/course/arch_model_selection.mlx)     | [ARCH Model Selection](/files/teaching/matlab/course/arch_model_selection.m)     |
+| [ARCH Model Forecasting](/files/teaching/matlab/course/arch_model_forecasting.mlx) | [ARCH Model Forecasting](/files/teaching/matlab/course/arch_model_forecasting.m) |
+
+### Value-at-Risk
+| MATLAB Live Script (mlx)                                                                                 | MATLAB Script (m)                                                                                        |
+| :--------------------------------------------------------------------------------------------------------| :--------------------------------------------------------------------------------------------------------|
+| [Value-at-Risk using Historical Simulation](/files/teaching/matlab/course/VaR_historical_simulation.mlx) | [Value-at-Risk using Historical Simulation](/files/teaching/matlab/course/VaR_historical_simulation.m) |
+| [Value-at-Risk using Filtered HS](/files/teaching/matlab/course/VaR_filtered_historical_simulation.mlx)  | [Value-at-Risk using Filtered HS](/files/teaching/matlab/course/VaR_filtered_historical_simulation.m)  |
+| [Value-at-Risk Evaluation](/files/teaching/matlab/course/VaR_forecast_evaluation.mlx)                    | [Value-at-Risk Evaluation](/files/teaching/matlab/course/VaR_forecast_evaluation.m)                    |
+
 #### Vector Autoregressions
-* [Vector Autoregression Estimation](/files/teaching/matlab/course/VectorAR_estimation.mlx)
-* [Vector Autoregression Order Selection](/files/teaching/matlab/course/VectorAR_order_selection.mlx)
-* [Vector Autoregression Granger Causality](/files/teaching/matlab/course/VectorAR_granger_causality.mlx)
-* [Vector Autoregression Impulse Responses](/files/teaching/matlab/course/VectorAR_impulse_response.mlx)
-* [Vector Autoregression: Engle-Granger Cointegration Testing](/files/teaching/matlab/course/VectorAR_engle_granger.mlx)
+| MATLAB Live Script (mlx)                                                                                                | MATLAB Script (m)                                                                                                       |
+| :-----------------------------------------------------------------------------------------------------------------------| :-----------------------------------------------------------------------------------------------------------------------|
+| [Vector Autoregression Estimation](/files/teaching/matlab/course/VectorAR_estimation.mlx)                               | [Vector Autoregression Estimation](/files/teaching/matlab/course/VectorAR_estimation.m)                               |
+| [Vector Autoregression Order Selection](/files/teaching/matlab/course/VectorAR_order_selection.mlx)                     | [Vector Autoregression Order Selection](/files/teaching/matlab/course/VectorAR_order_selection.m)                     |
+| [Vector Autoregression Granger Causality](/files/teaching/matlab/course/VectorAR_granger_causality.mlx)                 | [Vector Autoregression Granger Causality](/files/teaching/matlab/course/VectorAR_granger_causality.m)                 |
+| [Vector Autoregression Impulse Responses](/files/teaching/matlab/course/VectorAR_impulse_response.mlx)                  | [Vector Autoregression Impulse Responses](/files/teaching/matlab/course/VectorAR_impulse_response.m)                  |
+| [Vector Autoregression: Engle-Granger Cointegration Testing](/files/teaching/matlab/course/VectorAR_engle_granger.mlx)  | [Vector Autoregression: Engle-Granger Cointegration Testing](/files/teaching/matlab/course/VectorAR_engle_granger.m)  |
 
 ## Helper Function
-##### Data Set Construction
+### Data Set Construction
 * [Compute Month End Prices](/files/teaching/matlab/course/month_end_prices.m)
-##### Expectations
+### Expectations
 * [Lognormal Quadrature Target](/files/teaching/matlab/course/lognormal_quad_target.m)
 * [Expected Utility](/files/teaching/matlab/course/expected_utility.m)
-##### Maximum Likelihood
+### Maximum Likelihood
 * [Standardized T Log-likelihood (degree of freedom only)](/files/teaching/matlab/course/std_studentst_loglike.m)
 * [Standardized T Log-likelihood for unconstrained optimization](/files/teaching/matlab/course/std_studentst_loglike_mean_var.m)
 * [Standardized T Log-likelihood with mean and variance for unconstrained optimization](/files/teaching/matlab/course/std_studentst_loglike_mean_var_notrans.m)
@@ -123,13 +146,13 @@ econometric analysis serves as a reference for the companion course.
 * [CAY cointegration data](/files/teaching/matlab/course/cay.mat)
 
 #### Michaelmas
-##### Equity Index Data
+### Equity Index Data
 * [S&P 500 and FTSE 100 data](/files/teaching/matlab/course/SP_FTSE.mat)
 
-##### Ken French Data
+### Ken French Data
 * [Ken French's Data](/files/teaching/matlab/course/FF_data.mat)
 
-##### FX Rates
+### FX Rates
 * [GBP-USD Exchange Rate](/files/teaching/matlab/course/GBPUSD.mat)
 * [EUR-USD Exchange Rate](/files/teaching/matlab/course/EURUSD.mat)
 * [AUD-USD Exchange Rate](/files/teaching/matlab/course/AUDUSD.mat)

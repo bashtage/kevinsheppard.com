@@ -1108,7 +1108,7 @@ MARKDOWN_EXTENSIONS = ['markdown.extensions.fenced_code',
 # Default is {} (no config at all)
 MARKDOWN_EXTENSION_CONFIGS = {
     DEFAULT_LANG: {
-        'markdown.extensions.toc': {'permalink': True}
+        'markdown.extensions.toc': {'permalink': True, 'baselevel': 2}
     }
 }
 
