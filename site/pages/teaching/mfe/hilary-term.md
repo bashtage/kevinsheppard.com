@@ -23,7 +23,7 @@
 These slides contain the mark-up produced in the lecture including any derivations.
 
 * [Univariate Volatility](/files/teaching/mfe/markup/univariate-volatility-2019-2020-week-1.pdf) (Week 1)
-* [Univariate Volatility](#) (Available Week 2)
+* [Univariate Volatility](/files/teaching/mfe/markup/univariate-volatility-2019-2020-week-2.pdf) (Week 2)
 * [Univariate Volatility](#) (Available Week 3)
 * [Value-at-Risk](#) (Available Week 3)
 * [Value-at-Risk](#) (Available Week 4)
