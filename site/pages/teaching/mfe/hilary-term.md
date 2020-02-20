@@ -24,9 +24,9 @@ These slides contain the mark-up produced in the lecture including any derivatio
 
 * [Univariate Volatility](/files/teaching/mfe/markup/univariate-volatility-2019-2020-week-1.pdf) (Week 1)
 * [Univariate Volatility](/files/teaching/mfe/markup/univariate-volatility-2019-2020-week-2.pdf) (Week 2)
-* [Univariate Volatility](#) (Available Week 3)
-* [Value-at-Risk](#) (Available Week 3)
-* [Value-at-Risk](#) (Available Week 4)
+* [Univariate Volatility](/files/teaching/mfe/markup/univariate-volatility-2019-2020-week-4.pdf) (Week 4)
+* [Value-at-Risk](/files/teaching/mfe/markup/var-2019-2020-week-5.pdf) (Week 5)
+* [Value-at-Risk](#) (Available Week 6)
 
 ## Practice Quizzes
 There is a new quize each week on the [course canvas page](https://canvas.sbs.ox.ac.uk/courses/1219). 
