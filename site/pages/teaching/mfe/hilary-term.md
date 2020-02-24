@@ -38,7 +38,7 @@ There is a new quize each week on the [course canvas page](https://canvas.sbs.ox
 ## Empirical Projects
 
 * [Empirical Project 2](/files/teaching/mfe/assignments/computational-exercise-2-2019-2020.pdf)
-* Empirical Project 3 (Due Week 9)
+* [Empirical Project 3](/teaching/mfe/practical_work_4/) (Due Week 9)
 
 ## Notes
 
