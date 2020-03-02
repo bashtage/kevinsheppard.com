@@ -15,9 +15,9 @@
 
 ## Slides
 
-[Univariate Volatility](/files/teaching/mfe/slides/univariate-volatility-2019-2020.pdf) (Week 1-3)
-[Value-at-Risk](/files/teaching/mfe/slides/var-and-distributions2019-2020.pdf) (Week 1-3)
-[Vector Autoregressions](/files/teaching/mfe/slides/vector-ar-2019-2020.pdf) (Week 1-3)
+* [Univariate Volatility](/files/teaching/mfe/slides/univariate-volatility-2019-2020.pdf) (Week 1-3)
+* [Value-at-Risk](/files/teaching/mfe/slides/var-and-distributions2019-2020.pdf) (Week 1-3)
+* [Vector Autoregressions](/files/teaching/mfe/slides/vector-ar-2019-2020.pdf) (Week 1-3)
 
 
 ### Slides with Markup
