@@ -39,6 +39,8 @@ There is a new quiz each week on the [course canvas page](https://canvas.sbs.ox.
 ## Homework
 
 * [Weeks 1 - 4](/files/teaching/mfe/homework/ht_assignments_weeks_1_to_4.pdf)
+* [Weeks 5 - 8](/files/teaching/mfe/homework/ht_assignments_weeks_5_to_8.pdf)
+* [Final Exam (2019)](/files/teaching/mfe/homework/fe-final-2019.pdf)
 
 ## Empirical Projects
 
