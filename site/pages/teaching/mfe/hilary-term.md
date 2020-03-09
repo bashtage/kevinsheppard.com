@@ -18,6 +18,7 @@
 * [Univariate Volatility](/files/teaching/mfe/slides/univariate-volatility-2019-2020.pdf) (Week 1-5)
 * [Value-at-Risk](/files/teaching/mfe/slides/var-and-distributions2019-2020.pdf) (Week 5-6)
 * [Vector Autoregressions](/files/teaching/mfe/slides/vector-ar-2019-2020.pdf) (Week 6-8)
+* [Heterogeneity, Endogeneity, and Casual Inference](/files/teaching/mfe/slides/causality-2019-2020.pdf) (Week 8)
 
 
 ### Slides with Markup
@@ -30,8 +31,9 @@ These slides contain the mark-up produced in the lecture including any derivatio
 * [Value-at-Risk](/files/teaching/mfe/markup/var-2019-2020-week-5.pdf) (Week 5)
 * [Value-at-Risk](/files/teaching/mfe/markup/var-2019-2020-week-6.pdf) (Week 6)
 * [Vector Autoregressions](/files/teaching/mfe/markup/vector-ar-2019-2020-week-6.pdf) (Week 6)
-* [Vector Autoregressions](#) (Available Week 7)
-* [Vector Autoregressions](#) (Available Week 8)
+* [Vector Autoregressions](/files/teaching/mfe/markup/vector-ar-2019-2020-week-7.pdf) (Week 7)
+* [Vector Autoregressions](/files/teaching/mfe/markup/vector-ar-2019-2020-week-8.pdf) (Week 8)
+* [Causal Inference](#) (Available Week 8)
 
 ## Practice Quizzes
 There is a new quiz each week on the [course canvas page](https://canvas.sbs.ox.ac.uk/courses/1219). 
