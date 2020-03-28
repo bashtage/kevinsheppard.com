@@ -33,7 +33,7 @@ These slides contain the mark-up produced in the lecture including any derivatio
 * [Vector Autoregressions](/files/teaching/mfe/markup/vector-ar-2019-2020-week-6.pdf) (Week 6)
 * [Vector Autoregressions](/files/teaching/mfe/markup/vector-ar-2019-2020-week-7.pdf) (Week 7)
 * [Vector Autoregressions](/files/teaching/mfe/markup/vector-ar-2019-2020-week-8.pdf) (Week 8)
-* [Causal Inference](#) (Available Week 8)
+* [Causal Inference](/files/teaching/mfe/markup/causal-inference-2019-2020.pdf) (Week 8)
 
 ## Practice Quizzes
 There is a new quiz each week on the [course canvas page](https://canvas.sbs.ox.ac.uk/courses/1219). 

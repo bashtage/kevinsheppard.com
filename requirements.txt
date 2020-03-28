@@ -1,4 +1,4 @@
-Nikola[extras]==8.0.2
+Nikola[extras]==8.0.4
 beautifulsoup4
 lxml
 pybtex
