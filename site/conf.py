@@ -151,7 +151,8 @@ NAVIGATION_LINKS = {
              ("/teaching/python/", "Python"),
              ("/teaching/matlab/", "MATLAB"),
              ("/teaching/lyx/", "LyX"),
-             ("/teaching/other/", "Other")),
+             ("/teaching/other/", "Other"),
+             ("/teaching/scanning-recommendations/", "Document Scanning")),
          "Teaching"),
         ((
              ("/code/matlab/mfe-toolbox/", "MFE Toolbox"),
