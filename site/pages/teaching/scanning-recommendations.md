@@ -16,7 +16,7 @@ your work as PDF files that are modest in size. The final section is written for
 Term 2020 open-book test-takers since these students may be scanning documents under a
 tight time constraint. If you have any comments of know of software that works better,
 please let me know at
-[kevin.sheppard@economics.ox.ac.uk](kevin.sheppard@economics.ox.ac.uk).
+[kevin.sheppard@economics.ox.ac.uk](mailto:kevin.sheppard@economics.ox.ac.uk).
 
 # Flatbed Scanners
 
