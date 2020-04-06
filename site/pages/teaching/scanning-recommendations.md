@@ -11,6 +11,8 @@
 
 _You can also download a_ _[pdf version of this recommentation](/files/teaching/scanning-recommendations.pdf)_.
 
+**Trinity Term 2020 test takers**, please see the [dedicated section below](#trinty-term-test-takers).
+
 This document describes how you can use your phone or tablet to produce clear scans of
 your work as PDF files that are modest in size. The final section is written for Trinity
 Term 2020 open-book test-takers since these students may be scanning documents under a
@@ -85,7 +87,9 @@ recommend reshooting the problematic page and then continuing to the end of the
 document. All of the recommended software lets you delete a page after you finish
 scanning.
 
-# iOS (iPad/iPhone)
+# Software Recommendations
+
+## iOS (iPad/iPhone)
 
 There are two apps I recommend: [Genius
 Scan](https://apps.apple.com/gb/app/genius-scan-pdf-scanner/id377672876) (4.8 rating,
@@ -97,7 +101,7 @@ Both of these apps have great auto edge detection when used on a high contrast
 background. ScannerPro is more forgiving to uneven lighting and tends to produce softer
 shadows if present. ScannerPro is my recommendation if the price is not an issue.
 
-# Android
+## Android
 
 [Genius
 Scan](https://play.google.com/store/apps/details?id=com.thegrizzlylabs.geniusscan.free&hl=en_GB)
@@ -112,6 +116,52 @@ recommendation if you have a good lighting setup. If not, I would use CamScanner
 There are many other scanners, so please do try others if you are not happy with
 these. 
 
+# Additional Issues
+
+_I do not believe that at-home exam takers need to be overly concerned with carefully_
+_formatting their exam answers. If pressed for time, it is reasonable to refer a_
+_hand-drawn diagram or equation on another page. If you have time, your assessors will_
+_appreciate your efforts to produce an easier to read answer. If under time pressure and_
+_you have two files, combining them into a Zip file before uploading._
+  
+
+## Embedding Images in Documents
+
+When writing essays, you may need one or more diagrams or one or more equations. The best format (as in nicest for your tutor or assessor) is to embed the image into your word document. The simplest method to do this is to:
+
+* draw your diagram;
+* photograph it;
+* crop it tightly on your device; and
+* email it to yourself, upload to a file service (Dropbox, Google Drive, or OneDrive), or let a
+  service like Google Photos or iCloud to automatically back up the photo. You can encourage
+  Google photos to back up your images by opening the Google photos app.  The image will then
+  be available [through your browser](https://photos.google.com/).
+
+You should then be able to directly insert the equation or diagram into your document without further formatting.
+  
+## Combining PDFs
+
+You may have assignments or exams that require mixed answers where some questions
+are standard essays, while others require more calculation. If your answer is
+spread between a Word document or a Google doc and a scanned PDF, you should combine
+these into a single PDF before submission.
+
+There are two simple methods. The first uses a web service appropriately titled
+[Combine PDF](https://combinepdf.com/). You can upload two or more PDFs, use
+drag-and-drop to arrange their order, combine them, and then download them. This
+methods comes with a standard disclaimer about privacy. Combine PDF states they delete
+all content after an hour, but they do not have a Privacy Policy visible.
+
+The second uses [PDF Sam Basic](https://pdfsam.org/) to merge them. PDF Sam is both
+free to use and open source.  This program has to be locally installed to use. Merging
+two or more PDFs can be done by:
+
+* select merge;
+* use Add to add each of your files;
+* select the output pdf file; and
+* click on Run. 
+
+<a name="trinty-term-test-takers"></a>
 # Trinity Term 2020 Test Takers
 
 ## Moving your PDF
@@ -150,3 +200,4 @@ no matter how poor, of your exams before the deadline. Your uploaded copy will b
 inspected, and if it is illegible, then you will be asked to upload a better version
 later. The improved copy will be compared to the original submission to verify that it
 contains the same material.
+
