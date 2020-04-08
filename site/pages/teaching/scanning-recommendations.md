@@ -9,7 +9,7 @@
 .. type: text
 -->
 
-_You can also download a_ _[pdf version of this recommentation](/files/teaching/scanning-recommendations.pdf)_.
+_You can also download a_ _[pdf version of this recommendation](/files/teaching/scanning-recommendations.pdf)_.
 
 **Trinity Term 2020 test takers**, please see the [dedicated section below](#trinty-term-test-takers).
 
@@ -53,7 +53,7 @@ software into thinking that this was a color document.
 
 ![An obscured scan](/images/teaching/scanning/arm.png "A scan with a strong shadow produced by my arm that was incorrectly determined to be color")
 
-This final scan was produced by Genius Scan. The divice cast a strong shadow on the page
+This final scan was produced by Genius Scan. The device cast a strong shadow on the page
 which resulted in a large dark area.
 
 ![A low-quality scan](/images/teaching/scanning/device.png "A scan with a strong shadow produced by my arm that produced large black areas.")
@@ -66,7 +66,7 @@ contrast. Black, dark brown, and most other dark colors produce high contrast, w
 lets the software function better. The next image shows my preferred
 scanning location in my home. 
 
-<img alt="A good scaning location" src="../../images/teaching/scanning/location.jpg" title="An ideal scanning location with under cabinet lighting and a dark background." style="margin-left: auto;    max-width: 50%;    margin-right: auto;    display: block;" >
+<img alt="A good scanning location" src="../../images/teaching/scanning/location.jpg" title="An ideal scanning location with under cabinet lighting and a dark background." style="margin-left: auto;    max-width: 50%;    margin-right: auto;    display: block;" >
 
 It is a dark kitchen worktop which provides great
 contrast. It is illuminated by under cabinet lighting, and so I cannot cast shadows with
