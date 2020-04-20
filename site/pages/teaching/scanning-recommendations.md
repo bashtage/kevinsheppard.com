@@ -131,7 +131,7 @@ these.
   - Rotate the images so that they have the correct orientation; and
   - Recrop any images where GeniusScan's edge detection was not adequate.
 
-* Change the _File size_ when exporting.  GeniusScan will **estimate** size of the file after
+* Change the _File size_ when exporting.  GeniusScan will **estimate** the size of the file after
   export. In my tests, Small produced files that are easy to read (about 600kB per scanned page,
   when used with Medium image quality). The table below shows the **estimated** size of the file
   exported using combinations of Image Quality and _File size_.  Medium/Medium and Medium/Large
