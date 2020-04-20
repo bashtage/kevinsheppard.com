@@ -116,6 +116,64 @@ recommendation if you have a good lighting setup. If not, I would use CamScanner
 There are many other scanners, so please do try others if you are not happy with
 these. 
 
+
+## Genius Scan Settings
+
+* Set Image Quality to medium before scanning your document (Menu > Settings > Image Quality > Medium).
+  I Could not detect any relevant differences when scanning black and white documents
+  across Medium, High, and Highest.  File sizes, however, do vary with this setting, and Medium
+  minimizes the output size of the PDF without compromising legibility.
+
+* Edit images before exporting. After you have scanned the document, you can tap on any page to
+  open the edit view.  Editing lets you:
+  
+  - Adjust the scanning mode to select Black & White if color incorrectly was detected;
+  - Rotate the images so that they have the correct orientation; and
+  - Recrop any images where GeniusScan's edge detection was not adequate.
+
+* Change the _File size_ when exporting.  GeniusScan will **estimate** size of the file after
+  export. In my tests, Small produced files that are easy to read (about 600kB per scanned page,
+  when used with Medium image quality). The table below shows the **estimated** size of the file
+  exported using combinations of Image Quality and _File size_.  Medium/Medium and Medium/Large
+  appear to be the most sensible choices. Both Highest Image Quality and Actual _File size_ should
+  be avoided. 
+ 
+  | Image Quality | Small | Medium  | Large  | Actual  |
+  | ---           | ----: | ------: | -----: | ------: |
+  | Low           | 571kB | 640kB   | 811kB  | 2.1MB   |
+  | Medium        | 1.2MB | 1.3MB   | 1.7MB  | 4.3MB   |
+  | High          | 2.1MB | 2.3MB   | 2.9MB  | 7.5MB   |
+  | Highest       | 3.6MB | 4.0MB   | 5.1MB  | 13MB    |
+
+   I have included two sample files where you can compare
+   [Highest/Actual](/files/teaching/scanning/highest-actual.pdf) with
+   [Medium/Small](/files/teaching/scanning/medium-small.pdf). Note that the
+   file size of the Medium/Small file is 2.5MB, not 1.2MB, as estimated by GeniusScan. 
+
+### Excessively Large Scans
+
+If you attempt to export and the resulting file is excessively large, you can split a scan
+in GeniusScan. 
+
+1. Begin by selecting the document.
+2. Long press a page in the second half of the document.
+3. Select all pages in the second half.
+4. Select the move icon and select _New document_.
+
+The animation below illustrates these steps.
+
+![Splitting using GeniusScan](/images/teaching/scanning/genius-scan-splitting.gif "Splitting a document in GeniusScan")
+
+You will then need to rejoin the parts into a single PDF using [PDF Sam Basic](#pdf-sam)
+or an online tool.
+
+### Excessively Large PDFs
+
+If the PDF you have produced exceeds the upload limit, you can compress it using
+an [online PDF compressor](https://www.ilovepdf.com/compress_pdf).  I recommend using the
+most conservative compression (_Less Compression_) which reduced scanned file sizes by 50% in 
+my experiments. 
+
 # Additional Issues
 
 _I do not believe that at-home exam takers need to be overly concerned with carefully_
@@ -127,7 +185,9 @@ _you have two files, combining them into a Zip file before uploading._
 
 ## Embedding Images in Documents
 
-When writing essays, you may need one or more diagrams or one or more equations. The best format (as in nicest for your tutor or assessor) is to embed the image into your word document. The simplest method to do this is to:
+When writing essays, you may need one or more diagrams or one or more equations. The best
+format (as in nicest for your tutor or assessor) is to embed the image into your word document.
+The simplest method to do this is to:
 
 * draw your diagram;
 * photograph it;
@@ -137,7 +197,19 @@ When writing essays, you may need one or more diagrams or one or more equations.
   Google photos to back up your images by opening the Google photos app.  The image will then
   be available [through your browser](https://photos.google.com/).
 
-You should then be able to directly insert the equation or diagram into your document without further formatting.
+You should then be able to directly insert the equation or diagram into your document
+without further formatting.
+
+## Snipping Tools
+
+Snipping is a simple way to copy anything you can see on your computer into a Word
+or Google docs document.  You can snip just the content you want, and so should not 
+need to crop the image further.
+
+* Windows 10: The preferred option is _Snip and Sketch_. The snipping window can be opened using
+  `Win`+`Shift`+`S`.
+* Windows 7/8: These operating systems come with a program called _Snipping Tool_.
+* macOS: `Command` + `Shift` + `4` allows you to select a region to copy.
   
 ## Combining PDFs
 
@@ -151,6 +223,8 @@ There are two simple methods. The first uses a web service appropriately titled
 drag-and-drop to arrange their order, combine them, and then download them. This
 methods comes with a standard disclaimer about privacy. Combine PDF states they delete
 all content after an hour, but they do not have a Privacy Policy visible.
+
+<a name="pdf-sam"></a>
 
 The second uses [PDF Sam Basic](https://pdfsam.org/) to merge them. PDF Sam is both
 free to use and open source.  This program has to be locally installed to use. Merging
