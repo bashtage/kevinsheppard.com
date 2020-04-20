@@ -13,6 +13,8 @@ _You can also download a_ _[pdf version of this recommendation](/files/teaching/
 
 **Trinity Term 2020 test takers**, please see the [dedicated section below](#trinty-term-test-takers).
 
+[TOC]
+
 This document describes how you can use your phone or tablet to produce clear scans of
 your work as PDF files that are modest in size. The final section is written for Trinity
 Term 2020 open-book test-takers since these students may be scanning documents under a
@@ -28,9 +30,11 @@ This balances file size against the image's resolution. Grayscale and color gene
 produce files that are larger and that are not usually easier for assessors or tutors to
 read. 
 
-# General Instructions
+# Phone and Tablet Scanning
 
-## Lighting
+## General Instructions
+
+### Lighting
 
 Poor lighting is the simplest method to produce a scan that is hard or impossible to
 read. Side lighting is key to creating a high-quality scan when using a phone or tablet.
@@ -59,7 +63,7 @@ which resulted in a large dark area.
 ![A low-quality scan](/images/teaching/scanning/device.png "A scan with a strong shadow produced by my arm that produced large black areas.")
 
 
-## Background
+### Background
 
 Assuming you are writing on white paper, you want to scan on a background that has high
 contrast. Black, dark brown, and most other dark colors produce high contrast, which
@@ -73,13 +77,13 @@ contrast. It is illuminated by under cabinet lighting, and so I cannot cast shad
 my body or my device. Note that when scanning, I turn off the other lights in the
 kitchen so that the under-counter lights are the strongest source of illumination.
 
-## Device Position
+### Device Position
 
 It is important that you hold your device level and that the document occupies the
 majority of the viewfinder when scanning. Most high-quality scanning software will
 encourage optimal camera positioning.
 
-## Multi-page Documents
+### Multi-page Documents
 
 Most documents you scan will consist of multiple pages. You should scan these
 consecutively by adding a new page to your current scan. If you make a mistake, I
@@ -87,9 +91,9 @@ recommend reshooting the problematic page and then continuing to the end of the
 document. All of the recommended software lets you delete a page after you finish
 scanning.
 
-# Software Recommendations
+## Software Recommendations
 
-## iOS (iPad/iPhone)
+### iOS (iPad/iPhone)
 
 There are two apps I recommend: [Genius
 Scan](https://apps.apple.com/gb/app/genius-scan-pdf-scanner/id377672876) (4.8 rating,
@@ -101,7 +105,7 @@ Both of these apps have great auto edge detection when used on a high contrast
 background. ScannerPro is more forgiving to uneven lighting and tends to produce softer
 shadows if present. ScannerPro is my recommendation if the price is not an issue.
 
-## Android
+### Android
 
 [Genius
 Scan](https://play.google.com/store/apps/details?id=com.thegrizzlylabs.geniusscan.free&hl=en_GB)
@@ -117,7 +121,7 @@ There are many other scanners, so please do try others if you are not happy with
 these. 
 
 
-## Genius Scan Settings
+### Genius Scan Settings
 
 * Set Image Quality to medium before scanning your document (Menu > Settings > Image Quality > Medium).
   I Could not detect any relevant differences when scanning black and white documents
@@ -150,7 +154,7 @@ these.
    [Medium/Small](/files/teaching/scanning/medium-small.pdf). Note that the
    file size of the Medium/Small file is 2.5MB, not 1.2MB, as estimated by GeniusScan. 
 
-### Excessively Large Scans
+#### Excessively Large Scans
 
 If you attempt to export and the resulting file is excessively large, you can split a scan
 in GeniusScan. 
@@ -167,14 +171,14 @@ The animation below illustrates these steps.
 You will then need to rejoin the parts into a single PDF using [PDF Sam Basic](#pdf-sam)
 or an online tool.
 
-### Excessively Large PDFs
+#### Excessively Large PDFs
 
 If the PDF you have produced exceeds the upload limit, you can compress it using
 an [online PDF compressor](https://www.ilovepdf.com/compress_pdf).  I recommend using the
 most conservative compression (_Less Compression_) which reduced scanned file sizes by 50% in 
 my experiments. 
 
-# Additional Issues
+## Additional Issues
 
 _I do not believe that at-home exam takers need to be overly concerned with carefully_
 _formatting their exam answers. If pressed for time, it is reasonable to refer a_
@@ -183,7 +187,7 @@ _appreciate your efforts to produce an easier to read answer. If under time pres
 _you have two files, combining them into a Zip file before uploading._
   
 
-## Embedding Images in Documents
+### Embedding Images in Documents
 
 When writing essays, you may need one or more diagrams or one or more equations. The best
 format (as in nicest for your tutor or assessor) is to embed the image into your word document.
@@ -200,7 +204,7 @@ The simplest method to do this is to:
 You should then be able to directly insert the equation or diagram into your document
 without further formatting.
 
-## Snipping Tools
+### Snipping Tools
 
 Snipping is a simple way to copy anything you can see on your computer into a Word
 or Google docs document.  You can snip just the content you want, and so should not 
@@ -211,7 +215,7 @@ need to crop the image further.
 * Windows 7/8: These operating systems come with a program called _Snipping Tool_.
 * macOS: `Command` + `Shift` + `4` allows you to select a region to copy.
   
-## Combining PDFs
+### Combining PDFs
 
 You may have assignments or exams that require mixed answers where some questions
 are standard essays, while others require more calculation. If your answer is
@@ -238,7 +242,7 @@ two or more PDFs can be done by:
 <a name="trinty-term-test-takers"></a>
 # Trinity Term 2020 Test Takers
 
-## Moving your PDF
+### Moving your PDF
 
 You will most likely want to move your scan onto your laptop before uploading it to the
 submission server. You must have a good, reliable, and quick method for moving your file
@@ -248,7 +252,7 @@ save the file locally and then use a free service like
 [Firefox Send](https://send.firefox.com/)
 ([https://send.firefox.com/](https://send.firefox.com/)) to move the file if needed.
 
-## Practice, Practice, and Practice Again
+### Practice, Practice, and Practice Again
 
 If you are preparing for exams, you must practice with whatever method you are going to
 use. You need to practice scanning documents that have sizes that you expect to have for
@@ -267,7 +271,7 @@ You should practice the entire process during the University dry-runs. Be sure t
 the size of the file produced using your preferred method. Larger files are more likely
 may cause difficulties uploading, all things equal.
 
-## <span style="color:#ff0000">ALWAYS UPLOAD SOMETHING</span>
+### <span style="color:#ff0000">ALWAYS UPLOAD SOMETHING</span>
 
 If you are pressed for time and are having any difficulties, you must upload any copy,
 no matter how poor, of your exams before the deadline. Your uploaded copy will be

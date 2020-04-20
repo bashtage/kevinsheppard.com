@@ -41,6 +41,10 @@
 \paperfontsize default
 \spacing single
 \use_hyperref true
+\pdf_title "Document Scanning Recommendations for Online Tutorial and Exam Submission"
+\pdf_author "Kevin Sheppard"
+\pdf_subject "Scanning documents using Devices - Phones and Tablets"
+\pdf_keywords "document scanning, oxford, trinity term exam, phone, tablet, ios, android"
 \pdf_bookmarks true
 \pdf_bookmarksnumbered false
 \pdf_bookmarksopen false
@@ -49,7 +53,7 @@
 \pdf_pdfborder false
 \pdf_colorlinks true
 \pdf_backref false
-\pdf_pdfusetitle true
+\pdf_pdfusetitle false
 \pdf_quoted_options "allcolors=blue"
 \papersize a4paper
 \use_geometry true
