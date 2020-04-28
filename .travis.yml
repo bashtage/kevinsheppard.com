@@ -16,6 +16,7 @@ addons:
   apt:
     packages:
       - pandoc
+      - tidy
 
 git:
   depth: 1000
