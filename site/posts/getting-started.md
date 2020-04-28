@@ -9,7 +9,7 @@
 .. type: text
 -->
 
-<img align="right" src="/images/blog/under-construction.png" style="max-height:25vh;">
+<img class="align-right" alt="Under Construction" src="/images/blog/under-construction.png" style="max-height:25vh;">
 
 This is the first post on my new site.  This site is a static site generated using [Nikola](https://getnikola.com/), 
 a static-site generator written in Python. I chose it because I know Python pretty well and
