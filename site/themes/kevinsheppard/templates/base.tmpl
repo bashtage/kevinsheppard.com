@@ -22,7 +22,7 @@
 <a href="#content" class="sr-only sr-only-focusable">{{ messages("Skip to main content") }}</a>
 
 <!-- Menubar -->
-<div class="wrapper d-flex flex-column {% block wrapper_class %}{% endblock %}"
+<wrapper class="d-flex flex-column {% block wrapper_class %}{% endblock %}"
     {% block wrapper_style %}{% endblock %}>
 
   <nav
@@ -155,7 +155,7 @@
       </div>
     </div>
   </footer>
-</div>
+</wrapper>
 {{ base.late_load_js() }}
 {% if date_fanciness != 0 %}
   <!-- fancy dates -->
