@@ -22,11 +22,8 @@
 <a href="#content" class="sr-only sr-only-focusable">{{ messages("Skip to main content") }}</a>
 
 <!-- Menubar -->
-<wrapper class="d-flex flex-column {% block wrapper_class %}{% endblock %}"
-    {% block wrapper_style %}{% endblock %}>
-
-  <nav
-      class="navbar navbar-expand-sm fixed-top-sm justify-content-start flex-nowrap py-2 pl-1 nav-color-override {% block navbarbg %}navbar-primary{% endblock %}">
+<div class="wrapper d-flex flex-column {% block wrapper_class %}{% endblock %}" {% block wrapper_style %}{% endblock %}>
+  <nav class="navbar navbar-expand-sm fixed-top-sm justify-content-start flex-nowrap py-2 pl-1 nav-color-override {% block navbarbg %}navbar-primary{% endblock %}">
     <div class="container">
       <a class="navbar-brand ml-2 ml-sm-0 mr-auto"
          href="{{ abs_link(_link("root", None, lang)) }}">
@@ -65,7 +62,6 @@
           </div>
         </form>
       </div>
-    </div>
     </div>
   </nav>
   <nav class="navbar navbar-expand-sm nav-color-override
@@ -155,7 +151,7 @@
       </div>
     </div>
   </footer>
-</wrapper>
+</div> <!-- wrapper -->
 {{ base.late_load_js() }}
 {% if date_fanciness != 0 %}
   <!-- fancy dates -->

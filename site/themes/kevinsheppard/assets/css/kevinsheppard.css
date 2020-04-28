@@ -3,7 +3,7 @@ main {
     margin-top: 0;
 }
 
-body, wrapper {
+body, wrapper, div.wrapper {
     min-height: 100vh;
     font-feature-settings: "kern", "liga";
 }
