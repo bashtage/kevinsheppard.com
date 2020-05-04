@@ -17,6 +17,11 @@
 
 The [course website](/teaching/mfe/hilary-term/) for Financial Econometrics II contains all material distributed in Hilary Term. 
 
+# Advanced Financial Econometrics: Forecasting (2020) 
+
+The [course website](/teaching/mfe/advanced-financial-econometrics-forecasting/) for Advanced Financial Econometrics: Forecasting contains all material distributed in Trinity Term 2020. 
+
+
 # Notes
 
 The [complete set of notes](/teaching/mfe/notes/) covers all aspects of the Financial Econometrics I and II courses. 
