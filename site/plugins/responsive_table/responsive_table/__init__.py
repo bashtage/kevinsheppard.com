@@ -37,6 +37,17 @@ class ResponsiveTable(LateTask):
                 div_responsive = soup.new_tag('div',
                                               **{'class': 'table-responsive'})
                 table.wrap(div_responsive)
+            for elem in ("th", "td"):
+                table_elements = soup.findChildren(elem, recursive=True)
+                for te in table_elements:
+                    if "align" in te.attrs:
+                        alignment = [f"text-{te.attrs['align']}"]
+                        if "class" in te:
+                            te["class"] += alignment
+                        else:
+                            te["class"] = alignment
+                        del te["align"]
+
             with open(file_name, 'w', encoding="utf8") as html:
                 html.write(str(soup))
 

@@ -47,7 +47,7 @@
           <div class="col-sm-12 col-md-6 col-lg-3">
             <div class="thumbnail">
               <a href="{{ gallery.url }}">
-                <img src="{{ gallery.thumbnail }}" class="img-fluid" alt="{{ gallery.name }}">
+                <img src="{{ gallery.thumbnail|e }}" class="img-fluid" alt="{{ gallery.name }}">
               </a>
               <div class="caption">
                 <a href="{{ gallery.url }}" class="text-light"><h5>{{ gallery.name }}</h5></a>

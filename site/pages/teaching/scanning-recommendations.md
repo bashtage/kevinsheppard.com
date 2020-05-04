@@ -228,7 +228,7 @@ drag-and-drop to arrange their order, combine them, and then download them. This
 methods comes with a standard disclaimer about privacy. Combine PDF states they delete
 all content after an hour, but they do not have a Privacy Policy visible.
 
-<a name="pdf-sam"></a>
+<a id="pdf-sam"></a>
 
 The second uses [PDF Sam Basic](https://pdfsam.org/) to merge them. PDF Sam is both
 free to use and open source.  This program has to be locally installed to use. Merging
@@ -239,7 +239,7 @@ two or more PDFs can be done by:
 * select the output pdf file; and
 * click on Run. 
 
-<a name="trinty-term-test-takers"></a>
+<a id="trinty-term-test-takers"></a>
 # Trinity Term 2020 Test Takers
 
 ### Moving your PDF

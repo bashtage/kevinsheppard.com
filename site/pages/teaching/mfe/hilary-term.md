@@ -18,7 +18,7 @@
 * [Univariate Volatility](/files/teaching/mfe/slides/univariate-volatility-2019-2020.pdf) (Week 1-5)
 * [Value-at-Risk](/files/teaching/mfe/slides/var-and-distributions2019-2020.pdf) (Week 5-6)
 * [Vector Autoregressions](/files/teaching/mfe/slides/vector-ar-2019-2020.pdf) (Week 6-8)
-* [Heterogeneity, Endogeneity, and Casual Inference](/files/teaching/mfe/slides/causality-2019-2020.pdf) (Week 8)
+* [Heterogeneity, Endogeneity, and Casual Inference](/files/teaching/mfe/slides/causal-inference-2019-2020.pdf) (Week 8)
 
 
 ### Slides with Markup
