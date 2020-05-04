@@ -21,6 +21,12 @@
 * [The Theta Method](/files/teaching/mfe/advanced-financial-econometrics-2020/theta.pdf)
 * [The CARD Method](/files/teaching/mfe/advanced-financial-econometrics-2020/card.pdf)
 
+## Lectures
+
+Each of the lectures is presented in small blocks. You can find the presentation
+on the [YouTube lecture list](https://www.youtube.com/playlist?list=PLVR_rJLcetzmES8tqjgqlQw1Vx2IKMVot).
+
+
 ## Notebooks
 
 Coming Soon
