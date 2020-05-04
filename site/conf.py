@@ -2,6 +2,8 @@
 
 import time
 
+from defusedxml import ElementTree
+
 import generate_index
 
 # !! This is the configuration of Nikola. !! #
