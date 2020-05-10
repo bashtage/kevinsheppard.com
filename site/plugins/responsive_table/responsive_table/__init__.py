@@ -18,24 +18,24 @@ class ResponsiveTable(LateTask):
 
     def fix_tables(self):
         html_files = glob.glob(
-            os.path.join(self.kw['output_folder'], '**', '*.html'),
-            recursive=True)
+            os.path.join(self.kw["output_folder"], "**", "*.html"), recursive=True
+        )
         for file_name in html_files:
             with open(file_name, encoding="utf8") as html:
-                soup = BeautifulSoup(html.read(), features='lxml')
-            tables = soup.findChildren('table', recursive=True)
+                soup = BeautifulSoup(html.read(), features="lxml")
+            tables = soup.findChildren("table", recursive=True)
             first = True
             for table in tables:
-                if (table.parent.name == 'div'
-                        and 'class' in table.parent.attrs
-                        and table.parent.attrs['class'] == [
-                            'table-responsive']):
+                if (
+                    table.parent.name == "div"
+                    and "class" in table.parent.attrs
+                    and table.parent.attrs["class"] == ["table-responsive"]
+                ):
                     continue
                 if first:
-                    utils.LOGGER.info('Fixing tables in ' + file_name)
+                    utils.LOGGER.info("Fixing tables in " + file_name)
                     first = False
-                div_responsive = soup.new_tag('div',
-                                              **{'class': 'table-responsive'})
+                div_responsive = soup.new_tag("div", **{"class": "table-responsive"})
                 table.wrap(div_responsive)
             for elem in ("th", "td"):
                 table_elements = soup.findChildren(elem, recursive=True)
@@ -48,18 +48,19 @@ class ResponsiveTable(LateTask):
                             te["class"] = alignment
                         del te["align"]
 
-            with open(file_name, 'w', encoding="utf8") as html:
+            with open(file_name, "w", encoding="utf8") as html:
                 html.write(str(soup))
 
     def square_thumbnails(self):
-        THUMBNAIL_SIZE = self.site.config['THUMBNAIL_SIZE']
-        path = os.path.join(self.kw['output_folder'],
-                            'galleries', '**', '*.thumbnail.*')
+        THUMBNAIL_SIZE = self.site.config["THUMBNAIL_SIZE"]
+        path = os.path.join(
+            self.kw["output_folder"], "galleries", "**", "*.thumbnail.*"
+        )
         thumbs = glob.glob(path, recursive=True)
         for thumb in thumbs:
             output = thumb
             base, ext = os.path.splitext(thumb)
-            if ext == '.svg':
+            if ext == ".svg":
                 continue
             im = Image.open(thumb)
             size = im.size
@@ -81,9 +82,9 @@ class ResponsiveTable(LateTask):
                 upper = math.floor(excess / 2.0)
                 lower = math.floor(lower - excess / 2.0)
             crop = im.crop((left, upper, right, lower))
-            utils.LOGGER.info('Resized ' + thumb +
-                              ' from ' + str(size) +
-                              ' to ' + str(crop.size))
+            utils.LOGGER.info(
+                "Resized " + thumb + " from " + str(size) + " to " + str(crop.size)
+            )
             crop.save(output)
 
     def gen_tasks(self):
@@ -92,15 +93,19 @@ class ResponsiveTable(LateTask):
             "base_url": self.site.config["BASE_URL"],
             "site_url": self.site.config["SITE_URL"],
             "output_folder": self.site.config["OUTPUT_FOLDER"],
-            "files_folders": self.site.config['FILES_FOLDERS'],
+            "files_folders": self.site.config["FILES_FOLDERS"],
             "robots_exclusions": self.site.config["ROBOTS_EXCLUSIONS"],
             "filters": self.site.config["FILTERS"],
         }
 
         yield self.group_task()
-        yield {"basename": str(self.name),
-               'name': 'Make tables responsive',
-               'actions': [self.fix_tables]}
-        yield {"basename": str(self.name),
-               'name': 'Make thumbnails square',
-               'actions': [self.square_thumbnails]}
+        yield {
+            "basename": str(self.name),
+            "name": "Make tables responsive",
+            "actions": [self.fix_tables],
+        }
+        yield {
+            "basename": str(self.name),
+            "name": "Make thumbnails square",
+            "actions": [self.square_thumbnails],
+        }
