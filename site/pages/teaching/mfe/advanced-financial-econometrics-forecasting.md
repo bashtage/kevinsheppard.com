@@ -35,7 +35,7 @@ on the [YouTube lecture list](https://www.youtube.com/playlist?list=PLVR_rJLcetz
 
 
 | Slides |  Notebook                                                                         
-| :----- | ---------------------------------------------------------------------------------: |
+| :----- | :-------------------------------------------------------------------------------- |
 | [Introduction](/files/teaching/mfe/advanced-financial-econometrics-2020/intro.pdf) |  |
 | [SARIMA: Seasonal Autoregressive Integrated Moving Average Models](/files/teaching/mfe/advanced-financial-econometrics-2020/sarima.pdf) | [SARIMA](https://github.com/bashtage/AFE2020/blob/master/notebooks/SARIMA%20Modeling.ipynb) |
 | [Exponential Smoothing](/files/teaching/mfe/advanced-financial-econometrics-2020/es.pdf) | [Exponential Smoothing](https://github.com/bashtage/AFE2020/blob/master/notebooks/Exponential%20Smoothing.ipynb) |
