@@ -24,7 +24,7 @@ The notebooks and data are shared through [the course's GitHub repository](https
 
 ## Assignment
 
-The [AFE group work](/files/teaching/mfe/advanced-financial-econometrics-2020/assignment.pdf) asks you to use the method presented in teh course on a subset of the M4 data.
+The [AFE group work](/files/teaching/mfe/advanced-financial-econometrics-2020/assignment.pdf) asks you to use the method presented in the course on a subset of the M4 data.
 
 ## Lectures
 
