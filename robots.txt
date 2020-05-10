@@ -1,4 +1,7 @@
 Sitemap: https://www.kevinsheppard.com/sitemapindex.xml
 
 User-Agent: *
+Disallow: /50x.html
+Disallow: /404.html
+Disallow: /403.html
 Host: www.kevinsheppard.com
