@@ -1,4 +1,4 @@
-Nikola[extras]==8.0.4
+Nikola[extras]==8.1.0
 Markdown==3.2.2
 beautifulsoup4==4.9.1
 lxml==4.5.1
