@@ -292,7 +292,9 @@ DATE_FORMAT = "MMMM d, YYYY"
 
 # Date format used to display post dates, if local dates are used. (translatable)
 # Used by moment.js: https://momentjs.com/docs/#/displaying/format/
-JS_DATE_FORMAT = "MMMM D, YYYY"
+# Removed when switch to LUXON
+# JS_DATE_FORMAT = "MMMM D, YYYY"
+LUXON_DATE_FORMAT = {"en": {'preset': False, 'format': 'yyyy-MM-dd HH:mm'}}
 
 # Date fanciness.
 #
