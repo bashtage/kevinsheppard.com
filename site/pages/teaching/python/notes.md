@@ -12,10 +12,7 @@
 
 # Python Notes 
 
-*Introduction to Python for Econometrics, Statistics and Numerical Analysis: Fourth Edition* 
-
-New material added to the fourth edition on September 2020.
-{: .alert .alert-info}
+_**Introduction to Python for Econometrics, Statistics and Numerical Analysis: Fourth Edition**_ 
 
 [Download the Notes](#notes)
 
@@ -26,6 +23,9 @@ for a beginning programmer. They may also be useful for an experienced
 Python programmer interested in using NumPy, SciPy, matplotlib and
 pandas for numerical and statistical analysis (if this is the case, much
 of the beginning can be skipped).
+
+New material added to the fourth edition on September 2020.
+{: .alert .alert-info}
 
 ## Fourth edition
 
