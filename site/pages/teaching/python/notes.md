@@ -12,9 +12,9 @@
 
 # Python Notes 
 
-*Introduction to Python for Econometrics, Statistics and Numerical Analysis: Third Edition* 
+*Introduction to Python for Econometrics, Statistics and Numerical Analysis: Fourth Edition* 
 
-New material added to the third edition on January 3, 2018.
+New material added to the fourth edition on September 2020.
 {: .alert .alert-info}
 
 [Download the Notes](#notes)
@@ -26,6 +26,30 @@ for a beginning programmer. They may also be useful for an experienced
 Python programmer interested in using NumPy, SciPy, matplotlib and
 pandas for numerical and statistical analysis (if this is the case, much
 of the beginning can be skipped).
+
+## Fourth edition
+
+- Python 3.8 is the recommended version. The notes require Python 3.6 or later, and all references to Python 2.7 have been removed.
+- Removed references to NumPy's matrix class and clarified that it should not be used.
+- Verified that all code and examples work correctly against 2020 versions of modules. The notable packages and their versions are:
+   -  Python 3.8 (Preferred version), 3.6 (Minimum version)
+   -  NumPy: 1.19.1
+   -  SciPy: 1.5.2
+   -  pandas: 1.1.1
+   -  matplotlib: 3.3.1
+- Introduced f-Strings in Section [subsec:f-Strings] as the preferred way to format strings using modern Python. The notes use f-String where possible instead of format.
+- Added coverage of Windowing function – rolling, expanding and ewm – to the pandas chapter.
+- Expanded the list of packages of interest to researchers working in statistics, econometrics and machine learning.
+- Expanded description of model classes and statistical tests in statsmodels that are most relevant for econometrics. Added section detailing formula support. This list represents on a small function of the statsmodels API. 
+- Added minimize as the preferred interface for non-linear function optimization in Chapter [chap:Non-linear-Function-Optimization].
+- Python 2.7 support has been officially dropped, although most examples continue to work with 2.7. Do not Python 2.7 for numerical code.
+- Small typo fixes, thanks to Marton Huebler.
+- Fixed direct download of FRED data due to API changes, thanks to Jesper Termansen.
+- Thanks for Bill Tubbs for a detailed read and multiple typo reports.
+- Updated to changes in line profiler (see Ch. [chap:performance-and-optimization])
+- Updated deprecations in pandas.
+- Removed hold from plotting chapter since this is no longer required.
+- Thanks for Gen Li for multiple typo reports.
 
 ## Third edition, Update 1
 -  Verified that all code and examples work correctly against 2019 versions of modules. The
@@ -96,6 +120,10 @@ of the beginning can be skipped).
 -   All code has been verified working against Anaconda 1.7.0.
 
 ## Notes
+
+[Introduction to Python for Econometrics, Statistics and Numerical Analysis: Fourth Edition](/files/teaching/python/notes/python_introduction_2020.pdf)
+
+### Older Versions
 
 [Introduction to Python for Econometrics, Statistics and Numerical Analysis: Third Edition](/files/teaching/python/notes/python_introduction_2019.pdf)
 
