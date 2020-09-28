@@ -120,12 +120,13 @@ of the beginning can be skipped).
 -   All code has been verified working against Anaconda 1.7.0.
 
 ## Notes
+### Current Edition
 
 [Introduction to Python for Econometrics, Statistics and Numerical Analysis: Fourth Edition](/files/teaching/python/notes/python_introduction_2020.pdf)
 
-### Older Versions
+### _Archived Versions_
 
-[Introduction to Python for Econometrics, Statistics and Numerical Analysis: Third Edition](/files/teaching/python/notes/python_introduction_2019.pdf)
+[Third Edition](/files/teaching/python/notes/python_introduction_2019.pdf)
 
 ## Data and Notebooks
 
@@ -148,3 +149,4 @@ These notebooks contains the four extended examples from the Examples chapter.
 ### Mini-course
 
 [Python Course](link://filename/pages/teaching/python/course.md)
+
