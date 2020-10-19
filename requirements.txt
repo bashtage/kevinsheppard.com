@@ -1,7 +1,7 @@
 Nikola[extras]==8.1.1
 Markdown==3.3.1
 beautifulsoup4==4.9.3
-lxml==4.5.2
+lxml==4.6.1
 pybtex==0.23.0
 jupyter_contrib_nbextensions==0.5.1
 nbconvert==5.6.1
