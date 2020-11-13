@@ -25,9 +25,15 @@
 
 [Fama-French Data (pandas HDF)](/files/teaching/mfe/data/fama-french-data.h5)
 
-## Assignment
+## Empirical Assignment
+
+**Due Friday 7th Week**
 
 [Computational Assignment I](/files/teaching/mfe/assignments/mfe-fe-computational-cxercise-1-2020-2021.pdf)
+
+## Weekly Assignment
+
+[Week 5 Assignment](/files/teaching/mfe/homework/mt_week_5_assignment.pdf)
 
 ## Practice Quizzes
 
