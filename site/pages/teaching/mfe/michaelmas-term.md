@@ -15,9 +15,9 @@
 
 # Weekly Pages
 * [Week 5](/teaching/mfe/michaelmas-term-5/)  
-
-## Practice Quizzes
-There is a new quiz each week on the [course canvas page](https://canvas.sbs.ox.ac.uk/courses/1219). 
+* [Week 5](/teaching/mfe/michaelmas-term-6/)
+* Week 7  
+* Week 8  
 
 ## Notes
 
@@ -25,9 +25,12 @@ See the [notes page](/teaching/mfe/notes/) for standard and tablet optimized ver
 
 ## Computation
 
-See the [MATLAB course page](/teaching/matlab/mfe-matlab/) for assignments and data
-for the MATLAB introduction and companion course.
-
 See the [Python introduction](/teaching/python/course/) and the
 [Python companion course](/teaching/python/companion-course/) page for
 code, data and links to video presentations.
+
+### Archived 
+
+The MFE course has standardized on Python. The [MATLAB course page](/teaching/matlab/mfe-matlab/) remains
+available for anyone who wishes to use MATLAB. It has  assignments and data for the MATLAB introduction
+and companion course.
