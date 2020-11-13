@@ -15,17 +15,23 @@
 
 ## Slides
 
+*These not new slides. The slide set remains fixed within the same module*
+
 * [Analysis of Cross-sectional Data](/files/teaching/mfe/slides/cross-section-slides-2020-2021.pdf) (Weeks 5-7)
 * [Analysis of Cross-sectional Data (Print Optimized)](/files/teaching/mfe/slides/cross-section-slides-2020-2021-print.pdf) (Weeks 5-7)
 * [In-person Slides (pdf)](/files/teaching/mfe/slides/cross-section-2020-21-in-person-slides.pdf)
 * [In-person Slides (web)](/files/teaching/mfe/slides/cross-section-slides-2020-2021.html)
 * [In-person Slides (Jupyter Notebook)](/files/teaching/mfe/slides/cross-section-slides-2020-2021.ipynb)
 
-## Data Files
+### Data Files
+
+Data used in the IPython notebook-based slides.
 
 [Fama-French Data (pandas HDF)](/files/teaching/mfe/data/fama-french-data.h5)
 
 ## Assignment
+
+**Due Friday 7th Week**
 
 [Computational Assignment I](/files/teaching/mfe/assignments/mfe-fe-computational-cxercise-1-2020-2021.pdf)
 
@@ -33,7 +39,7 @@
 
 *Note*: Oxford MFE Students only (Canvas)
 
-[Week 6 Quiz](https://canvas.sbs.ox.ac.uk/courses/1731/quizzes/1986). 
+[Week 6 Quiz](https://canvas.sbs.ox.ac.uk/courses/1731/quizzes/1988). 
 
 ## Pre-recorded content
 
