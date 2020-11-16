@@ -29,7 +29,7 @@
 
 **Due Friday 7th Week**
 
-[Computational Assignment I](/files/teaching/mfe/assignments/mfe-fe-computational-cxercise-1-2020-2021.pdf)
+[Computational Assignment I](/files/teaching/mfe/assignments/mfe-fe-computational-exercise-1-2020-2021.pdf)
 
 ## Weekly Assignment
 
