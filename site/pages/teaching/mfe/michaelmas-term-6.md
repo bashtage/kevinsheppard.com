@@ -33,7 +33,11 @@ Data used in the IPython notebook-based slides.
 
 **Due Friday 7th Week**
 
-[Computational Assignment I](/files/teaching/mfe/assignments/mfe-fe-computational-cxercise-1-2020-2021.pdf)
+[Computational Assignment I](/files/teaching/mfe/assignments/mfe-fe-computational-exercise-1-2020-2021.pdf)
+
+## Weekly Assignment
+
+[Week 5 Assignment](/files/teaching/mfe/homework/mt_week_6_assignment.pdf)
 
 ## Practice Quizzes
 
