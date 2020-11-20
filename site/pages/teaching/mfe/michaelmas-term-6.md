@@ -37,7 +37,7 @@ Data used in the IPython notebook-based slides.
 
 ## Weekly Assignment
 
-[Week 5 Assignment](/files/teaching/mfe/homework/mt_week_6_assignment.pdf)
+[Week 6 Assignment](/files/teaching/mfe/homework/mt_week_6_assignment.pdf)
 
 ## Practice Quizzes
 
