@@ -1,6 +1,6 @@
 <!--
 .. title: Financial Econometrics I: Week 6
-.. slug: michaelmas-term-6
+.. slug: michaelmas-term-7
 .. date: 2020-11-27 17:51:04 UTC
 .. tags: teaching, mfe
 .. category: teaching 
