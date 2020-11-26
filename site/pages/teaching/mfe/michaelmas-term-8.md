@@ -22,9 +22,9 @@
 * [In-person Slides (pdf)](/files/teaching/mfe/slides/cross-section-2020-21-in-person-slides.pdf)
 * [In-person Slides (web)](/files/teaching/mfe/slides/cross-section-slides-2020-2021.html)
 * [In-person Slides (Jupyter Notebook)](/files/teaching/mfe/slides/cross-section-slides-2020-2021.ipynb)
-* [Machine Learning Slides (pdf)](/files/teaching/mfe/slides/cross-section-ml-2020-21-in-person-slides.pdf)
+* [Machine Learning Slides (pdf)](/files/teaching/mfe/slides/cross-section-ml-slides-2020-21-in-person.pdf)
 * [Machine Learning Slides (web)](/files/teaching/mfe/slides/cross-section-ml-slides-2020-2021.html)
-* [Machine Learning Slides (Jupyter Notebook)](/files/teaching/mfe/slides/cross-section-slides-ml-2020-2021.ipynb)
+* [Machine Learning Slides (Jupyter Notebook)](/files/teaching/mfe/slides/cross-section-ml-slides-2020-2021.ipynb)
 
 ### Data Files
 
