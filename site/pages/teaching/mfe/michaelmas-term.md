@@ -16,7 +16,7 @@
 # Weekly Pages
 * [Week 5](/teaching/mfe/michaelmas-term-5/)  
 * [Week 6](/teaching/mfe/michaelmas-term-6/)
-* Week 7  
+* [Week 6](/teaching/mfe/michaelmas-term-7/)
 * Week 8  
 
 ## Notes

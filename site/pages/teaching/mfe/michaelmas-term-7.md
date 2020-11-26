@@ -1,5 +1,5 @@
 <!--
-.. title: Financial Econometrics I: Week 6
+.. title: Financial Econometrics I: Week 7
 .. slug: michaelmas-term-7
 .. date: 2020-11-27 17:51:04 UTC
 .. tags: teaching, mfe
@@ -42,6 +42,9 @@ Data used in the IPython notebook-based slides.
 ## Practice Quizzes
 
 *Note*: Oxford MFE Students only (Canvas)
+
+**Note**: You might want to wait until after week 8 to attempt this quiz.  It has questions that
+will likely not be covered until then.
 
 [Week 7 Quiz](https://canvas.sbs.ox.ac.uk/courses/1731/quizzes/1994). 
 

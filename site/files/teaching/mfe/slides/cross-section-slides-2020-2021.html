@@ -15913,8 +15913,9 @@ $$\hat{\boldsymbol{\beta}}_n \stackrel{\approx}{\sim}N\left(\boldsymbol{\beta},\
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Hypothesis-Testing">Hypothesis Testing<a class="anchor-link" href="#Hypothesis-Testing">&#182;</a></h1><ul>
-<li>Null in a Linear Equality Test
-$$ H_0: \mathbf{R}\beta = r$$</li>
+<li>Null in a Linear Equality Test</li>
+</ul>
+$$ H_0: \mathbf{R}\beta = \mathbf{r}$$<ul>
 <li>Three classes of tests<ul>
 <li>Wald and $t$-test</li>
 <li>Lagrange Multiplier</li>
@@ -16219,7 +16220,10 @@ $$H_0: SMB + HML + MOM = 0 $$$$ R = \left[0,0,1,1,1\right], r=0 $$
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Hypothesis-Testing">Hypothesis Testing<a class="anchor-link" href="#Hypothesis-Testing">&#182;</a></h1><h2 id="Wald-Tests">Wald Tests<a class="anchor-link" href="#Wald-Tests">&#182;</a></h2><ul>
 <li>Test multiple hypothesis</li>
-<li>Exploit properties of multivariate normals</li>
+<li>Null is</li>
+</ul>
+$$ H_0: \mathbf{R}\boldsymbol{\beta} = \mathbf{r} $$<ul>
+<li>Exploit properties of multivariate normal CLT</li>
 <li>$\chi^2_m$ distributed in large samples</li>
 <li>Test statistic is </li>
 </ul>
@@ -16233,7 +16237,10 @@ $$ W = n\left(\mathbf{R}\hat{\boldsymbol{\beta}}-\mathbf{r}\right)^\prime
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Hypothesis-Testing">Hypothesis Testing<a class="anchor-link" href="#Hypothesis-Testing">&#182;</a></h1><h2 id="Wald-Tests">Wald Tests<a class="anchor-link" href="#Wald-Tests">&#182;</a></h2><h3 id="Testing-the-CAPM">Testing the CAPM<a class="anchor-link" href="#Testing-the-CAPM">&#182;</a></h3><ul>
-<li>Multiple $\beta$ all zero: $H_0: SMB=HML=MOM=0$</li>
+<li>Multiple $\beta$ all zero: </li>
+</ul>
+$$H_0: SMB=HML=MOM=0$$<ul>
+<li>Restriction matrix and value</li>
 </ul>
 $$ R = \left[\begin{array}{ccccc} 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 \\  0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 \\   0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 \\ \end{array}\right], r = \left[\begin{array}{c} 0 \\ 0 \\ 0 \end{array}\right] $$
 </div>
