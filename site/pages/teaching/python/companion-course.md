@@ -21,7 +21,7 @@ The course covers aspects of financial econometrics including:
 * Maximum Likelihood Estimation
 * Regression and Model Selection
 * Linear Time Series Models
-* Voltility Modeling
+* Volatility Modeling
 * Value-at-Risk Estimation
 * Vector Autoregressions
 

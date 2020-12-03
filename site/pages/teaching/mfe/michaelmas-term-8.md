@@ -39,7 +39,7 @@ Data used in the IPython notebook-based slides.
 * [Computational Assignment II](/files/teaching/mfe/assignments/mfe-fe-computational-exercise-2-2020-2021.pdf)
 * [Demo Autograder (Jupyter Notebook)](/files/teaching/mfe/assignments/demo-autograder-pw2.ipynb)
 * [Demo Autograder (Python)](/files/teaching/mfe/assignments/demo-autograder-pw2.py)
-* [Solutions Templace](/files/teaching/mfe/assignments/solutions-pw2.py)
+* [Solutions Template](/files/teaching/mfe/assignments/solutions-pw2.py)
 
 ## Weekly Assignment
 
@@ -47,7 +47,7 @@ Data used in the IPython notebook-based slides.
 
 ## Practice Quizzes
 
-None this week. You should be able to complete the three previous quizes. 
+None this week. You should be able to complete the three previous quizzes. 
 
 ## Pre-recorded content
 

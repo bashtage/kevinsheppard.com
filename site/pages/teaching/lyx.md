@@ -12,7 +12,7 @@
 .. masthead_color: #737b80
 -->
 
-[LyX](https://www.lyx.org/) is a powerful [WSYIWYG](https://en.wikipedia.org/wiki/WYSIWYG) editor
+[LyX](https://www.lyx.org/) is a powerful [WYSIWYG](https://en.wikipedia.org/wiki/WYSIWYG) editor
 for LaTeX. I am an avid user of LyX since it allows for a highly productive environment for 
 writing text and formatted math while continuing to allow for a high degree of customizability. 
 LyX is an open source version of Scientific Workplace which is both more modern and has broader

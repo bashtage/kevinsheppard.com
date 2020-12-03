@@ -18,14 +18,14 @@
 A set of notes that introduce the core concepts of Python that
 are relevant to applications in Statistics, Econometrics and many other
 numerical areas. Codes Python fundamentals, NumPy, Pandas,
-and some parts of SciPy and statsmdoels.  
+and some parts of SciPy and statsmodels.  
 
 [Python Notes](/teaching/python/notes/)
 
 # Introductory Course
 
 A short course designed for people new to Python, and often new
-to programming.  Starts with the basics - getting the Python environemnt
+to programming.  Starts with the basics - getting the Python environment
 right, and work through entering arrays and pandas DataFrame, selecting
 elements, basic looping and graphics.  
 
