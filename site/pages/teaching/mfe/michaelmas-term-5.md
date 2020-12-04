@@ -35,7 +35,6 @@
 
 * [Computational Assignment I Solution Sketch](/teaching/mfe/mfe-fe-computational-exercise-1-2020-2021/)
 * [Computational Assignment I Solution Sketch (Jupyter Notebook)](/files/teaching/mfe/assignments/mfe-fe-computational-exercise-1-2020-2021.ipynb)
-* [Computational Assignment I Solution Sketch (web)](/files/teaching/mfe/assignments/mfe-fe-computational-exercise-1-2020-2021.html)
 
 ## Weekly Assignment
 
