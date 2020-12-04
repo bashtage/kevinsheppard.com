@@ -31,9 +31,9 @@ Data used in the IPython notebook-based slides.
 
 ## Assignment
 
-**Due Friday 7th Week**
+* [Computational Assignment I](/files/teaching/mfe/assignments/mfe-fe-computational-exercise-1-2020-2021.pdf)
+* [Computational Assignment I Solution Sketch (Jupyter Notebook)](/files/teaching/mfe/assignments/mfe-fe-computational-exercise-1-2020-2021.ipynb)
 
-[Computational Assignment I](/files/teaching/mfe/assignments/mfe-fe-computational-exercise-1-2020-2021.pdf)
 
 ## Weekly Assignment
 
