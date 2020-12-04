@@ -15,7 +15,8 @@
 
 # MFE Financial Econometrics I 
 
-The [course website](/teaching/mfe/michaelmas-term/) for Financial Econometrics II contains all material distributed in Hilary Term. 
+The [Michaelmas term](/teaching/mfe/michaelmas-term/) and [Hilary term](/teaching/mfe/hilary-term/)
+course websites contain all of the Financial Econometrics I and II material. 
 
 # Notes
 
