@@ -1,0 +1,42 @@
+{#  -*- coding: utf-8 -*- #}
+{% extends 'list_post.tmpl' %}
+{% import 'feeds_translations_helper.tmpl' as feeds_translations with context %}
+
+{# Show subnav on posts and index #}
+{% block subnavbarbg %}d-none{% endblock %}
+
+{% block extra_head %}
+    {{ feeds_translations.head(tag, kind, rss_override=False) }}
+  <link href="https://fonts.googleapis.com/css?family=Bitter&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/blog.css" type="text/css">
+{% endblock %}
+
+{% block content %}
+<article class="tagpage">
+    <header class="mb-3">
+        <h1>{{ title|e }}</h1>
+        {% if description %}
+            <p>{{ description }}</p>
+        {% endif %}
+        {% if subcategories %}
+        {{ messages('Subcategories:') }}
+        <ul>
+            {% for name, link in subcategories %}
+            <li><a href="{{ link }}">{{ name|e }}</a></li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        <div class="metadata">
+            {{ feeds_translations.feed_link(tag, kind=kind) }}
+        </div>
+        {{ feeds_translations.translation_link(kind) }}
+    </header>
+    {% if posts %}
+        <ul class="postlist">
+        {% for post in posts %}
+            <li><time class="listdate" datetime="{{ post.formatted_date('webiso') }}" title="{{ post.formatted_date(date_format)|e }}">{{ post.formatted_date(date_format)|e }}</time> <a href="{{ post.permalink() }}" class="listtitle">{{ post.title()|e }}<a></li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+</article>
+{% endblock %}
