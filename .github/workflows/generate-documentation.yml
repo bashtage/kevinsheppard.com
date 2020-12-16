@@ -31,9 +31,15 @@ jobs:
         python -m pip install --upgrade pip wheel setuptools
         python -m pip install -r requirements.txt -q
         python -m pip list
+    - name: Install tidy
+      run: |
+        sudo apt update -y
+        sudo apt install -qq -y tidy
     - name: Build site
       run: |
         pushd site
         python generate_index.py
         nikola build
         popd
+    - name: Deploy docs
+      run: source deploy-docs.sh

@@ -1,0 +1,107 @@
+/* Code fixups */
+main {
+    margin-top: 0;
+}
+
+body, wrapper, div.wrapper {
+    min-height: 100vh;
+    font-feature-settings: "kern", "liga";
+}
+
+.flex-fill {
+    flex: 1 1 auto;
+}
+
+
+a.contact {
+    color: #ffffff;
+}
+
+pre.code .hll, .highlight pre .hll {
+    background-color: rgba(255, 255, 0, 0.5);
+}
+
+a.headerlink {
+    color: #ffffff;
+}
+
+a.headerlink:hover {
+    color: #0a6ebd;
+    transition: 0.5s;
+}
+
+.prompt {
+    min-width: 0;
+    padding: 0;
+}
+
+div.prompt {
+    padding: 0;
+    background-color: transparent;
+}
+
+.rendered_html table {
+    font-size: 1rem;
+}
+
+.rendered_html pre, .rendered_html code, pre.code, .highlight pre {
+    background: #f0f0f0;
+}
+
+
+.bg-page {
+    background-color: #f8f8f8 !important;
+}
+
+.bg-footer {
+    background-color: #212121 !important;
+}
+
+
+.custom-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(7,104,159,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+.custom-toggler.navbar-toggler {
+  border-color: rgba(0,0,0,0);
+}
+
+.dropdown-menu {
+    background-color: #fafafa !important;
+}
+
+.dropdown-menu .dropdown-item {
+    color: #07689F;
+}
+
+.dropdown-menu .dropdown-item.active, .dropdown-menu .dropdown-item:active {
+    color: #07689F;
+    font-weight: 700;
+}
+
+.dropdown-menu .dropdown-item:active {
+    background-color: rgba(7,104,159,0.2);
+}
+
+.masthead {
+    background-size: cover !important;
+}
+
+@media (min-width: 1999px) {
+    .masthead {
+        background-size: auto 150% !important;
+    }
+}
+
+.blog-nav {
+    visibility: hidden;
+}
+
+/* #Sets TOC depth level */
+div.toc>ul>li>ul>li>ul>li>ul {
+    display: none;
+}
+
+div.toc ul li {
+    margin-left: -1rem;
+}
+
