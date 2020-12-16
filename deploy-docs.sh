@@ -8,6 +8,7 @@ git checkout gh-pages
 echo "Copy docs to root"
 echo cp -r ${PWD}/site/output/* ${PWD}/
 cp -r ${PWD}/site/output/* ${PWD}/
+rm -rf ${PWD}/site/output/*
 git add .
 echo "Change remote"
 git remote set-url origin https://bashtage:"${GH_PAGES_TOKEN}"@github.com/bashtage/kevinsheppard.com.git

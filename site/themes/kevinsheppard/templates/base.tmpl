@@ -1,0 +1,176 @@
+{#  -*- coding: utf-8 -*- #}
+{% import 'base_helper.tmpl' as base with context %}
+{% import 'annotation_helper.tmpl' as notes with context %}
+{{ set_locale(lang) }}
+{{ base.html_headstart() }}
+{% block theme_color %}
+  <meta name="theme-color" content="{{ theme_color }}">
+{% endblock %}
+<style>
+  html, body {
+    font-family: 'Roboto', sans-serif;
+    background-color: {% block style_body_color %}#fafafa{% endblock %};
+  }
+</style>
+{% block extra_head %}
+  {#  Leave this block alone. #}
+{% endblock %}
+{{ template_hooks['extra_head']() }}
+</head>
+{# TODO: Move to style sheet #}
+<body>
+<a href="#content" class="sr-only sr-only-focusable">{{ messages("Skip to main content") }}</a>
+
+<!-- Menubar -->
+<div class="wrapper d-flex flex-column {% block wrapper_class %}{% endblock %}" {% block wrapper_style %}{% endblock %}>
+  <nav class="navbar navbar-expand-sm fixed-top-sm justify-content-start flex-nowrap py-2 pl-1 nav-color-override {% block navbarbg %}navbar-primary{% endblock %}">
+    <div class="container">
+      <a class="navbar-brand ml-2 ml-sm-0 mr-auto"
+         href="{{ abs_link(_link("root", None, lang)) }}">
+        {% if logo_url %}
+          <img src="{{ logo_url }}" alt="{{ blog_title|e }}" id="logo"
+               class="d-inline-block align-top">
+        {% endif %}
+
+        {% if show_blog_title %}
+          <span id="blog-title">{{ blog_title|e }}</span>
+        {% endif %}
+      </a>
+      <button class="custom-toggler navbar-toggler order-first" type="button"
+              data-toggle="collapse" data-target="#bs-navbar1, #bs-navbar2"
+              aria-controls="bs-navbar1 bs-navbar2" aria-expanded="false"
+              aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse collapse " id="bs-navbar1">
+        <ul class="navbar-nav blog-nav ml-auto my-2 my-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="/blog/">Blog</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0" action="/search/" role="search">
+         <div class="input-group">
+            <input
+                class="form-control mr-sm-2 {% block search_box %}bg-light{% endblock %} text-dark pl-2"
+                type="search" placeholder="Search..." aria-label="Search" id="tipue_search_input"
+                name="q" autocomplete="off">
+
+            <button
+                class="btn {% block search_button %}btn-primary{% endblock %} py-1"
+                type="submit" aria-label="Submit search"><i class="fa fa-search"></i>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </nav>
+  <nav class="navbar navbar-expand-sm nav-color-override
+      {% block subnavbarbg %}{% endblock %} navbar-primary pb-1">
+    <div class="navbar-collapse collapse pt-2 pt-sm-0" id="bs-navbar2">
+      <div class="container">
+        <ul class="navbar-nav mr-auto">
+          {{ base.html_navigation_links_entries(navigation_links) }}
+          {{ template_hooks['menu']() }}
+        </ul>
+        {% if search_form %}
+          {{ search_form }}
+        {% endif %}
+      </div>
+    </div>
+  </nav>
+
+
+  <main class="flex-fill" id="content">
+    {% block masthead %}
+      <div class="container">
+        <div class="row pt-4"></div>
+      </div>
+    {% endblock %}
+    {% block container %}
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-1"></div>
+          <div class="col-xl-10">
+            {{ template_hooks['page_header']() }}
+            {% block content %}{% endblock %}
+          </div>
+          <div class="col-xl-1"></div>
+        </div>
+      </div>
+    {% endblock %}
+  </main>
+  <footer class="w-100 text-light py-4 mt-4 {% block footer_bg %} bg-footer {% endblock %}">
+    <div class="container-fluid">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <ul class="list-inline text-center">
+              <li class="list-inline-item">
+                <a class="contact" href="mailto:kevin.k.sheppard@gmail.com" aria-label="Contact me using email">
+                <span class="fa-stack fa-lg">
+                <i class="far fa-circle fa-stack-2x"></i>
+                <i class="far fa-envelope fa-stack-1x"></i>
+                </span>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a class="contact" href="https://github.com/bashtage" aria-label="Visit my github repositories">
+                <span class="fa-stack fa-lg">
+                <i class="far fa-circle fa-stack-2x"></i>
+                <i class="fab fa-github fa-stack-1x"></i>
+                </span>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a class="contact" href="https://www.linkedin.com/in/kevinsheppard/" aria-label="View my LinkedIn profile">
+                <span class="fa-stack fa-lg">
+                <i class="far fa-circle fa-stack-2x"></i>
+                <i class="fab fa-linkedin fa-stack-1x"></i>
+                </span>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a class="contact" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" aria-label="Read about the content license used on this site">
+              <span class="fa-stack fa-lg">
+                <i class="fab fa-creative-commons fa-stack-2x"></i>
+              </span>
+                </a>
+              </li>
+            </ul>
+            <!--<p class="copyright text-muted">Copyright © Your Website 2018</p>-->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div class="container d-flex justify-content-center">
+        <div class="row">
+          {{ content_footer }}
+          {{ template_hooks['page_footer']() }}
+        </div>
+      </div>
+    </div>
+  </footer>
+</div> <!-- wrapper -->
+{{ base.late_load_js() }}
+{% if date_fanciness != 0 %}
+  <!-- fancy dates -->
+  <script>
+      luxon.Settings.defaultLocale = "${luxon_locales[lang]}";
+      fancydates(${date_fanciness}, ${luxon_date_format});
+  </script>
+  <!-- end fancy dates -->
+{% endif %}
+{% block extra_js %}{% endblock %}
+<script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function (element) {
+            return element.getElementsByTagName('img')[0].alt;
+        }
+    });
+</script>
+{{ body_end }}
+{{ template_hooks['body_end']() }}
+</body>
+</html>

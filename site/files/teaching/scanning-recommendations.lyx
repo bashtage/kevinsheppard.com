@@ -1,0 +1,1270 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage{xcolor}
+\definecolor{cyan}{rgb}{0.0, 0.13, 0.28}
+\usepackage{sectsty}
+\chapterfont{\color{blue}}  % sets colour of chapters
+\sectionfont{\color{cyan}}  % sets colour of sections
+\subsectionfont{\color{cyan}}  % sets colour of sections
+\subsubsectionfont{\color{cyan}}  % sets colour of sections
+\paragraphfont{\color{cyan}}  % sets colour of sections
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "helvet" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family sfdefault
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_title "Document Scanning Recommendations for Online Tutorial and Exam Submission"
+\pdf_author "Kevin Sheppard"
+\pdf_subject "Scanning documents using Devices - Phones and Tablets"
+\pdf_keywords "document scanning, oxford, trinity term exam, phone, tablet, ios, android"
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle false
+\pdf_quoted_options "allcolors=blue"
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 3cm
+\topmargin 4cm
+\rightmargin 3cm
+\bottommargin 4cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip smallskip
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+color{cyan}
+\end_layout
+
+\end_inset
+
+Document Scanning Recommendations for Online Tutorial and Exam Submission
+\end_layout
+
+\begin_layout Date
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Trinity Term 2020 test takers
+\series default
+, please see the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hyperref[sec:Trinity-Term-2020]{dedicated section below}
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+This document describes how you can use your phone or tablet to produce
+ clear scans of your work as PDF files that are modest in size.
+ The final section is written for Trinity Term 2020 open-book test-takers
+ since these students may be scanning documents under a tight time constraint.
+ If you have any comments of know of software that works better, please
+ let me know at 
+\begin_inset CommandInset href
+LatexCommand href
+name "kevin.sheppard@economics.ox.ac.uk"
+target "kevin.sheppard@economics.ox.ac.uk"
+type "mailto:"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section*
+Flatbed Scanners
+\end_layout
+
+\begin_layout Standard
+If you have access to a flatbed scanner, this will produce the highest quality
+ scan.
+ I recommend you use 300dpi in black and white mode when scanning documents
+ for submission.
+ This balances file size against the image's resolution.
+ Grayscale and color generally produce files that are larger and that are
+ not usually easier for assessors or tutors to read.
+ 
+\end_layout
+
+\begin_layout Section*
+General Instructions
+\end_layout
+
+\begin_layout Subsection*
+Lighting
+\end_layout
+
+\begin_layout Standard
+Poor lighting is the simplest method to produce a scan that is hard or impossibl
+e to read.
+ Side lighting is key to creating a high-quality scan when using a phone
+ or tablet.
+ Overhead lighting is your enemy since it is likely that your body or your
+ device will cast an unnecessary shadow.
+ Look around your environment for locations that have a reliable source
+ of side lighting.
+ When scanning in the day, indirect outside light can produce an excellent
+ source for producing high-quality scans.
+ Direct sunlight can lead to overexposure and is not recommended.
+ Alternatively, you might find locations with under cabinet lighting.
+ I have good experience using these.
+ Finally, a desk lamp can be positioned to produce side lighting where both
+ you and your device will not case a shadow.
+ If you do not have a good location with side lighting, you can use your
+ device's flash.
+ In my experience, this produces slightly worse quality scans than having
+ a good lighting setup, but it is much better than having a shadow on your
+ document.
+ Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:A-virtually-perfect"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ shows a scan created with uniform lighting that originated from the side.
+ Figures 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:A-scan-produced"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:A-scan-produced-1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ show scans that were produced when the strongest source of light originated
+ above the document so that my arm or the device cast a strong shadow.
+\end_layout
+
+\begin_layout Subsection*
+Background
+\end_layout
+
+\begin_layout Standard
+Assuming you are writing on white paper, you want to scan on a background
+ that has high contrast.
+ Black, dark brown, and most other dark colors produce high contrast, which
+ lets the software function better.
+ Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:location"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ shows my preferred scanning location in my home.
+ It is a dark kitchen worktop which provides great contrast.
+ It is illuminated by under cabinet lighting, and so I cannot cast shadows
+ with my body or my device.
+ Note that when scanning, I turn off the other lights in the kitchen so
+ that the under-counter lights are the strongest source of illumination.
+\end_layout
+
+\begin_layout Subsection*
+Device Position
+\end_layout
+
+\begin_layout Standard
+It is important that you hold your device level and that the document occupies
+ the majority of the viewfinder when scanning.
+ Most high-quality scanning software will encourage optimal camera positioning.
+\end_layout
+
+\begin_layout Subsection*
+Multi-page Documents
+\end_layout
+
+\begin_layout Standard
+Most documents you scan will consist of multiple pages.
+ You should scan these consecutively by adding a new page to your current
+ scan.
+ If you make a mistake, I recommend reshooting the problematic page and
+ then continuing to the end of the document.
+ All of the recommended software lets you delete a page after you finish
+ scanning.
+\end_layout
+
+\begin_layout Section*
+Software Recommendations
+\end_layout
+
+\begin_layout Subsection*
+iOS (iPad/iPhone)
+\end_layout
+
+\begin_layout Standard
+There are two apps I recommend: 
+\begin_inset CommandInset href
+LatexCommand href
+name "Genius Scan"
+target "https://apps.apple.com/gb/app/genius-scan-pdf-scanner/id377672876"
+literal "false"
+
+\end_inset
+
+ (4.8 rating, 35,000 reviews) and 
+\begin_inset CommandInset href
+LatexCommand href
+name "Scanner Pro"
+target "https://apps.apple.com/us/app/scanner-pro-pdf-scanner-app/id333710667"
+literal "false"
+
+\end_inset
+
+ (4.9 rating 130,000 reviews).
+ Genius Scan is free and has a paid upgrade.
+ It works well enough in the free mode to use for exam and assignment submission.
+ Scanner Pro has a modest price.
+ Both of these apps have great auto edge detection when used on a high contrast
+ background.
+ ScannerPro is more forgiving to uneven lighting and tends to produce softer
+ shadows if present.
+ ScannerPro is my recommendation if the price is not an issue.
+\end_layout
+
+\begin_layout Subsection*
+Android 
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset href
+LatexCommand href
+name "Genius Scan"
+target "https://play.google.com/store/apps/details?id=com.thegrizzlylabs.geniusscan.free&hl=en_GB"
+literal "false"
+
+\end_inset
+
+ (4.7 rating, 78,000 reviews) is also available for Android and is, in my
+ experience, the most accurate scanner.
+ 
+\begin_inset CommandInset href
+LatexCommand href
+name "CamScanner"
+target "https://play.google.com/store/apps/details?id=com.intsig.camscanner&hl=en_GB"
+literal "false"
+
+\end_inset
+
+ (4.8 rating, 2.5M reviews) also works well, although it is not as accurate
+ at automatic edge detection.
+ It does have some party trick modes that work well if you have a text that
+ is mostly monochrome text but contains a full-color diagram.
+ Genius Scan is my recommendation if you have a good lighting setup.
+ If not, I would use CamScanner.
+\end_layout
+
+\begin_layout Subsection*
+Genius Scan Settings
+\end_layout
+
+\begin_layout Itemize
+Set Image Quality to medium before scanning your document (Menu > Settings
+ > Image Quality > Medium).
+ I Could not detect any relevant differences when scanning black and white
+ documents across Medium, High, and Highest.
+ File sizes, however, do vary with this setting, and Medium minimizes the
+ output size of the PDF without compromising legibility.
+\end_layout
+
+\begin_layout Itemize
+Edit images before exporting.
+ After you have scanned the document, you can tap on any page to open the
+ edit view.
+ Editing lets you: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Adjust the scanning mode to select Black & White if color incorrectly was
+ detected; 
+\end_layout
+
+\begin_layout Itemize
+Rotate the images so that they have the correct orientation; and 
+\end_layout
+
+\begin_layout Itemize
+Recrop any images where GeniusScan's edge detection was not adequate.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Change the 
+\emph on
+File size
+\emph default
+ when exporting.
+ GeniusScan will 
+\series bold
+estimate
+\series default
+ the size of the file after export.
+ In my tests, Small produced files that are easy to read (about 600kB per
+ scanned page, when used with Medium image quality).
+ The table below shows the 
+\series bold
+estimated
+\series default
+ size of the file exported using combinations of Image Quality and 
+\emph on
+File size
+\emph default
+.
+ Medium/Medium and Medium/Large appear to be the most sensible choices.
+ Both Highest Image Quality and Actual 
+\emph on
+File size
+\emph default
+ should be avoided.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="5">
+<features booktabs="true" islongtable="true" longtabularalignment="center">
+<column alignment="none" valignment="top" special="@{}l">
+<column alignment="right" valignment="top">
+<column alignment="right" valignment="top">
+<column alignment="right" valignment="top">
+<column alignment="none" valignment="top" special="r@{}">
+<row endhead="true">
+<cell alignment="none" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Image Quality
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Small
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Medium
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Large
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Actual
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Low
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+571kB
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+640kB
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+811kB
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2.1MB
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Medium
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.2MB
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.3MB
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.7MB
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4.3MB
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+High
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2.1MB
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2.3MB
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2.9MB
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7.5MB
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Highest
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3.6MB
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4.0MB
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5.1MB
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+13MB
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+I have included two sample files where you can compare 
+\begin_inset CommandInset href
+LatexCommand href
+name "Highest/Actual"
+target "https://www.kevinsheppard.com/files/teaching/scanning/highest-actual.pdf"
+literal "false"
+
+\end_inset
+
+ with 
+\begin_inset CommandInset href
+LatexCommand href
+name "Medium/Small"
+target "https://www.kevinsheppard.com/files/teaching/scanning/medium-small.pdf"
+literal "false"
+
+\end_inset
+
+.
+ Note that the file size of the Medium/Small file is 2.5MB, not 1.2MB, as
+ estimated by GeniusScan.
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+Excessively Large Scans
+\end_layout
+
+\begin_layout Standard
+If you attempt to export and the resulting file is excessively large, you
+ can split a scan in GeniusScan.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Begin by selecting the document.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Long press a page in the second half of the document.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Select all pages in the second half.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Select the move icon and select 
+\emph on
+New document
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+The animation 
+\begin_inset CommandInset href
+LatexCommand href
+name "on my website"
+target "https://www.kevinsheppard.com/teaching/scanning-recommendations/"
+literal "false"
+
+\end_inset
+
+ illustrates these steps.
+\end_layout
+
+\begin_layout Standard
+You will then need to rejoin the parts into a single PDF using 
+\begin_inset CommandInset href
+LatexCommand href
+name "PDF Sam Basic"
+target "https://www.kevinsheppard.com/teaching/scanning-recommendations/#pdf-sam"
+literal "false"
+
+\end_inset
+
+ or an online tool.
+\end_layout
+
+\begin_layout Subsubsection*
+Excessively Large PDFs
+\end_layout
+
+\begin_layout Standard
+If the PDF you have produced exceeds the upload limit, you can compress
+ it using an 
+\begin_inset CommandInset href
+LatexCommand href
+name "online PDF compressor"
+target "https://www.ilovepdf.com/compress_pdf"
+literal "false"
+
+\end_inset
+
+.
+ I recommend using the most conservative compression (
+\emph on
+Less Compression
+\emph default
+) which reduced scanned file sizes by 50% in my experiments.
+ 
+\end_layout
+
+\begin_layout Section*
+Additional Issues
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+I do not believe that at-home exam takers need to be overly concerned with
+ carefully formatting their exam answers.
+ If pressed for time, it is reasonable to refer a hand-drawn diagram or
+ equation on another page.
+ If you have time, your assessors will appreciate your efforts to produce
+ an easier to read answer.
+ If under time pressure and you have two files, combining them into a Zip
+ file before uploading.
+\end_layout
+
+\begin_layout Subsection*
+Embedding Images in Documents
+\end_layout
+
+\begin_layout Standard
+When writing essays, you may need one or more diagrams or one or more equations.
+ The best format (as in nicest for your tutor or assessor) is to embed the
+ image into your word document.
+ The simplest method to do this is to:
+\end_layout
+
+\begin_layout Itemize
+draw your diagram; 
+\end_layout
+
+\begin_layout Itemize
+photograph it;
+\end_layout
+
+\begin_layout Itemize
+crop it tightly on your device; and 
+\end_layout
+
+\begin_layout Itemize
+email it to yourself, upload to a file service (Dropbox, Google Drive, or
+ OneDrive), or let a service like Google Photos or iCloud to automatically
+ back up the photo.
+ You can encourage Google photos to back up your images by opening the Google
+ photos app.
+ The image will then be available 
+\begin_inset CommandInset href
+LatexCommand href
+name "through your browser"
+target "https://photos.google.com/"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+You should then be able to directly insert the equation or diagram into
+ your document without further formatting.
+\end_layout
+
+\begin_layout Subsection*
+Snipping Tools
+\end_layout
+
+\begin_layout Standard
+Snipping is a simple way to copy anything you can see on your computer into
+ a Word or Google docs document.
+ You can snip just the content you want, and so should not need to crop
+ the image further.
+\end_layout
+
+\begin_layout Itemize
+Windows 10: The preferred option is 
+\emph on
+Snip and Sketch
+\emph default
+.
+ The snipping window can be opened using 
+\family typewriter
+Win
+\family default
++
+\family typewriter
+Shift
+\family default
++
+\family typewriter
+S
+\family default
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+Windows 7/8: These operating systems come with a program called 
+\emph on
+Snipping Tool
+\emph default
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+macOS: 
+\family typewriter
+Command
+\family default
+ + 
+\family typewriter
+Shift
+\family default
+ + 
+\family typewriter
+4
+\family default
+ allows you to select a region to copy.
+ 
+\end_layout
+
+\begin_layout Subsection*
+Combining PDFs
+\end_layout
+
+\begin_layout Standard
+You may have assignments or exams that require mixed answers where some
+ questions are standard essays, while others require more calculation.
+ If your answer is spread between a Word document or a Google doc and a
+ scanned PDF, you should combine these into a single PDF before submission.
+\end_layout
+
+\begin_layout Standard
+There are two simple methods.
+ The first uses a web service appropriately titled 
+\begin_inset CommandInset href
+LatexCommand href
+name "Combine PDF"
+target "https://combinepdf.com/"
+literal "false"
+
+\end_inset
+
+.
+ You can upload two or more PDFs, use drag-and-drop to arrange their order,
+ combine them, and then download them.
+ This methods comes with a standard disclaimer about privacy.
+ Combine PDF states they delete all content after an hour, but they do not
+ have a Privacy Policy visible.
+\end_layout
+
+\begin_layout Standard
+The second uses 
+\begin_inset CommandInset href
+LatexCommand href
+name "PDF Sam Basic"
+target "https://pdfsam.org/"
+literal "false"
+
+\end_inset
+
+ to merge them.
+ PDF Sam is both free to use and open source.
+ This program has to be locally installed to use.
+ Merging two or more PDFs can be done by:
+\end_layout
+
+\begin_layout Itemize
+select merge;
+\end_layout
+
+\begin_layout Itemize
+use Add to add each of your files; 
+\end_layout
+
+\begin_layout Itemize
+select the output pdf file; and 
+\end_layout
+
+\begin_layout Itemize
+click on Run.
+ 
+\end_layout
+
+\begin_layout Standard
+There are many other scanners, so please do try others if you are not happy
+ with these.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Trinity Term 2020 Test Takers
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Trinity-Term-2020"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Moving your PDF
+\end_layout
+
+\begin_layout Standard
+You will most likely want to move your scan onto your laptop before uploading
+ it to the submission server.
+ You must have a good, reliable, and quick method for moving your file out
+ of your scanning software.
+ I almost always upload to Dropbox (Google Drive and OneDrive are also good
+ choices) and use email as a backup if Dropbox fails.
+ You can also save the file locally and then use a free service like 
+\begin_inset CommandInset href
+LatexCommand href
+name "Firefox Send"
+target "https://send.firefox.com/"
+literal "false"
+
+\end_inset
+
+ to move the file if needed.
+\end_layout
+
+\begin_layout Subsection*
+Practice, Practice, and Practice Again
+\end_layout
+
+\begin_layout Standard
+If you are preparing for exams, you must practice with whatever method you
+ are going to use.
+ You need to practice scanning documents that have sizes that you expect
+ to have for your exam, i.e., 10 – 15 pages, depending on your handwriting.
+ You should practice until scanning and getting the document off of your
+ device until it is second nature.
+ The last thing you want is to be stressed in the final minutes of an open
+ -book exam.
+ You should: 
+\end_layout
+
+\begin_layout Itemize
+know which app you are going to use; 
+\end_layout
+
+\begin_layout Itemize
+know where you will be scanning your paper; 
+\end_layout
+
+\begin_layout Itemize
+know how you will get your PDF off of your device; 
+\end_layout
+
+\begin_layout Itemize
+have a backup method to get it off your device (e.g., a USB cable to your
+ laptop or using a temporary upload service like Firefox Send (
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://send.firefox.com/
+\end_layout
+
+\end_inset
+
+))
+\end_layout
+
+\begin_layout Standard
+You should practice the entire process during the University dry-runs.
+ Be sure to check the size of the file produced using your preferred method.
+ Larger files are more likely may cause difficulties uploading, all things
+ equal.
+\end_layout
+
+\begin_layout Subsubsection*
+
+\color cyan
+ALWAYS UPLOAD SOMETHING
+\end_layout
+
+\begin_layout Standard
+If you are pressed for time and are having any difficulties, you must upload
+ any copy, no matter how poor, of your exams before the deadline.
+ Your uploaded copy will be inspected, and if it is illegible, then you
+ will be asked to upload a better version later.
+ The improved copy will be compared to the original submission to verify
+ that it contains the same material.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename Scan 4 Apr 2020 at 09.59.pdf
+	width 100text%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+A virtually perfect scan produced by Scanner Pro on an iPad.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:A-virtually-perfect"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename a-2.pdf
+	width 100text%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+A scan created with a strong shadow that was produced by my arm.
+ This tricked the software into thinking that this was a color document.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:A-scan-produced"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename b-3.pdf
+	width 100text%
+	rotateAngle 180
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+A scan produced by Genius Scan when the device cast a strong shadow on the
+ page.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:A-scan-produced-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename IMG_20200404_172348.jpg
+	lyxscale 10
+	width 75text%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+My preferred scanning environment in my home.
+ A dark kitchen counter illuminated by under cabinet lighting.
+ I get nearly flawless  results from any device scanning software with no
+ manual intervention.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:location"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
