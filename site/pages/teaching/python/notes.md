@@ -12,7 +12,7 @@
 
 # Python Notes 
 
-_**Introduction to Python for Econometrics, Statistics and Numerical Analysis: Fourth Edition**_ 
+_**Introduction to Python for Econometrics, Statistics and Numerical Analysis: Fourth+ Edition**_ 
 
 [Download the Notes](#notes)
 
@@ -26,6 +26,11 @@ of the beginning can be skipped).
 
 New material added to the fourth edition on September 2020.
 {: .alert .alert-info}
+
+## Since the Fourth edition
+
+- Added coverage of context managers (`with` _method_ `as` _variable_) as the preferred way to open and close files.
+- Changed examples to use context managers where appropriate.
 
 ## Fourth edition
 
