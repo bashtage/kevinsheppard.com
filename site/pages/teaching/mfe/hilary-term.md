@@ -13,42 +13,9 @@
 .. jumbotron_text: The most-up-to-date information on MFE Financial Econometrics II
 -->
 
-## Slides
+# Weekly Pages
+* [Week 1](/teaching/mfe/hilary-term-1/)  
 
-<!--[Univariate Volatility](/files/teaching/mfe/slides/univariate-volatility-2019-2020.pdf) (Week 1-5) -->
-<!--[Value-at-Risk](/files/teaching/mfe/slides/var-and-distributions2019-2020.pdf) (Week 5-6) -->
-<!--[Vector Autoregressions](/files/teaching/mfe/slides/vector-ar-2019-2020.pdf) (Week 6-8) -->
-<!--[Heterogeneity, Endogeneity, and Casual Inference](/files/teaching/mfe/slides/causal-inference-2019-2020.pdf) (Week 8) -->
-
-
-### Slides with Markup
-
-These slides contain the mark-up produced in the lecture including any derivations.
-
-<!--* [Univariate Volatility](/files/teaching/mfe/markup/univariate-volatility-2019-2020-week-1.pdf) (Week 1) -->
-<!--* [Univariate Volatility](/files/teaching/mfe/markup/univariate-volatility-2019-2020-week-2.pdf) (Week 2) -->
-<!--* [Univariate Volatility](/files/teaching/mfe/markup/univariate-volatility-2019-2020-week-4.pdf) (Week 4) -->
-<!--* [Value-at-Risk](/files/teaching/mfe/markup/var-2019-2020-week-5.pdf) (Week 5) -->
-<!--* [Value-at-Risk](/files/teaching/mfe/markup/var-2019-2020-week-6.pdf) (Week 6) -->
-<!--* [Vector Autoregressions](/files/teaching/mfe/markup/vector-ar-2019-2020-week-6.pdf) (Week 6) -->
-<!--* [Vector Autoregressions](/files/teaching/mfe/markup/vector-ar-2019-2020-week-7.pdf) (Week 7) -->
-<!--* [Vector Autoregressions](/files/teaching/mfe/markup/vector-ar-2019-2020-week-8.pdf) (Week 8) -->
-<!--* [Causal Inference](/files/teaching/mfe/markup/causal-inference-2019-2020.pdf) (Week 8) -->
-
-## Practice Quizzes
-
-There is a new quiz each week on the [course canvas page](https://canvas.sbs.ox.ac.uk/courses/1219). 
-
-## Homework
-
-<!-- * [Weeks 1 - 4](/files/teaching/mfe/homework/ht_assignments_weeks_1_to_4.pdf) -->
-<!-- * [Weeks 5 - 8](/files/teaching/mfe/homework/ht_assignments_weeks_5_to_8.pdf) -->
-<!-- * [Final Exam (2019)](/files/teaching/mfe/homework/fe-final-2019.pdf) -->
-
-## Empirical Projects
-
-<!-- * [Empirical Project 2](/files/teaching/mfe/assignments/computational-exercise-2-2019-2020.pdf)  -->
-<!-- * [Empirical Project 3](/teaching/mfe/practical_work_4/) (Due Week 9) -->
 
 ## Notes
 
@@ -59,3 +26,9 @@ See the [notes page](/teaching/mfe/notes/) for standard and tablet optimized ver
 See the [Python introduction](/teaching/python/course/) and the
 [Python companion course](/teaching/python/companion-course/) page for
 code, data and links to video presentations.
+
+### Archived 
+
+The MFE course has standardized on Python. The [MATLAB course page](/teaching/matlab/mfe-matlab/) remains
+available for anyone who wishes to use MATLAB. It has  assignments and data for the MATLAB introduction
+and companion course.

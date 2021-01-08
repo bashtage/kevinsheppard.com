@@ -42,7 +42,7 @@ Data used in the IPython notebook-based slides.
 
 [Week 7 Assignment](/files/teaching/mfe/homework/mt_week_7_assignment.pdf)
 
-## Practice Quizzes
+## Practice Quiz
 
 *Note*: Oxford MFE Students only (Canvas)
 
