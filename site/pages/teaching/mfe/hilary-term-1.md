@@ -44,13 +44,13 @@ _Oxford MFE Students only (Canvas)_
 
 ### Time Series Analysis
 
-1. [Overview](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=f25c754a-70bb-4cb8-9ffd-ac770132c8f2)
-2. [Stochastic Processes](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=f25c754a-70bb-4cb8-9ffd-ac770132c8f2)
-3. [Autocovariance](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=f25c754a-70bb-4cb8-9ffd-ac770132c8f2)
-4. [Stationarity](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=f25c754a-70bb-4cb8-9ffd-ac770132c8f2)
-5. [Ergodicity](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=f25c754a-70bb-4cb8-9ffd-ac770132c8f2)
-6. [White Noise](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=f25c754a-70bb-4cb8-9ffd-ac770132c8f2)
-7. [Linear Time Series Processes](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=f25c754a-70bb-4cb8-9ffd-ac770132c8f2)
+1. [Overview](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=debd94f6-02af-4316-8a2a-acae011d3fa3)
+2. [Stochastic Processes](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=1d094144-2301-4ad2-b177-acae011d833c)
+3. [Autocovariance](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=c8441dfc-dc5f-4c48-ac78-acae011d691c)
+4. [Stationarity](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=6e05f055-6075-46c8-be87-acae011da5ab)
+5. [Ergodicity](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=d0a31c23-341c-499a-8454-acae011db6a6)
+6. [White Noise](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=c77fdfcb-1469-411c-bc6a-acae011dc35c)
+7. [Linear Time Series Processes](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=65346da0-79ec-4fff-a8fc-acae0126af4d)
 8. [Autoregressive-Moving Average Processes](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=f25c754a-70bb-4cb8-9ffd-ac770132c8f2)
 9. [Conditional Moments](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=f25c754a-70bb-4cb8-9ffd-ac770132c8f2)
 10. [Stationarity of AR Processes](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=f25c754a-70bb-4cb8-9ffd-ac770132c8f2)
