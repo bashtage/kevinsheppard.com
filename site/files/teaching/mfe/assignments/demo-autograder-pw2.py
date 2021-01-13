@@ -41,7 +41,7 @@ mu = 0.0
 
 output = mod.oos_rsquared(y, yhat, mu)
 assert isinstance(output, float)
-assert output >= -1000.0
+assert output <= 1.0
 
 
 # In[ ]:
