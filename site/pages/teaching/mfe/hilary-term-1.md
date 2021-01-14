@@ -30,13 +30,13 @@ Data used in the IPython notebook-based slides.
 
 ## Weekly Assignment
 
-[Week 1 Assignment](/files/teaching/mfe/homework/mt_week_1_assignment.pdf)
+[Week 1 Assignment](/files/teaching/mfe/homework/ht_week_1_assignment.pdf)
 
 ## Practice Quiz
 
 _Oxford MFE Students only (Canvas)_
 
-[Week 1 Quiz](https://canvas.sbs.ox.ac.uk/courses/1731/quizzes/1994)
+[Week 1 Quiz](https://canvas.sbs.ox.ac.uk/courses/1914/quizzes/2088)
 
 ## Pre-recorded content
 
@@ -51,18 +51,19 @@ _Oxford MFE Students only (Canvas)_
 5. [Ergodicity](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=d0a31c23-341c-499a-8454-acae011db6a6)
 6. [White Noise](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=c77fdfcb-1469-411c-bc6a-acae011dc35c)
 7. [Linear Time Series Processes](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=65346da0-79ec-4fff-a8fc-acae0126af4d)
-8. [Autoregressive-Moving Average Processes](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=f25c754a-70bb-4cb8-9ffd-ac770132c8f2)
-9. [Conditional Moments](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=f25c754a-70bb-4cb8-9ffd-ac770132c8f2)
-10. [Stationarity of AR Processes](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=f25c754a-70bb-4cb8-9ffd-ac770132c8f2)
-11. [Moments of an AR(1) Process](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=f25c754a-70bb-4cb8-9ffd-ac770132c8f2)
-12. [Autocorrelations and Partial Autocorrelations](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=f25c754a-70bb-4cb8-9ffd-ac770132c8f2)
-13. [Autocorrelations Structure of ARMA Processes](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=f25c754a-70bb-4cb8-9ffd-ac770132c8f2)
-14. [Estimating Autocorrelations and Partial Auocorreations](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=f25c754a-70bb-4cb8-9ffd-ac770132c8f2)
-15. [Testing Autocorrelations and Partial Auocorreations](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=f25c754a-70bb-4cb8-9ffd-ac770132c8f2)
-16. [Parameter Estimation](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=f25c754a-70bb-4cb8-9ffd-ac770132c8f2)
-17. [Model Building](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=f25c754a-70bb-4cb8-9ffd-ac770132c8f2)
-18. [Model Diagnostics](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=f25c754a-70bb-4cb8-9ffd-ac770132c8f2)
-19. [The Information Set](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=f25c754a-70bb-4cb8-9ffd-ac770132c8f2)
+8. [Autoregressive-Moving Average Processes](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=72ed63f5-0600-43c0-a15f-acae013b2e64)
+9. [Conditional Moments](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=5b69270a-2d6b-4dfc-92f7-acaf007d3722)
+10. [Stationarity of AR Processes](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=7e5e0f65-5b4d-47dd-b5ea-acaf008f1707)
+11. [Moments of an AR(1) Process](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=c9b2d757-e674-4eba-9d5b-acb000e02813)
+12. [Autocorrelations and Partial Autocorrelations](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=a2f05a7b-9358-4362-8c10-acaf00a0688e)
+13. [Autocorrelation Structure of ARMA Processes](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=f62c34d7-9bd4-41b9-bfec-acaf013a357a)
+14. [Estimating Autocorrelations and Partial Auocorreations](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=b9ab535b-5545-4ad7-a2f2-acb0009cea31)
+15. [Testing Autocorrelations and Partial Auocorreations](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=34d26e66-1a4f-49c8-80ee-acb0009cf156)
+16. [Parameter Estimation](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=f6d10081-77e8-402d-8547-acb000a38bac)
+17. [Model Building](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=4c0b1411-7cc4-45a6-9bf8-acb001036755)
+18. [Model Diagnostics](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=1961f413-f991-4699-98a4-acb000f897e4)
+19. [The Information Set](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=c32ff7db-5478-41fa-8fa6-acaf00cda5b4)
+<!--
 20. [Loss Functions](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=f25c754a-70bb-4cb8-9ffd-ac770132c8f2)
 21. [Forecasting](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=f25c754a-70bb-4cb8-9ffd-ac770132c8f2)
 22. [Mincer-Zarnowitz Tests](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=f25c754a-70bb-4cb8-9ffd-ac770132c8f2)
@@ -76,4 +77,4 @@ _Oxford MFE Students only (Canvas)_
 30. [Seasonal Differencing](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=f25c754a-70bb-4cb8-9ffd-ac770132c8f2)
 31. [Self-Exciting Threshold Autoregression](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=f25c754a-70bb-4cb8-9ffd-ac770132c8f2)
 32. [Markov-Switching Models](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=f25c754a-70bb-4cb8-9ffd-ac770132c8f2)
-
+-->
