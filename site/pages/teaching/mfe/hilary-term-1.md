@@ -44,6 +44,15 @@ _Oxford MFE Students only (Canvas)_
 
 ### Time Series Analysis
 
+#### Reading
+
+_The readings listed correspond to the pre-recorded content. You should either 
+watch the pre-recorded content or read the notes prior to the Week 1 lecture._
+
+Sections 4.1-4.4 (ex 4.4.1), 4.6, and 4.7 from the [Time Series Notes](/files/teaching/mfe/notes/financial-econometrics-2020-2021-chapter-4.pdf)
+
+#### Presentation
+
 1. [Overview](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=debd94f6-02af-4316-8a2a-acae011d3fa3)
 2. [Stochastic Processes](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=1d094144-2301-4ad2-b177-acae011d833c)
 3. [Autocovariance](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=c8441dfc-dc5f-4c48-ac78-acae011d691c)
