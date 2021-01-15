@@ -30,7 +30,7 @@ Data used in the IPython notebook-based slides.
 
 ## Weekly Assignment
 
-[Week 1 Assignment](/files/teaching/mfe/homework/ht_week_1_assignment.pdf)
+[Week 1 Assignment](/files/teaching/mfe/homework/ht-week-1-assignment.pdf)
 
 ## Practice Quiz
 
