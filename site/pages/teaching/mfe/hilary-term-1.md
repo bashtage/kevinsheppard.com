@@ -28,6 +28,16 @@ Data used in the IPython notebook-based slides.
 
 [Time Series Data (pandas HDF)](/files/teaching/mfe/data/time-series-data.h5)
 
+## Assignment
+
+**Due Friday 5th Week Hilary**
+
+* [Computational Assignment III](/files/teaching/mfe/assignments/mfe-fe-computational-exercise-3-2020-2021.pdf)
+* [Demo Autograder (Jupyter Notebook)](/files/teaching/mfe/assignments/demo-autograder-pw3.ipynb)
+* [Demo Autograder (Python)](/files/teaching/mfe/assignments/demo-autograder-pw3.py)
+* [Solutions Template](/files/teaching/mfe/assignments/solutions-pw3.py)
+
+
 ## Weekly Assignment
 
 [Week 1 Assignment](/files/teaching/mfe/homework/ht-week-1-assignment.pdf)
