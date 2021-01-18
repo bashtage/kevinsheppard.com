@@ -13,10 +13,12 @@
 .. jumbotron_text: Slides, problem sets and assignment for the core Financial Econometrics Course
 -->
 
-# MFE Financial Econometrics I 
+# MFE Financial Econometrics Course Sites
 
-The [Michaelmas term](/teaching/mfe/michaelmas-term/) and [Hilary term](/teaching/mfe/hilary-term/)
-course websites contain all of the Financial Econometrics I and II material. 
+The course websites contain all of the Financial Econometrics I and II material.  
+
+[Financial Econometrics I (Michaelmas)](/teaching/mfe/michaelmas-term/) <br />
+[Financial Econometrics II (Hilary)](/teaching/mfe/hilary-term/)
 
 # Notes
 
