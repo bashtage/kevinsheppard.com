@@ -36,7 +36,7 @@ Data used in the IPython notebook-based slides.
 
 _Oxford MFE Students only (Canvas)_
 
-[Week 1 Quiz](https://canvas.sbs.ox.ac.uk/courses/1914/quizzes/2088)
+[Week 1 Quiz](https://canvas.sbs.ox.ac.uk/courses/1914/quizzes/2102)
 
 ## Pre-recorded content
 
@@ -71,8 +71,9 @@ Sections 4.1-4.4 (ex 4.4.1), 4.6, and 4.7 from the [Time Series Notes](/files/te
 16. [Parameter Estimation](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=f6d10081-77e8-402d-8547-acb000a38bac)
 17. [Model Building](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=b44336f7-333d-4665-a601-acb0012feb9b)
 18. [Model Diagnostics](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=1961f413-f991-4699-98a4-acb000f897e4)
-19. [The Information Set](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=21a4194a-2f65-42c6-be0d-acb1008749df)
+
 <!--
+19. [The Information Set](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=21a4194a-2f65-42c6-be0d-acb1008749df)
 20. [Loss Functions](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=f25c754a-70bb-4cb8-9ffd-ac770132c8f2)
 21. [Forecasting](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=f25c754a-70bb-4cb8-9ffd-ac770132c8f2)
 22. [Mincer-Zarnowitz Tests](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=f25c754a-70bb-4cb8-9ffd-ac770132c8f2)
