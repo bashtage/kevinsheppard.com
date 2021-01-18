@@ -32,10 +32,10 @@ Data used in the IPython notebook-based slides.
 
 **Due Friday 5th Week Hilary**
 
-* [Computational Assignment III](/files/teaching/mfe/assignments/mfe-fe-computational-exercise-3-2020-2021.pdf)
-* [Demo Autograder (Jupyter Notebook)](/files/teaching/mfe/assignments/demo-autograder-pw3.ipynb)
-* [Demo Autograder (Python)](/files/teaching/mfe/assignments/demo-autograder-pw3.py)
-* [Solutions Template](/files/teaching/mfe/assignments/solutions-pw3.py)
+[Computational Assignment III](/files/teaching/mfe/assignments/mfe-fe-computational-exercise-3-2020-2021.pdf) <br />
+[Demo Autograder (Jupyter Notebook)](/files/teaching/mfe/assignments/demo-autograder-pw3.ipynb) <br />
+[Demo Autograder (Python)](/files/teaching/mfe/assignments/demo-autograder-pw3.py) <br />
+[Solutions Template](/files/teaching/mfe/assignments/solutions-pw3.py)
 
 
 ## Weekly Assignment
