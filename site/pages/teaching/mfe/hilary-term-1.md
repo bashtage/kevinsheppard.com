@@ -18,9 +18,9 @@
 
 [Univariate Time Series Analysis](/files/teaching/mfe/slides/time_series_slides_2020-2021.pdf) <br />
 [Univariate Time Series Analysis (Print Optimized)](/files/teaching/mfe/slides/time_series_slides_2020-2021-print.pdf)  <br />
-[In-person Slides (pdf)](/files/teaching/mfe/slides/time-series-2020-21-in-person-slides.pdf)  <br />
-[In-person Slides (web)](/files/teaching/mfe/slides/time-series-slides-2020-2021.html)  <br />
-[In-person Slides (Jupyter Notebook)](/files/teaching/mfe/slides/time-series-slides-2020-2021.ipynb)  <br />
+[In-person Slides (pdf)](/files/teaching/mfe/slides/time-series-slides-2020-21-in-person.pdf)  <br />
+[In-person Slides (web)](/files/teaching/mfe/slides/time-series-slides-2020-21-in-person.html)  <br />
+[In-person Slides (Jupyter Notebook)](/files/teaching/mfe/slides/time-series-slides-2020-21-in-person.ipynb)  <br />
 
 ### Data Files
 
