@@ -15,11 +15,11 @@
 
 ## Slides
 
-_Same as week 1_<br/>
+_Same as week 1_ <br/>
 [Univariate Time Series Analysis](/files/teaching/mfe/slides/time_series_slides_2020-2021.pdf) <br />
 [Univariate Time Series Analysis (Print Optimized)](/files/teaching/mfe/slides/time_series_slides_2020-2021-print.pdf)
 
-_New this week_<br/>
+_New this week_ <br/>
 [In-person Slides (pdf)](/files/teaching/mfe/slides/time-series-slides-2020-21-in-person-week-2.pdf)  <br />
 [In-person Slides (web)](/files/teaching/mfe/slides/time-series-slides-2020-21-in-person-week-2.html)  <br />
 [In-person Slides (Jupyter Notebook)](/files/teaching/mfe/slides/time-series-slides-2020-21-in-person-week-2.ipynb)  <br />
@@ -37,7 +37,6 @@ _New this week_<br/>
 [Demo Autograder (Python)](/files/teaching/mfe/assignments/demo-autograder-pw3.py) <br />
 [Solutions Template](/files/teaching/mfe/assignments/solutions-pw3.py)
 
-
 ## Weekly Assignment
 
 [Week 2 Assignment](/files/teaching/mfe/homework/ht-week-2-assignment.pdf)
@@ -46,14 +45,14 @@ _New this week_<br/>
 
 _Oxford MFE Students only (Canvas)_
 
-[Week 1 Quiz](https://canvas.sbs.ox.ac.uk/courses/1914/quizzes/2108)
+[Week 2 Quiz](https://canvas.sbs.ox.ac.uk/courses/1914/quizzes/2108)
 
 ## Pre-lecture content
 
 ### Reading
 
-_The readings listed correspond to the pre-recorded content. You should either 
-watch the pre-recorded content or read the notes prior to the Week 1 lecture._
+_The readings listed correspond to the pre-recorded content. You should either
+watch the pre-recorded content or read the notes prior to the Week 2 lecture._
 
 Sections 4.9-4.11 and 4.13 from the [Time Series Notes](/files/teaching/mfe/notes/financial-econometrics-2020-2021-chapter-4.pdf)
 
