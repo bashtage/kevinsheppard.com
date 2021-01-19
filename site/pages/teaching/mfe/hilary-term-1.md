@@ -24,9 +24,7 @@
 
 ### Data Files
 
-Data used in the IPython notebook-based slides.
-
-[Time Series Data (pandas HDF)](/files/teaching/mfe/data/time-series-data.h5)
+[Time Series Data (pandas HDF)](/files/teaching/mfe/data/time-series-data.h5) used in the IPython notebook-based slides.
 
 ## Assignment
 
@@ -48,20 +46,18 @@ _Oxford MFE Students only (Canvas)_
 
 [Week 1 Quiz](https://canvas.sbs.ox.ac.uk/courses/1914/quizzes/2102)
 
-## Pre-recorded content
+## Pre-lecture content
 
-_Oxford MFE Students only (Canvas)_
-
-### Time Series Analysis
-
-#### Reading
+### Reading
 
 _The readings listed correspond to the pre-recorded content. You should either 
 watch the pre-recorded content or read the notes prior to the Week 1 lecture._
 
 Sections 4.1-4.4 (ex 4.4.1), 4.6, and 4.7 from the [Time Series Notes](/files/teaching/mfe/notes/financial-econometrics-2020-2021-chapter-4.pdf)
 
-#### Presentation
+### Presentation
+
+_Oxford MFE Students only (Canvas)_
 
 01. [Introduction to Time Series Analysis](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=debd94f6-02af-4316-8a2a-acae011d3fa3)
 02. [Stochastic Processes](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=1d094144-2301-4ad2-b177-acae011d833c)
