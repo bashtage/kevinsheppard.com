@@ -16,7 +16,8 @@
 # Weekly Pages
 [Week 1](/teaching/mfe/hilary-term-1/)  
 [Week 2](/teaching/mfe/hilary-term-2/) <br />
-
+[Week 3](/teaching/mfe/hilary-term-3/) <br />
+[Week 4](/teaching/mfe/hilary-term-4/) 
 
 ## Notes
 
