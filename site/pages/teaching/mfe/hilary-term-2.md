@@ -41,6 +41,10 @@ _New this week_ <br/>
 
 [Week 2 Assignment](/files/teaching/mfe/homework/ht-week-2-assignment.pdf)
 
+### Solutions ###
+
+[Week 2 Assignment Solution](/files/teaching/mfe/homework/ht-week-2-assignment-answers.pdf)
+
 ## Practice Quiz
 
 _Oxford MFE Students only (Canvas)_

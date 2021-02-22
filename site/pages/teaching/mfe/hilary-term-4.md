@@ -42,7 +42,7 @@
 
 ### Solutions ###
 
-See the [Week 2](../hilary-term-2) page for solutions for the Week 2 problem.
+[Week 4 Assignment Solution](/files/teaching/mfe/homework/ht-week-4-assignment-answers.pdf)
 
 ## Practice Quiz
 

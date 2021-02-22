@@ -45,7 +45,7 @@ _New this week_ <br/>
 
 ### Solutions ###
 
-See the [Week 1](../hilary-term-1) page for solutions for the Week 1 problem.
+[Week 3 Assignment Solution](/files/teaching/mfe/homework/ht-week-3-assignment-answers.pdf)
 
 ## Practice Quiz
 
