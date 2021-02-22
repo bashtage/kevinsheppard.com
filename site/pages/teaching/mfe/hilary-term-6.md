@@ -53,7 +53,7 @@ Sections 7.8 and 7.9 from the [Univariate Volatility Notes](/files/teaching/mfe/
 
 _Oxford MFE Students only ([Canvas](https://canvas.sbs.ox.ac.uk/courses/1914/external_tools/185))_
 
-1. [Realized Variance](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=8033699a-138e-46c9-91b4-acc20134ef4b)
+1. [Realized Variance](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=5d6112cd-7535-4499-9a49-acc300810055)
 2. [Understanding Realized Variance](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=8033699a-138e-46c9-91b4-acc20134ef4b)
 3. [Realized Variance Limitations](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=cb180877-4178-4418-95d9-acd70154ebd9)
 4. [Improving Realized Variance Estimators](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=8396d5e9-72ab-4dd1-ae23-acd701353819)

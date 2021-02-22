@@ -18,7 +18,8 @@
 [Week 2](/teaching/mfe/hilary-term-2/) <br />
 [Week 3](/teaching/mfe/hilary-term-3/) <br />
 [Week 4](/teaching/mfe/hilary-term-4/) <br />
-[Week 5](/teaching/mfe/hilary-term-5/) 
+[Week 5](/teaching/mfe/hilary-term-5/) <br />
+[Week 6](/teaching/mfe/hilary-term-6/) 
 
 ## Notes
 
