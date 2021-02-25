@@ -126,7 +126,7 @@ MathJax.Hub.Config({
 <p>Before reporting bugs, please be sure you have the latest version, have downloaded the <a href="http://www.spatial-econometrics.com/">JPL toolbox</a>, and ARE NOT using the ucsd_garch code from the JPL toolbox (and don't have that directory on your path)</p>
 <p>The UCSD_Garch toolbox is a toolbox for Matlab that is useful in estimating and diagnosing univariate and multivariate heteroskedasticity in a Time Series models. The toolbox contains C-Mex files for the necessary loops in the univariate models. It is being released under a BSD style [license]. This means you can do pretty much what ever you want to including make money by selling it.</p>
 <p><a href="../../../files/code/matlab/ucsd_garch.zip">Download</a></p>
-<h5>Updates</h5>
+<h5 id="updates">Updates<a class="headerlink" href="#updates" title="Permanent link">¶</a></h5>
 <p>2.0.14: Thanks for Mark Flood who pointed out an old bug in fattailed garch. Even more reason to <strong>move to the <a href="../mfe-toolbox/">MFE Toolbox</a> if possible</strong>.</p>
 <p>2.0.13: Thanks for Mark Flood who pointed out an initialization bug in full_bekk_simulate.</p>
 <p>2.0.12: Thanks to Dennis Turk who pointed out a bug in garchcore.m.</p>
@@ -146,13 +146,13 @@ MathJax.Hub.Config({
 <ul>
 <li><code>ucsd_garch_demo</code> - A demo of the garch toolbox</li>
 </ul>
-<h6>Main Univariate Mean Functions</h6>
+<h6 id="main-univariate-mean-functions">Main Univariate Mean Functions<a class="headerlink" href="#main-univariate-mean-functions" title="Permanent link">¶</a></h6>
 <ul>
 <li><code>armaxfilter</code> - Univariate ARMAX estimation</li>
 <li><code>mafilter</code> - Univariate MA estimation</li>
 <li><code>garchinmean</code> - Univariate Garch-In-Mean estimation</li>
 </ul>
-<h6>Main Univariate GARCH Functions</h6>
+<h6 id="main-univariate-garch-functions">Main Univariate GARCH Functions<a class="headerlink" href="#main-univariate-garch-functions" title="Permanent link">¶</a></h6>
 <ul>
 <li><code>garchpq_eviews</code> - Univariare GARCH estimation without lower bound constraints; uses a penalty funcion(similar to eviews)</li>
 <li><code>skewt_garch</code> - Univariat GARCH estimation with skew-t residuals(Hansen)</li>
@@ -162,7 +162,7 @@ MathJax.Hub.Config({
 <li><code>multi_garch</code> - Univariate GARCH proceeedure to estimate a variety of GARCH specifications including AP GARCH</li>
 <li><code>egarch</code> - Exponential garch estimation with normal, Students T and Generalized Error Distribution</li>
 </ul>
-<h6>Main Multivariate Functions</h6>
+<h6 id="main-multivariate-functions">Main Multivariate Functions<a class="headerlink" href="#main-multivariate-functions" title="Permanent link">¶</a></h6>
 <ul>
 <li><code>cc_mvgarch</code> - Estimates Bollerslev's Constant Correlation MV Garch</li>
 <li><code>dcc_mvgarch</code> - Estimates Engle and Sheppard's Dynamic Correlation MV Garch</li>
@@ -175,7 +175,7 @@ MathJax.Hub.Config({
 <li><code>diagonal_bekk_T_mvgarch</code> - Estimates Diagonal Bekk MV Garch with Multivariate T disturbances</li>
 <li><code>full_bekk_T_mvgarch</code> - Estimates Full Bekk MV Garch with Multivariate T disturbances</li>
 </ul>
-<h6>Univariate Mean and GARCH Simulation</h6>
+<h6 id="univariate-mean-and-garch-simulation">Univariate Mean and GARCH Simulation<a class="headerlink" href="#univariate-mean-and-garch-simulation" title="Permanent link">¶</a></h6>
 <ul>
 <li><code>armaxsimulate</code> - Simulate an ARMAX model</li>
 <li><code>garchsimulate</code> - Sumilate Univariate GARCH series with normal innovations</li>
@@ -186,7 +186,7 @@ MathJax.Hub.Config({
 <li><code>multigarchSimulate</code> - Simulate one of 8 different forms of GARCH</li>
 <li><code>dcc_univariate_simulate</code> - likelihood function called from dcc_univariate_simulate</li>
 </ul>
-<h6>Multivaraite GARCH Simulation</h6>
+<h6 id="multivaraite-garch-simulation">Multivaraite GARCH Simulation<a class="headerlink" href="#multivaraite-garch-simulation" title="Permanent link">¶</a></h6>
 <ul>
 <li><code>scalar_bekk_simulate</code> - Simulate a scalar BEKK</li>
 <li><code>diagonal_bekk_simulate</code> - Simulate a diagonal BEKK</li>
@@ -194,13 +194,13 @@ MathJax.Hub.Config({
 <li><code>cc_mvgarch_simulate</code> - Simulates Bollerslev's Constant Correlation MV Garch</li>
 <li><code>dcc_simulate</code> - Simulates Engle and Sheppard's Dynamic Correlation MV Garch</li>
 </ul>
-<h6>Univariate Mean Likelihood functions</h6>
+<h6 id="univariate-mean-likelihood-functions">Univariate Mean Likelihood functions<a class="headerlink" href="#univariate-mean-likelihood-functions" title="Permanent link">¶</a></h6>
 <ul>
 <li><code>garchinmeanlikelihood</code> - Likelihood funtion for garch in mean estimation</li>
 <li><code>maxfilter_likelihood</code> - Likelihood function for MA estimation</li>
 <li><code>armaxfilter_likelihood.m</code> - likelihood function called from armaxfilter</li>
 </ul>
-<h6>Univariate GARCH Likelihood Functions</h6>
+<h6 id="univariate-garch-likelihood-functions">Univariate GARCH Likelihood Functions<a class="headerlink" href="#univariate-garch-likelihood-functions" title="Permanent link">¶</a></h6>
 <ul>
 <li><code>garcheviewslikelihood</code> - likelihood function called from garchpq_eviews</li>
 <li><code>skewt_garchlikelihood</code> - likelihood function called from skewt_garch</li>
@@ -211,7 +211,7 @@ MathJax.Hub.Config({
 <li><code>egarchlikelihood</code> - likelihood function called from egarch</li>
 <li>`tarchlikelihood</li>
 </ul>
-<h6>Multivariate GARCH Likelihood Functions</h6>
+<h6 id="multivariate-garch-likelihood-functions">Multivariate GARCH Likelihood Functions<a class="headerlink" href="#multivariate-garch-likelihood-functions" title="Permanent link">¶</a></h6>
 <ul>
 <li><code>cc_mvgarch_full_likelihood</code> - likelihood function called from cc_mvgarch_full_likelihood</li>
 <li><code>dcc_mvgarch_full_likelihood</code> - likelihood function called from dcc_mvgarch_full_likelihood(correct)</li>
@@ -228,7 +228,7 @@ MathJax.Hub.Config({
 <li><code>diagonal_bekk_T_likelihood</code> - likelihood function called from diagonal_T_bekk_mvgarch_likelihood(correct)</li>
 <li><code>full_bekk_T_likelihood</code> - likelihood function called from full_T_bekk_mvgarch_likelihood(correct)</li>
 </ul>
-<h6>Diagnostics</h6>
+<h6 id="diagnostics">Diagnostics<a class="headerlink" href="#diagnostics" title="Permanent link">¶</a></h6>
 <ul>
 <li><code>dcc_mvgarch_test</code> - Engle and Sheppards test for dynamic correlation</li>
 <li><code>lilliefors</code> - Lillifors test for normality</li>
@@ -241,7 +241,7 @@ MathJax.Hub.Config({
 <li><code>kolmogorov</code> - Kolmorogov-Shmirnov non-parametric test</li>
 <li><code>berkowitz</code> - The berkowitz transform of the KS test</li>
 </ul>
-<h6>Kernel Smoothing Routines</h6>
+<h6 id="kernel-smoothing-routines">Kernel Smoothing Routines<a class="headerlink" href="#kernel-smoothing-routines" title="Permanent link">¶</a></h6>
 <ul>
 <li><code>cosinus</code> - Cosinus kernel</li>
 <li><code>epanechnikov</code> - Epanechnikov kernel</li>
@@ -254,7 +254,7 @@ MathJax.Hub.Config({
 <li><code>triweight</code> - Triweight kernel</li>
 <li><code>uniform</code> - Uniform kernel</li>
 </ul>
-<h6>Bootstrap Routines</h6>
+<h6 id="bootstrap-routines">Bootstrap Routines<a class="headerlink" href="#bootstrap-routines" title="Permanent link">¶</a></h6>
 <ul>
 <li><code>block_bootstrap</code> - Block time series bootstrap</li>
 <li><code>bsds</code> - Bootstrap Data Snooper(White 2000, Hansen 2001) with upper, lower and consistent pvals</li>
@@ -262,7 +262,7 @@ MathJax.Hub.Config({
 <li><code>cont_bootstrap</code> - Continuous Bootstrap for unit root data</li>
 <li><code>stationary_bootstrap</code> - Stationary Bootstrap(Politis and Romano(1994)) for time series</li>
 </ul>
-<h6>Univariate Density Functions</h6>
+<h6 id="univariate-density-functions">Univariate Density Functions<a class="headerlink" href="#univariate-density-functions" title="Permanent link">¶</a></h6>
 <ul>
 <li><code>exppowcdf</code> - Exponential Power Cumulative Density Function</li>
 <li><code>exppowrnd</code> - Exponential Power Random number generator</li>
@@ -279,7 +279,7 @@ MathJax.Hub.Config({
 <li><code>stdtdis_pdf</code> - Standardized T distribution(unit variance for all nu) Probability Density Function</li>
 <li><code>stdtdis_rnd</code> - Standardized T distribution(unit variance for all nu) Random Number Generator</li>
 </ul>
-<h6>Helper Functions</h6>
+<h6 id="helper-functions">Helper Functions<a class="headerlink" href="#helper-functions" title="Permanent link">¶</a></h6>
 <ul>
 <li><code>kscritical</code> - Lookup table for KS critical values</li>
 <li><code>cc_ivech</code> - Specialized ivech for correlation matrices</li>
