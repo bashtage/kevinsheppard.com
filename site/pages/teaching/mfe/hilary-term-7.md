@@ -41,6 +41,7 @@
 [Demo Autograder (Jupyter Notebook)](/files/teaching/mfe/assignments/demo-autograder-fw1.ipynb) <br />
 [Demo Autograder (Python)](/files/teaching/mfe/assignments/demo-autograder-fw1.py) <br />
 [Solutions Template](/files/teaching/mfe/assignments/solutions-fw1.py)
+[Data for Assignment](/files/teaching/mfe/assignments/mfe-formal-work-1-2020-2021.csv.gz)
 
 
 ### Solutions ###
