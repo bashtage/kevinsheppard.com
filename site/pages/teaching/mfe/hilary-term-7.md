@@ -66,3 +66,13 @@ Sections 8.1--8.5  [Value-at-Risk Notes](/files/teaching/mfe/notes/financial-eco
 ### Presentation
 
 _Oxford MFE Students only ([Canvas](https://canvas.sbs.ox.ac.uk/courses/1914/external_tools/185))_
+
+1. [Introduction](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=236d2a5f-9a2c-4d82-8f91-acdd01804c36)
+2. [Defining Value-at-Risk](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=d97804cf-d423-4a10-924e-acdd0180fce1)
+3. [Alternative Value-at-Risk-Definitions](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=661fb182-aaa8-44f2-8f74-acdd0187ad6e)
+4. [Volatility-based Models for Value-at-Risk](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=070634d7-efdb-4f08-834e-acde00c819ff)
+5. [Conditional VaR - CaViaR](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=440100c4-47bb-4d6b-b9f7-acde00cf0586)
+6. [Weighted Historical Simulation](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=33ac1078-b6fa-4833-b884-acde009b3db9)
+7. [Evaluation of Value-at-Risk Models](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=2623e90e-39a1-4392-93c8-acde009b4347)
+8. [Value-at-Risk Model Evaluation using Bernoullis](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=c0141a14-05de-42a1-8fdc-acde00d7e828)
+9. [Logit Model-based Value-at-Risk Model Evaluation](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=1be057bb-cc0e-4f9d-9659-acde009b48d1)
