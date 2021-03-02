@@ -25,8 +25,7 @@
 [Value-at-Risk, Expected Shortfall and Density Forecasting (Print Optimized)](/files/teaching/mfe/slides/var-slides-2020-2021-print.pdf) <br />
 
 ### Data Files
-[Univariate Volatility Data (pandas HDF)](/files/teaching/mfe/data/univariate-volatility-data.h5) used in the IPython notebook-based slides.
-[Value-at-Risk Data (pandas HDF)](/files/teaching/mfe/data/value-at-risk-data.h5) used in the IPython notebook-based slides.
+[Value-at-Risk Data (pandas HDF)](/files/teaching/mfe/data/univariate-volatility-data.h5) used in the IPython notebook-based slides. _Note_: This is the same data that was used in the univariate volatility slides.
 
 
 ## Weekly Assignment
