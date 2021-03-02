@@ -16,9 +16,9 @@
 ## Slides
 
 ### New
-[In-person Slides (pdf)](/files/teaching/mfe/slides/univariate-volatility-slides-2020-21-in-person-week-7.pdf)  <br />
-[In-person Slides (web)](/files/teaching/mfe/slides/univariate-volatility-slides-2020-21-in-person-week-7.html)  <br />
-[In-person Slides (Jupyter Notebook)](/files/teaching/mfe/slides/univariate-volatility-slides-2020-21-in-person-week-7.ipynb) 
+[In-person Slides (pdf)](/files/teaching/mfe/slides/var-slides-2020-21-in-person-week-7.pdf)  <br />
+[In-person Slides (web)](/files/teaching/mfe/slides/var-slides-2020-21-in-person-week-7.html)  <br />
+[In-person Slides (Jupyter Notebook)](/files/teaching/mfe/slides/var-slides-2020-21-in-person-week-7.ipynb) 
 
 ### Same as Previous Week
 [Value-at-Risk, Expected Shortfall and Density Forecasting](/files/teaching/mfe/slides/var-slides-2020-2021.pdf) <br />
