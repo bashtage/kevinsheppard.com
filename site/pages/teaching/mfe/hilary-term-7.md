@@ -39,7 +39,7 @@
 [Computational Assignment IV](/files/teaching/mfe/assignments/mfe-fe-computational-exercise-4-2020-2021.pdf) <br />
 [Demo Autograder (Jupyter Notebook)](/files/teaching/mfe/assignments/demo-autograder-fw1.ipynb) <br />
 [Demo Autograder (Python)](/files/teaching/mfe/assignments/demo-autograder-fw1.py) <br />
-[Solutions Template](/files/teaching/mfe/assignments/solutions-fw1.py)
+[Solutions Template](/files/teaching/mfe/assignments/solutions-fw1.py) <br />
 [Data for Assignment](/files/teaching/mfe/assignments/mfe-formal-work-1-2020-2021.csv.gz)
 
 
