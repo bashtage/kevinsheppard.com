@@ -31,6 +31,8 @@
 ## Weekly Assignment
 
 [Week 8 Assignment](/files/teaching/mfe/homework/ht-week-8-assignment.pdf)
+[Trinity Term 2020 Exam](/files/teaching/mfe/homework/trinity-term-2020-exam.pdf)
+
 
 ## Format Assignment 1
 
