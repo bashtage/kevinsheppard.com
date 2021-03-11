@@ -62,7 +62,7 @@ print(onestep_variance.head())
 
 which produces
 
-```
+```text
 Date
 2009-01-02    7.752248
 2009-01-05    7.178808
