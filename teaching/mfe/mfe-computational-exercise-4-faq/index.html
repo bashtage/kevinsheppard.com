@@ -132,6 +132,29 @@ MathJax.Hub.Config({
 <span class="c1"># Use -tau//2: to get second half</span>
 <span class="n">oos_1step</span> <span class="o">=</span> <span class="n">oos_1step</span><span class="p">[</span><span class="o">-</span><span class="n">tau</span><span class="o">//</span><span class="mi">2</span><span class="p">:]</span>
 <span class="n">oos_rw</span> <span class="o">=</span> <span class="n">oos_rw</span><span class="p">[</span><span class="o">-</span><span class="n">tau</span><span class="o">//</span><span class="mi">2</span><span class="p">:]</span>
+</code></pre>
+<h3 id="out-of-sample-forecasts-from-arch-models">Out-of-sample forecasts from <code>arch</code> models<a class="headerlink" href="#out-of-sample-forecasts-from-arch-models" title="Permanent link">¶</a></h3>
+<p>Out-of-sample forecasting is simpler in models from the <code>arch</code> package since you can use the argument <code>last_obs</code> in a call to <code>fit</code> to set the final observation.</p>
+<pre class="code literal-block"><span></span><code><span class="kn">from</span> <span class="nn">arch.data</span> <span class="kn">import</span> <span class="n">sp500</span>
+<span class="kn">from</span> <span class="nn">arch</span> <span class="kn">import</span> <span class="n">arch_model</span>
+
+<span class="n">rets</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">*</span> <span class="n">sp500</span><span class="o">.</span><span class="n">load</span><span class="p">()[</span><span class="s2">"Adj Close"</span><span class="p">]</span><span class="o">.</span><span class="n">pct_change</span><span class="p">()</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+<span class="n">mod</span> <span class="o">=</span> <span class="n">arch_model</span><span class="p">(</span><span class="n">rets</span><span class="p">)</span>
+<span class="n">tau</span> <span class="o">=</span> <span class="n">rets</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">mod</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">last_obs</span><span class="o">=</span><span class="n">tau</span><span class="o">//</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">oos</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">forecast</span><span class="p">()</span>
+<span class="n">onestep_variance</span> <span class="o">=</span> <span class="n">oos</span><span class="o">.</span><span class="n">variance</span><span class="o">.</span><span class="n">dropna</span><span class="p">()[</span><span class="s2">"h.1"</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">onestep_variance</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</code></pre>
+<p>which produces</p>
+<pre class="code literal-block"><span></span><code>Date
+2009-01-02    7.752248
+2009-01-05    7.178808
+2009-01-06    6.672307
+2009-01-07    6.830862
+2009-01-08    6.317631
+Name: h.1, dtype: float64
 </code></pre></div>
 </div>
 </article>
