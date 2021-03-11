@@ -32,7 +32,7 @@
 
 [Week 7 Assignment](/files/teaching/mfe/homework/ht-week-7-assignment.pdf)
 
-## Format Assignment 1
+## Formal Assignment 1
 
 **Due Friday 9th Week Hilary**
 

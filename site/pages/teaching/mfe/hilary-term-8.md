@@ -34,7 +34,9 @@
 [Trinity Term 2020 Exam](/files/teaching/mfe/homework/trinity-term-2020-exam.pdf)
 
 
-## Format Assignment 1
+## Formal Assignment 1
+
+[FAQ](../mfe-computational-exercise-4-faq)
 
 **Due Friday 9th Week Hilary**
 
