@@ -40,3 +40,34 @@ oos_rw = oos_mod.predict([0, 1])
 oos_1step = oos_1step[-tau//2:]
 oos_rw = oos_rw[-tau//2:]
 ```
+
+# Out-of-sample forecasts from `arch` models
+
+Out-of-sample forecasting is simpler in models from the `arch` package since you
+can use the argument `last_obs` in a call to `fit` to set the final observation.
+
+```python
+from arch.data import sp500
+from arch import arch_model
+
+rets = 100 * sp500.load()["Adj Close"].pct_change().dropna()
+mod = arch_model(rets)
+tau = rets.shape[0]
+res = mod.fit(last_obs=tau//2)
+
+oos = res.forecast()
+onestep_variance = oos.variance.dropna()["h.1"]
+print(onestep_variance.head())
+```
+
+which produces
+
+```
+Date
+2009-01-02    7.752248
+2009-01-05    7.178808
+2009-01-06    6.672307
+2009-01-07    6.830862
+2009-01-08    6.317631
+Name: h.1, dtype: float64
+```
