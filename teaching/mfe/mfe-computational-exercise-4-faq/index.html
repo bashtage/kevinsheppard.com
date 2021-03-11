@@ -10,9 +10,8 @@
 
     gtag('config', 'UA-2701681-1');
 </script>
-<meta content="Teaching resources for MFE Financial Econometrics II Week 8" name="description"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>Financial Econometrics II: Week 8 | Kevin Sheppard</title>
+<title>MFE Computational Assignment 4 FAQ | Kevin Sheppard</title>
 <link href="https://fonts.googleapis.com/css?family=Roboto+Mono%7CRoboto:300,400,500,700&amp;display=fallback" rel="stylesheet"/>
 <link href="../../../assets/css/bootstrap-material-design.css" rel="stylesheet" type="text/css"/>
 <link href="../../../assets/css/baguetteBox.min.css" rel="stylesheet" type="text/css"/>
@@ -25,7 +24,7 @@
 <link href="../../../assets/css/tipuesearch.css" rel="stylesheet" type="text/css"/>
 <link href="../../../assets/css/kevinsheppard.css" rel="stylesheet" type="text/css"/>
 <link href="../../../rss.xml" rel="alternate" title="RSS" type="application/rss+xml"/>
-<link href="https://www.kevinsheppard.com/teaching/mfe/hilary-term-8/" rel="canonical"/>
+<link href="https://www.kevinsheppard.com/teaching/mfe/mfe-computational-exercise-4-faq/" rel="canonical"/>
 <link href="../../../apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
 <link href="../../../favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
 <link href="../../../favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
@@ -55,13 +54,11 @@ MathJax.Hub.Config({
 </style>
 <meta content="Kevin Sheppard" name="author"/>
 <meta content="Kevin Sheppard" property="og:site_name"/>
-<meta content="Financial Econometrics II: Week 8" property="og:title"/>
-<meta content="https://www.kevinsheppard.com/teaching/mfe/hilary-term-8/" property="og:url"/>
-<meta content="Teaching resources for MFE Financial Econometrics II Week 8" property="og:description"/>
+<meta content="MFE Computational Assignment 4 FAQ" property="og:title"/>
+<meta content="https://www.kevinsheppard.com/teaching/mfe/mfe-computational-exercise-4-faq/" property="og:url"/>
+<meta content="Using AutoReg to generate out-of-sample predictions¶ AutoReg can be used twice to produce out-of-sample predictions. The first uses the data that is used to estimate parameters. The second uses all of" property="og:description"/>
 <meta content="article" property="og:type"/>
-<meta content="2020-11-27T17:51:05Z" property="article:published_time"/>
-<meta content="mfe" property="article:tag"/>
-<meta content="teaching" property="article:tag"/>
+<meta content="2021-03-11T09:01:25Z" property="article:published_time"/>
 </head>
 <body>
 <a class="sr-only sr-only-focusable" href="#content">Skip to main content</a> <!-- Menubar -->
@@ -98,17 +95,8 @@ MathJax.Hub.Config({
 </div>
 </nav>
 <main class="flex-fill" id="content">
-<div class="jumbotron" style="background-color: #002147;">
-<div class="container text-light">
-<div class="row">
-<div class="col-sm-1"></div>
-<div class="col-sm-10">
-<h1 class="display-3">MFE Financial Econometrics II: Week 8</h1>
-<p>Teaching material from Week 8.</p>
-</div>
-<div class="col-sm-1"></div>
-</div>
-</div>
+<div class="container">
+<div class="row pt-4"></div>
 </div>
 <div class="container">
 <div class="row">
@@ -116,52 +104,35 @@ MathJax.Hub.Config({
 <div class="col-xl-10">
 <article class="post-text storypage" itemscope="itemscope" itemtype="http://schema.org/Article">
 <header>
-<h1 class="p-name entry-title" itemprop="headline name"><a class="u-url" href=".">Financial Econometrics II: Week 8</a></h1>
+<h1 class="p-name entry-title" itemprop="headline name"><a class="u-url" href=".">MFE Computational Assignment 4 FAQ</a></h1>
 </header>
 <div class="e-content entry-content" itemprop="articleBody text">
 <div>
-<h4 id="slides">Slides<a class="headerlink" href="#slides" title="Permanent link">¶</a></h4>
-<h5 id="new">New<a class="headerlink" href="#new" title="Permanent link">¶</a></h5>
-<p><a href="../../../files/teaching/mfe/slides/var-slides-2020-21-in-person-week-8.pdf">In-person Slides (pdf)</a><br/>
-<a href="../../../files/teaching/mfe/slides/var-slides-2020-21-in-person-week-8.html">In-person Slides (web)</a><br/>
-<a href="../../../files/teaching/mfe/slides/var-slides-2020-21-in-person-week-8.ipynb">In-person Slides (Jupyter Notebook)</a></p>
-<h5 id="same-as-previous-week">Same as Previous Week<a class="headerlink" href="#same-as-previous-week" title="Permanent link">¶</a></h5>
-<p><a href="../../../files/teaching/mfe/slides/var-slides-2020-2021.pdf">Value-at-Risk, Expected Shortfall and Density Forecasting</a><br/>
-<a href="../../../files/teaching/mfe/slides/var-slides-2020-2021-print.pdf">Value-at-Risk, Expected Shortfall and Density Forecasting (Print Optimized)</a><br/></p>
-<h5 id="data-files">Data Files<a class="headerlink" href="#data-files" title="Permanent link">¶</a></h5>
-<p><a href="../../../files/teaching/mfe/data/univariate-volatility-data.h5">Value-at-Risk Data (pandas HDF)</a> used in the IPython notebook-based slides. <em>Note</em>: This is the same data that was used in the univariate volatility slides.</p>
-<h4 id="weekly-assignment">Weekly Assignment<a class="headerlink" href="#weekly-assignment" title="Permanent link">¶</a></h4>
-<p><a href="../../../files/teaching/mfe/homework/ht-week-8-assignment.pdf">Week 8 Assignment</a> <a href="../../../files/teaching/mfe/homework/trinity-term-2020-exam.pdf">Trinity Term 2020 Exam</a></p>
-<h4 id="formal-assignment-1">Formal Assignment 1<a class="headerlink" href="#formal-assignment-1" title="Permanent link">¶</a></h4>
-<p><a href="../mfe-computational-exercise-4-faq">FAQ</a></p>
-<p><strong>Due Friday 9th Week Hilary</strong></p>
-<p><a href="../../../files/teaching/mfe/assignments/mfe-fe-computational-exercise-4-2020-2021.pdf">Computational Assignment IV</a><br/>
-<a href="../../../files/teaching/mfe/assignments/demo-autograder-fw1.ipynb">Demo Autograder (Jupyter Notebook)</a><br/>
-<a href="../../../files/teaching/mfe/assignments/demo-autograder-fw1.py">Demo Autograder (Python)</a><br/>
-<a href="../../../files/teaching/mfe/assignments/solutions-fw1.py">Solutions Template</a><br/>
-<a href="../../../files/teaching/mfe/assignments/mfe-formal-work-1-2020-2021.csv.gz">Data for Assignment</a></p>
-<h5 id="solutions">Solutions<a class="headerlink" href="#solutions" title="Permanent link">¶</a></h5>
-<p>See the <a href="../hilary-term-5">Week 5</a> page for solutions for the Week 3 problem.</p>
-<h4 id="practice-quiz">Practice Quiz<a class="headerlink" href="#practice-quiz" title="Permanent link">¶</a></h4>
-<p><em>Oxford MFE Students only (Canvas)</em></p>
-<p><a href="https://canvas.sbs.ox.ac.uk/courses/1914/quizzes/2095">Week 5 Quiz</a></p>
-<h4 id="pre-lecture-content">Pre-lecture content<a class="headerlink" href="#pre-lecture-content" title="Permanent link">¶</a></h4>
-<h5 id="reading">Reading<a class="headerlink" href="#reading" title="Permanent link">¶</a></h5>
-<p><em>The readings listed correspond to the pre-recorded content. You should either watch the pre-recorded content or read the notes prior to the Week 8 lecture.</em></p>
-<p>Sections 8.6--8.8 <a href="../../../files/teaching/mfe/notes/financial-econometrics-2020-2021-chapter-8.pdf">Value-at-Risk Notes</a></p>
-<h5 id="presentation">Presentation<a class="headerlink" href="#presentation" title="Permanent link">¶</a></h5>
-<p><em>Oxford MFE Students only (<a href="https://canvas.sbs.ox.ac.uk/courses/1914/external_tools/185">Canvas</a>)</em></p>
-<ol>
-<li><a href="https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=dc256cc8-3cf6-4dc7-b44a-ace1012ec53e">Density Forecasting and Evaluation</a></li>
-<li><a href="https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=5e98996f-cc2e-441e-bf2d-ace1012ecce9">Kernel Densities</a></li>
-<li><a href="https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=8402c1f3-3cb2-4543-b71b-ace101359e93">Multi-step Density Forecasting</a></li>
-<li><a href="https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=8b02258b-578e-48a0-a828-ace10135fbc1">The Probability Integral Transform</a></li>
-<li><a href="https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=233ab5fb-2107-4021-a5e6-ace1013adc8b">Density Forecast Evaluation using QQ Plots</a></li>
-<li><a href="https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=51e41174-bfc9-4a6d-91fb-ace200b39cf5">Density Forecast Evaluation - Formal Tests</a></li>
-<li><a href="https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=6d7e7b22-debb-4070-b8be-ace200b3a3a2">Expected Shortfall</a></li>
-<li><a href="https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=65330f6b-375a-4ab2-9233-ace200b3aa77">Coherent Risk Measures</a></li>
-</ol>
-</div>
+<h4 id="using-autoreg-to-generate-out-of-sample-predictions">Using <code>AutoReg</code> to generate out-of-sample predictions<a class="headerlink" href="#using-autoreg-to-generate-out-of-sample-predictions" title="Permanent link">¶</a></h4>
+<p><code>AutoReg</code> can be used twice to produce out-of-sample predictions. The first uses the data that is used to estimate parameters. The second uses all of the data and then calls <code>predict</code> using the parameters estimated on the in-sample data.</p>
+<pre class="code literal-block"><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">statsmodels.tsa.api</span> <span class="kn">import</span> <span class="n">AutoReg</span>
+
+<span class="c1"># Simulate some data</span>
+<span class="n">tau</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">standard_normal</span><span class="p">(</span><span class="n">tau</span><span class="p">)</span>
+
+<span class="c1"># Fit using first half, tau//2</span>
+<span class="n">mod</span> <span class="o">=</span> <span class="n">AutoReg</span><span class="p">(</span><span class="n">y</span><span class="p">[:</span><span class="n">tau</span><span class="o">//</span><span class="mi">2</span><span class="p">],</span> <span class="n">lags</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">trend</span><span class="o">=</span><span class="s2">"c"</span><span class="p">,</span> <span class="n">old_names</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">mod</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+
+<span class="c1"># Full-sample model</span>
+<span class="n">oos_mod</span> <span class="o">=</span> <span class="n">AutoReg</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">lags</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">trend</span><span class="o">=</span><span class="s2">"c"</span><span class="p">,</span> <span class="n">old_names</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="c1"># One-step predictions</span>
+<span class="n">oos_1step</span> <span class="o">=</span> <span class="n">oos_mod</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">params</span><span class="p">)</span>
+<span class="c1"># OOS Random Walk predictions</span>
+<span class="n">oos_rw</span> <span class="o">=</span> <span class="n">oos_mod</span><span class="o">.</span><span class="n">predict</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+
+<span class="c1"># Get second half of both</span>
+<span class="c1"># Use -tau//2: to get second half</span>
+<span class="n">oos_1step</span> <span class="o">=</span> <span class="n">oos_1step</span><span class="p">[</span><span class="o">-</span><span class="n">tau</span><span class="o">//</span><span class="mi">2</span><span class="p">:]</span>
+<span class="n">oos_rw</span> <span class="o">=</span> <span class="n">oos_rw</span><span class="p">[</span><span class="o">-</span><span class="n">tau</span><span class="o">//</span><span class="mi">2</span><span class="p">:]</span>
+</code></pre></div>
 </div>
 </article>
 </div>

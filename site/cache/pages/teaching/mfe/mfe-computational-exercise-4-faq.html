@@ -1,0 +1,28 @@
+<h3 id="using-autoreg-to-generate-out-of-sample-predictions">Using <code>AutoReg</code> to generate out-of-sample predictions<a class="headerlink" href="#using-autoreg-to-generate-out-of-sample-predictions" title="Permanent link">&para;</a></h3>
+<p><code>AutoReg</code> can be used twice to produce out-of-sample predictions. The first
+uses the data that is used to estimate parameters. The second uses all of the
+data and then calls <code>predict</code> using the parameters estimated on the in-sample
+data.</p>
+<pre class="code literal-block"><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">statsmodels.tsa.api</span> <span class="kn">import</span> <span class="n">AutoReg</span>
+
+<span class="c1"># Simulate some data</span>
+<span class="n">tau</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">standard_normal</span><span class="p">(</span><span class="n">tau</span><span class="p">)</span>
+
+<span class="c1"># Fit using first half, tau//2</span>
+<span class="n">mod</span> <span class="o">=</span> <span class="n">AutoReg</span><span class="p">(</span><span class="n">y</span><span class="p">[:</span><span class="n">tau</span><span class="o">//</span><span class="mi">2</span><span class="p">],</span> <span class="n">lags</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">trend</span><span class="o">=</span><span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="n">old_names</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">mod</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+
+<span class="c1"># Full-sample model</span>
+<span class="n">oos_mod</span> <span class="o">=</span> <span class="n">AutoReg</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">lags</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">trend</span><span class="o">=</span><span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="n">old_names</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="c1"># One-step predictions</span>
+<span class="n">oos_1step</span> <span class="o">=</span> <span class="n">oos_mod</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">params</span><span class="p">)</span>
+<span class="c1"># OOS Random Walk predictions</span>
+<span class="n">oos_rw</span> <span class="o">=</span> <span class="n">oos_mod</span><span class="o">.</span><span class="n">predict</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+
+<span class="c1"># Get second half of both</span>
+<span class="c1"># Use -tau//2: to get second half</span>
+<span class="n">oos_1step</span> <span class="o">=</span> <span class="n">oos_1step</span><span class="p">[</span><span class="o">-</span><span class="n">tau</span><span class="o">//</span><span class="mi">2</span><span class="p">:]</span>
+<span class="n">oos_rw</span> <span class="o">=</span> <span class="n">oos_rw</span><span class="p">[</span><span class="o">-</span><span class="n">tau</span><span class="o">//</span><span class="mi">2</span><span class="p">:]</span>
+</code></pre>
