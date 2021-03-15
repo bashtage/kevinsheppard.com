@@ -17,7 +17,7 @@ The mfe package is one I use to prepare the slides.  It is not polished, but I a
 share it so that you can install it on your computer.  This is not a requirement, but is necessary
 if you want to run the notebook code I have shared.
 
-1. Download the [MFE package](files/teaching/mfe/mfe-1.0.tar.gz) to your computer and made note of the download location.
+1. Download the [MFE package](/files/teaching/mfe/mfe-1.0.tar.gz) to your computer and made note of the download location.
 2. Install the package using `pip`.  You can do this inside IPython or Jupyter by entering the command
 
 ```
