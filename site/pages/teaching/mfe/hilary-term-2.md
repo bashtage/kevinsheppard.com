@@ -37,6 +37,10 @@ _New this week_ <br/>
 [Demo Autograder (Python)](/files/teaching/mfe/assignments/demo-autograder-pw3.py) <br />
 [Solutions Template](/files/teaching/mfe/assignments/solutions-pw3.py)
 
+#### Executing code in jupyter slides
+See [the instructions for installing](../running-notebooks) the mfe package to install some 
+function used in the slides.
+
 ## Weekly Assignment
 
 [Week 2 Assignment](/files/teaching/mfe/homework/ht-week-2-assignment.pdf)

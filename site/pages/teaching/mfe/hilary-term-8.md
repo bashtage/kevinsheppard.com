@@ -27,6 +27,10 @@
 ### Data Files
 [Value-at-Risk Data (pandas HDF)](/files/teaching/mfe/data/univariate-volatility-data.h5) used in the IPython notebook-based slides. _Note_: This is the same data that was used in the univariate volatility slides.
 
+#### Executing code in jupyter slides
+See [the instructions for installing](../running-notebooks) the mfe package to install some 
+function used in the slides.
+
 
 ## Weekly Assignment
 

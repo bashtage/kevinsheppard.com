@@ -25,6 +25,10 @@
 
 [Univariate Volatility Data (pandas HDF)](/files/teaching/mfe/data/univariate-volatility-data.h5) used in the IPython notebook-based slides.
 
+#### Executing code in jupyter slides
+See [the instructions for installing](../running-notebooks) the mfe package to install some 
+function used in the slides.
+
 ## Practical Assignment 4
 
 **Due Friday 5th Week Hilary**
