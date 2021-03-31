@@ -47,7 +47,7 @@ function used in the slides.
 
 ### Solutions ###
 
-See the [Week 3](../hilary-term-3) page for solutions for the Week 3 problem.
+[Week 5 Assignment Solution](/files/teaching/mfe/homework/ht-week-5-assignment-answers.pdf)
 
 ## Practice Quiz
 

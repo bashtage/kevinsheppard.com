@@ -35,6 +35,11 @@ function used in the slides.
 
 [Week 7 Assignment](/files/teaching/mfe/homework/ht-week-7-assignment.pdf)
 
+### Solutions ###
+
+[Week 7 Assignment Solution](/files/teaching/mfe/homework/ht-week-7-assignment-answers.pdf)
+
+
 ## Formal Assignment 1
 
 **Due Friday 9th Week Hilary**
