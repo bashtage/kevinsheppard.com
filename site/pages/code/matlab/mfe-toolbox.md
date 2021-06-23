@@ -5,7 +5,7 @@
 .. tags: 
 .. category: 
 .. link: 
-.. description: 
+.. description: Download the MFE tool box for MATLAB which contains many common estimators used in financial econometrics
 .. type: text
 -->
 

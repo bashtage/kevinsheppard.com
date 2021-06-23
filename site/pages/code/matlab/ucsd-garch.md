@@ -5,7 +5,7 @@
 .. tags: 
 .. category: 
 .. link: 
-.. description: 
+.. description: An archived page showing the precursor to the MFE toolbox for MATLAB and the ARCH package for Python
 .. type: text
 -->
 

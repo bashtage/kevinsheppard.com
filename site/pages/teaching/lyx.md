@@ -5,7 +5,7 @@
 .. tags: lyx
 .. category: teaching 
 .. link: 
-.. description: 
+.. description:
 .. type: text
 .. masthead: /images/mastheads/lyx-masthead.svg
 .. masthead_height: 15

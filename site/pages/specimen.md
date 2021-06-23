@@ -6,7 +6,7 @@
 .. tags: 
 .. category: 
 .. link: 
-.. description: 
+.. description: See the things you can do using Markdown in the Nikola static site generator.
 .. type: text
 .. jumbotron: Example of Markup
 .. jumbotron_text: This page shows how markdown is translated into html code and how the html is styles using the default theme.
