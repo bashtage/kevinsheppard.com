@@ -1,0 +1,449 @@
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Estimating-the-Risk-Premia-using-Fama-MacBeth-Regressions">Estimating the Risk Premia using Fama-MacBeth Regressions<a class="anchor-link" href="#Estimating-the-Risk-Premia-using-Fama-MacBeth-Regressions">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This example highlights how to implement a Fama-MacBeth 2-stage regression to estimate factor risk premia, make inference on the risk premia, and test whether a linear factor model can explain a cross-section of portfolio returns. This example closely follows [Cochrane::2001] (See also [JagannathanSkoulakisWang::2010]). As in the previous example, the first segment contains the imports.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">mat</span><span class="p">,</span> <span class="n">cov</span><span class="p">,</span> <span class="n">mean</span><span class="p">,</span> <span class="n">hstack</span><span class="p">,</span> <span class="n">multiply</span><span class="p">,</span><span class="n">sqrt</span><span class="p">,</span><span class="n">diag</span><span class="p">,</span> \
+    <span class="n">squeeze</span><span class="p">,</span> <span class="n">ones</span><span class="p">,</span> <span class="n">array</span><span class="p">,</span> <span class="n">vstack</span><span class="p">,</span> <span class="n">kron</span><span class="p">,</span> <span class="n">zeros</span><span class="p">,</span> <span class="n">eye</span><span class="p">,</span> <span class="n">savez_compressed</span>
+<span class="kn">from</span> <span class="nn">numpy.linalg</span> <span class="kn">import</span> <span class="n">inv</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">chi2</span>
+<span class="kn">from</span> <span class="nn">pandas</span> <span class="kn">import</span> <span class="n">read_csv</span>
+<span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Next, the data are imported. I formatted the data downloaded from Ken French's website into an easy-to-import CSV which can be read by <code>pandas.read_csv</code>. The data is split using named columns for the small sets of variables and <code>ix</code> for the portfolios. The code uses pure NumPy arrays, and so <code>values</code> is used to retrieve the array from the DataFrame. The dimensions are determined using <code>shape</code>. Finally the risk free rate is forced to have 2 dimensions so that it will be broadcastable with the portfolio returns in the construction of the excess returns to the Size and Value-weighted portfolios. <code>asmatrix</code> is used to return matrix views of all of the arrays. This code is linear algebra-heavy and so matrices are easier to use than arrays.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;FamaFrench.csv&#39;</span><span class="p">)</span>
+
+<span class="c1"># Split using both named colums and ix for larger blocks</span>
+<span class="n">dates</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">factors</span> <span class="o">=</span> <span class="n">data</span><span class="p">[[</span><span class="s1">&#39;VWMe&#39;</span><span class="p">,</span> <span class="s1">&#39;SMB&#39;</span><span class="p">,</span> <span class="s1">&#39;HML&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">riskfree</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;RF&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">portfolios</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">5</span><span class="p">:]</span><span class="o">.</span><span class="n">values</span>
+
+<span class="c1"># Use mat for easier linear algebra</span>
+<span class="n">factors</span> <span class="o">=</span> <span class="n">mat</span><span class="p">(</span><span class="n">factors</span><span class="p">)</span>
+<span class="n">riskfree</span> <span class="o">=</span> <span class="n">mat</span><span class="p">(</span><span class="n">riskfree</span><span class="p">)</span>
+<span class="n">portfolios</span> <span class="o">=</span> <span class="n">mat</span><span class="p">(</span><span class="n">portfolios</span><span class="p">)</span>
+
+<span class="c1"># Shape information</span>
+<span class="n">T</span><span class="p">,</span><span class="n">K</span> <span class="o">=</span> <span class="n">factors</span><span class="o">.</span><span class="n">shape</span>
+<span class="n">T</span><span class="p">,</span><span class="n">N</span> <span class="o">=</span> <span class="n">portfolios</span><span class="o">.</span><span class="n">shape</span>
+<span class="c1"># Reshape rf and compute excess returns</span>
+<span class="n">riskfree</span><span class="o">.</span><span class="n">shape</span> <span class="o">=</span> <span class="n">T</span><span class="p">,</span><span class="mi">1</span>
+<span class="n">excessReturns</span> <span class="o">=</span> <span class="n">portfolios</span> <span class="o">-</span> <span class="n">riskfree</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The next block does 2 things:</p>
+<ol>
+<li>Compute the time-series $\beta$s. This is done be regressing the full array of excess returns on the factors (augmented with a constant) using lstsq.</li>
+<li>Compute the risk premia using a cross-sectional regression of average excess returns on the estimates $\beta$s. This is a standard regression where the step 1 $\beta$ estimates are used as regressors, and the dependent variable is the average excess return.</li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Time series regressions</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">add_constant</span><span class="p">(</span><span class="n">factors</span><span class="p">)</span>
+<span class="n">ts_res</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">excessReturns</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="n">alpha</span> <span class="o">=</span> <span class="n">ts_res</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">beta</span> <span class="o">=</span> <span class="n">ts_res</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+<span class="n">avgExcessReturns</span> <span class="o">=</span> <span class="n">mean</span><span class="p">(</span><span class="n">excessReturns</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="c1"># Cross-section regression</span>
+<span class="n">cs_res</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">avgExcessReturns</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">beta</span><span class="o">.</span><span class="n">T</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="n">riskPremia</span> <span class="o">=</span> <span class="n">cs_res</span><span class="o">.</span><span class="n">params</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The asymptotic variance requires computing the covariance of the demeaned returns and the weighted pricing errors. The problem is formulated using 2-step GMM where the moment conditions are 
+\begin{equation}
+g_{t}\left(\theta\right)=\left[\begin{array}{c}
+\epsilon_{1t}\\
+\epsilon_{1t}f_{t}\\
+\epsilon_{2t}\\
+\epsilon_{2t}f_{t}\\
+\vdots\\
+\epsilon_{Nt}\\
+\epsilon_{Nt}f_{t}\\
+\beta u_{t}
+\end{array}\right]
+\end{equation}</p>
+<p>where $\epsilon_{it}=r_{it}^{e}-\alpha_{i}-\beta_{i}^{\prime}f_{t}$, $\beta_{i}$ is a $K$ by 1 vector of factor loadings, $f_{t}$ is a $K$ by 1 set of factors, $\beta=\left[\beta_{1}\,\beta_{2}\ldots\beta_{N}\right]$ is a $K$ by $N$ matrix of all factor loadings, $u_{t}=r_{t}^{e}-\beta'\lambda$ are the $N$ by 1 vector of pricing errors and $\lambda$ is a $K$  by 1 vector of risk premia. 
+The vector of parameters is then $\theta= \left[\alpha_{1}\:\beta_{1}^{\prime}\:\alpha_{2}\:\beta_{2}^{\prime}\:\ldots\:\alpha_{N}\,\beta_{N}^{\prime}\:\lambda'\right]'$
+ To make inference on this problem, the derivative of the moments with respect to the parameters, $\partial g_{t}\left(\theta\right)/\partial\theta^{\prime}$ is needed. With some work, the estimator of this matrix can be seen to be</p>
+\begin{equation}
+ G=E\left[\frac{\partial g_{t}\left(\theta\right)}{\partial\theta^{\prime}}\right]=\left[\begin{array}{cc}
+-I_{n}\otimes\Sigma_{X} &amp; 0\\
+G_{21} &amp; -\beta\beta^{\prime}
+\end{array}\right].
+\end{equation}<p>where $X_{t}=\left[1\: f_{t}^{\prime}\right]'$  and $\Sigma_{X}=E\left[X_{t}X_{t}^{\prime}\right]$. $G_{21}$ is a matrix with the structure</p>
+\begin{equation}
+G_{21}=\left[G_{21,1}\, G_{21,2}\,\ldots G_{21,N}\right]
+\end{equation}<p>where</p>
+\begin{equation}
+G_{21,i}=\left[\begin{array}{cc} 
+0_{K,1} &amp; \textrm{diag}\left(E\left[u_{i}\right]-\beta_{i}\odot\lambda\right)\end{array}\right]\end{equation}<p>and where $E\left[u_{i}\right]$ is the expected pricing error. In estimation, all expectations are replaced with their sample analogues.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Moment conditions</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">add_constant</span><span class="p">(</span><span class="n">factors</span><span class="p">)</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">vstack</span><span class="p">((</span><span class="n">alpha</span><span class="p">,</span> <span class="n">beta</span><span class="p">))</span>
+<span class="n">epsilon</span> <span class="o">=</span> <span class="n">excessReturns</span> <span class="o">-</span> <span class="n">X</span> <span class="o">@</span> <span class="n">p</span>
+<span class="n">moments1</span> <span class="o">=</span> <span class="n">kron</span><span class="p">(</span><span class="n">epsilon</span><span class="p">,</span> <span class="n">ones</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="n">K</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)))</span>
+<span class="n">moments1</span> <span class="o">=</span> <span class="n">multiply</span><span class="p">(</span><span class="n">moments1</span><span class="p">,</span> <span class="n">kron</span><span class="p">(</span><span class="n">ones</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="n">N</span><span class="p">)),</span> <span class="n">X</span><span class="p">))</span>
+<span class="n">u</span> <span class="o">=</span> <span class="n">excessReturns</span> <span class="o">-</span> <span class="n">riskPremia</span><span class="p">[</span><span class="kc">None</span><span class="p">,:]</span> <span class="o">@</span> <span class="n">beta</span>
+<span class="n">moments2</span> <span class="o">=</span> <span class="n">u</span> <span class="o">*</span> <span class="n">beta</span><span class="o">.</span><span class="n">T</span>
+<span class="c1"># Score covariance</span>
+<span class="n">S</span> <span class="o">=</span> <span class="n">mat</span><span class="p">(</span><span class="n">cov</span><span class="p">(</span><span class="n">hstack</span><span class="p">((</span><span class="n">moments1</span><span class="p">,</span> <span class="n">moments2</span><span class="p">))</span><span class="o">.</span><span class="n">T</span><span class="p">))</span>
+<span class="c1"># Jacobian</span>
+<span class="n">G</span> <span class="o">=</span> <span class="n">mat</span><span class="p">(</span><span class="n">zeros</span><span class="p">((</span><span class="n">N</span> <span class="o">*</span> <span class="n">K</span> <span class="o">+</span> <span class="n">N</span> <span class="o">+</span> <span class="n">K</span><span class="p">,</span> <span class="n">N</span> <span class="o">*</span> <span class="n">K</span> <span class="o">+</span> <span class="n">N</span> <span class="o">+</span> <span class="n">K</span><span class="p">)))</span>
+<span class="n">SigmaX</span> <span class="o">=</span> <span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">X</span><span class="p">)</span> <span class="o">/</span> <span class="n">T</span>
+<span class="n">G</span><span class="p">[:</span><span class="n">N</span> <span class="o">*</span> <span class="n">K</span> <span class="o">+</span> <span class="n">N</span><span class="p">,</span> <span class="p">:</span><span class="n">N</span> <span class="o">*</span> <span class="n">K</span> <span class="o">+</span> <span class="n">N</span><span class="p">]</span> <span class="o">=</span> <span class="n">kron</span><span class="p">(</span><span class="n">eye</span><span class="p">(</span><span class="n">N</span><span class="p">),</span> <span class="n">SigmaX</span><span class="p">)</span>
+<span class="n">G</span><span class="p">[</span><span class="n">N</span> <span class="o">*</span> <span class="n">K</span> <span class="o">+</span> <span class="n">N</span><span class="p">:,</span> <span class="n">N</span> <span class="o">*</span> <span class="n">K</span> <span class="o">+</span> <span class="n">N</span><span class="p">:]</span> <span class="o">=</span> <span class="o">-</span><span class="n">beta</span> <span class="o">@</span> <span class="n">beta</span><span class="o">.</span><span class="n">T</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+    <span class="n">temp</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">((</span><span class="n">K</span><span class="p">,</span> <span class="n">K</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+    <span class="n">values</span> <span class="o">=</span> <span class="n">mean</span><span class="p">(</span><span class="n">u</span><span class="p">[:,</span> <span class="n">i</span><span class="p">])</span> <span class="o">-</span> <span class="n">multiply</span><span class="p">(</span><span class="n">beta</span><span class="p">[:,</span> <span class="n">i</span><span class="p">],</span> <span class="n">riskPremia</span><span class="p">)</span>
+    <span class="n">temp</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">:]</span> <span class="o">=</span> <span class="n">diag</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
+    <span class="n">G</span><span class="p">[</span><span class="n">N</span> <span class="o">*</span> <span class="n">K</span> <span class="o">+</span> <span class="n">N</span><span class="p">:,</span> <span class="n">i</span> <span class="o">*</span> <span class="p">(</span><span class="n">K</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">K</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)]</span> <span class="o">=</span> <span class="n">temp</span>
+
+<span class="n">vcv</span> <span class="o">=</span> <span class="n">inv</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">T</span><span class="p">)</span> <span class="o">*</span> <span class="n">S</span> <span class="o">*</span> <span class="n">inv</span><span class="p">(</span><span class="n">G</span><span class="p">)</span> <span class="o">/</span> <span class="n">T</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The $J$-test examines whether the average pricing errors, $\hat{\alpha}$, are zero. The $J$ statistic has an asymptotic $\chi_{N}^{2}$  distribution, and the model is badly rejected.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">vcvAlpha</span> <span class="o">=</span> <span class="n">vcv</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">N</span> <span class="o">*</span> <span class="n">K</span> <span class="o">+</span> <span class="n">N</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="n">N</span> <span class="o">*</span> <span class="n">K</span> <span class="o">+</span> <span class="n">N</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span>
+<span class="n">J</span> <span class="o">=</span> <span class="n">alpha</span> <span class="o">@</span> <span class="n">inv</span><span class="p">(</span><span class="n">vcvAlpha</span><span class="p">)</span> <span class="o">@</span> <span class="n">alpha</span><span class="o">.</span><span class="n">T</span>
+<span class="n">J</span> <span class="o">=</span> <span class="n">J</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">Jpval</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">chi2</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="n">J</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The final block using formatted output to present all of the results in a readable manner.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">vcvRiskPremia</span> <span class="o">=</span> <span class="n">vcv</span><span class="p">[</span><span class="n">N</span> <span class="o">*</span> <span class="n">K</span> <span class="o">+</span> <span class="n">N</span><span class="p">:,</span> <span class="n">N</span> <span class="o">*</span> <span class="n">K</span> <span class="o">+</span> <span class="n">N</span><span class="p">:]</span>
+<span class="n">annualizedRP</span> <span class="o">=</span> <span class="mi">12</span> <span class="o">*</span> <span class="n">riskPremia</span>
+<span class="n">arp</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">squeeze</span><span class="p">(</span><span class="n">annualizedRP</span><span class="p">))</span>
+<span class="n">arpSE</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">12</span> <span class="o">*</span> <span class="n">diag</span><span class="p">(</span><span class="n">vcvRiskPremia</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;        Annualized Risk Premia&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;           Market       SMB        HML&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;--------------------------------------&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Premia     </span><span class="si">{0:0.4f}</span><span class="s1">    </span><span class="si">{1:0.4f}</span><span class="s1">     </span><span class="si">{2:0.4f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">arp</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">arp</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">arp</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Std. Err.  </span><span class="si">{0:0.4f}</span><span class="s1">    </span><span class="si">{1:0.4f}</span><span class="s1">     </span><span class="si">{2:0.4f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">arpSE</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">arpSE</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">arpSE</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;J-test:   </span><span class="si">{:0.4f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">J</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;P-value:   </span><span class="si">{:0.4f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">Jpval</span><span class="p">))</span>
+
+<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">betaSE</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="n">alpha</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="n">beta</span><span class="p">[:,</span> <span class="n">i</span><span class="p">]</span>
+        <span class="n">variances</span> <span class="o">=</span> <span class="n">diag</span><span class="p">(</span><span class="n">vcv</span><span class="p">[(</span><span class="n">K</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">i</span><span class="p">:(</span><span class="n">K</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="n">K</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">i</span><span class="p">:(</span><span class="n">K</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)])</span>
+        <span class="n">betaSE</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="n">variances</span><span class="p">))</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">variances</span><span class="p">)</span>
+        <span class="n">c</span> <span class="o">=</span> <span class="n">hstack</span><span class="p">((</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span>
+        <span class="n">t</span> <span class="o">=</span> <span class="n">c</span> <span class="o">/</span> <span class="n">s</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Size: </span><span class="si">{:}</span><span class="s1">, Value:</span><span class="si">{:}</span><span class="s1">   Alpha   Beta(VWM)   Beta(SMB)   Beta(HML)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Coefficients: </span><span class="si">{:&gt;10,.4f}</span><span class="s1">  </span><span class="si">{:&gt;10,.4f}</span><span class="s1">  </span><span class="si">{:&gt;10,.4f}</span><span class="s1">  </span><span class="si">{:&gt;10,.4f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">b</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Std Err.      </span><span class="si">{:&gt;10,.4f}</span><span class="s1">  </span><span class="si">{:&gt;10,.4f}</span><span class="s1">  </span><span class="si">{:&gt;10,.4f}</span><span class="s1">  </span><span class="si">{:&gt;10,.4f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">s</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">s</span><span class="p">[</span><span class="mi">3</span><span class="p">]))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;T-stat        </span><span class="si">{:&gt;10,.4f}</span><span class="s1">  </span><span class="si">{:&gt;10,.4f}</span><span class="s1">  </span><span class="si">{:&gt;10,.4f}</span><span class="s1">  </span><span class="si">{:&gt;10,.4f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">t</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">t</span><span class="p">[</span><span class="mi">3</span><span class="p">]))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>        Annualized Risk Premia
+           Market       SMB        HML
+--------------------------------------
+Premia     6.6642    2.8731     2.8080
+Std. Err.  0.5994    0.4010     0.4296
+
+
+
+J-test:   95.2879
+P-value:   0.0000
+Size: 1, Value:1   Alpha   Beta(VWM)   Beta(SMB)   Beta(HML)
+Coefficients:    -0.8354      1.3099      1.2892      0.3943
+Std Err.          0.1820      0.1269      0.1671      0.2748
+T-stat           -4.5904     10.3196      7.7127      1.4348
+
+Size: 1, Value:2   Alpha   Beta(VWM)   Beta(SMB)   Beta(HML)
+Coefficients:    -0.3911      1.0853      1.6100      0.3317
+Std Err.          0.1237      0.0637      0.1893      0.1444
+T-stat           -3.1616     17.0351      8.5061      2.2971
+
+Size: 1, Value:3   Alpha   Beta(VWM)   Beta(SMB)   Beta(HML)
+Coefficients:    -0.1219      1.0747      1.1812      0.4648
+Std Err.          0.0997      0.0419      0.0938      0.0723
+T-stat           -1.2225     25.6206     12.5952      6.4310
+
+Size: 1, Value:4   Alpha   Beta(VWM)   Beta(SMB)   Beta(HML)
+Coefficients:     0.0388      0.9630      1.2249      0.5854
+Std Err.          0.0692      0.0232      0.1003      0.0353
+T-stat            0.5614     41.5592     12.2108     16.5705
+
+Size: 1, Value:5   Alpha   Beta(VWM)   Beta(SMB)   Beta(HML)
+Coefficients:     0.0918      0.9850      1.3453      0.9052
+Std Err.          0.0676      0.0255      0.0818      0.0610
+T-stat            1.3580     38.5669     16.4489     14.8404
+
+Size: 2, Value:1   Alpha   Beta(VWM)   Beta(SMB)   Beta(HML)
+Coefficients:    -0.2397      1.0691      1.0520     -0.2647
+Std Err.          0.0725      0.0318      0.0609      0.0591
+T-stat           -3.3052     33.6540     17.2706     -4.4768
+
+Size: 2, Value:2   Alpha   Beta(VWM)   Beta(SMB)   Beta(HML)
+Coefficients:    -0.0194      1.0416      0.9880      0.1877
+Std Err.          0.0615      0.0170      0.0776      0.0350
+T-stat           -0.3162     61.1252     12.7393      5.3646
+
+Size: 2, Value:3   Alpha   Beta(VWM)   Beta(SMB)   Beta(HML)
+Coefficients:     0.0898      0.9590      0.8619      0.3553
+Std Err.          0.0517      0.0170      0.0733      0.0320
+T-stat            1.7359     56.4856     11.7528     11.0968
+
+Size: 2, Value:4   Alpha   Beta(VWM)   Beta(SMB)   Beta(HML)
+Coefficients:     0.0482      0.9788      0.8178      0.5562
+Std Err.          0.0495      0.0138      0.0454      0.0281
+T-stat            0.9733     70.7006     18.0210     19.8055
+
+Size: 2, Value:5   Alpha   Beta(VWM)   Beta(SMB)   Beta(HML)
+Coefficients:    -0.0109      1.0502      0.9373      0.8493
+Std Err.          0.0596      0.0182      0.0281      0.0263
+T-stat           -0.1830     57.7092     33.3971     32.2980
+
+Size: 3, Value:1   Alpha   Beta(VWM)   Beta(SMB)   Beta(HML)
+Coefficients:    -0.1556      1.1416      0.7883     -0.1980
+Std Err.          0.0591      0.0190      0.0445      0.0411
+T-stat           -2.6320     60.1173     17.6973     -4.8171
+
+Size: 3, Value:2   Alpha   Beta(VWM)   Beta(SMB)   Beta(HML)
+Coefficients:     0.0889      1.0133      0.5151      0.0720
+Std Err.          0.0553      0.0179      0.0340      0.0334
+T-stat            1.6068     56.6380     15.1651      2.1546
+
+Size: 3, Value:3   Alpha   Beta(VWM)   Beta(SMB)   Beta(HML)
+Coefficients:     0.1118      1.0129      0.4130      0.3379
+Std Err.          0.0578      0.0267      0.0324      0.0321
+T-stat            1.9344     37.9790     12.7488     10.5399
+
+Size: 3, Value:4   Alpha   Beta(VWM)   Beta(SMB)   Beta(HML)
+Coefficients:     0.0818      0.9615      0.4646      0.5068
+Std Err.          0.0568      0.0141      0.0475      0.0301
+T-stat            1.4399     68.3360      9.7754     16.8580
+
+Size: 3, Value:5   Alpha   Beta(VWM)   Beta(SMB)   Beta(HML)
+Coefficients:    -0.0526      1.1447      0.4970      0.9143
+Std Err.          0.0687      0.0197      0.0509      0.0390
+T-stat           -0.7655     58.0319      9.7690     23.4302
+
+Size: 4, Value:1   Alpha   Beta(VWM)   Beta(SMB)   Beta(HML)
+Coefficients:     0.0902      1.0661      0.2857     -0.3692
+Std Err.          0.0498      0.0151      0.0444      0.0323
+T-stat            1.8127     70.4710      6.4268    -11.4334
+
+Size: 4, Value:2   Alpha   Beta(VWM)   Beta(SMB)   Beta(HML)
+Coefficients:    -0.0104      1.0308      0.2430      0.1328
+Std Err.          0.0534      0.0217      0.0300      0.0294
+T-stat           -0.1952     47.5567      8.0926      4.5183
+
+Size: 4, Value:3   Alpha   Beta(VWM)   Beta(SMB)   Beta(HML)
+Coefficients:     0.0392      1.0096      0.2214      0.2980
+Std Err.          0.0572      0.0209      0.0436      0.0486
+T-stat            0.6862     48.3271      5.0836      6.1333
+
+Size: 4, Value:4   Alpha   Beta(VWM)   Beta(SMB)   Beta(HML)
+Coefficients:     0.0148      1.0437      0.2016      0.5857
+Std Err.          0.0593      0.0224      0.0343      0.0484
+T-stat            0.2497     46.5053      5.8694     12.0922
+
+Size: 4, Value:5   Alpha   Beta(VWM)   Beta(SMB)   Beta(HML)
+Coefficients:    -0.1762      1.2284      0.2974      0.9834
+Std Err.          0.0803      0.0224      0.0490      0.0378
+T-stat           -2.1927     54.8427      6.0726     26.0265
+
+Size: 5, Value:1   Alpha   Beta(VWM)   Beta(SMB)   Beta(HML)
+Coefficients:     0.0794      1.0310     -0.1507     -0.2508
+Std Err.          0.0372      0.0095      0.0247      0.0168
+T-stat            2.1369    108.0844     -6.1067    -14.9673
+
+Size: 5, Value:2   Alpha   Beta(VWM)   Beta(SMB)   Beta(HML)
+Coefficients:     0.0535      0.9576     -0.1893     -0.0107
+Std Err.          0.0457      0.0170      0.0243      0.0239
+T-stat            1.1690     56.3228     -7.7765     -0.4458
+
+Size: 5, Value:3   Alpha   Beta(VWM)   Beta(SMB)   Beta(HML)
+Coefficients:    -0.0236      0.9753     -0.2173      0.3127
+Std Err.          0.0559      0.0178      0.0309      0.0256
+T-stat           -0.4225     54.6936     -7.0217     12.2061
+
+Size: 5, Value:4   Alpha   Beta(VWM)   Beta(SMB)   Beta(HML)
+Coefficients:    -0.1978      1.0546     -0.1732      0.7115
+Std Err.          0.0587      0.0230      0.0300      0.0316
+T-stat           -3.3679     45.7933     -5.7749     22.5339
+
+Size: 5, Value:5   Alpha   Beta(VWM)   Beta(SMB)   Beta(HML)
+Coefficients:    -1.2737      1.1045      0.0076      0.8527
+Std Err.          0.3557      0.1143      0.1594      0.1490
+T-stat           -3.5805      9.6657      0.0477      5.7232
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The final block converts the standard errors of $\beta$ to be an array and saves the results.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">betaSE</span> <span class="o">=</span> <span class="n">array</span><span class="p">(</span><span class="n">betaSE</span><span class="p">)</span>
+<span class="n">savez_compressed</span><span class="p">(</span><span class="s1">&#39;fama-macbeth-results&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="n">alpha</span><span class="p">,</span> <span class="n">beta</span><span class="o">=</span><span class="n">beta</span><span class="p">,</span>
+                 <span class="n">betaSE</span><span class="o">=</span><span class="n">betaSE</span><span class="p">,</span> <span class="n">arpSE</span><span class="o">=</span><span class="n">arpSE</span><span class="p">,</span> <span class="n">arp</span><span class="o">=</span><span class="n">arp</span><span class="p">,</span> <span class="n">J</span><span class="o">=</span><span class="n">J</span><span class="p">,</span> <span class="n">Jpval</span><span class="o">=</span><span class="n">Jpval</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Save-Results">Save Results<a class="anchor-link" href="#Save-Results">&#182;</a></h2><p>Save the estimated values for use in the $\LaTeX$ notebook.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">savez</span>
+<span class="n">savez</span><span class="p">(</span><span class="s1">&#39;fama-macBeth-results.npz&#39;</span><span class="p">,</span> <span class="n">arp</span><span class="o">=</span><span class="n">arp</span><span class="p">,</span> <span class="n">beta</span><span class="o">=</span><span class="n">beta</span><span class="p">,</span> <span class="n">arpSE</span><span class="o">=</span><span class="n">arpSE</span><span class="p">,</span>
+      <span class="n">betaSE</span><span class="o">=</span><span class="n">betaSE</span><span class="p">,</span> <span class="n">J</span><span class="o">=</span><span class="n">J</span><span class="p">,</span> <span class="n">Jpval</span><span class="o">=</span><span class="n">Jpval</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+ 
+

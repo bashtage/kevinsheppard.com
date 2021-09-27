@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+<head>
+<meta charset="utf-8"/><!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-2701681-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-2701681-1');
+</script>
+<meta content="An archived page showing the precursor to the MFE toolbox for MATLAB and the ARCH package for Python" name="description"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>UCSD Garch | Kevin Sheppard</title>
+<link href="https://fonts.googleapis.com/css?family=Roboto+Mono%7CRoboto:300,400,500,700&amp;display=fallback" rel="stylesheet"/>
+<link href="../../../assets/css/bootstrap-material-design.css" rel="stylesheet" type="text/css"/>
+<link href="../../../assets/css/baguetteBox.min.css" rel="stylesheet" type="text/css"/>
+<link href="../../../assets/css/rst.css" rel="stylesheet" type="text/css"/>
+<link href="../../../assets/css/code.css" rel="stylesheet" type="text/css"/>
+<link href="../../../assets/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../../../assets/css/ipython.min.css" rel="stylesheet" type="text/css"/>
+<link href="../../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" rel="stylesheet" type="text/css"/>
+<link href="../../../assets/css/tipuesearch.css" rel="stylesheet" type="text/css"/>
+<link href="../../../assets/css/kevinsheppard.css" rel="stylesheet" type="text/css"/>
+<link href="../../../rss.xml" rel="alternate" title="RSS" type="application/rss+xml"/>
+<link href="https://www.kevinsheppard.com/code/matlab/ucsd-garch/" rel="canonical"/>
+<link href="../../../apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="../../../favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="../../../favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="../../../favicon.png" rel="icon"/>
+<link href="../../../site.webmanifest" rel="manifest"/>
+<link color="#07689f" href="../../../safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#07689F" name="msapplication-TileColor"/>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  jax: ["input/TeX","output/HTML-CSS"],
+  extensions: ["tex2jax.js","MathMenu.js","MathZoom.js"],
+  TeX: {
+    extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]
+  },
+  tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: false,
+  }
+});
+</script><!--[if lt IE 9]><script src="../../../assets/js/html5.js"></script><![endif]-->
+<meta content="#07689F" name="theme-color"/>
+<style>
+  html, body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #fafafa;
+  }
+</style>
+<meta content="Kevin Sheppard" name="author"/>
+<meta content="Kevin Sheppard" property="og:site_name"/>
+<meta content="UCSD Garch" property="og:title"/>
+<meta content="https://www.kevinsheppard.com/code/matlab/ucsd-garch/" property="og:url"/>
+<meta content="An archived page showing the precursor to the MFE toolbox for MATLAB and the ARCH package for Python" property="og:description"/>
+<meta content="article" property="og:type"/>
+<meta content="2019-09-12T15:04:43+01:00" property="article:published_time"/>
+</head>
+<body>
+<a class="sr-only sr-only-focusable" href="#content">Skip to main content</a> <!-- Menubar -->
+<div class="wrapper d-flex flex-column">
+<nav class="navbar navbar-expand-sm fixed-top-sm justify-content-start flex-nowrap py-2 pl-1 nav-color-override navbar-primary">
+<div class="container"><a class="navbar-brand ml-2 ml-sm-0 mr-auto" href="https://www.kevinsheppard.com/"><span id="blog-title">Kevin Sheppard</span></a> <button aria-controls="bs-navbar1 bs-navbar2" aria-expanded="false" aria-label="Toggle navigation" class="custom-toggler navbar-toggler order-first" data-target="#bs-navbar1, #bs-navbar2" data-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button>
+<div class="navbar-collapse collapse" id="bs-navbar1">
+<ul class="navbar-nav blog-nav ml-auto my-2 my-lg-0">
+<li class="nav-item"><a class="nav-link" href="../../../blog/">Blog</a></li>
+</ul>
+<form action="../../../search/" class="form-inline my-2 my-lg-0" role="search">
+<div class="input-group"><input aria-label="Search" autocomplete="off" class="form-control mr-sm-2 bg-light text-dark pl-2" id="tipue_search_input" name="q" placeholder="Search..." type="search"/><button aria-label="Submit search" class="btn btn-primary py-1" type="submit"><i class="fa fa-search"></i></button></div>
+</form>
+</div>
+</div>
+</nav>
+<nav class="navbar navbar-expand-sm nav-color-override navbar-primary pb-1">
+<div class="navbar-collapse collapse pt-2 pt-sm-0" id="bs-navbar2">
+<div class="container">
+<ul class="navbar-nav mr-auto">
+<li class="nav-item dropdown"><a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Research</a>
+<div class="dropdown-menu"><a class="dropdown-item" href="../../../research/cv/">CV</a> <a class="dropdown-item" href="../../../research/publications/">Publications</a> <a class="dropdown-item" href="../../../research/working-papers/">Working Papers</a></div>
+</li>
+<li class="nav-item dropdown"><a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Teaching</a>
+<div class="dropdown-menu"><a class="dropdown-item" href="../../../teaching/mfe/">MFE</a> <a class="dropdown-item" href="../../../teaching/python/">Python</a> <a class="dropdown-item" href="../../../teaching/matlab/">MATLAB</a> <a class="dropdown-item" href="../../../teaching/lyx/">LyX</a> <a class="dropdown-item" href="../../../teaching/other/">Other</a> <a class="dropdown-item" href="../../../teaching/scanning-recommendations/">Document Scanning</a></div>
+</li>
+<li class="nav-item dropdown"><a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Code</a>
+<div class="dropdown-menu"><a class="dropdown-item" href="../mfe-toolbox/">MFE Toolbox</a> <a class="dropdown-item" href="https://github.com/bashtage/arch/"><span><i class="fab fa-github"></i> arch</span></a> <a class="dropdown-item" href="https://github.com/bashtage/linearmodels"><span><i class="fab fa-github"></i> linearmodels</span></a> <a class="dropdown-item" href="https://github.com/bashtage/"><span><i class="fab fa-github"></i> GitHub<span></span></span></a></div>
+</li>
+<li class="nav-item"><a class="nav-link" href="../../../galleries/">Photos</a></li>
+<li class="nav-item"><a class="nav-link" href="../../../blog/">Blog</a></li>
+</ul>
+</div>
+</div>
+</nav>
+<main class="flex-fill" id="content">
+<div class="container">
+<div class="row pt-4"></div>
+</div>
+<div class="container">
+<div class="row">
+<div class="col-xl-1"></div>
+<div class="col-xl-10">
+<article class="post-text storypage" itemscope="itemscope" itemtype="http://schema.org/Article">
+<header>
+<h1 class="p-name entry-title" itemprop="headline name"><a class="u-url" href=".">UCSD Garch</a></h1>
+</header>
+<div class="e-content entry-content" itemprop="articleBody text">
+<div>
+<div class="admonition warning">
+<p class="admonition-title">DEPRECATED</p>
+<p><strong>The UCSD GARCH has been deprecated and will receive no further updates. Recent changes in MATLAB have broken many of the functions in the UCSD GARCH toolbox. Please use the <a href="../mfe-toolbox/">MFE Toolbox</a> which is the successor to the UCSD GARCH toolbox.</strong></p>
+</div>
+<h3 id="legacy-ucsd-toolbox">Legacy UCSD Toolbox<a class="headerlink" href="#legacy-ucsd-toolbox" title="Permanent link">¶</a></h3>
+<div class="toc">
+<ul>
+<li><a href="#legacy-ucsd-toolbox">Legacy UCSD Toolbox</a>
+<ul>
+<li><a href="#help-and-documentation">Help and Documentation</a></li>
+</ul>
+</li>
+<li><a href="#license">License</a></li>
+</ul>
+</div>
+<p>Before reporting bugs, please be sure you have the latest version, have downloaded the <a href="http://www.spatial-econometrics.com/">JPL toolbox</a>, and ARE NOT using the ucsd_garch code from the JPL toolbox (and don't have that directory on your path)</p>
+<p>The UCSD_Garch toolbox is a toolbox for Matlab that is useful in estimating and diagnosing univariate and multivariate heteroskedasticity in a Time Series models. The toolbox contains C-Mex files for the necessary loops in the univariate models. It is being released under a BSD style [license]. This means you can do pretty much what ever you want to including make money by selling it.</p>
+<p><a href="../../../files/code/matlab/ucsd_garch.zip">Download</a></p>
+<h5 id="updates">Updates<a class="headerlink" href="#updates" title="Permanent link">¶</a></h5>
+<p>2.0.14: Thanks for Mark Flood who pointed out an old bug in fattailed garch. Even more reason to <strong>move to the <a href="../mfe-toolbox/">MFE Toolbox</a> if possible</strong>.</p>
+<p>2.0.13: Thanks for Mark Flood who pointed out an initialization bug in full_bekk_simulate.</p>
+<p>2.0.12: Thanks to Dennis Turk who pointed out a bug in garchcore.m.</p>
+<p>2.0.11: I have updated the mex files to work with more modern versions of MATLAB and removed the 5.3 binaries. I also replaced the missing tarchcore.m so that all functions in the toolbox run with or without using the binary files.</p>
+<p>2.0.10: New versions of bsds, bsds_studentized, block_bootstrap and stationary_bootstrap that use the latest version of Hansen's SPA paper</p>
+<p>2.0.9.: Quite a few bug/inconsistencies squashed thanks to Paul Koufalas and Lance Young</p>
+<p>2.0.8: 2 bugs in dcc_mvgarch and one in egarch squashed</p>
+<p>2.0.7: A few more bugs squashed thanks to Hansen Chen</p>
+<p>2.0.6: Fixed a couple of typos in the skewt garch functions</p>
+<p>2.0.5: Fixed a bug in vech()</p>
+<p>2.0.4: There is a Matlab limitation on filename length of 31 characters on some versions. dagonal_bekk_mvgarch_likelihood was 1 character too long. It has been renamed diagonalBekkMVgarchLikelihood.</p>
+<p>2.0.4: A bug was found in GARCHINMEAN. It is now fixed.</p>
+<p>2.0.3: A huge bug was found in EGARCH. The original file was using variances, not std devs. This is now fixed. Not&gt; I am unable to build the 5.3 binary as I am out of the country. For now, egarchcore.dll is only available for 6 and above.</p>
+<p>Note: A few last minute bugs have been caught and the toolbox has been fixed(Again!). Please fell free to contact ma about any errors you get at <a href="mailto:kevin.sheppard@economics.ox.ac.uk">kevin.sheppard@economics.ox.ac.uk</a>.</p>
+<h4 id="help-and-documentation">Help and Documentation<a class="headerlink" href="#help-and-documentation" title="Permanent link">¶</a></h4>
+<p><strong>UCSD_GARCH Toolbox, Version 2.0.10 21-APR-2007</strong></p>
+<ul>
+<li><code>ucsd_garch_demo</code> - A demo of the garch toolbox</li>
+</ul>
+<h6 id="main-univariate-mean-functions">Main Univariate Mean Functions<a class="headerlink" href="#main-univariate-mean-functions" title="Permanent link">¶</a></h6>
+<ul>
+<li><code>armaxfilter</code> - Univariate ARMAX estimation</li>
+<li><code>mafilter</code> - Univariate MA estimation</li>
+<li><code>garchinmean</code> - Univariate Garch-In-Mean estimation</li>
+</ul>
+<h6 id="main-univariate-garch-functions">Main Univariate GARCH Functions<a class="headerlink" href="#main-univariate-garch-functions" title="Permanent link">¶</a></h6>
+<ul>
+<li><code>garchpq_eviews</code> - Univariare GARCH estimation without lower bound constraints; uses a penalty funcion(similar to eviews)</li>
+<li><code>skewt_garch</code> - Univariat GARCH estimation with skew-t residuals(Hansen)</li>
+<li><code>tarch</code> - Univariate TARCH and GJR estimation</li>
+<li><code>garchpq</code> - Univariate garch estimation with analytic derivatives</li>
+<li><code>fattailed_garch</code> - Univariate GARCH estimation with normal, Students T and Generalized Error Distribution</li>
+<li><code>multi_garch</code> - Univariate GARCH proceeedure to estimate a variety of GARCH specifications including AP GARCH</li>
+<li><code>egarch</code> - Exponential garch estimation with normal, Students T and Generalized Error Distribution</li>
+</ul>
+<h6 id="main-multivariate-functions">Main Multivariate Functions<a class="headerlink" href="#main-multivariate-functions" title="Permanent link">¶</a></h6>
+<ul>
+<li><code>cc_mvgarch</code> - Estimates Bollerslev's Constant Correlation MV Garch</li>
+<li><code>dcc_mvgarch</code> - Estimates Engle and Sheppard's Dynamic Correlation MV Garch</li>
+<li><code>o_mvgarch</code> - Estimates Orthogonal or Factor MV Garch</li>
+<li><code>scalar_bekk_mvgarch</code> - Estimates Engle and Kroner's Scalar Bekk MV Garch</li>
+<li><code>diagonal_bekk_mvgarch</code> - Estimates Engle and Kroner's Diagonal Bekk MV Garch</li>
+<li><code>full_bekk_mvgarch</code> - Estimates Engle and Kroner's Bekk MV Garch</li>
+<li><code>Idcc_mvgarch</code> - Estimates Engle and Sheppards Integrated DCC MV Garch</li>
+<li><code>scalar_bekk_T_mvgarch</code> - Estimates Scalar Bekk MV Garch with Multivariate T disturbances</li>
+<li><code>diagonal_bekk_T_mvgarch</code> - Estimates Diagonal Bekk MV Garch with Multivariate T disturbances</li>
+<li><code>full_bekk_T_mvgarch</code> - Estimates Full Bekk MV Garch with Multivariate T disturbances</li>
+</ul>
+<h6 id="univariate-mean-and-garch-simulation">Univariate Mean and GARCH Simulation<a class="headerlink" href="#univariate-mean-and-garch-simulation" title="Permanent link">¶</a></h6>
+<ul>
+<li><code>armaxsimulate</code> - Simulate an ARMAX model</li>
+<li><code>garchsimulate</code> - Sumilate Univariate GARCH series with normal innovations</li>
+<li><code>fattailed_garchsimulate</code> - Simulate Univariate GARCH series with Normal, Students T, or GED innovations</li>
+<li><code>garcheviewssimulate</code> - Simulate a GARCH process with (some)negative smoothing terms</li>
+<li><code>garchinmeansimulate</code> - Simulate a garch in mean model</li>
+<li><code>egarchsimulate</code> - Simulate an EGARCH model</li>
+<li><code>multigarchSimulate</code> - Simulate one of 8 different forms of GARCH</li>
+<li><code>dcc_univariate_simulate</code> - likelihood function called from dcc_univariate_simulate</li>
+</ul>
+<h6 id="multivaraite-garch-simulation">Multivaraite GARCH Simulation<a class="headerlink" href="#multivaraite-garch-simulation" title="Permanent link">¶</a></h6>
+<ul>
+<li><code>scalar_bekk_simulate</code> - Simulate a scalar BEKK</li>
+<li><code>diagonal_bekk_simulate</code> - Simulate a diagonal BEKK</li>
+<li><code>full_bekk_simulate</code> - Simulate a full BEKK model</li>
+<li><code>cc_mvgarch_simulate</code> - Simulates Bollerslev's Constant Correlation MV Garch</li>
+<li><code>dcc_simulate</code> - Simulates Engle and Sheppard's Dynamic Correlation MV Garch</li>
+</ul>
+<h6 id="univariate-mean-likelihood-functions">Univariate Mean Likelihood functions<a class="headerlink" href="#univariate-mean-likelihood-functions" title="Permanent link">¶</a></h6>
+<ul>
+<li><code>garchinmeanlikelihood</code> - Likelihood funtion for garch in mean estimation</li>
+<li><code>maxfilter_likelihood</code> - Likelihood function for MA estimation</li>
+<li><code>armaxfilter_likelihood.m</code> - likelihood function called from armaxfilter</li>
+</ul>
+<h6 id="univariate-garch-likelihood-functions">Univariate GARCH Likelihood Functions<a class="headerlink" href="#univariate-garch-likelihood-functions" title="Permanent link">¶</a></h6>
+<ul>
+<li><code>garcheviewslikelihood</code> - likelihood function called from garchpq_eviews</li>
+<li><code>skewt_garchlikelihood</code> - likelihood function called from skewt_garch</li>
+<li><code>skewtdis_LL</code> - Log likelihod of a skew T distribution(helper)</li>
+<li><code>garchlikelihood</code> - likelihood function called from garchpq</li>
+<li><code>fattailed_garchlikelihood</code> - likelihood function called from fattailed_garch</li>
+<li><code>multi_garchlikelihood</code> - likelihood function called from multi_garch</li>
+<li><code>egarchlikelihood</code> - likelihood function called from egarch</li>
+<li>`tarchlikelihood</li>
+</ul>
+<h6 id="multivariate-garch-likelihood-functions">Multivariate GARCH Likelihood Functions<a class="headerlink" href="#multivariate-garch-likelihood-functions" title="Permanent link">¶</a></h6>
+<ul>
+<li><code>cc_mvgarch_full_likelihood</code> - likelihood function called from cc_mvgarch_full_likelihood</li>
+<li><code>dcc_mvgarch_full_likelihood</code> - likelihood function called from dcc_mvgarch_full_likelihood(correct)</li>
+<li><code>dcc_mvgarch_likelihood</code> - likelihood function called from dcc_mvgarch_likelihood(restricted)</li>
+<li><code>diagonal_bekk_mvgarch_likelihood</code> - likelihood function called from diagonal_bekk_mvgarch_likelihood</li>
+<li><code>full_bekk_mvgarch_likelihood</code> - likelihood function called from full_bekk_mvgarch_likelihood</li>
+<li><code>scalar_bekk_mvgarch_likelihood</code> - likelihood function called from scalar_bekk_mvgarch_likelihood</li>
+<li><code>Idcc_mvgarch_full_likelihood</code> - likelihood function called from IDCC_mvgarch_likelihood(correct)</li>
+<li><code>Idcc_mvgarch_likelihood</code> - likelihood function called from IDCC_mvgarch_likelihood(used in estimation)</li>
+<li><code>scalar_bekk_T_est_likelihood</code> - likelihood function called from scalar_T_bekk_mvgarch_likelihood(used in estimation)</li>
+<li><code>diagonal_bekk_T_est_likelihood</code> - likelihood function called from diagonal_T_bekk_mvgarch_likelihood(used in estimation)</li>
+<li><code>full_bekk_T_est_likelihood</code> - likelihood function called from full_T_bekk_mvgarch_likelihood(used in estimation)</li>
+<li><code>scalar_bekk_T_likelihood</code> - likelihood function called from scalar_T_bekk_mvgarch_likelihood(correct)</li>
+<li><code>diagonal_bekk_T_likelihood</code> - likelihood function called from diagonal_T_bekk_mvgarch_likelihood(correct)</li>
+<li><code>full_bekk_T_likelihood</code> - likelihood function called from full_T_bekk_mvgarch_likelihood(correct)</li>
+</ul>
+<h6 id="diagnostics">Diagnostics<a class="headerlink" href="#diagnostics" title="Permanent link">¶</a></h6>
+<ul>
+<li><code>dcc_mvgarch_test</code> - Engle and Sheppards test for dynamic correlation</li>
+<li><code>lilliefors</code> - Lillifors test for normality</li>
+<li><code>ljq2</code> - Ljung-Box Q Test</li>
+<li><code>lmtest1</code> - Lagrange Multiplier Test for autocorrelation</li>
+<li><code>lmtest2</code> - Lagrange Multiplier Test for autocorrelation in the squarred residuals, an ARCH test</li>
+<li><code>jarquebera</code> - Jarque-Bera test for normality</li>
+<li><code>shapirowilks</code> - Shapiro-Wilks Test for normality</li>
+<li><code>shapirofrancia</code> - Shapiro-Francia Test for normality</li>
+<li><code>kolmogorov</code> - Kolmorogov-Shmirnov non-parametric test</li>
+<li><code>berkowitz</code> - The berkowitz transform of the KS test</li>
+</ul>
+<h6 id="kernel-smoothing-routines">Kernel Smoothing Routines<a class="headerlink" href="#kernel-smoothing-routines" title="Permanent link">¶</a></h6>
+<ul>
+<li><code>cosinus</code> - Cosinus kernel</li>
+<li><code>epanechnikov</code> - Epanechnikov kernel</li>
+<li><code>kern_dens_contour</code> - Bivariate kernel density plot of a density contour</li>
+<li><code>kern_dens_plot</code> - Univariate kernel density plot</li>
+<li><code>kern_dens_plot2</code> - 3d bivariate kernel density plot</li>
+<li><code>normal</code> - Normal kernel</li>
+<li><code>quartic</code> - Quaritc kernel</li>
+<li><code>triangular</code> - Triangular kernel</li>
+<li><code>triweight</code> - Triweight kernel</li>
+<li><code>uniform</code> - Uniform kernel</li>
+</ul>
+<h6 id="bootstrap-routines">Bootstrap Routines<a class="headerlink" href="#bootstrap-routines" title="Permanent link">¶</a></h6>
+<ul>
+<li><code>block_bootstrap</code> - Block time series bootstrap</li>
+<li><code>bsds</code> - Bootstrap Data Snooper(White 2000, Hansen 2001) with upper, lower and consistent pvals</li>
+<li><code>bsds_studentized</code> - Bootstrap Data Snooper, using studentized bootstraps(Hansen 2001)</li>
+<li><code>cont_bootstrap</code> - Continuous Bootstrap for unit root data</li>
+<li><code>stationary_bootstrap</code> - Stationary Bootstrap(Politis and Romano(1994)) for time series</li>
+</ul>
+<h6 id="univariate-density-functions">Univariate Density Functions<a class="headerlink" href="#univariate-density-functions" title="Permanent link">¶</a></h6>
+<ul>
+<li><code>exppowcdf</code> - Exponential Power Cumulative Density Function</li>
+<li><code>exppowrnd</code> - Exponential Power Random number generator</li>
+<li><code>exppowpdf</code> - Exponential Power Random Probability Density Function</li>
+<li><code>gedcdf</code> - Generalized Error Distribution Cumulative Density Function</li>
+<li><code>gedinv</code> - Generalized Error Distribution Inverse CDF</li>
+<li><code>gedpdf</code> - Generalized Error Distribution Probability Density Function</li>
+<li><code>gedrnd</code> - Generalized Error Distribution Random Number Generator</li>
+<li><code>skewtdis_cdf</code> - Skew-T Cumulative Density Function</li>
+<li><code>skewtdis_inv</code> - Skew-T Inverse CDF</li>
+<li><code>skewtdis_pdf</code> - Skew-T Probability Density Function</li>
+<li><code>skewtdis_rnd</code> - Skew-T Random Number Generator</li>
+<li><code>stdtdis_cdf</code> - Standardized T distribution(unit variance for all nu) Cumulative Density Function</li>
+<li><code>stdtdis_pdf</code> - Standardized T distribution(unit variance for all nu) Probability Density Function</li>
+<li><code>stdtdis_rnd</code> - Standardized T distribution(unit variance for all nu) Random Number Generator</li>
+</ul>
+<h6 id="helper-functions">Helper Functions<a class="headerlink" href="#helper-functions" title="Permanent link">¶</a></h6>
+<ul>
+<li><code>kscritical</code> - Lookup table for KS critical values</li>
+<li><code>cc_ivech</code> - Specialized ivech for correlation matrices</li>
+<li><code>fx.mat</code> - a data set for foreign exchange return used by the demos</li>
+<li><code>multi_garch_paramsetup</code> - helper function for multi_garch</li>
+<li><code>multi_garch_constraints</code> - helper function for multi_garch</li>
+<li><code>dcc_hessian</code> - A modified version of HESSIAN for use in with CC_MVGARCH and DCC_MVGARCH</li>
+<li><code>ivech</code> - Creates a square lower triangular matrix, inverse of vech</li>
+<li><code>vech</code> - Takes teh half-vec of a square matrix, inverse of ivech</li>
+<li><code>lagmatrix</code> - Returns a matrix of lags of a dependant variable</li>
+<li><code>pca</code> - Performs Principal Componet Analysis</li>
+</ul>
+<p>C-MEX functions(should be compilable using any C compiler, binaries for Win32 provided) NOTE: WHILE .M FILESARE AVAILABLE FOR ALL OF THESE, YOU SHOULD COMPILE THESE OR USE THE PROVIDED BINARIES BINARIES END IN .DLL, MATLAB FUNCTIONS END IN .M, AND SOURCE ENDS IN .C</p>
+<ul>
+<li><code>armaxcore</code> - Core routine for ARMAX</li>
+<li><code>egarchcore</code> - Core routine for EGARCH</li>
+<li><code>garchcore</code> - Core routine for GARCH and FATTAILED_GARCH</li>
+<li><code>garchgrad</code> - Core routine for GARCH derivative estimation</li>
+<li><code>garchinmeancore</code> - Core routine for Garch in mean estimation</li>
+<li><code>multigarchcore</code> - Core routine for MULTIGARCH</li>
+<li><code>ivech</code> - C version of ivech</li>
+<li><code>vech</code> - C version of vech</li>
+<li><code>maxcore</code> - Core routing for MA estimation</li>
+<li><code>recserarcore</code> - C core for recserar</li>
+<li><code>tarchcore</code> - Core routine for TARCH estimation</li>
+<li><code>multigarchcore</code> - Core routine for MULTIGARCH</li>
+</ul>
+<p><strong>NOTE</strong>: This toolbox requires both MATLAB optimization toolbox and the excellent J.P.LeSage Library available from www.spatial-econometrics.com</p>
+<p>Copyright (c) 2001-2007 Kevin Sheppard All Rights Reserved.</p>
+<h3 id="license">License<a class="headerlink" href="#license" title="Permanent link">¶</a></h3>
+<p>All of the documentation and software included in the UCSD_Garch toolbox for Matlab is copyrighted by Kevin Sheppard.</p>
+<p>Copyright 2001-2007 Kevin Sheppard</p>
+<p>Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:</p>
+<p>Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution. All advertising materials mentioning features or use of this software must display the following acknowledgement: This product includes software developed by the Kevin Sheppard. Neither the name of the University of California at San Diego nor Kevin Sheppard may be used to endorse or promote products derived from this software without specific prior written permission. THIS SOFTWARE IS PROVIDED BY KEVIN SHEPPARD ``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL KEVIN SHEPPARD OR UCSD OR THE REGENTS OF THE UNIVERSITY OF CALIFORNIA BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</p>
+<p>The views and conclusions contained in the software and documentation are those of the authors and should not be interpreted as representing official policies, either expressed or implied, of the Regents of the University of California or UCSD.</p>
+<p>Please feel free to contact the author at kevin.k.sheppard with comments, suggestions, or bugfixes.</p>
+</div>
+</div>
+</article>
+</div>
+<div class="col-xl-1"></div>
+</div>
+</div>
+</main>
+<footer class="w-100 text-light py-4 mt-4 bg-footer">
+<div class="container-fluid">
+<div class="container">
+<div class="row">
+<div class="col-lg-8 col-md-10 mx-auto">
+<ul class="list-inline text-center">
+<li class="list-inline-item"><a aria-label="Contact me using email" class="contact" href="mailto:kevin.k.sheppard@gmail.com"><span class="fa-stack fa-lg"><i class="far fa-circle fa-stack-2x"></i> <i class="far fa-envelope fa-stack-1x"></i></span></a></li>
+<li class="list-inline-item"><a aria-label="Visit my github repositories" class="contact" href="https://github.com/bashtage"><span class="fa-stack fa-lg"><i class="far fa-circle fa-stack-2x"></i> <i class="fab fa-github fa-stack-1x"></i></span></a></li>
+<li class="list-inline-item"><a aria-label="View my LinkedIn profile" class="contact" href="https://www.linkedin.com/in/kevinsheppard/"><span class="fa-stack fa-lg"><i class="far fa-circle fa-stack-2x"></i> <i class="fab fa-linkedin fa-stack-1x"></i></span></a></li>
+<li class="list-inline-item"><a aria-label="Read about the content license used on this site" class="contact" href="https://creativecommons.org/licenses/by-nc-nd/4.0/"><span class="fa-stack fa-lg"><i class="fab fa-creative-commons fa-stack-2x"></i></span></a></li>
+</ul>
+<!--<p class="copyright text-muted">Copyright © Your Website 2018</p>--></div>
+</div>
+</div>
+</div>
+<div class="container-fluid">
+<div class="container d-flex justify-content-center">
+<div class="row">
+<p>© 2021 <a href="mailto:kevin.k.sheppard@gmail.com">Kevin Sheppard</a> - Content licensed <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" rel="license">CC-BY-NC-ND</a> except code blocks which are <a href="https://opensource.org/licenses/NCSA/" rel="license">NCSA</a> licensed.</p>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<!-- wrapper -->
+<script src="../../../assets/js/jquery.min.js"></script>
+<script src="../../../assets/js/popper.min.js"></script>
+<script src="../../../assets/js/bootstrap.min.js"></script>
+<script src="../../../assets/js/baguetteBox.min.js"></script>
+<script>
+
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function (element) {
+            return element.getElementsByTagName('img')[0].alt;
+        }
+    });
+</script>
+</body>
+</html>

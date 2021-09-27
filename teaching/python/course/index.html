@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+<head>
+<meta charset="utf-8"/><!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-2701681-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-2701681-1');
+</script>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Python Course | Kevin Sheppard</title>
+<link href="https://fonts.googleapis.com/css?family=Roboto+Mono%7CRoboto:300,400,500,700&amp;display=fallback" rel="stylesheet"/>
+<link href="../../../assets/css/bootstrap-material-design.css" rel="stylesheet" type="text/css"/>
+<link href="../../../assets/css/baguetteBox.min.css" rel="stylesheet" type="text/css"/>
+<link href="../../../assets/css/rst.css" rel="stylesheet" type="text/css"/>
+<link href="../../../assets/css/code.css" rel="stylesheet" type="text/css"/>
+<link href="../../../assets/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../../../assets/css/ipython.min.css" rel="stylesheet" type="text/css"/>
+<link href="../../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" rel="stylesheet" type="text/css"/>
+<link href="../../../assets/css/tipuesearch.css" rel="stylesheet" type="text/css"/>
+<link href="../../../assets/css/kevinsheppard.css" rel="stylesheet" type="text/css"/>
+<link href="../../../rss.xml" rel="alternate" title="RSS" type="application/rss+xml"/>
+<link href="https://www.kevinsheppard.com/teaching/python/course/" rel="canonical"/>
+<link href="../../../apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="../../../favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="../../../favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="../../../favicon.png" rel="icon"/>
+<link href="../../../site.webmanifest" rel="manifest"/>
+<link color="#07689f" href="../../../safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#07689F" name="msapplication-TileColor"/>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  jax: ["input/TeX","output/HTML-CSS"],
+  extensions: ["tex2jax.js","MathMenu.js","MathZoom.js"],
+  TeX: {
+    extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]
+  },
+  tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: false,
+  }
+});
+</script><!--[if lt IE 9]><script src="../../../assets/js/html5.js"></script><![endif]-->
+<meta content="#07689F" name="theme-color"/>
+<style>
+  html, body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #fafafa;
+  }
+</style>
+<meta content="Kevin Sheppard" name="author"/>
+<meta content="Kevin Sheppard" property="og:site_name"/>
+<meta content="Python Course" property="og:title"/>
+<meta content="https://www.kevinsheppard.com/teaching/python/course/" property="og:url"/>
+<meta content="This course is an introduction to Python and programming aimed at students working in Finance and Economics. The course is designed to be taught using the Jupyter notebooks that are in the course GitH" property="og:description"/>
+<meta content="article" property="og:type"/>
+<meta content="2019-09-03T01:04:08+01:00" property="article:published_time"/>
+</head>
+<body>
+<a class="sr-only sr-only-focusable" href="#content">Skip to main content</a> <!-- Menubar -->
+<div class="wrapper d-flex flex-column">
+<nav class="navbar navbar-expand-sm fixed-top-sm justify-content-start flex-nowrap py-2 pl-1 nav-color-override navbar-primary">
+<div class="container"><a class="navbar-brand ml-2 ml-sm-0 mr-auto" href="https://www.kevinsheppard.com/"><span id="blog-title">Kevin Sheppard</span></a> <button aria-controls="bs-navbar1 bs-navbar2" aria-expanded="false" aria-label="Toggle navigation" class="custom-toggler navbar-toggler order-first" data-target="#bs-navbar1, #bs-navbar2" data-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button>
+<div class="navbar-collapse collapse" id="bs-navbar1">
+<ul class="navbar-nav blog-nav ml-auto my-2 my-lg-0">
+<li class="nav-item"><a class="nav-link" href="../../../blog/">Blog</a></li>
+</ul>
+<form action="../../../search/" class="form-inline my-2 my-lg-0" role="search">
+<div class="input-group"><input aria-label="Search" autocomplete="off" class="form-control mr-sm-2 bg-light text-dark pl-2" id="tipue_search_input" name="q" placeholder="Search..." type="search"/><button aria-label="Submit search" class="btn btn-primary py-1" type="submit"><i class="fa fa-search"></i></button></div>
+</form>
+</div>
+</div>
+</nav>
+<nav class="navbar navbar-expand-sm nav-color-override navbar-primary pb-1">
+<div class="navbar-collapse collapse pt-2 pt-sm-0" id="bs-navbar2">
+<div class="container">
+<ul class="navbar-nav mr-auto">
+<li class="nav-item dropdown"><a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Research</a>
+<div class="dropdown-menu"><a class="dropdown-item" href="../../../research/cv/">CV</a> <a class="dropdown-item" href="../../../research/publications/">Publications</a> <a class="dropdown-item" href="../../../research/working-papers/">Working Papers</a></div>
+</li>
+<li class="nav-item dropdown"><a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Teaching</a>
+<div class="dropdown-menu"><a class="dropdown-item" href="../../mfe/">MFE</a> <a class="dropdown-item" href="../">Python</a> <a class="dropdown-item" href="../../matlab/">MATLAB</a> <a class="dropdown-item" href="../../lyx/">LyX</a> <a class="dropdown-item" href="../../other/">Other</a> <a class="dropdown-item" href="../../scanning-recommendations/">Document Scanning</a></div>
+</li>
+<li class="nav-item dropdown"><a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Code</a>
+<div class="dropdown-menu"><a class="dropdown-item" href="../../../code/matlab/mfe-toolbox/">MFE Toolbox</a> <a class="dropdown-item" href="https://github.com/bashtage/arch/"><span><i class="fab fa-github"></i> arch</span></a> <a class="dropdown-item" href="https://github.com/bashtage/linearmodels"><span><i class="fab fa-github"></i> linearmodels</span></a> <a class="dropdown-item" href="https://github.com/bashtage/"><span><i class="fab fa-github"></i> GitHub<span></span></span></a></div>
+</li>
+<li class="nav-item"><a class="nav-link" href="../../../galleries/">Photos</a></li>
+<li class="nav-item"><a class="nav-link" href="../../../blog/">Blog</a></li>
+</ul>
+</div>
+</div>
+</nav>
+<main class="flex-fill" id="content">
+<div class="jumbotron" style="background-color: #FFE162;">
+<div class="container text-dark">
+<div class="row">
+<div class="col-sm-1"></div>
+<div class="col-sm-10">
+<h1 class="display-3">Python Introduction</h1>
+<p>An brief introduction targeted at first time users of Python who do not have programming experience.</p>
+</div>
+<div class="col-sm-1"></div>
+</div>
+</div>
+</div>
+<div class="container">
+<div class="row">
+<div class="col-xl-1"></div>
+<div class="col-xl-10">
+<article class="post-text storypage" itemscope="itemscope" itemtype="http://schema.org/Article">
+<header></header>
+<div class="e-content entry-content" itemprop="articleBody text">
+<div>
+<p>This course is an introduction to Python and programming aimed at students working in Finance and Economics. The course is designed to be taught using the Jupyter notebooks that are in the course <a href="https://github.com/bashtage/python-introduction">GitHub repository</a> and are linked below. The complete course is available for <a href="https://github.com/bashtage/python-introduction/raw/master/course/python-introduction.pdf">download as a pdf</a>.</p>
+<h4 id="github">GitHub<a class="headerlink" href="#github" title="Permanent link">¶</a></h4>
+<p>The introduction is available on <a href="https://github.com/bashtage/python-introduction">Github</a>. If you are happy to use git, you can download everything using <code>git</code>, or for even fork the repo and save your progress to your own fork.</p>
+<h4 id="self-paced-study">Self-paced Study<a class="headerlink" href="#self-paced-study" title="Permanent link">¶</a></h4>
+<p>This course is intended as an alternative to the MATLAB introduction and so is self-paced. Each of the lessons is covered in one or more videos that are available in a <a href="https://www.youtube.com/playlist?list=PLVR_rJLcetzkqoeuhpIXmG9uQCtSoGBz1">YouTube channel</a>.</p>
+<p><strong>Note</strong>: The video content is a work-in-progress and should be completed by mid-October 2019.</p>
+<h4 id="notebooks">Notebooks<a class="headerlink" href="#notebooks" title="Permanent link">¶</a></h4>
+<div class="table-responsive"><table>
+<thead>
+<tr>
+<th class="text-left">﻿Lesson</th>
+<th class="text-left">Link to Download</th>
+<th class="text-left">Demonstration(s)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-left"><a href="installation/">Installation</a></td>
+<td class="text-left"><a href="https://github.com/bashtage/python-introduction/raw/master/course/introduction/installation.ipynb">Download</a></td>
+<td class="text-left"><a href="https://youtu.be/CH3IOVGLCAQ">Installation</a></td>
+</tr>
+<tr>
+<td class="text-left"><a href="lesson-1/">Lesson 1</a></td>
+<td class="text-left"><a href="https://github.com/bashtage/python-introduction/raw/master/course/introduction/lesson-1.ipynb">Download</a></td>
+<td class="text-left"><a href="https://youtu.be/UsMJhoD2sz8">Lesson 1: Part 1</a>, <a href="https://youtu.be/1DfFJNEfXpY">Part 2</a>, <a href="https://youtu.be/0kxU6MIkvds">Part 3</a></td>
+</tr>
+<tr>
+<td class="text-left"><a href="lesson-2/">Lesson 2</a></td>
+<td class="text-left"><a href="https://github.com/bashtage/python-introduction/raw/master/course/introduction/lesson-2.ipynb">Download</a></td>
+<td class="text-left"><a href="https://youtu.be/XYH318V76ng">Lesson 2</a></td>
+</tr>
+<tr>
+<td class="text-left"><a href="lesson-3/">Lesson 3</a></td>
+<td class="text-left"><a href="https://github.com/bashtage/python-introduction/raw/master/course/introduction/lesson-3.ipynb">Download</a></td>
+<td class="text-left"><a href="https://youtu.be/6RpWl5CKnXE">Lesson 3</a></td>
+</tr>
+<tr>
+<td class="text-left"><a href="lesson-4/">Lesson 4</a></td>
+<td class="text-left"><a href="https://github.com/bashtage/python-introduction/raw/master/course/introduction/lesson-4.ipynb">Download</a></td>
+<td class="text-left"><a href="https://youtu.be/K4bYsGa4Vcw">Lesson 4</a></td>
+</tr>
+<tr>
+<td class="text-left"><a href="lesson-5/">Lesson 5</a></td>
+<td class="text-left"><a href="https://github.com/bashtage/python-introduction/raw/master/course/introduction/lesson-5.ipynb">Download</a></td>
+<td class="text-left"><a href="https://youtu.be/TTj_Ll8msts">Lesson 5</a></td>
+</tr>
+<tr>
+<td class="text-left"><a href="lesson-6/">Lesson 6</a></td>
+<td class="text-left"><a href="https://github.com/bashtage/python-introduction/raw/master/course/introduction/lesson-6.ipynb">Download</a></td>
+<td class="text-left"><a href="https://youtu.be/aX1qi_uAnSI">Lesson 6</a></td>
+</tr>
+<tr>
+<td class="text-left"><a href="lesson-7/">Lesson 7</a></td>
+<td class="text-left"><a href="https://github.com/bashtage/python-introduction/raw/master/course/introduction/lesson-7.ipynb">Download</a></td>
+<td class="text-left"><a href="https://youtu.be/nPKRibnDsac">Lesson 7</a></td>
+</tr>
+<tr>
+<td class="text-left"><a href="lesson-8/">Lesson 8</a></td>
+<td class="text-left"><a href="https://github.com/bashtage/python-introduction/raw/master/course/introduction/lesson-8.ipynb">Download</a></td>
+<td class="text-left"><a href="https://youtu.be/cdUd5HnSRYE">Lesson 8</a></td>
+</tr>
+<tr>
+<td class="text-left"><a href="lesson-9/">Lesson 9</a></td>
+<td class="text-left"><a href="https://github.com/bashtage/python-introduction/raw/master/course/introduction/lesson-9.ipynb">Download</a></td>
+<td class="text-left"><a href="https://youtu.be/DiBKr9hlfSQ">Lesson 9</a></td>
+</tr>
+<tr>
+<td class="text-left"><a href="lesson-10/">Lesson 10</a></td>
+<td class="text-left"><a href="https://github.com/bashtage/python-introduction/raw/master/course/introduction/lesson-10.ipynb">Download</a></td>
+<td class="text-left"><a href="https://youtu.be/x14mHuo_fLQ">Lesson 10</a></td>
+</tr>
+<tr>
+<td class="text-left"><a href="lesson-11/">Lesson 11</a></td>
+<td class="text-left"><a href="https://github.com/bashtage/python-introduction/raw/master/course/introduction/lesson-11.ipynb">Download</a></td>
+<td class="text-left"><a href="https://youtu.be/XF3YruB8an8">Lesson 11</a></td>
+</tr>
+<tr>
+<td class="text-left"><a href="lesson-12/">Lesson 12</a></td>
+<td class="text-left"><a href="https://github.com/bashtage/python-introduction/raw/master/course/introduction/lesson-12.ipynb">Download</a></td>
+<td class="text-left"><a href="https://youtu.be/BFGqsAYNhPY">Lesson 12</a></td>
+</tr>
+<tr>
+<td class="text-left"><a href="lesson-13/">Lesson 13</a></td>
+<td class="text-left"><a href="https://github.com/bashtage/python-introduction/raw/master/course/introduction/lesson-13.ipynb">Download</a></td>
+<td class="text-left"><a href="https://youtu.be/oYOJ1b6zEj8">Lesson 13</a></td>
+</tr>
+<tr>
+<td class="text-left"><a href="lesson-14/">Lesson 14</a></td>
+<td class="text-left"><a href="https://github.com/bashtage/python-introduction/raw/master/course/introduction/lesson-14.ipynb">Download</a></td>
+<td class="text-left"><a href="https://youtu.be/80LRTXAXJ-4">Lesson 14</a></td>
+</tr>
+<tr>
+<td class="text-left"><a href="lesson-15/">Lesson 15</a></td>
+<td class="text-left"><a href="https://github.com/bashtage/python-introduction/raw/master/course/introduction/lesson-15.ipynb">Download</a></td>
+<td class="text-left"><a href="https://youtu.be/t-0_zup9yuM">Lesson 15</a></td>
+</tr>
+<tr>
+<td class="text-left"><a href="lesson-16/">Lesson 16</a></td>
+<td class="text-left"><a href="https://github.com/bashtage/python-introduction/raw/master/course/introduction/lesson-16.ipynb">Download</a></td>
+<td class="text-left"><a href="https://youtu.be/kiSZAxT6zNo">Lesson 16</a></td>
+</tr>
+<tr>
+<td class="text-left"><a href="lesson-17/">Lesson 17</a></td>
+<td class="text-left"><a href="https://github.com/bashtage/python-introduction/raw/master/course/introduction/lesson-17.ipynb">Download</a></td>
+<td class="text-left"><a href="https://youtu.be/NwZybFgs7cQ">Lesson 17</a></td>
+</tr>
+<tr>
+<td class="text-left"><a href="lesson-18/">Lesson 18</a></td>
+<td class="text-left"><a href="https://github.com/bashtage/python-introduction/raw/master/course/introduction/lesson-18.ipynb">Download</a></td>
+<td class="text-left"><a href="https://youtu.be/LQUML7gJS7g">Lesson 18</a></td>
+</tr>
+<tr>
+<td class="text-left"><a href="lesson-19/">Lesson 19</a></td>
+<td class="text-left"><a href="https://github.com/bashtage/python-introduction/raw/master/course/introduction/lesson-19.ipynb">Download</a></td>
+<td class="text-left"><a href="https://youtu.be/9ogZjicmFo8">Lesson 19</a></td>
+</tr>
+<tr>
+<td class="text-left"><a href="lesson-20/">Lesson 20</a></td>
+<td class="text-left"><a href="https://github.com/bashtage/python-introduction/raw/master/course/introduction/lesson-20.ipynb">Download</a></td>
+<td class="text-left"><a href="https://youtu.be/HoDvQPl-vUI">Lesson 20</a></td>
+</tr>
+<tr>
+<td class="text-left"><a href="lesson-21/">Lesson 21</a></td>
+<td class="text-left"><a href="https://github.com/bashtage/python-introduction/raw/master/course/introduction/lesson-21.ipynb">Download</a></td>
+<td class="text-left"><a href="https://youtu.be/pvlsYDre774">Lesson 21</a></td>
+</tr>
+<tr>
+<td class="text-left"><a href="lesson-22/">Lesson 22</a></td>
+<td class="text-left"><a href="https://github.com/bashtage/python-introduction/raw/master/course/introduction/lesson-22.ipynb">Download</a></td>
+<td class="text-left"><a href="https://youtu.be/HLg_RweswXo">Lesson 22</a></td>
+</tr>
+<tr>
+<td class="text-left"><a href="final-exam/">Final Exam</a></td>
+<td class="text-left"><a href="https://github.com/bashtage/python-introduction/raw/master/course/introduction/final-exam.ipynb">Download</a></td>
+<td class="text-left"></td>
+</tr>
+</tbody>
+</table></div>
+<p class="alert alert-secondary"><strong>Downloading</strong>: Right-click and select Download to save the notebook files to your computer.</p>
+<h4 id="data-and-supporting-files">Data and Supporting Files<a class="headerlink" href="#data-and-supporting-files" title="Permanent link">¶</a></h4>
+<p><a href="../../../files/teaching/python/course/data.zip">Data</a> <i class="primary far fa-file-archive"></i></p>
+</div>
+</div>
+</article>
+</div>
+<div class="col-xl-1"></div>
+</div>
+</div>
+</main>
+<footer class="w-100 text-light py-4 mt-4 bg-footer">
+<div class="container-fluid">
+<div class="container">
+<div class="row">
+<div class="col-lg-8 col-md-10 mx-auto">
+<ul class="list-inline text-center">
+<li class="list-inline-item"><a aria-label="Contact me using email" class="contact" href="mailto:kevin.k.sheppard@gmail.com"><span class="fa-stack fa-lg"><i class="far fa-circle fa-stack-2x"></i> <i class="far fa-envelope fa-stack-1x"></i></span></a></li>
+<li class="list-inline-item"><a aria-label="Visit my github repositories" class="contact" href="https://github.com/bashtage"><span class="fa-stack fa-lg"><i class="far fa-circle fa-stack-2x"></i> <i class="fab fa-github fa-stack-1x"></i></span></a></li>
+<li class="list-inline-item"><a aria-label="View my LinkedIn profile" class="contact" href="https://www.linkedin.com/in/kevinsheppard/"><span class="fa-stack fa-lg"><i class="far fa-circle fa-stack-2x"></i> <i class="fab fa-linkedin fa-stack-1x"></i></span></a></li>
+<li class="list-inline-item"><a aria-label="Read about the content license used on this site" class="contact" href="https://creativecommons.org/licenses/by-nc-nd/4.0/"><span class="fa-stack fa-lg"><i class="fab fa-creative-commons fa-stack-2x"></i></span></a></li>
+</ul>
+<!--<p class="copyright text-muted">Copyright © Your Website 2018</p>--></div>
+</div>
+</div>
+</div>
+<div class="container-fluid">
+<div class="container d-flex justify-content-center">
+<div class="row">
+<p>© 2021 <a href="mailto:kevin.k.sheppard@gmail.com">Kevin Sheppard</a> - Content licensed <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" rel="license">CC-BY-NC-ND</a> except code blocks which are <a href="https://opensource.org/licenses/NCSA/" rel="license">NCSA</a> licensed.</p>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<!-- wrapper -->
+<script src="../../../assets/js/jquery.min.js"></script>
+<script src="../../../assets/js/popper.min.js"></script>
+<script src="../../../assets/js/bootstrap.min.js"></script>
+<script src="../../../assets/js/baguetteBox.min.js"></script>
+<script>
+
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function (element) {
+            return element.getElementsByTagName('img')[0].alt;
+        }
+    });
+</script>
+</body>
+</html>

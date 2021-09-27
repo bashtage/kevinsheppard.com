@@ -1,0 +1,218 @@
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Importing-Modules">Importing Modules<a class="anchor-link" href="#Importing-Modules">&#182;</a></h1><p>This lesson covers:</p>
+<ul>
+<li>Module import</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Problem:-Importing-Modules">Problem: Importing Modules<a class="anchor-link" href="#Problem:-Importing-Modules">&#182;</a></h2><p>Python is a general-purpose programming language and is not specialized for
+numerical or statistical computation. The core modules that enable Python to
+store and access data efficiently and that provide statistical algorithms are
+located in modules.  The most important are:</p>
+<ul>
+<li>NumPy (<code>numpy</code>) - provide the basic array block used throughout numerical
+Python</li>
+<li>pandas (<code>pandas</code>) - provides DataFrames which are used to store 
+data in an easy-to-use format</li>
+<li>SciPy (<code>scipy</code>) - Basic statistics and random number generators. The most
+important submodule is <code>scipy.stats</code></li>
+<li>matplotlib (<code>matplotlib</code>) - graphics. The most important submodule is
+<code>matplotlib.pyplot</code>.</li>
+<li>statsmodels (<code>statsmodels</code>) - statistical models such as OLS. The most
+important submodules are <code>statsmodels.api</code> and <code>statsmodels.tsa.api</code>.</li>
+</ul>
+<p>Begin by importing the important modules.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Problem:-Canonical-Names">Problem: Canonical Names<a class="anchor-link" href="#Problem:-Canonical-Names">&#182;</a></h2><p>Use the <code>as</code> keyword to import the modules using their canonical names:</p>
+<table>
+<thead><tr>
+<th style="text-align:left">Module</th>
+<th style="text-align:left">Canonical Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">numpy</td>
+<td style="text-align:left">np</td>
+</tr>
+<tr>
+<td style="text-align:left">pandas</td>
+<td style="text-align:left">pd</td>
+</tr>
+<tr>
+<td style="text-align:left">scipy</td>
+<td style="text-align:left">sp</td>
+</tr>
+<tr>
+<td style="text-align:left">scipy.stats</td>
+<td style="text-align:left">stats</td>
+</tr>
+<tr>
+<td style="text-align:left">matplotlib.pyplot</td>
+<td style="text-align:left">plt</td>
+</tr>
+<tr>
+<td style="text-align:left">statsmodels.api</td>
+<td style="text-align:left">sm</td>
+</tr>
+<tr>
+<td style="text-align:left">statsmodels.tsa.api</td>
+<td style="text-align:left">tsa</td>
+</tr>
+</tbody>
+</table>
+<p>Import the core modules using <code>import</code> <em>module</em> <code>as</code> <em>canonical</em>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Problem:-Importing-individual-functions">Problem: Importing individual functions<a class="anchor-link" href="#Problem:-Importing-individual-functions">&#182;</a></h2><ol>
+<li>Import <code>array</code>, <code>sqrt</code>, <code>log</code> and <code>exp</code> from NumPy.</li>
+<li>Import <code>OLS</code> from <code>statsmodels.regression.linear_model</code></li>
+<li>Import the <code>stats</code> module from <code>scipy</code></li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Exercises">Exercises<a class="anchor-link" href="#Exercises">&#182;</a></h2><h3 id="Exercise:-Import-det">Exercise: Import <code>det</code><a class="anchor-link" href="#Exercise:-Import-det">&#182;</a></h3><p>The determinant function is located at <code>numpy.linalg.det</code>. Access this function
+using:</p>
+<ol>
+<li><code>numpy</code></li>
+<li><code>np</code></li>
+<li>By importing <code>linalg</code> from <code>numpy</code> and accessing it from <code>linalg</code></li>
+<li>By directly importing the function</li>
+</ol>
+<p>You can <code>x</code> in the setup code to call the function as <em>func</em><code>(x)</code>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Setup: A simple 2 by 2 array to use with det</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+ 
+

@@ -1,0 +1,243 @@
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Getting-Started">Getting Started<a class="anchor-link" href="#Getting-Started">&#182;</a></h1><p>This lesson covers:</p>
+<ul>
+<li>Opening a terminal window</li>
+<li>Launching Jupyter notebook</li>
+<li>Running IPython in a Terminal</li>
+<li>Running IPython in Jupyter QtConsole</li>
+<li>Executing a standalone Python file in IPython</li>
+<li>Optional<ul>
+<li>Jupyter notebooks in <a href="https://code.visualstudio.com/docs/python/jupyter-support">VSCode</a></li>
+<li>Jupyter notebooks in <a href="https://jetbrains.com/student/">PyCharm Professional</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Opening-an-Anaconda-Terminal">Opening an Anaconda Terminal<a class="anchor-link" href="#Opening-an-Anaconda-Terminal">&#182;</a></h2><p>An Anaconda terminal allows <code>python</code> to be run directly.  It also allows other
+useful programs, for example <code>pip</code>, the Python package manager to be used to
+install packages that are not available through Anaconda.</p>
+<h3 id="Windows">Windows<a class="anchor-link" href="#Windows">&#182;</a></h3><p>Launch Anaconda Prompt from the start menu.</p>
+<h3 id="OSX-and-Linux">OSX and Linux<a class="anchor-link" href="#OSX-and-Linux">&#182;</a></h3><p>Open the terminal (instructions depend on your distribution). If you allowed
+conda to initialize, then you should be ready to call Anaconda"s python and
+supporting functions.  If not, you should</p>
+
+<pre><code>cd ~/anaconda3/bin
+./conda init</code></pre>
+<p>and then reopen your terminal.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Running-IPython-in-a-Terminal">Running IPython in a Terminal<a class="anchor-link" href="#Running-IPython-in-a-Terminal">&#182;</a></h2><ol>
+<li>Open a terminal.</li>
+<li>Run IPython by entering <code>ipython</code> in the terminal window. You should see a 
+window like the one below with the iconic <code>In [1]</code> indicating that you
+are at the start of a new IPython session.</li>
+</ol>
+<p><img src="/images/teaching/python/course/ipython-windows.png" alt="IPython in Windows Terminal" title="IPython in Windows Terminal"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Launching-Jupyter-notebook">Launching Jupyter notebook<a class="anchor-link" href="#Launching-Jupyter-notebook">&#182;</a></h2><ol>
+<li>Launch Jupyter Notebook from the Start Menu or launcher.</li>
+<li>Change directory to the location where you store your notebooks.</li>
+</ol>
+<p><img src="/images/teaching/python/course/jupyter-notebook.png" alt="Jupyter Notebook" title="Jupyter Notebook"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Executing-a-standalone-Python-file-in-IPython">Executing a standalone Python file in IPython<a class="anchor-link" href="#Executing-a-standalone-Python-file-in-IPython">&#182;</a></h2><ol>
+<li>Open a text editor and enter the following lines. Save the file as
+lesson-2.py. Note that Python is white-space sensitive, and so these
+lines should <strong>not</strong> not indented.</li>
+</ol>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">exp</span><span class="p">,</span> <span class="n">log</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;exp(1)=</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">, log(exp(1))=</span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+<ol>
+<li>Run the code in an IPython session using <code>%run -i lesson-2.py</code>.  Note: you
+should create the python file in the same directory as the notebook. </li>
+</ol>
+<p>If everything works as expected, you should see</p>
+<div class="highlight"><pre><span></span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">=</span><span class="mf">2.718281828459045</span><span class="p">,</span> <span class="n">log</span><span class="p">(</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span><span class="o">=</span><span class="mf">1.0</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Jupyter-notebooks-in-VSCode">Jupyter notebooks in VSCode<a class="anchor-link" href="#Jupyter-notebooks-in-VSCode">&#182;</a></h2><p><a href="https://code.visualstudio.com/">Visual Studio Code</a> (or VS Code) is a
+lightweight IDE that supports adding features through extensions.  The
+key extension for working with notebooks is 
+<a href="https://marketplace.visualstudio.com/items?itemName=ms-python.python">Python extension for Visual Studio Code</a>.
+With this extension installed, VS code provides native support for 
+Jupyter notebooks.</p>
+<ol>
+<li>Install VS Code and the Python extension</li>
+<li>Open the command palette and enter "create jupyter" and select the only
+available item.</li>
+</ol>
+<p>See the screenshot below for an example of the experience of using Jupyter notebooks in 
+VS Code.</p>
+<p><img src="/images/teaching/python/course/vscode-notebook-new.png" alt="VS Code Notebook" title="VS Code Notebook"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Magic-Python-in-VSCode">Magic Python in VSCode<a class="anchor-link" href="#Magic-Python-in-VSCode">&#182;</a></h2><p><a href="https://code.visualstudio.com/">Visual Studio Code</a> supports Magic Python mode in 
+standard Python files that can be executed cell-by-cell.</p>
+<ol>
+<li>Install VS Code and the Python extension</li>
+<li>Select File, New and then save your file with the extension .py (e.g., file.py).</li>
+<li><p>This is a Python file that supports a cell demarcation using <code>#%%</code> for
+code cells and <code>#%% [markdown]</code> for cells that contain markdown code.
+Note that markdown text <strong>must</strong> be either:</p>
+<ul>
+<li><p>Surrounded by triple quotes, e.g. <code>"""markdown text"""</code> or <code>"""markdown text"""</code>; e.g.,</p>
+<div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd"># Cell Heading</span>
+
+<span class="sd">Likeness darkness. That give brought creeping. Doesn&quot;t may. Fruit kind </span>
+<span class="sd">midst seed. Creature, let under created void god to. Them day was Was</span>
+<span class="sd">creature set it from. Fourth. Created don&quot;t man. Man. Light fourth</span>
+<span class="sd">light given the he image first multiply after deep she&quot;d great. Morning </span>
+<span class="sd">likeness very have give also fowl third land beast from moving thing</span>
+<span class="sd">creepeth herb creeping won&quot;t fifth. Us bring was our beast wherein our</span>
+<span class="sd">void and green he fruit kind upon a given, saying fruit, moveth face </span>
+<span class="sd">forth. His you it. Good beginning hath.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+</pre></div>
+</li>
+<li><p>Or commented <code>#</code> (with a single space) at the start of each line,</p>
+<div class="highlight"><pre><span></span><span class="c1"># # Cell Heading</span>
+<span class="c1">#</span>
+<span class="c1"># Likeness darkness. That give brought creeping. Doesn&quot;t may. Fruit kind </span>
+<span class="c1"># midst seed. Creature, let under created void god to. Them day was Was</span>
+<span class="c1"># creature set it from. Fourth. Created don&quot;t man. Man. Light fourth</span>
+<span class="c1"># light given the he image first multiply after deep she&quot;d great. Morning </span>
+<span class="c1"># likeness very have give also fowl third land beast from moving thing</span>
+<span class="c1"># creepeth herb creeping won&quot;t fifth. Us bring was our beast wherein our</span>
+<span class="c1"># void and green he fruit kind upon a given, saying fruit, moveth face </span>
+<span class="c1"># forth. His you it. Good beginning hath.</span>
+</pre></div>
+</li>
+</ul>
+</li>
+</ol>
+<p>The cells have a special button above them that allows the contents to be
+executed and the result to be displayed in the interactive window. See the 
+screenshot below for an example of the experience of using VS Code. There 
+is also an interactive console at the bottom left where commands can be 
+directly executed.</p>
+<p><img src="/images/teaching/python/course/vscode-magic-python.png" alt="VS Code Notebook" title="VS Code Notebook"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Importing-an-exiting-notebook-into-Magic-Python">Importing an exiting notebook into Magic Python<a class="anchor-link" href="#Importing-an-exiting-notebook-into-Magic-Python">&#182;</a></h3><p>VS Code only understands Magic Python files as notebook-like documents, and so
+<code>.ipynb</code> files must be converted to use. The process of importing is simple:</p>
+<ol>
+<li>Open a Jupyter notebook file</li>
+<li>Click on Import in the popup that appears.</li>
+</ol>
+<p><img src="/images/teaching/python/course/vscode-export.png" alt="VS Code Export" title="VS Code Export"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Exporting-Magic-Python-to-a-Jupyter-notebook">Exporting Magic Python to a Jupyter notebook<a class="anchor-link" href="#Exporting-Magic-Python-to-a-Jupyter-notebook">&#182;</a></h3><p>To export a Magic Python file, open the command palette and enter "import jupyter". 
+Select the option to import the notebook.</p>
+<p><img src="/images/teaching/python/course/vscode-import.png" alt="VS Code Import" title="VS Code Import"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Jupyter-notebooks-in-PyCharm-Professional">Jupyter notebooks in PyCharm Professional<a class="anchor-link" href="#Jupyter-notebooks-in-PyCharm-Professional">&#182;</a></h2><div class="alert alert-info">
+PyCharm Professional is my recommended approach if you are going to use Python
+throughout the course. It provides the best experience and can be acquired for
+free using the student program.
+</div><p>PyCharm Professional has deeply integrated Jupyter Notebooks. To create
+an IPython notebook:</p>
+<ol>
+<li>Open PyCharm Profession</li>
+<li>Open the directory where your notebooks are stored</li>
+<li>Right-click on the root directory and select <code>New &gt; Jupyter Notebook</code>.
+Give your file a meaningful name, and it will open in the main window.</li>
+</ol>
+<p><img src="/images/teaching/python/course/pycharm-new-notebook.png" alt="PyCharm New Notebook" title="PyCharm New Notebook"></p>
+<p>PyCharm uses a special syntax where cells look like code and so can be edited
+like text. This allows PyCharm to use introspection and code completion on the
+code you have written, a highly useful set of features. PyCharm stores the
+notebook in a Jupyter notebook file (<code>.ipynb</code>), which means that you can
+trivially open it in any other Jupyter notebook aware app.  This differs from
+<a href="#jupyter-notebooks-in-vsCode">VS code</a> which stores the file as a play Python
+file (<code>.py</code>) and requires an explicit export to a Jupyter notebook file.</p>
+<p>A code cell is demarcated using <code>#%%</code> and a markdown cell begins with <code>#%% md</code>.
+Below is a screenshot of this notebook in PyCharm.</p>
+<p><img src="/images/teaching/python/course/pycharm-notebook.png" alt="PyCharm Notebook" title="Pycharm Notebook"></p>
+<h2 id="Magic-Python-in-PyCharm">Magic Python in PyCharm<a class="anchor-link" href="#Magic-Python-in-PyCharm">&#182;</a></h2><p>PyCharm supports Magic Python cell execution. To use Magic Python, you need
+to enable <em>Scientific Mode</em> in the View menu. You can then use <code>#%%</code> to
+indicate the start and end of cells. Individual Cells can be executed in
+the console by pressing CTRL+Enter.</p>
+<ol>
+<li>In PyCharm, right-click on the root directory and select <code>New &gt; Python File</code>. Give
+your file a meaningful name.</li>
+<li><p>Enter</p>
+<div class="highlight"><pre><span></span><span class="c1">#%%</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This is the first cell&quot;</span><span class="p">)</span>
+
+<span class="c1">#%%</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This is not executed when the first cell is run&quot;</span><span class="p">)</span>
+</pre></div>
+</li>
+<li>Enable Scientific Mode in the View menu.</li>
+<li>Run the first cell by placing you mouse in the cell and pressing CTRL+Enter.</li>
+<li>Run the second cell by clicking on the Play button (arrow) that appears in the
+gutter of the editor.</li>
+</ol>
+<div class="alert alert-warning">
+<b>Note:</b> Magic Python in PyCharm only supports python code, and so it is
+not possible to mix Markdown text and Python in the same file.
+</div>
+</div>
+</div>
+</div>
+ 
+

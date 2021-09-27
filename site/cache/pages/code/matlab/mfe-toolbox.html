@@ -1,0 +1,149 @@
+<p>The Oxford MFE Toolbox is the follow on to the <a href="/code/matlab/ucsd-garch/">UCSD_GARCH</a>
+toolbox. It has been widely used by students here at Oxford, and represents a
+substantial improvement in robustness over the original UCSD GARCH code,
+although in its current form it only contains univariate routines.</p>
+<div class="toc">
+<ul>
+<li><a href="#current-version">Current Version</a></li>
+<li><a href="#code">Code</a></li>
+<li><a href="#documentation">Documentation</a></li>
+<li><a href="#high-level-list-of-functions">High Level List of Functions</a></li>
+</ul>
+</div>
+<h3 id="current-version">Current Version<a class="headerlink" href="#current-version" title="Permanent link">&para;</a></h3>
+<p>The latest version, including any work in progress, can be downloaded on
+the <a href="https://github.com/bashtage/mfe-toolbox/">GitHub repository for the MFE Toolbox</a>
+(<a href="https://github.com/bashtage/mfe-toolbox/archive/master.zip">Direct link to zip</a>).</p>
+<h4 id="last-updated">Last Updated<a class="headerlink" href="#last-updated" title="Permanent link">&para;</a></h4>
+<p>June 7, 2013</p>
+<h4 id="update-news">Update News<a class="headerlink" href="#update-news" title="Permanent link">&para;</a></h4>
+<p>Many changes have occurred since the last release. The most notable are:</p>
+<ul>
+<li>A major rework of the subsampling in the Realized code</li>
+<li>Modern versions of BEKK (Scalar, Diagonal and Full) and RARCH, a
+    recent model by Diaa Noureldin, Neil Sheppard and me.</li>
+<li>DCC, BEKK and HEAVY are all finally available in this toolbox, and
+    so the retirement of the UCSD GARCH toolbox is almost ready.</li>
+<li>OGARCH and GOGARCH have been added.</li>
+<li>RCC, an alternative to DCC, is also available (by Diaa Noureldin,
+    Neil Sheppard and Kevin Sheppard).</li>
+</ul>
+<p>The next developments should include the TODO include:</p>
+<ul>
+<li>SARIMA</li>
+<li>Clean up of unused files and more coherent naming</li>
+</ul>
+<h3 id="code">Code<a class="headerlink" href="#code" title="Permanent link">&para;</a></h3>
+<p><a href="https://github.com/bashtage/mfe-toolbox/archive/master.zip">Oxford MFE Toolbox</a></p>
+<h3 id="documentation">Documentation<a class="headerlink" href="#documentation" title="Permanent link">&para;</a></h3>
+<p><a href="/files/code/matlab/mfe-toolbox-documentation.pdf">Oxford MFE Toolbox Documentation</a></p>
+<h3 id="high-level-list-of-functions">High Level List of Functions<a class="headerlink" href="#high-level-list-of-functions" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Regression</li>
+<li>ARMA Simulation</li>
+<li>ARMA Estimation<ul>
+<li>Heterogeneous Autoregression</li>
+<li>Information Criteria</li>
+</ul>
+</li>
+<li>ARMA Forecasting</li>
+<li>Sample autocorrelation and partial autocorrelation</li>
+<li>Theoretical autocorrelation and partial autocorrelation</li>
+<li>Testing for serial correlation<ul>
+<li>Ljung-BoxQ Statistic</li>
+<li>LM Serial Correlation Test</li>
+</ul>
+</li>
+<li>Filtering<ul>
+<li>Baxter-King Filtering</li>
+<li>Hodrick-Prescott Filtering</li>
+</ul>
+</li>
+<li>Regression with Time Series Data</li>
+<li>Long-run Covariance Estimation<ul>
+<li>Newey-West covariance estimation</li>
+<li>Den Hann-Levin covariance estimation</li>
+</ul>
+</li>
+<li>Nonstationary Time Series</li>
+<li>Unit Root Testing<ul>
+<li>Augmented Dickey-Fuller testing</li>
+<li>Augmented Dickey-Fuller testing with automated lag selection</li>
+</ul>
+</li>
+<li>Vector Autoregressions<ul>
+<li>Granger Causality Testing: grangercause</li>
+<li>Impulse Response function calculation</li>
+</ul>
+</li>
+<li>Volatility Modeling<ul>
+<li>ARCH/GARCH/AVARCH/TARCH/ZARCH Simulation</li>
+<li>EGARCH Simulation</li>
+<li>APARCH Simulation</li>
+<li>FIGARCH Simulation</li>
+</ul>
+</li>
+<li>GARCH Model Estimation<ul>
+<li>ARCH/GARCH/GJR-GARCH/TARCH/AVGARCH/ZARCH Estimation</li>
+<li>EGARCH Estimation</li>
+<li>APARCH Estimation</li>
+<li>AGARCH and NAGARCH estimation</li>
+<li>IGARCH estimation</li>
+<li>FIGARCH estimation</li>
+<li>HEAVY models</li>
+</ul>
+</li>
+<li>Density Estimation<ul>
+<li>Kernel Density Estimation</li>
+</ul>
+</li>
+<li>Distributional Fit Testing<ul>
+<li>Jarque-Bera Test</li>
+<li>Kolmogorov-Smirnov Test</li>
+<li>Berkowitz Test</li>
+</ul>
+</li>
+<li>Bootstraps<ul>
+<li>Block Bootstrap</li>
+<li>Stationary Bootstrap</li>
+</ul>
+</li>
+<li>Multiple Hypothesis Tests<ul>
+<li>Reality Check and Test for Superior Predictive Accuracy</li>
+<li>Model Confidence Set</li>
+</ul>
+</li>
+<li>Multaivariate GARCH<ul>
+<li>CCC MVGARCH</li>
+<li>Scalar Variance Targetting VECH</li>
+<li>MATRIX GARCH</li>
+<li>DCC and ADCC</li>
+<li>OGARCH</li>
+<li>GOGARCH</li>
+<li>RARCH</li>
+</ul>
+</li>
+<li>Realized Measures<ul>
+<li>Realized Variance</li>
+<li>Realized Covariance</li>
+<li>Realized Kernels</li>
+<li>Multivariate Realized Kernels</li>
+<li>Realized Quantile Variance</li>
+<li>Two-scale Realized Variance</li>
+<li>Multi-scale Realized Variance</li>
+<li>Realized Range</li>
+<li>QMLE Realized Variance</li>
+<li>Min Realized Variance, Median Realized Variance (MinRV, MedRV)</li>
+<li>Integrated Quarticity Estimation</li>
+</ul>
+</li>
+</ul>
+<h4 id="functions-missing-from-previous-ucsd-garch-toolbox">Functions Missing from Previous UCSD GARCH Toolbox<a class="headerlink" href="#functions-missing-from-previous-ucsd-garch-toolbox" title="Permanent link">&para;</a></h4>
+<p>The following list of function have not been updated and so if needed,
+you should continue to use the <a href="/code/matlab/ucsd-garch/">UCSD GARCH</a> code.</p>
+<ul>
+<li>GARCH in mean</li>
+<li>IDCC MVGARCH</li>
+<li>Shapirowilks</li>
+<li>Shapirofrancia</li>
+</ul>

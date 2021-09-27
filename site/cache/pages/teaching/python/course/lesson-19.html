@@ -1,0 +1,116 @@
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Importing-Data">Importing Data<a class="anchor-link" href="#Importing-Data">&#182;</a></h1><p>This lesson covers:</p>
+<ul>
+<li>Importing data </li>
+<li>Converting dates </li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Problem:-Reading-in-data-with-Dates">Problem: Reading in data with Dates<a class="anchor-link" href="#Problem:-Reading-in-data-with-Dates">&#182;</a></h2><p>Read in the files <code>GS10.csv</code> and <code>GS10.xls</code> which have both been downloaded
+from <a href="https://fred.stlouisfed.org/">FRED</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Problem:-Converting-Dates">Problem: Converting Dates<a class="anchor-link" href="#Problem:-Converting-Dates">&#182;</a></h2><ol>
+<li>Load the CSV file without converting the dates in <code>read_csv</code>.</li>
+<li>Convert the date column, remove it from the DataFrame, and set it as the
+index. </li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Exercises">Exercises<a class="anchor-link" href="#Exercises">&#182;</a></h2><h3 id="Exercise:-Selectively-Load-Columns">Exercise: Selectively Load Columns<a class="anchor-link" href="#Exercise:-Selectively-Load-Columns">&#182;</a></h3><ol>
+<li>Load the data in <code>data/fred-md.csv</code> in the columns sasdate,
+RPI and INDPRO using the <code>usecols</code> keyword.</li>
+<li>Remove the first row by selecting the second to the end.</li>
+<li>Convert sasdate to dates</li>
+<li>Set sasdate as the index and remove it from the <code>DataFrame</code>.</li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Exercise:-Load-and-Merge-multiple-Sheets">Exercise: Load and Merge multiple Sheets<a class="anchor-link" href="#Exercise:-Load-and-Merge-multiple-Sheets">&#182;</a></h3><ol>
+<li>Load the data on the sheet "Long Mat" in the Excel file "data/exercise.xlsx". 
+These are 10 and 20 year constant maturity yields.</li>
+<li>Load the data on the sheet "Short Mat" in the Excel file "data/exercise.xlsx".
+These are 1 and 3 year constant maturity yields.</li>
+<li>Combine the columns in the two <code>DataFrame</code>s by creating a dictionary of the keys in
+each with the values equal to the column names.</li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+ 
+

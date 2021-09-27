@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+<head>
+<meta charset="utf-8"/><!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-2701681-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-2701681-1');
+</script>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>MATLAB | Kevin Sheppard</title>
+<link href="https://fonts.googleapis.com/css?family=Roboto+Mono%7CRoboto:300,400,500,700&amp;display=fallback" rel="stylesheet"/>
+<link href="../../assets/css/bootstrap-material-design.css" rel="stylesheet" type="text/css"/>
+<link href="../../assets/css/baguetteBox.min.css" rel="stylesheet" type="text/css"/>
+<link href="../../assets/css/rst.css" rel="stylesheet" type="text/css"/>
+<link href="../../assets/css/code.css" rel="stylesheet" type="text/css"/>
+<link href="../../assets/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css"/>
+<link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" rel="stylesheet" type="text/css"/>
+<link href="../../assets/css/tipuesearch.css" rel="stylesheet" type="text/css"/>
+<link href="../../assets/css/kevinsheppard.css" rel="stylesheet" type="text/css"/>
+<link href="../../rss.xml" rel="alternate" title="RSS" type="application/rss+xml"/>
+<link href="https://www.kevinsheppard.com/teaching/matlab/" rel="canonical"/>
+<link href="../../apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="../../favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="../../favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="../../favicon.png" rel="icon"/>
+<link href="../../site.webmanifest" rel="manifest"/>
+<link color="#07689f" href="../../safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#07689F" name="msapplication-TileColor"/>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  jax: ["input/TeX","output/HTML-CSS"],
+  extensions: ["tex2jax.js","MathMenu.js","MathZoom.js"],
+  TeX: {
+    extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]
+  },
+  tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: false,
+  }
+});
+</script><!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]-->
+<meta content="#07689F" name="theme-color"/>
+<style>
+  html, body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #fafafa;
+  }
+</style>
+<meta content="Kevin Sheppard" name="author"/>
+<meta content="Kevin Sheppard" property="og:site_name"/>
+<meta content="MATLAB" property="og:title"/>
+<meta content="https://www.kevinsheppard.com/teaching/matlab/" property="og:url"/>
+<meta content="Introductory Notes and Course¶ MATLAB Notes and Course is a set of notes and an introductory MATLAB course designed for new users. MFE Companion Course¶ The companion course is designed to accompany F" property="og:description"/>
+<meta content="article" property="og:type"/>
+<meta content="2019-09-02T11:28:06+01:00" property="article:published_time"/>
+</head>
+<body>
+<a class="sr-only sr-only-focusable" href="#content">Skip to main content</a> <!-- Menubar -->
+<div class="wrapper d-flex flex-column">
+<nav class="navbar navbar-expand-sm fixed-top-sm justify-content-start flex-nowrap py-2 pl-1 nav-color-override navbar-primary">
+<div class="container"><a class="navbar-brand ml-2 ml-sm-0 mr-auto" href="https://www.kevinsheppard.com/"><span id="blog-title">Kevin Sheppard</span></a> <button aria-controls="bs-navbar1 bs-navbar2" aria-expanded="false" aria-label="Toggle navigation" class="custom-toggler navbar-toggler order-first" data-target="#bs-navbar1, #bs-navbar2" data-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button>
+<div class="navbar-collapse collapse" id="bs-navbar1">
+<ul class="navbar-nav blog-nav ml-auto my-2 my-lg-0">
+<li class="nav-item"><a class="nav-link" href="../../blog/">Blog</a></li>
+</ul>
+<form action="../../search/" class="form-inline my-2 my-lg-0" role="search">
+<div class="input-group"><input aria-label="Search" autocomplete="off" class="form-control mr-sm-2 bg-light text-dark pl-2" id="tipue_search_input" name="q" placeholder="Search..." type="search"/><button aria-label="Submit search" class="btn btn-primary py-1" type="submit"><i class="fa fa-search"></i></button></div>
+</form>
+</div>
+</div>
+</nav>
+<nav class="navbar navbar-expand-sm nav-color-override navbar-primary pb-1">
+<div class="navbar-collapse collapse pt-2 pt-sm-0" id="bs-navbar2">
+<div class="container">
+<ul class="navbar-nav mr-auto">
+<li class="nav-item dropdown"><a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Research</a>
+<div class="dropdown-menu"><a class="dropdown-item" href="../../research/cv/">CV</a> <a class="dropdown-item" href="../../research/publications/">Publications</a> <a class="dropdown-item" href="../../research/working-papers/">Working Papers</a></div>
+</li>
+<li class="nav-item dropdown"><a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Teaching</a>
+<div class="dropdown-menu"><a class="dropdown-item" href="../mfe/">MFE</a> <a class="dropdown-item" href="../python/">Python</a> <a class="dropdown-item active" href=".">MATLAB <span class="sr-only">(active)</span></a> <a class="dropdown-item" href="../lyx/">LyX</a> <a class="dropdown-item" href="../other/">Other</a> <a class="dropdown-item" href="../scanning-recommendations/">Document Scanning</a></div>
+</li>
+<li class="nav-item dropdown"><a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Code</a>
+<div class="dropdown-menu"><a class="dropdown-item" href="../../code/matlab/mfe-toolbox/">MFE Toolbox</a> <a class="dropdown-item" href="https://github.com/bashtage/arch/"><span><i class="fab fa-github"></i> arch</span></a> <a class="dropdown-item" href="https://github.com/bashtage/linearmodels"><span><i class="fab fa-github"></i> linearmodels</span></a> <a class="dropdown-item" href="https://github.com/bashtage/"><span><i class="fab fa-github"></i> GitHub<span></span></span></a></div>
+</li>
+<li class="nav-item"><a class="nav-link" href="../../galleries/">Photos</a></li>
+<li class="nav-item"><a class="nav-link" href="../../blog/">Blog</a></li>
+</ul>
+</div>
+</div>
+</nav>
+<main class="flex-fill" id="content">
+<div class="jumbotron masthead" style="background: #003144 center center no-repeat url(../../images/mastheads/matlab-masthead-opt.png);">
+<div class="container text-dark" style="min-height: 15rem;">
+<div class="row">
+<div class="col-sm-1"></div>
+<div class="col-sm-10"></div>
+<div class="col-sm-1"></div>
+</div>
+</div>
+</div>
+<div class="container">
+<div class="row">
+<div class="col-xl-1"></div>
+<div class="col-xl-10">
+<article class="post-text storypage" itemscope="itemscope" itemtype="http://schema.org/Article">
+<header>
+<h1 class="p-name entry-title" itemprop="headline name"><a class="u-url" href=".">MATLAB</a></h1>
+</header>
+<div class="e-content entry-content" itemprop="articleBody text">
+<div>
+<h3 id="introductory-notes-and-course">Introductory Notes and Course<a class="headerlink" href="#introductory-notes-and-course" title="Permanent link">¶</a></h3>
+<p><a href="notes/">MATLAB Notes and Course</a> is a set of notes and an introductory MATLAB course designed for new users.</p>
+<h3 id="mfe-companion-course">MFE Companion Course<a class="headerlink" href="#mfe-companion-course" title="Permanent link">¶</a></h3>
+<p>The <a href="mfe-matlab/">companion course</a> is designed to accompany Financial Econometrics I and II and to provide tools needed in Empirical Asset pricing.</p>
+<h3 id="mfe-toolbox">MFE Toolbox<a class="headerlink" href="#mfe-toolbox" title="Permanent link">¶</a></h3>
+<p>The <a href="../../code/matlab/mfe-toolbox/">MFE Toolbox</a> provides a large collection of MATLAB functions for analyzing financial time series.</p>
+</div>
+</div>
+</article>
+</div>
+<div class="col-xl-1"></div>
+</div>
+</div>
+</main>
+<footer class="w-100 text-light py-4 mt-4 bg-footer">
+<div class="container-fluid">
+<div class="container">
+<div class="row">
+<div class="col-lg-8 col-md-10 mx-auto">
+<ul class="list-inline text-center">
+<li class="list-inline-item"><a aria-label="Contact me using email" class="contact" href="mailto:kevin.k.sheppard@gmail.com"><span class="fa-stack fa-lg"><i class="far fa-circle fa-stack-2x"></i> <i class="far fa-envelope fa-stack-1x"></i></span></a></li>
+<li class="list-inline-item"><a aria-label="Visit my github repositories" class="contact" href="https://github.com/bashtage"><span class="fa-stack fa-lg"><i class="far fa-circle fa-stack-2x"></i> <i class="fab fa-github fa-stack-1x"></i></span></a></li>
+<li class="list-inline-item"><a aria-label="View my LinkedIn profile" class="contact" href="https://www.linkedin.com/in/kevinsheppard/"><span class="fa-stack fa-lg"><i class="far fa-circle fa-stack-2x"></i> <i class="fab fa-linkedin fa-stack-1x"></i></span></a></li>
+<li class="list-inline-item"><a aria-label="Read about the content license used on this site" class="contact" href="https://creativecommons.org/licenses/by-nc-nd/4.0/"><span class="fa-stack fa-lg"><i class="fab fa-creative-commons fa-stack-2x"></i></span></a></li>
+</ul>
+<!--<p class="copyright text-muted">Copyright © Your Website 2018</p>--></div>
+</div>
+</div>
+</div>
+<div class="container-fluid">
+<div class="container d-flex justify-content-center">
+<div class="row">
+<p>© 2021 <a href="mailto:kevin.k.sheppard@gmail.com">Kevin Sheppard</a> - Content licensed <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" rel="license">CC-BY-NC-ND</a> except code blocks which are <a href="https://opensource.org/licenses/NCSA/" rel="license">NCSA</a> licensed.</p>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<!-- wrapper -->
+<script src="../../assets/js/jquery.min.js"></script>
+<script src="../../assets/js/popper.min.js"></script>
+<script src="../../assets/js/bootstrap.min.js"></script>
+<script src="../../assets/js/baguetteBox.min.js"></script>
+<script>
+
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function (element) {
+            return element.getElementsByTagName('img')[0].alt;
+        }
+    });
+</script>
+</body>
+</html>

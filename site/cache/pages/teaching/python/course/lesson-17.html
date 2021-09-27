@@ -1,0 +1,154 @@
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Conditional-Statements">Conditional Statements<a class="anchor-link" href="#Conditional-Statements">&#182;</a></h1><ul>
+<li><code>if</code>-<code>elif</code>-<code>else</code> blocks</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Problem:-Print-value-if-negative">Problem: Print value if negative<a class="anchor-link" href="#Problem:-Print-value-if-negative">&#182;</a></h2><p>Draw a standard normal value using <code>np.random.standard_normal</code> and print the
+value if it is negative.</p>
+<p><strong>Note</strong>: Rerun the cell a few time to see different output.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Problem:-Print-different-messages-based-on-value">Problem: Print different messages based on value<a class="anchor-link" href="#Problem:-Print-different-messages-based-on-value">&#182;</a></h2><p>Draw a standard normal value and print "Positive" if it is positive
+and "Negative" if not.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Problem:">Problem:<a class="anchor-link" href="#Problem:">&#182;</a></h2><p>Draw a standard t random variable with 2 degrees of freedom using
+<code>np.random.standard_t(2)</code> and print "Negative Outlier" if less than -2,
+"Positive Outlier" if larger than 2, and "Inlier" if between -2 and 2.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Exercises">Exercises<a class="anchor-link" href="#Exercises">&#182;</a></h2><h3 id="Exercise:-Classify-two-points">Exercise: Classify two points<a class="anchor-link" href="#Exercise:-Classify-two-points">&#182;</a></h3><p>Generate two standard normal values <code>x</code> and <code>y</code> using
+two calls to <code>rs.standard_normal()</code>. Use an <code>if</code>-<code>elif</code>-<code>else</code> 
+clause to print the quadrant they are in.  The four quadrants are
+upper right, upper left, lower left and lower right.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Exercise:-Generate-a-contaminated-normal">Exercise: Generate a contaminated normal<a class="anchor-link" href="#Exercise:-Generate-a-contaminated-normal">&#182;</a></h3><p>Generate a uniform using <code>u = rs.sample()</code>. Using this value and an 
+<code>if</code>-<code>else</code> clause, generate a contaminated normal which is a draw from a
+$N(0,1)$ ($N(\mu,sigma^2)$) if $u&lt;0.95$ or a draw from a $N(0,10)$ otherwise.
+Use <code>rs.normal</code> to generate the normal variable.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+ 
+

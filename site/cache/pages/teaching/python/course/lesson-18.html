@@ -1,0 +1,244 @@
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Logic-and-Loops">Logic and Loops<a class="anchor-link" href="#Logic-and-Loops">&#182;</a></h1><p>This lesson covers:</p>
+<ul>
+<li>Mixing logic and loops </li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Setup: Load the momentum data</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">momentum</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/momentum.csv&quot;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="s2">&quot;date&quot;</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">mom_01</span> <span class="o">=</span> <span class="n">momentum</span><span class="o">.</span><span class="n">mom_01</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">momentum</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Problem:-Logical-Statements-and-for-Loops">Problem: Logical Statements and for Loops<a class="anchor-link" href="#Problem:-Logical-Statements-and-for-Loops">&#182;</a></h2><p>Use a for loop along with an <code>if</code> statement to simulate an asymmetric random
+walk of the form</p>
+$$y_{i}=y_{i-1}+e_{i}+I_{[e_{i}&lt;0]}e_{i}$$<p>where $I_{[e_{i}&lt;0]}$ is known as an indicator variable that takes the value
+1 if the statement in brackets is true. Plot y. $e$ is a standard normal
+shock. Use <code>cumsum</code> to simulate a symmetric one (<code>z</code>), and plot the two using
+the code in the cell below.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Plot the two random walks using the code.  We will cover data visualization
+in a later lesson.</p>
+<div class="highlight"><pre><span></span><span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;z&quot;</span><span class="p">])</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Problem:-Simulate-the-asymmetric-random-walk-without-an-if-then">Problem: Simulate the asymmetric random walk without an <code>if</code>-<code>then</code><a class="anchor-link" href="#Problem:-Simulate-the-asymmetric-random-walk-without-an-if-then">&#182;</a></h2><p>Use boolean multiplication to simulate the same random walk without using
+an <code>if</code>-<code>then</code> statement.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Setup: Plot the data</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Problem:-Combining-flow-control">Problem: Combining flow control<a class="anchor-link" href="#Problem:-Combining-flow-control">&#182;</a></h2><p>For momentum portfolios 1 and 10, compute the length of the runs in the
+series. In pseudo code,</p>
+<ul>
+<li>Start at i=1 and define run(1) = 1</li>
+<li>For i in 2,...,T, define run(i) = run(i-1) + 1 if 
+$\textrm{sgn}\left(r_{i}\right)=\textrm{sgn}\left(r_{i-1}\right)$ else 1.</li>
+</ul>
+<p>You will need to use <code>len</code> and <code>zeros</code>.</p>
+<ol>
+<li>Compute the length longest run in the series and the index of the
+location of the longest run. Was it positive or negative?</li>
+<li>How many distinct runs lasted 5 or more days?</li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Plot the runs using</p>
+<div class="highlight"><pre><span></span><span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">run</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Exercises">Exercises<a class="anchor-link" href="#Exercises">&#182;</a></h2><h3 id="Exercise:-Simulate-a-Process-with-Heteroskedasticity">Exercise: Simulate a Process with Heteroskedasticity<a class="anchor-link" href="#Exercise:-Simulate-a-Process-with-Heteroskedasticity">&#182;</a></h3><p>Simulate 100 observations of a time series with heteroskedasticity 
+that follows a random walk of the form:</p>
+$$ y_t = y_{t-1} + \sigma_t \epsilon_t $$<p>where $\epsilon_t\sim N(0,1)$, $y_0=0$ and $\sigma_t$ is:</p>
+<ul>
+<li>0.5 if the 0 of the past 3 shocks are negative</li>
+<li>1 if 1 of the past 3 shocks are negative</li>
+<li>2 if 2 of the past 3 shocks are negative</li>
+<li>6 if 3 of the past 3 shocks are negative</li>
+</ul>
+<p>Plot the result.</p>
+<p><strong>Notes</strong></p>
+<ul>
+<li>When generating the first 3 values, treat $\epsilon_{-1}$, $\epsilon_{-2}$ and
+$\epsilon_{-3}$ as 0 (non-negative).</li>
+<li>Re-run the simulation to see different paths.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+ 
+

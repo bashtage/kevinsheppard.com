@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+<head>
+<meta charset="utf-8"/><!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-2701681-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-2701681-1');
+</script>
+<meta content="A complete course for learning MATLAB from novice to expert." name="description"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>MFE MATLAB | Kevin Sheppard</title>
+<link href="https://fonts.googleapis.com/css?family=Roboto+Mono%7CRoboto:300,400,500,700&amp;display=fallback" rel="stylesheet"/>
+<link href="../../../assets/css/bootstrap-material-design.css" rel="stylesheet" type="text/css"/>
+<link href="../../../assets/css/baguetteBox.min.css" rel="stylesheet" type="text/css"/>
+<link href="../../../assets/css/rst.css" rel="stylesheet" type="text/css"/>
+<link href="../../../assets/css/code.css" rel="stylesheet" type="text/css"/>
+<link href="../../../assets/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../../../assets/css/ipython.min.css" rel="stylesheet" type="text/css"/>
+<link href="../../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" rel="stylesheet" type="text/css"/>
+<link href="../../../assets/css/tipuesearch.css" rel="stylesheet" type="text/css"/>
+<link href="../../../assets/css/kevinsheppard.css" rel="stylesheet" type="text/css"/>
+<link href="../../../rss.xml" rel="alternate" title="RSS" type="application/rss+xml"/>
+<link href="https://www.kevinsheppard.com/teaching/matlab/mfe-matlab/" rel="canonical"/>
+<link href="../../../apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="../../../favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="../../../favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="../../../favicon.png" rel="icon"/>
+<link href="../../../site.webmanifest" rel="manifest"/>
+<link color="#07689f" href="../../../safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#07689F" name="msapplication-TileColor"/>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  jax: ["input/TeX","output/HTML-CSS"],
+  extensions: ["tex2jax.js","MathMenu.js","MathZoom.js"],
+  TeX: {
+    extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]
+  },
+  tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: false,
+  }
+});
+</script><!--[if lt IE 9]><script src="../../../assets/js/html5.js"></script><![endif]-->
+<meta content="#07689F" name="theme-color"/>
+<style>
+  html, body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #fafafa;
+  }
+</style>
+<meta content="Kevin Sheppard" name="author"/>
+<meta content="Kevin Sheppard" property="og:site_name"/>
+<meta content="MFE MATLAB" property="og:title"/>
+<meta content="https://www.kevinsheppard.com/teaching/matlab/mfe-matlab/" property="og:url"/>
+<meta content="A complete course for learning MATLAB from novice to expert." property="og:description"/>
+<meta content="article" property="og:type"/>
+<meta content="2019-09-10T15:48:35+01:00" property="article:published_time"/>
+<meta content="matlab" property="article:tag"/>
+<meta content="mfe" property="article:tag"/>
+</head>
+<body>
+<a class="sr-only sr-only-focusable" href="#content">Skip to main content</a> <!-- Menubar -->
+<div class="wrapper d-flex flex-column">
+<nav class="navbar navbar-expand-sm fixed-top-sm justify-content-start flex-nowrap py-2 pl-1 nav-color-override navbar-primary">
+<div class="container"><a class="navbar-brand ml-2 ml-sm-0 mr-auto" href="https://www.kevinsheppard.com/"><span id="blog-title">Kevin Sheppard</span></a> <button aria-controls="bs-navbar1 bs-navbar2" aria-expanded="false" aria-label="Toggle navigation" class="custom-toggler navbar-toggler order-first" data-target="#bs-navbar1, #bs-navbar2" data-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button>
+<div class="navbar-collapse collapse" id="bs-navbar1">
+<ul class="navbar-nav blog-nav ml-auto my-2 my-lg-0">
+<li class="nav-item"><a class="nav-link" href="../../../blog/">Blog</a></li>
+</ul>
+<form action="../../../search/" class="form-inline my-2 my-lg-0" role="search">
+<div class="input-group"><input aria-label="Search" autocomplete="off" class="form-control mr-sm-2 bg-light text-dark pl-2" id="tipue_search_input" name="q" placeholder="Search..." type="search"/><button aria-label="Submit search" class="btn btn-primary py-1" type="submit"><i class="fa fa-search"></i></button></div>
+</form>
+</div>
+</div>
+</nav>
+<nav class="navbar navbar-expand-sm nav-color-override navbar-primary pb-1">
+<div class="navbar-collapse collapse pt-2 pt-sm-0" id="bs-navbar2">
+<div class="container">
+<ul class="navbar-nav mr-auto">
+<li class="nav-item dropdown"><a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Research</a>
+<div class="dropdown-menu"><a class="dropdown-item" href="../../../research/cv/">CV</a> <a class="dropdown-item" href="../../../research/publications/">Publications</a> <a class="dropdown-item" href="../../../research/working-papers/">Working Papers</a></div>
+</li>
+<li class="nav-item dropdown"><a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Teaching</a>
+<div class="dropdown-menu"><a class="dropdown-item" href="../../mfe/">MFE</a> <a class="dropdown-item" href="../../python/">Python</a> <a class="dropdown-item" href="../">MATLAB</a> <a class="dropdown-item" href="../../lyx/">LyX</a> <a class="dropdown-item" href="../../other/">Other</a> <a class="dropdown-item" href="../../scanning-recommendations/">Document Scanning</a></div>
+</li>
+<li class="nav-item dropdown"><a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Code</a>
+<div class="dropdown-menu"><a class="dropdown-item" href="../../../code/matlab/mfe-toolbox/">MFE Toolbox</a> <a class="dropdown-item" href="https://github.com/bashtage/arch/"><span><i class="fab fa-github"></i> arch</span></a> <a class="dropdown-item" href="https://github.com/bashtage/linearmodels"><span><i class="fab fa-github"></i> linearmodels</span></a> <a class="dropdown-item" href="https://github.com/bashtage/"><span><i class="fab fa-github"></i> GitHub<span></span></span></a></div>
+</li>
+<li class="nav-item"><a class="nav-link" href="../../../galleries/">Photos</a></li>
+<li class="nav-item"><a class="nav-link" href="../../../blog/">Blog</a></li>
+</ul>
+</div>
+</div>
+</nav>
+<main class="flex-fill" id="content">
+<div class="jumbotron" style="background-color: #ffcc00;">
+<div class="container text-dark">
+<div class="row">
+<div class="col-sm-1"></div>
+<div class="col-sm-10">
+<h1 class="display-3">MFE Financial Econometrics</h1>
+<p>Notes, assignment and solutions for the MATLAB companion course the accompanies Financial Econometrics I &amp; II.</p>
+</div>
+<div class="col-sm-1"></div>
+</div>
+</div>
+</div>
+<div class="container">
+<div class="row">
+<div class="col-xl-1"></div>
+<div class="col-xl-10">
+<article class="post-text storypage" itemscope="itemscope" itemtype="http://schema.org/Article">
+<header></header>
+<div class="e-content entry-content" itemprop="articleBody text">
+<div>
+<p>Solutions are posted after the class that covers the assignment has completed. Solutions are available both as MATLAB Live Scripts, which provide an integrated view of code, text and mathematics and generic m-file scripts. Live Scripts are only usable in recent versions of MATLAB.</p>
+<div class="toc">
+<ul>
+<li><a href="#matlab-notes">MATLAB Notes</a></li>
+<li><a href="#introduction">Introduction</a>
+<ul>
+<li><a href="#introduction-solutions">Introduction Solutions</a></li>
+</ul>
+</li>
+<li><a href="#companion-course">Companion Course</a>
+<ul>
+<li><a href="#michaelmas-solutions">Michaelmas Solutions</a></li>
+<li><a href="#hilary-solutions">Hilary Solutions</a></li>
+<li><a href="#helper-function">Helper Function</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<h3 id="matlab-notes">MATLAB Notes<a class="headerlink" href="#matlab-notes" title="Permanent link">¶</a></h3>
+<p>A <a href="../notes/">complete set of notes</a> covering the core aspects of MATLAB used in econometric analysis serves as a reference for the companion course.</p>
+<h3 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">¶</a></h3>
+<p><a href="../../../files/teaching/matlab/course/mfe_matlab_introductory_course_2019.pdf">MATLAB Introduction Course</a></p>
+<p><a href="../../../files/teaching/matlab/course/mfe_matlab_introduction_data.zip">MATLAB Introduction Course Data</a></p>
+<h4 id="introduction-solutions">Introduction Solutions<a class="headerlink" href="#introduction-solutions" title="Permanent link">¶</a></h4>
+<div class="table-responsive"><table>
+<thead>
+<tr>
+<th class="text-left">MATLAB Live Script (mlx)</th>
+<th class="text-left">MATLAB Script (m)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-left"><a href="../../../files/teaching/matlab/course/importing_data.mlx">Importing Data into MATLAB</a></td>
+<td class="text-left"><a href="../../../files/teaching/matlab/course/importing_data.m">Importing Data into MATLAB</a></td>
+</tr>
+<tr>
+<td class="text-left"><a href="../../../files/teaching/matlab/course/using_functions.mlx">Using functions</a></td>
+<td class="text-left"><a href="../../../files/teaching/matlab/course/using_functions.m">Using functions</a></td>
+</tr>
+<tr>
+<td class="text-left"><a href="../../../files/teaching/matlab/course/accessing_elements.mlx">Accessing elements in matrices</a></td>
+<td class="text-left"><a href="../../../files/teaching/matlab/course/accessing_elements.m">Accessing elements in matrices</a></td>
+</tr>
+<tr>
+<td class="text-left"><a href="../../../files/teaching/matlab/course/program_flow.mlx">Program flow</a></td>
+<td class="text-left"><a href="../../../files/teaching/matlab/course/program_flow.m">Program flow</a></td>
+</tr>
+<tr>
+<td class="text-left"><a href="../../../files/teaching/matlab/course/logical_statements.mlx">Logical statements</a></td>
+<td class="text-left"><a href="../../../files/teaching/matlab/course/logical_statements.m">Logical statements</a></td>
+</tr>
+<tr>
+<td class="text-left"><a href="../../../files/teaching/matlab/course/tables.mlx">Tables</a></td>
+<td class="text-left"><a href="../../../files/teaching/matlab/course/tables.m">Tables</a></td>
+</tr>
+<tr>
+<td class="text-left"><a href="../../../files/teaching/matlab/course/graphics.mlx">Graphics</a></td>
+<td class="text-left"><a href="../../../files/teaching/matlab/course/graphics.m">Graphics</a></td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="companion-course">Companion Course<a class="headerlink" href="#companion-course" title="Permanent link">¶</a></h3>
+<p><a href="../../../files/teaching/matlab/course/mfe_matlab_course_outline_2019.pdf">MATLAB Companion Course (Complete)</a></p>
+<h4 id="michaelmas-solutions">Michaelmas Solutions<a class="headerlink" href="#michaelmas-solutions" title="Permanent link">¶</a></h4>
+<h5 id="data-and-simulation">Data and Simulation<a class="headerlink" href="#data-and-simulation" title="Permanent link">¶</a></h5>
+<div class="table-responsive"><table>
+<thead>
+<tr>
+<th class="text-left">MATLAB Live Script (mlx)</th>
+<th class="text-left">MATLAB Script (m)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-left"><a href="../../../files/teaching/matlab/course/data_set_construction.mlx">Data Set Construction</a></td>
+<td class="text-left"><a href="../../../files/teaching/matlab/course/data_set_construction.m">Data Set Construction</a></td>
+</tr>
+<tr>
+<td class="text-left"><a href="../../../files/teaching/matlab/course/simulation.mlx">Simulation</a></td>
+<td class="text-left"><a href="../../../files/teaching/matlab/course/simulation.m">Simulation</a></td>
+</tr>
+<tr>
+<td class="text-left"><a href="../../../files/teaching/matlab/course/expectations.mlx">Expectations</a></td>
+<td class="text-left"><a href="../../../files/teaching/matlab/course/expectations.m">Expectations</a></td>
+</tr>
+</tbody>
+</table></div>
+<h5 id="estimation-and-inference">Estimation and Inference<a class="headerlink" href="#estimation-and-inference" title="Permanent link">¶</a></h5>
+<div class="table-responsive"><table>
+<thead>
+<tr>
+<th class="text-left">MATLAB Live Script (mlx)</th>
+<th class="text-left">MATLAB Script (m)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-left"><a href="../../../files/teaching/matlab/course/method_of_moments.mlx">Method of Moments</a></td>
+<td class="text-left"><a href="../../../files/teaching/matlab/course/method_of_moments.m">Method of Moments</a></td>
+</tr>
+<tr>
+<td class="text-left"><a href="../../../files/teaching/matlab/course/maximum_likelihood.mlx">Maximum Likelihood</a></td>
+<td class="text-left"><a href="../../../files/teaching/matlab/course/maximum_likelihood.m">Maximum Likelihood</a></td>
+</tr>
+<tr>
+<td class="text-left"><a href="../../../files/teaching/matlab/course/standard_errors.mlx">Bias and Standard Errors</a></td>
+<td class="text-left"><a href="../../../files/teaching/matlab/course/standard_errors.m">Bias and Standard Errors</a></td>
+</tr>
+</tbody>
+</table></div>
+<h5 id="linear-regression">Linear Regression<a class="headerlink" href="#linear-regression" title="Permanent link">¶</a></h5>
+<div class="table-responsive"><table>
+<thead>
+<tr>
+<th class="text-left">MATLAB Live Script (mlx)</th>
+<th class="text-left">MATLAB Script (m)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-left"><a href="../../../files/teaching/matlab/course/basic_linear_regression.mlx">Basic Linear Regression</a></td>
+<td class="text-left"><a href="../../../files/teaching/matlab/course/basic_linear_regression.m">Basic Linear Regression</a></td>
+</tr>
+<tr>
+<td class="text-left"><a href="../../../files/teaching/matlab/course/rolling_and_recursive_ols.mlx">Rolling Regressions</a></td>
+<td class="text-left"><a href="../../../files/teaching/matlab/course/rolling_and_recursive_ols.m">Rolling Regressions</a></td>
+</tr>
+<tr>
+<td class="text-left"><a href="../../../files/teaching/matlab/course/cross_validation.mlx">Cross-validation and Model Selection</a></td>
+<td class="text-left"><a href="../../../files/teaching/matlab/course/cross_validation.m">Cross-validation and Model Selection</a></td>
+</tr>
+<tr>
+<td class="text-left"><a href="../../../files/teaching/matlab/course/model_selection_and_out_of_sample_r2.mlx">Model Selection and Out-of-Sample R2</a></td>
+<td class="text-left"><a href="../../../files/teaching/matlab/course/model_selection_and_out_of_sample_r2.m">Model Selection and Out-of-Sample R2</a></td>
+</tr>
+</tbody>
+</table></div>
+<h6 id="support-files">Support Files<a class="headerlink" href="#support-files" title="Permanent link">¶</a></h6>
+<ul>
+<li><a href="../../../files/teaching/matlab/course/stg.m">Specific-to-General</a></li>
+<li><a href="../../../files/teaching/matlab/course/gts.m">General-to-Specific</a></li>
+<li><a href="../../../files/teaching/matlab/course/kfold_cross_val.m">K-fold Cross Validation</a></li>
+<li><a href="../../../files/teaching/matlab/course/generate_data.m">Simulated Data Generation</a></li>
+<li><a href="../../../files/teaching/matlab/course/compute_ic.m">Information Criteria Calculation</a></li>
+</ul>
+<h4 id="hilary-solutions">Hilary Solutions<a class="headerlink" href="#hilary-solutions" title="Permanent link">¶</a></h4>
+<h5 id="data">Data<a class="headerlink" href="#data" title="Permanent link">¶</a></h5>
+<div class="table-responsive"><table>
+<thead>
+<tr>
+<th class="text-left">MATLAB Live Script (mlx)</th>
+<th class="text-left">MATLAB Script (m)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-left"><a href="../../../files/teaching/matlab/course/time_series_data.mlx">Data Set Construction</a></td>
+<td class="text-left"><a href="../../../files/teaching/matlab/course/time_series_data.m">Data Set Construction</a></td>
+</tr>
+</tbody>
+</table></div>
+<h5 id="arma-models">ARMA Models<a class="headerlink" href="#arma-models" title="Permanent link">¶</a></h5>
+<div class="table-responsive"><table>
+<thead>
+<tr>
+<th class="text-left">MATLAB Live Script (mlx)</th>
+<th class="text-left">MATLAB Script (m)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-left"><a href="../../../files/teaching/matlab/course/arma_estimation.mlx">ARMA Model Estimation</a></td>
+<td class="text-left"><a href="../../../files/teaching/matlab/course/arma_estimation.m">ARMA Model Estimation</a></td>
+</tr>
+<tr>
+<td class="text-left"><a href="../../../files/teaching/matlab/course/arma_model_selection.mlx">ARMA Model Selection</a></td>
+<td class="text-left"><a href="../../../files/teaching/matlab/course/arma_model_selection.m">ARMA Model Selection</a></td>
+</tr>
+<tr>
+<td class="text-left"><a href="../../../files/teaching/matlab/course/arma_residual_diagnostics.mlx">ARMA Diagnostics</a></td>
+<td class="text-left"><a href="../../../files/teaching/matlab/course/arma_residual_diagnostics.m">ARMA Diagnostics</a></td>
+</tr>
+<tr>
+<td class="text-left"><a href="../../../files/teaching/matlab/course/arma_forecasting.mlx">ARMA Forecasting</a></td>
+<td class="text-left"><a href="../../../files/teaching/matlab/course/arma_forecasting.m">ARMA Forecasting</a></td>
+</tr>
+<tr>
+<td class="text-left"><a href="../../../files/teaching/matlab/course/arma_unit_roots.mlx">Unit Root Testing</a></td>
+<td class="text-left"><a href="../../../files/teaching/matlab/course/arma_unit_roots.m">Unit Root Testing</a></td>
+</tr>
+</tbody>
+</table></div>
+<h5 id="arch-models">ARCH Models<a class="headerlink" href="#arch-models" title="Permanent link">¶</a></h5>
+<div class="table-responsive"><table>
+<thead>
+<tr>
+<th class="text-left">MATLAB Live Script (mlx)</th>
+<th class="text-left">MATLAB Script (m)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-left"><a href="../../../files/teaching/matlab/course/arch_model_estimation.mlx">ARCH Model Estimation</a></td>
+<td class="text-left"><a href="../../../files/teaching/matlab/course/arch_model_estimation.m">ARCH Model Estimation</a></td>
+</tr>
+<tr>
+<td class="text-left"><a href="../../../files/teaching/matlab/course/arch_model_selection.mlx">ARCH Model Selection</a></td>
+<td class="text-left"><a href="../../../files/teaching/matlab/course/arch_model_selection.m">ARCH Model Selection</a></td>
+</tr>
+<tr>
+<td class="text-left"><a href="../../../files/teaching/matlab/course/arch_model_forecasting.mlx">ARCH Model Forecasting</a></td>
+<td class="text-left"><a href="../../../files/teaching/matlab/course/arch_model_forecasting.m">ARCH Model Forecasting</a></td>
+</tr>
+</tbody>
+</table></div>
+<h5 id="value-at-risk">Value-at-Risk<a class="headerlink" href="#value-at-risk" title="Permanent link">¶</a></h5>
+<div class="table-responsive"><table>
+<thead>
+<tr>
+<th class="text-left">MATLAB Live Script (mlx)</th>
+<th class="text-left">MATLAB Script (m)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-left"><a href="../../../files/teaching/matlab/course/VaR_historical_simulation.mlx">Value-at-Risk using Historical Simulation</a></td>
+<td class="text-left"><a href="../../../files/teaching/matlab/course/VaR_historical_simulation.m">Value-at-Risk using Historical Simulation</a></td>
+</tr>
+<tr>
+<td class="text-left"><a href="../../../files/teaching/matlab/course/VaR_filtered_historical_simulation.mlx">Value-at-Risk using Filtered HS</a></td>
+<td class="text-left"><a href="../../../files/teaching/matlab/course/VaR_filtered_historical_simulation.m">Value-at-Risk using Filtered HS</a></td>
+</tr>
+<tr>
+<td class="text-left"><a href="../../../files/teaching/matlab/course/VaR_forecast_evaluation.mlx">Value-at-Risk Evaluation</a></td>
+<td class="text-left"><a href="../../../files/teaching/matlab/course/VaR_forecast_evaluation.m">Value-at-Risk Evaluation</a></td>
+</tr>
+</tbody>
+</table></div>
+<h6 id="vector-autoregressions">Vector Autoregressions<a class="headerlink" href="#vector-autoregressions" title="Permanent link">¶</a></h6>
+<div class="table-responsive"><table>
+<thead>
+<tr>
+<th class="text-left">MATLAB Live Script (mlx)</th>
+<th class="text-left">MATLAB Script (m)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-left"><a href="../../../files/teaching/matlab/course/VectorAR_estimation.mlx">Vector Autoregression Estimation</a></td>
+<td class="text-left"><a href="../../../files/teaching/matlab/course/VectorAR_estimation.m">Vector Autoregression Estimation</a></td>
+</tr>
+<tr>
+<td class="text-left"><a href="../../../files/teaching/matlab/course/VectorAR_order_selection.mlx">Vector Autoregression Order Selection</a></td>
+<td class="text-left"><a href="../../../files/teaching/matlab/course/VectorAR_order_selection.m">Vector Autoregression Order Selection</a></td>
+</tr>
+<tr>
+<td class="text-left"><a href="../../../files/teaching/matlab/course/VectorAR_granger_causality.mlx">Vector Autoregression Granger Causality</a></td>
+<td class="text-left"><a href="../../../files/teaching/matlab/course/VectorAR_granger_causality.m">Vector Autoregression Granger Causality</a></td>
+</tr>
+<tr>
+<td class="text-left"><a href="../../../files/teaching/matlab/course/VectorAR_impulse_response.mlx">Vector Autoregression Impulse Responses</a></td>
+<td class="text-left"><a href="../../../files/teaching/matlab/course/VectorAR_impulse_response.m">Vector Autoregression Impulse Responses</a></td>
+</tr>
+<tr>
+<td class="text-left"><a href="../../../files/teaching/matlab/course/VectorAR_engle_granger.mlx">Vector Autoregression: Engle-Granger Cointegration Testing</a></td>
+<td class="text-left"><a href="../../../files/teaching/matlab/course/VectorAR_engle_granger.m">Vector Autoregression: Engle-Granger Cointegration Testing</a></td>
+</tr>
+</tbody>
+</table></div>
+<h4 id="helper-function">Helper Function<a class="headerlink" href="#helper-function" title="Permanent link">¶</a></h4>
+<h5 id="data-set-construction">Data Set Construction<a class="headerlink" href="#data-set-construction" title="Permanent link">¶</a></h5>
+<ul>
+<li><a href="../../../files/teaching/matlab/course/month_end_prices.m">Compute Month End Prices</a></li>
+</ul>
+<h5 id="expectations">Expectations<a class="headerlink" href="#expectations" title="Permanent link">¶</a></h5>
+<ul>
+<li><a href="../../../files/teaching/matlab/course/lognormal_quad_target.m">Lognormal Quadrature Target</a></li>
+<li><a href="../../../files/teaching/matlab/course/expected_utility.m">Expected Utility</a></li>
+</ul>
+<h5 id="maximum-likelihood">Maximum Likelihood<a class="headerlink" href="#maximum-likelihood" title="Permanent link">¶</a></h5>
+<ul>
+<li><a href="../../../files/teaching/matlab/course/std_studentst_loglike.m">Standardized T Log-likelihood (degree of freedom only)</a></li>
+<li><a href="../../../files/teaching/matlab/course/std_studentst_loglike_mean_var.m">Standardized T Log-likelihood for unconstrained optimization</a></li>
+<li><a href="../../../files/teaching/matlab/course/std_studentst_loglike_mean_var_notrans.m">Standardized T Log-likelihood with mean and variance for unconstrained optimization</a></li>
+<li><a href="../../../files/teaching/matlab/course/probit_loglike.m">Probit Log-likelihood</a></li>
+<li><a href="../../../files/teaching/matlab/course/ols.m">OLS Function</a></li>
+</ul>
+<h5 id="data-files-raw">Data Files (Raw)<a class="headerlink" href="#data-files-raw" title="Permanent link">¶</a></h5>
+<ul>
+<li><a href="../../../files/teaching/matlab/course/raw_data_files.zip">Raw Data Files (Zipped)</a></li>
+</ul>
+<h5 id="data-files-mat">Data Files (mat)<a class="headerlink" href="#data-files-mat" title="Permanent link">¶</a></h5>
+<h6 id="hilary">Hilary<a class="headerlink" href="#hilary" title="Permanent link">¶</a></h6>
+<ul>
+<li><a href="../../../files/teaching/matlab/course/sp500.mat">S&amp;P 500 (FRED)</a></li>
+<li><a href="../../../files/teaching/matlab/course/cpi.mat">Core CPI (FRED)</a></li>
+<li><a href="../../../files/teaching/matlab/course/term.mat">Term Premium (FRED)</a></li>
+<li><a href="../../../files/teaching/matlab/course/def.mat">Default Premium (FRED)</a></li>
+<li><a href="../../../files/teaching/matlab/course/VAR_data.mat">Government yields and GDF Deflator Data</a></li>
+<li><a href="../../../files/teaching/matlab/course/cay.mat">CAY cointegration data</a></li>
+</ul>
+<h6 id="michaelmas">Michaelmas<a class="headerlink" href="#michaelmas" title="Permanent link">¶</a></h6>
+<h5 id="equity-index-data">Equity Index Data<a class="headerlink" href="#equity-index-data" title="Permanent link">¶</a></h5>
+<ul>
+<li><a href="../../../files/teaching/matlab/course/SP_FTSE.mat">S&amp;P 500 and FTSE 100 data</a></li>
+</ul>
+<h5 id="ken-french-data">Ken French Data<a class="headerlink" href="#ken-french-data" title="Permanent link">¶</a></h5>
+<ul>
+<li><a href="../../../files/teaching/matlab/course/FF_data.mat">Ken French's Data</a></li>
+</ul>
+<h5 id="fx-rates">FX Rates<a class="headerlink" href="#fx-rates" title="Permanent link">¶</a></h5>
+<ul>
+<li><a href="../../../files/teaching/matlab/course/GBPUSD.mat">GBP-USD Exchange Rate</a></li>
+<li><a href="../../../files/teaching/matlab/course/EURUSD.mat">EUR-USD Exchange Rate</a></li>
+<li><a href="../../../files/teaching/matlab/course/AUDUSD.mat">AUD-USD Exchange Rate</a></li>
+<li><a href="../../../files/teaching/matlab/course/JPYUSD.mat">JPY-USD Exchange Rate</a></li>
+</ul>
+</div>
+</div>
+</article>
+</div>
+<div class="col-xl-1"></div>
+</div>
+</div>
+</main>
+<footer class="w-100 text-light py-4 mt-4 bg-footer">
+<div class="container-fluid">
+<div class="container">
+<div class="row">
+<div class="col-lg-8 col-md-10 mx-auto">
+<ul class="list-inline text-center">
+<li class="list-inline-item"><a aria-label="Contact me using email" class="contact" href="mailto:kevin.k.sheppard@gmail.com"><span class="fa-stack fa-lg"><i class="far fa-circle fa-stack-2x"></i> <i class="far fa-envelope fa-stack-1x"></i></span></a></li>
+<li class="list-inline-item"><a aria-label="Visit my github repositories" class="contact" href="https://github.com/bashtage"><span class="fa-stack fa-lg"><i class="far fa-circle fa-stack-2x"></i> <i class="fab fa-github fa-stack-1x"></i></span></a></li>
+<li class="list-inline-item"><a aria-label="View my LinkedIn profile" class="contact" href="https://www.linkedin.com/in/kevinsheppard/"><span class="fa-stack fa-lg"><i class="far fa-circle fa-stack-2x"></i> <i class="fab fa-linkedin fa-stack-1x"></i></span></a></li>
+<li class="list-inline-item"><a aria-label="Read about the content license used on this site" class="contact" href="https://creativecommons.org/licenses/by-nc-nd/4.0/"><span class="fa-stack fa-lg"><i class="fab fa-creative-commons fa-stack-2x"></i></span></a></li>
+</ul>
+<!--<p class="copyright text-muted">Copyright © Your Website 2018</p>--></div>
+</div>
+</div>
+</div>
+<div class="container-fluid">
+<div class="container d-flex justify-content-center">
+<div class="row">
+<p>© 2021 <a href="mailto:kevin.k.sheppard@gmail.com">Kevin Sheppard</a> - Content licensed <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" rel="license">CC-BY-NC-ND</a> except code blocks which are <a href="https://opensource.org/licenses/NCSA/" rel="license">NCSA</a> licensed.</p>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<!-- wrapper -->
+<script src="../../../assets/js/jquery.min.js"></script>
+<script src="../../../assets/js/popper.min.js"></script>
+<script src="../../../assets/js/bootstrap.min.js"></script>
+<script src="../../../assets/js/baguetteBox.min.js"></script>
+<script>
+
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function (element) {
+            return element.getElementsByTagName('img')[0].alt;
+        }
+    });
+</script>
+</body>
+</html>

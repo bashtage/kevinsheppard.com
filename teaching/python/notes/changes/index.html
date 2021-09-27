@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+<head>
+<meta charset="utf-8"/><!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-2701681-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-2701681-1');
+</script>
+<meta content="Changes to Introduction to Python for Econometrics, Statistics and Numerical Analysis" name="description"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Changes Log | Kevin Sheppard</title>
+<link href="https://fonts.googleapis.com/css?family=Roboto+Mono%7CRoboto:300,400,500,700&amp;display=fallback" rel="stylesheet"/>
+<link href="../../../../assets/css/bootstrap-material-design.css" rel="stylesheet" type="text/css"/>
+<link href="../../../../assets/css/baguetteBox.min.css" rel="stylesheet" type="text/css"/>
+<link href="../../../../assets/css/rst.css" rel="stylesheet" type="text/css"/>
+<link href="../../../../assets/css/code.css" rel="stylesheet" type="text/css"/>
+<link href="../../../../assets/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../../../../assets/css/ipython.min.css" rel="stylesheet" type="text/css"/>
+<link href="../../../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" rel="stylesheet" type="text/css"/>
+<link href="../../../../assets/css/tipuesearch.css" rel="stylesheet" type="text/css"/>
+<link href="../../../../assets/css/kevinsheppard.css" rel="stylesheet" type="text/css"/>
+<link href="../../../../rss.xml" rel="alternate" title="RSS" type="application/rss+xml"/>
+<link href="https://www.kevinsheppard.com/teaching/python/notes/changes/" rel="canonical"/>
+<link href="../../../../apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="../../../../favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="../../../../favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="../../../../favicon.png" rel="icon"/>
+<link href="../../../../site.webmanifest" rel="manifest"/>
+<link color="#07689f" href="../../../../safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#07689F" name="msapplication-TileColor"/>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  jax: ["input/TeX","output/HTML-CSS"],
+  extensions: ["tex2jax.js","MathMenu.js","MathZoom.js"],
+  TeX: {
+    extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]
+  },
+  tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: false,
+  }
+});
+</script><!--[if lt IE 9]><script src="../../../../assets/js/html5.js"></script><![endif]-->
+<meta content="#07689F" name="theme-color"/>
+<style>
+  html, body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #fafafa;
+  }
+</style>
+<meta content="Kevin Sheppard" name="author"/>
+<meta content="Kevin Sheppard" property="og:site_name"/>
+<meta content="Changes Log" property="og:title"/>
+<meta content="https://www.kevinsheppard.com/teaching/python/notes/changes/" property="og:url"/>
+<meta content="Changes to Introduction to Python for Econometrics, Statistics and Numerical Analysis" property="og:description"/>
+<meta content="article" property="og:type"/>
+<meta content="2019-09-02T11:27:39+01:00" property="article:published_time"/>
+<meta content="python" property="article:tag"/>
+</head>
+<body>
+<a class="sr-only sr-only-focusable" href="#content">Skip to main content</a> <!-- Menubar -->
+<div class="wrapper d-flex flex-column">
+<nav class="navbar navbar-expand-sm fixed-top-sm justify-content-start flex-nowrap py-2 pl-1 nav-color-override navbar-primary">
+<div class="container"><a class="navbar-brand ml-2 ml-sm-0 mr-auto" href="https://www.kevinsheppard.com/"><span id="blog-title">Kevin Sheppard</span></a> <button aria-controls="bs-navbar1 bs-navbar2" aria-expanded="false" aria-label="Toggle navigation" class="custom-toggler navbar-toggler order-first" data-target="#bs-navbar1, #bs-navbar2" data-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button>
+<div class="navbar-collapse collapse" id="bs-navbar1">
+<ul class="navbar-nav blog-nav ml-auto my-2 my-lg-0">
+<li class="nav-item"><a class="nav-link" href="../../../../blog/">Blog</a></li>
+</ul>
+<form action="../../../../search/" class="form-inline my-2 my-lg-0" role="search">
+<div class="input-group"><input aria-label="Search" autocomplete="off" class="form-control mr-sm-2 bg-light text-dark pl-2" id="tipue_search_input" name="q" placeholder="Search..." type="search"/><button aria-label="Submit search" class="btn btn-primary py-1" type="submit"><i class="fa fa-search"></i></button></div>
+</form>
+</div>
+</div>
+</nav>
+<nav class="navbar navbar-expand-sm nav-color-override navbar-primary pb-1">
+<div class="navbar-collapse collapse pt-2 pt-sm-0" id="bs-navbar2">
+<div class="container">
+<ul class="navbar-nav mr-auto">
+<li class="nav-item dropdown"><a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Research</a>
+<div class="dropdown-menu"><a class="dropdown-item" href="../../../../research/cv/">CV</a> <a class="dropdown-item" href="../../../../research/publications/">Publications</a> <a class="dropdown-item" href="../../../../research/working-papers/">Working Papers</a></div>
+</li>
+<li class="nav-item dropdown"><a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Teaching</a>
+<div class="dropdown-menu"><a class="dropdown-item" href="../../../mfe/">MFE</a> <a class="dropdown-item" href="../../">Python</a> <a class="dropdown-item" href="../../../matlab/">MATLAB</a> <a class="dropdown-item" href="../../../lyx/">LyX</a> <a class="dropdown-item" href="../../../other/">Other</a> <a class="dropdown-item" href="../../../scanning-recommendations/">Document Scanning</a></div>
+</li>
+<li class="nav-item dropdown"><a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Code</a>
+<div class="dropdown-menu"><a class="dropdown-item" href="../../../../code/matlab/mfe-toolbox/">MFE Toolbox</a> <a class="dropdown-item" href="https://github.com/bashtage/arch/"><span><i class="fab fa-github"></i> arch</span></a> <a class="dropdown-item" href="https://github.com/bashtage/linearmodels"><span><i class="fab fa-github"></i> linearmodels</span></a> <a class="dropdown-item" href="https://github.com/bashtage/"><span><i class="fab fa-github"></i> GitHub<span></span></span></a></div>
+</li>
+<li class="nav-item"><a class="nav-link" href="../../../../galleries/">Photos</a></li>
+<li class="nav-item"><a class="nav-link" href="../../../../blog/">Blog</a></li>
+</ul>
+</div>
+</div>
+</nav>
+<main class="flex-fill" id="content">
+<div class="container">
+<div class="row pt-4"></div>
+</div>
+<div class="container">
+<div class="row">
+<div class="col-xl-1"></div>
+<div class="col-xl-10">
+<article class="post-text storypage" itemscope="itemscope" itemtype="http://schema.org/Article">
+<header></header>
+<div class="e-content entry-content" itemprop="articleBody text">
+<div>
+<h3 id="changes-to-introduction-to-python-for-econometrics-statistics-and-numerical-analysis">Changes to <em>Introduction to Python for Econometrics, Statistics and Numerical Analysis</em><a class="headerlink" href="#changes-to-introduction-to-python-for-econometrics-statistics-and-numerical-analysis" title="Permanent link">¶</a></h3>
+<h4 id="fifth-edition">Fifth Edition<a class="headerlink" href="#fifth-edition" title="Permanent link">¶</a></h4>
+<ul>
+<li>Python 3.8 or 3.9 are the recommended versions.</li>
+<li>Added a chapter on code style.</li>
+<li>Expanded coverage of random number generation and added coverage of the preferred method to generate random variates, numpy.random.Generator..</li>
+<li>Verified that all code and examples work correctly against 2021 versions of modules.</li>
+<li>Added coverage of context managers (<code>with</code> <em>method</em> <code>as</code> <em>variable</em>) as the preferred way to open and close files.</li>
+<li>Changed examples to use context managers where appropriate.</li>
+</ul>
+<h4 id="fourth-edition">Fourth edition<a class="headerlink" href="#fourth-edition" title="Permanent link">¶</a></h4>
+<ul>
+<li>Python 3.8 is the recommended version. The notes require Python 3.6 or later, and all references to Python 2.7 have been removed.</li>
+<li>Removed references to NumPy's matrix class and clarified that it should not be used.</li>
+<li>Verified that all code and examples work correctly against 2020 versions of modules. The notable packages and their versions are:</li>
+<li>Python 3.8 (Preferred version), 3.6 (Minimum version)</li>
+<li>NumPy: 1.19.1</li>
+<li>SciPy: 1.5.2</li>
+<li>pandas: 1.1.1</li>
+<li>matplotlib: 3.3.1</li>
+<li>Introduced f-Strings in Section [subsec:f-Strings] as the preferred way to format strings using modern Python. The notes use f-String where possible instead of format.</li>
+<li>Added coverage of Windowing function – rolling, expanding and ewm – to the pandas chapter.</li>
+<li>Expanded the list of packages of interest to researchers working in statistics, econometrics and machine learning.</li>
+<li>Expanded description of model classes and statistical tests in statsmodels that are most relevant for econometrics. Added section detailing formula support. This list represents on a small function of the statsmodels API.</li>
+<li>Added minimize as the preferred interface for non-linear function optimization in Chapter [chap:Non-linear-Function-Optimization].</li>
+<li>Python 2.7 support has been officially dropped, although most examples continue to work with 2.7. Do not Python 2.7 for numerical code.</li>
+<li>Small typo fixes, thanks to Marton Huebler.</li>
+<li>Fixed direct download of FRED data due to API changes, thanks to Jesper Termansen.</li>
+<li>Thanks for Bill Tubbs for a detailed read and multiple typo reports.</li>
+<li>Updated to changes in line profiler (see Ch. [chap:performance-and-optimization])</li>
+<li>Updated deprecations in pandas.</li>
+<li>Removed hold from plotting chapter since this is no longer required.</li>
+<li>Thanks for Gen Li for multiple typo reports.</li>
+</ul>
+<h4 id="third-edition-update-1">Third edition, Update 1<a class="headerlink" href="#third-edition-update-1" title="Permanent link">¶</a></h4>
+<ul>
+<li>Verified that all code and examples work correctly against 2019 versions of modules. The notable packages and their versions are:</li>
+<li>Python 3.7 (Preferred version)</li>
+<li>NumPy: 1.16</li>
+<li>SciPy: 1.3</li>
+<li>pandas: 0.25</li>
+<li>matplotlib: 3.1</li>
+<li>Python 2.7 support has been officially dropped, although most examples continue to work with 2.7. <strong>Do not Python 2.7 in 2019 for numerical code</strong>.</li>
+</ul>
+<h4 id="third-edition-update">Third edition update<a class="headerlink" href="#third-edition-update" title="Permanent link">¶</a></h4>
+<ul>
+<li>Rewritten installation section focused exclusively on using Continuum\'s Anaconda.</li>
+<li>Python 3.5 is the default version of Python instead of 2.7. Python 3.5 (or newer) is well supported by the Python packages required to analyze data and perform statistical analysis, and bring some new useful features, such as a new operator for matrix multiplication (@).</li>
+<li>Removed distinction between integers and longs in built-in data types chapter. This distinction is only relevant for Python 2.7.</li>
+<li>dot has been removed from most examples and replaced with @ to produce more readable code.</li>
+<li>Split Cython and Numba into separate chapters to highlight the improved capabilities of Numba.</li>
+<li>Verified all code working on current versions of core libraries using Python 3.5.</li>
+<li>pandas
+<ul>
+<li>Updated syntax of pandas functions such as resample.</li>
+<li>Added pandas Categorical.</li>
+<li>Expanded coverage of pandas groupby.</li>
+<li>Expanded coverage of date and time data types and functions.</li>
+</ul>
+</li>
+<li>New chapter introducing statsmodels, a package that facilitates statistical analysis of data. statsmodels includes regression analysis, Generalized Linear Models (GLM) and time-series analysis using ARIMA models.</li>
+</ul>
+<h4 id="second-edition-update">Second edition update<a class="headerlink" href="#second-edition-update" title="Permanent link">¶</a></h4>
+<ul>
+<li>Improved Cython and Numba sections</li>
+<li>Added sections discussing interfacing with C code</li>
+<li>Added sections to the chapter on running code in Parallel covering IPython\'s cluster server and joblib</li>
+<li>Further improvements in the installation based on feedback from the <a href=".">Python Course</a></li>
+<li>Updated Anaconda to 1.9</li>
+<li>Added information about using Spyder as an initial IDE.</li>
+<li>Added packages for Spyder to the installation instructions.</li>
+</ul>
+<h5 id="new-in-second-edition">New in second edition<a class="headerlink" href="#new-in-second-edition" title="Permanent link">¶</a></h5>
+<ul>
+<li>The preferred installation method is now Continuum Analytics\' Anaconda. Anaconda is a complete scientific stack and is available for all major platforms.</li>
+<li>New chapter on pandas. pandas provides a simple but powerful tool to manage data and perform basic analysis. It also greatly simplifies importing and exporting data.</li>
+<li>New chapter on advanced selection of elements from an array.</li>
+<li>Numba provides just-in-time compilation for numeric Python code which often produces large performance gains when pure NumPy solutions are not available (e.g. looping code).</li>
+<li>Addition to performance section covering line_profiler for profiling code.</li>
+<li>Dictionary, set and tuple comprehensions.</li>
+<li>Numerous typos fixed.</li>
+<li>All code has been verified working against Anaconda 1.7.0.</li>
+</ul>
+</div>
+</div>
+</article>
+</div>
+<div class="col-xl-1"></div>
+</div>
+</div>
+</main>
+<footer class="w-100 text-light py-4 mt-4 bg-footer">
+<div class="container-fluid">
+<div class="container">
+<div class="row">
+<div class="col-lg-8 col-md-10 mx-auto">
+<ul class="list-inline text-center">
+<li class="list-inline-item"><a aria-label="Contact me using email" class="contact" href="mailto:kevin.k.sheppard@gmail.com"><span class="fa-stack fa-lg"><i class="far fa-circle fa-stack-2x"></i> <i class="far fa-envelope fa-stack-1x"></i></span></a></li>
+<li class="list-inline-item"><a aria-label="Visit my github repositories" class="contact" href="https://github.com/bashtage"><span class="fa-stack fa-lg"><i class="far fa-circle fa-stack-2x"></i> <i class="fab fa-github fa-stack-1x"></i></span></a></li>
+<li class="list-inline-item"><a aria-label="View my LinkedIn profile" class="contact" href="https://www.linkedin.com/in/kevinsheppard/"><span class="fa-stack fa-lg"><i class="far fa-circle fa-stack-2x"></i> <i class="fab fa-linkedin fa-stack-1x"></i></span></a></li>
+<li class="list-inline-item"><a aria-label="Read about the content license used on this site" class="contact" href="https://creativecommons.org/licenses/by-nc-nd/4.0/"><span class="fa-stack fa-lg"><i class="fab fa-creative-commons fa-stack-2x"></i></span></a></li>
+</ul>
+<!--<p class="copyright text-muted">Copyright © Your Website 2018</p>--></div>
+</div>
+</div>
+</div>
+<div class="container-fluid">
+<div class="container d-flex justify-content-center">
+<div class="row">
+<p>© 2021 <a href="mailto:kevin.k.sheppard@gmail.com">Kevin Sheppard</a> - Content licensed <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" rel="license">CC-BY-NC-ND</a> except code blocks which are <a href="https://opensource.org/licenses/NCSA/" rel="license">NCSA</a> licensed.</p>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<!-- wrapper -->
+<script src="../../../../assets/js/jquery.min.js"></script>
+<script src="../../../../assets/js/popper.min.js"></script>
+<script src="../../../../assets/js/bootstrap.min.js"></script>
+<script src="../../../../assets/js/baguetteBox.min.js"></script>
+<script>
+
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function (element) {
+            return element.getElementsByTagName('img')[0].alt;
+        }
+    });
+</script>
+</body>
+</html>

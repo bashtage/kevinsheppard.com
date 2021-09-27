@@ -1,0 +1,551 @@
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Final-Exam">Final Exam<a class="anchor-link" href="#Final-Exam">&#182;</a></h1><p>This self-grading notebook serves as a final exam for the introductory course.
+If you have grasped the contents of the course, you should be able to complete
+this exam.</p>
+<p>It is essential that you answer each cell by assigning the solution to <code>QUESTION_#</code>
+where <code>#</code> is the question number.</p>
+<p>We will start with a warm-up question that is already answered.</p>
+<h2 id="Question-0">Question 0<a class="anchor-link" href="#Question-0">&#182;</a></h2><p>Create a 3-element 1-dimensional array containing the values [1,1,1]</p>
+<p><em>Note</em>: This answer is not assessed.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Setup: The solution is used as a model</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">QUESTION_0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Question-1">Question 1<a class="anchor-link" href="#Question-1">&#182;</a></h2><p>Construct the correlation matrix</p>
+$$\left[\begin{array}{ccc} 1 &amp; 0.2 &amp; 0.5 \\ 0.2 &amp; 1 &amp; 0.8 \\ 0.5 &amp; 0.8 &amp; 1 \end{array}\right]$$<p>as a NumPy array.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Question-2">Question 2<a class="anchor-link" href="#Question-2">&#182;</a></h2><p>Construct the correlation matrix</p>
+$$\left[\begin{array}{ccc} 1 &amp; 0.2 &amp; 0.5 \\ 0.2 &amp; 1 &amp; 0.8 \\ 0.5 &amp; 0.8 &amp; 1 \end{array}\right]$$<p>as a DataFrame with columns and index both equal to <code>['A', 'B', 'C']</code>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Question-3">Question 3<a class="anchor-link" href="#Question-3">&#182;</a></h2><p>Load the momentum data in the CSV file <code>momentum.csv</code>, set the column <code>date</code> 
+as the index, and ensure that <code>date</code> is a <code>DateTimeIndex</code>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Question-4">Question 4<a class="anchor-link" href="#Question-4">&#182;</a></h2><p>Construct a DataFrame using the data loaded in the previous question
+that contains the returns from momentum portfolio 5 in March and April 2016.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Question-5">Question 5<a class="anchor-link" href="#Question-5">&#182;</a></h2><p>What is the standard deviation of the data:</p>
+$$ 1, 3, 1, 2,9, 4, 5, 6, 10, 4 $$<p><strong>Note</strong> Use 1 degree of freedom in the denominator.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Question-6">Question 6<a class="anchor-link" href="#Question-6">&#182;</a></h2><p>Compute the correlation matrix of momentum portfolios 1, 4, 6, and 10 as a DataFrame
+where the index and columns are the portfolio names (e.g., 'mom_01') in the order
+listed above.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Question-7">Question 7<a class="anchor-link" href="#Question-7">&#182;</a></h2><p>Compute the percentage of returns of each of the 10 momentum portfolios
+that are outside of the interval</p>
+$$ [\hat{\mu} - \hat{\sigma}, \hat{\mu} + \hat{\sigma}]$$<p>where $\hat{\mu}$ is the mean and $\hat{\sigma}$ is the standard deviation computed using
+1 dof.  The returned variable must be a <code>Series</code> where the index is the portfolio
+names ordered from 1 to 10.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Question-8">Question 8<a class="anchor-link" href="#Question-8">&#182;</a></h2><p>Import the data the data in the sheet <code>question 8</code> in <code>final-exam.xlsx</code> into
+a DataFrame where the index contains the dates and variable name is the column
+name.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Question-9">Question 9<a class="anchor-link" href="#Question-9">&#182;</a></h2><p>Enter the DataFrame in the table below and save it to HDF with the key 'question9'. The answer to
+this problem must be the full path to the hdf file. The values in
+index should be the DataFrame's index.</p>
+<table>
+<thead><tr>
+<th style="text-align:left">index</th>
+<th style="text-align:left">data</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">A</td>
+<td style="text-align:left">6.0</td>
+</tr>
+<tr>
+<td style="text-align:left">E</td>
+<td style="text-align:left">2.7</td>
+</tr>
+<tr>
+<td style="text-align:left">G</td>
+<td style="text-align:left">1.6</td>
+</tr>
+<tr>
+<td style="text-align:left">P</td>
+<td style="text-align:left">3.1</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Note</strong>: If you want to get the full path to a file saved in the current directory, 
+you can use</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+
+<span class="n">file_name</span> <span class="o">=</span> <span class="s1">&#39;my_file_name&#39;</span>
+<span class="n">full_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">(),</span> <span class="n">file_name</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Question-10">Question 10<a class="anchor-link" href="#Question-10">&#182;</a></h2><p>Compute the cumulative return on a portfolio the longs mom_10 and shorts mom_01. The
+first value should be <code>1 + mom_10.iloc[0] - mom_01.iloc[0]</code>. The second cumulative
+return should be the first return times <code>1 + mom_10.iloc[1] - mom_01.iloc[1]</code>, and
+so on.  The solution must be a Series with the name 'momentum_factor' and index
+equal to the index of the momentum DataFrame.</p>
+<p><strong>Note</strong>: The data in the momentum return file is in percentages, i.e., a return of
+4.2% is recorded as 4.2.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Question-11">Question 11<a class="anchor-link" href="#Question-11">&#182;</a></h2><p>Write a function named QUESTION_11 that take 1 numerical input <code>x</code> and returns:</p>
+<ul>
+<li>$exp(x)$ is x is less than 0</li>
+<li>$log(1+x)$ if <code>x</code> is greater than or equal to 0</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Question-12">Question 12<a class="anchor-link" href="#Question-12">&#182;</a></h2><p>Produce a scatter plot of the momentum returns of portfolios 1 (x-axis) and 10 using only
+data in 2016.  Set the x limits and y limits to be tight so that the lower bound is the 
+smallest return plotted and the upper bound is the largest return plotted. Use the 'darkgrid'
+theme from seaborn.  Assign the <strong>figure</strong> handle to QUESTION_12.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Question-13">Question 13<a class="anchor-link" href="#Question-13">&#182;</a></h2><p>Compute the excess kurtosis of daily, weekly (using Friday and the end of the week) and monthly 
+returns on the 10 momentum portfolios using the pandas function <code>kurt</code>. The solution must be a
+DataFrame with the portfolio names as the index ordered form 1 to 10 and the sampling frequencies,
+'daily', 'weekly', or 'monthly' as the columns (in order). When computing weekly or monthly returns
+from daily data, use the sum of the daily returns.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Question-14">Question 14<a class="anchor-link" href="#Question-14">&#182;</a></h2><p>Simulate a random walk using 100 normal observations from a
+NumPy <code>RandomState</code> initialized with a seed of <code>19991231</code>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Question-15">Question 15<a class="anchor-link" href="#Question-15">&#182;</a></h2><p>Defining</p>
+
+<pre><code>import numpy as np
+
+cum_momentum = np.cumprod(1 + momentum / 100)</code></pre>
+<p>compute the ratio of the high-price to the low price in each month.  The solution
+should be a DataFrame where the index is the last date in each month and the columns
+are the variables names.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Question-16">Question 16<a class="anchor-link" href="#Question-16">&#182;</a></h2><p>Simulate 100 observations from the model</p>
+$$ y_i = 0.2 + 1.2 y_{i-1} - 0.2 y_{i-2} + \epsilon_i$$<p>where $\epsilon_i$ is a standard normal shock.  Set $y_0=\epsilon_0$ and
+$y_1=\epsilon_0 + \epsilon_1$. The solution should be a 1-d NumPy array with 100 elements. Use
+a RandomState with a seed value of 19991231.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Question-17">Question 17<a class="anchor-link" href="#Question-17">&#182;</a></h2><p>What is the ratio of the largest eigenvalue to the smallest eigenvalue 
+of the correlation matrix of the 10 momentum returns?</p>
+<p><strong>Note</strong>: This is called the condition number of a matrix and is a measure of
+how closely correlated the series are. You can compute the eigenvalues from
+the correlation matrix using <code>np.linalg.eigs</code>.  See the help of this function
+for more details.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Question-18">Question 18<a class="anchor-link" href="#Question-18">&#182;</a></h2><p>Write a function that takes a single input 'x' and return the string
+"The value of x is " and the value of x. For example, if x is 3.14,
+then the returned value should be "The value of x is 3.14". The function name
+must be QUESTION_18.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Question-19">Question 19<a class="anchor-link" href="#Question-19">&#182;</a></h2><p>Compute the percentage of days where all 10 returns are positive and subtract the
+percentage of days where all 10 momentum returns are negative on the same day.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Question-20">Question 20<a class="anchor-link" href="#Question-20">&#182;</a></h2><p>Write the function <code>QUESTION_20</code> that will take a single input <code>s</code>, which is a string
+and will return a Series that counts the number of times each letter in <code>s</code> appears in <code>s</code>
+<em>without</em> regard to case. Do not include spaces.  Ensure the Series returned as its index sorted.</p>
+<p><strong>Hints</strong>:</p>
+<ul>
+<li>Have a look at <code>value_counts</code> for a pandas <code>Series</code>.</li>
+<li>You can iterate across the letters of a string using</li>
+</ul>
+
+<pre><code>some_string = 'abcdefg'
+for letter in some_string:
+    do somethign with letter...</code></pre>
+<ul>
+<li><code>str.lower</code> can be used to get the lower case version of a string</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+ 
+

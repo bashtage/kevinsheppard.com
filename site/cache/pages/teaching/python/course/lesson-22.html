@@ -1,0 +1,220 @@
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Graphics:-Other-Plots">Graphics: Other Plots<a class="anchor-link" href="#Graphics:-Other-Plots">&#182;</a></h1><p>This lesson covers:</p>
+<ul>
+<li>Histograms </li>
+<li>Scatter Plots</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Plotting in notebooks requires using a magic command, which starts with <code>%</code>,
+to initialize the plotting backend.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Setup</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Begin by loading the data in hf.h5. This data set contains high-frequency
+price data for IBM and MSFT on a single day stored as two Series. IBM is
+stored as "IBM" in the HDF file, and MSFT is stored as "MSFT.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Problem:-Histogram">Problem: Histogram<a class="anchor-link" href="#Problem:-Histogram">&#182;</a></h2><p>Produce a histogram of MSFT 1-minute returns (Hint: you have to produce
+the 1-minute Microsoft returns first using <code>resample</code> and <code>pct_change</code>).</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Problem:-Scatter-Plot">Problem: Scatter Plot<a class="anchor-link" href="#Problem:-Scatter-Plot">&#182;</a></h2><p>Scatter the 5-minute MSFT returns against the 5-minute IBM returns.</p>
+<p><em>Hint</em>: You will need to create both 5-minute return series, merge them,
+and then plot using the combined DataFrame.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Problem:-Saving-plots">Problem: Saving plots<a class="anchor-link" href="#Problem:-Saving-plots">&#182;</a></h2><p>Save the previous plot to PNG and PDF.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Exercises">Exercises<a class="anchor-link" href="#Exercises">&#182;</a></h2><h3 id="Exercise:-Visualize-5-and-10-minute-returns">Exercise: Visualize 5 and 10 minute returns<a class="anchor-link" href="#Exercise:-Visualize-5-and-10-minute-returns">&#182;</a></h3><p>Produce a 2 by 1 subplot with a histogram of the 5-minute returns of IBM in the
+top panel and 10-minute returns of IBM in the bottom. Set an appropriate title on
+each of the 2 plots.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Exercise:-Export-the-result-of-the-previous-exercise-to-JPEG-and-PDF">Exercise: Export the result of the previous exercise to JPEG and PDF<a class="anchor-link" href="#Exercise:-Export-the-result-of-the-previous-exercise-to-JPEG-and-PDF">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Exercise:-Plot-histograms-and-a-scatter-plot">Exercise: Plot histograms and a scatter plot<a class="anchor-link" href="#Exercise:-Plot-histograms-and-a-scatter-plot">&#182;</a></h2><p>Produce a 2 by 2 subplot with:</p>
+<ul>
+<li>Create a square figure with a size of 10 by 10 using <code>plt.rc</code></li>
+<li>Histograms of IBM and MSFT on the diagonals</li>
+<li>Scatter plots on the off-diagonals where the x and y line up with the
+histogram on the diagonal.</li>
+<li>Set the limits of the scatter plots to match the appropriate histogram
+x and y limit.</li>
+<li>Clean up the plot using <code>tight_layout</code></li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Exercise:-Use-pandas-plotting-tools">Exercise: Use pandas plotting tools<a class="anchor-link" href="#Exercise:-Use-pandas-plotting-tools">&#182;</a></h3><p>Use <code>pandas.plotting.scatter_matrix</code> to produce a similar plot to the previous exercise.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+ 
+

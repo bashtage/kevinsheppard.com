@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+<head>
+<meta charset="utf-8"/><!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-2701681-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-2701681-1');
+</script>
+<meta content="A course introducing some modern methods to produce forecasts and to assess their accuracy" name="description"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Advanced Econometrics | Kevin Sheppard</title>
+<link href="https://fonts.googleapis.com/css?family=Roboto+Mono%7CRoboto:300,400,500,700&amp;display=fallback" rel="stylesheet"/>
+<link href="../../../assets/css/bootstrap-material-design.css" rel="stylesheet" type="text/css"/>
+<link href="../../../assets/css/baguetteBox.min.css" rel="stylesheet" type="text/css"/>
+<link href="../../../assets/css/rst.css" rel="stylesheet" type="text/css"/>
+<link href="../../../assets/css/code.css" rel="stylesheet" type="text/css"/>
+<link href="../../../assets/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../../../assets/css/ipython.min.css" rel="stylesheet" type="text/css"/>
+<link href="../../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" rel="stylesheet" type="text/css"/>
+<link href="../../../assets/css/tipuesearch.css" rel="stylesheet" type="text/css"/>
+<link href="../../../assets/css/kevinsheppard.css" rel="stylesheet" type="text/css"/>
+<link href="../../../rss.xml" rel="alternate" title="RSS" type="application/rss+xml"/>
+<link href="https://www.kevinsheppard.com/teaching/mfe/advanced-econometrics/" rel="canonical"/>
+<link href="../../../apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="../../../favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="../../../favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="../../../favicon.png" rel="icon"/>
+<link href="../../../site.webmanifest" rel="manifest"/>
+<link color="#07689f" href="../../../safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#07689F" name="msapplication-TileColor"/>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  jax: ["input/TeX","output/HTML-CSS"],
+  extensions: ["tex2jax.js","MathMenu.js","MathZoom.js"],
+  TeX: {
+    extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]
+  },
+  tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: false,
+  }
+});
+</script><!--[if lt IE 9]><script src="../../../assets/js/html5.js"></script><![endif]-->
+<meta content="#07689F" name="theme-color"/>
+<style>
+  html, body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #fafafa;
+  }
+</style>
+<meta content="Kevin Sheppard" name="author"/>
+<meta content="Kevin Sheppard" property="og:site_name"/>
+<meta content="Advanced Econometrics" property="og:title"/>
+<meta content="https://www.kevinsheppard.com/teaching/mfe/advanced-econometrics/" property="og:url"/>
+<meta content="A course introducing some modern methods to produce forecasts and to assess their accuracy" property="og:description"/>
+<meta content="article" property="og:type"/>
+<meta content="2019-09-12T14:50:54+01:00" property="article:published_time"/>
+<meta content="econometrics" property="article:tag"/>
+<meta content="mfe" property="article:tag"/>
+</head>
+<body>
+<a class="sr-only sr-only-focusable" href="#content">Skip to main content</a> <!-- Menubar -->
+<div class="wrapper d-flex flex-column">
+<nav class="navbar navbar-expand-sm fixed-top-sm justify-content-start flex-nowrap py-2 pl-1 nav-color-override navbar-primary">
+<div class="container"><a class="navbar-brand ml-2 ml-sm-0 mr-auto" href="https://www.kevinsheppard.com/"><span id="blog-title">Kevin Sheppard</span></a> <button aria-controls="bs-navbar1 bs-navbar2" aria-expanded="false" aria-label="Toggle navigation" class="custom-toggler navbar-toggler order-first" data-target="#bs-navbar1, #bs-navbar2" data-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button>
+<div class="navbar-collapse collapse" id="bs-navbar1">
+<ul class="navbar-nav blog-nav ml-auto my-2 my-lg-0">
+<li class="nav-item"><a class="nav-link" href="../../../blog/">Blog</a></li>
+</ul>
+<form action="../../../search/" class="form-inline my-2 my-lg-0" role="search">
+<div class="input-group"><input aria-label="Search" autocomplete="off" class="form-control mr-sm-2 bg-light text-dark pl-2" id="tipue_search_input" name="q" placeholder="Search..." type="search"/><button aria-label="Submit search" class="btn btn-primary py-1" type="submit"><i class="fa fa-search"></i></button></div>
+</form>
+</div>
+</div>
+</nav>
+<nav class="navbar navbar-expand-sm nav-color-override navbar-primary pb-1">
+<div class="navbar-collapse collapse pt-2 pt-sm-0" id="bs-navbar2">
+<div class="container">
+<ul class="navbar-nav mr-auto">
+<li class="nav-item dropdown"><a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Research</a>
+<div class="dropdown-menu"><a class="dropdown-item" href="../../../research/cv/">CV</a> <a class="dropdown-item" href="../../../research/publications/">Publications</a> <a class="dropdown-item" href="../../../research/working-papers/">Working Papers</a></div>
+</li>
+<li class="nav-item dropdown"><a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Teaching</a>
+<div class="dropdown-menu"><a class="dropdown-item" href="../">MFE</a> <a class="dropdown-item" href="../../python/">Python</a> <a class="dropdown-item" href="../../matlab/">MATLAB</a> <a class="dropdown-item" href="../../lyx/">LyX</a> <a class="dropdown-item" href="../../other/">Other</a> <a class="dropdown-item" href="../../scanning-recommendations/">Document Scanning</a></div>
+</li>
+<li class="nav-item dropdown"><a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Code</a>
+<div class="dropdown-menu"><a class="dropdown-item" href="../../../code/matlab/mfe-toolbox/">MFE Toolbox</a> <a class="dropdown-item" href="https://github.com/bashtage/arch/"><span><i class="fab fa-github"></i> arch</span></a> <a class="dropdown-item" href="https://github.com/bashtage/linearmodels"><span><i class="fab fa-github"></i> linearmodels</span></a> <a class="dropdown-item" href="https://github.com/bashtage/"><span><i class="fab fa-github"></i> GitHub<span></span></span></a></div>
+</li>
+<li class="nav-item"><a class="nav-link" href="../../../galleries/">Photos</a></li>
+<li class="nav-item"><a class="nav-link" href="../../../blog/">Blog</a></li>
+</ul>
+</div>
+</div>
+</nav>
+<main class="flex-fill" id="content">
+<div class="jumbotron" style="background-color: #ffcc00;">
+<div class="container text-dark">
+<div class="row">
+<div class="col-sm-1"></div>
+<div class="col-sm-10">
+<h1 class="display-3">Advanced Econometrics</h1>
+<p>Archived material from the Trinity Term 2014 Advanced Econometrics Elective.</p>
+</div>
+<div class="col-sm-1"></div>
+</div>
+</div>
+</div>
+<div class="container">
+<div class="row">
+<div class="col-xl-1"></div>
+<div class="col-xl-10">
+<article class="post-text storypage" itemscope="itemscope" itemtype="http://schema.org/Article">
+<header></header>
+<div class="e-content entry-content" itemprop="articleBody text">
+<div>
+<ul>
+<li><a href="../../../files/teaching/mfe/advanced-econometrics/Course_outline.pdf">Elective Presentation</a></li>
+<li><a href="../../../files/teaching/mfe/advanced-econometrics/Course_outline_handout.pdf">Course Outline</a></li>
+</ul>
+<h6 id="collected-slides">Collected Slides<a class="headerlink" href="#collected-slides" title="Permanent link">¶</a></h6>
+<p>These downloads contain complete slide sets from the course split into two parts. The first covers material related to data snooping bias and multiple testing in the context of technical trading. The second covers forecasting methodologies that are suitable with large number of predictors.</p>
+<ul>
+<li><a href="../../../files/teaching/mfe/advanced-econometrics/AFE_part_1.pdf">Technical Trading: Fools Gold? Forecast Evaluation with Many Predictions</a></li>
+<li><a href="../../../files/teaching/mfe/advanced-econometrics/AFE_part_2.pdf">Forecasting with Many Predictors</a></li>
+</ul>
+<h6 id="syllabus">Syllabus<a class="headerlink" href="#syllabus" title="Permanent link">¶</a></h6>
+<ul>
+<li><a href="../../../files/teaching/mfe/advanced-econometrics/AFE_syllabus.pdf">Syllabus</a></li>
+</ul>
+<h6 id="assessments">Assessments<a class="headerlink" href="#assessments" title="Permanent link">¶</a></h6>
+<ul>
+<li><a href="../../../files/teaching/mfe/advanced-econometrics/AFE_Assignment_1.pdf">Assignment 1</a></li>
+<li><a href="../../../files/teaching/mfe/advanced-econometrics/AFE_Assignment_1.zip">Assignment 1 Data</a> - <strong>Note</strong> - You will need the password distributed in the course email to open the Excel file in this zip.</li>
+<li><a href="../../../files/teaching/mfe/advanced-econometrics/AFE_Assignment_2.pdf">Assignment 2</a></li>
+<li><a href="../../../files/teaching/mfe/advanced-econometrics/AFE_Assignment_2.zip">Assignment 2 Data</a></li>
+</ul>
+<h6 id="course-material">Course Material<a class="headerlink" href="#course-material" title="Permanent link">¶</a></h6>
+<h6 id="week-1">Week 1<a class="headerlink" href="#week-1" title="Permanent link">¶</a></h6>
+<div class="table-responsive"><table>
+<thead>
+<tr>
+<th class="text-left">Week</th>
+<th class="text-left">Presentation</th>
+<th class="text-left">Handout</th>
+<th class="text-left">Markup</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="text-left">1</td>
+<td class="text-left"><a href="../../../files/teaching/mfe/advanced-econometrics/AFE_Week_1_presentation.pdf">Presentation</a></td>
+<td class="text-left"><a href="../../../files/teaching/mfe/advanced-econometrics/AFE_Week_1_handout.pdf">Handout</a></td>
+<td class="text-left"><a href="../../../files/teaching/mfe/advanced-econometrics/AFE_Week_1_markup.pdf">Markup</a></td>
+</tr>
+<tr>
+<td class="text-left">2</td>
+<td class="text-left"><a href="../../../files/teaching/mfe/advanced-econometrics/AFE_Week_2_presentation.pdf">Presentation</a></td>
+<td class="text-left"><a href="../../../files/teaching/mfe/advanced-econometrics/AFE_Week_2_handout.pdf">Handout</a></td>
+<td class="text-left"><a href="../../../files/teaching/mfe/advanced-econometrics/AFE_Week_2_markup.pdf">Markup</a></td>
+</tr>
+<tr>
+<td class="text-left">3</td>
+<td class="text-left"><a href="../../../files/teaching/mfe/advanced-econometrics/AFE_Week_3_presentation.pdf">Presentation</a></td>
+<td class="text-left"><a href="../../../files/teaching/mfe/advanced-econometrics/AFE_Week_3_handout.pdf">Handout</a></td>
+<td class="text-left"><a href="../../../files/teaching/mfe/advanced-econometrics/AFE_Week_3_markup.pdf">Markup</a></td>
+</tr>
+<tr>
+<td class="text-left">4</td>
+<td class="text-left"><a href="../../../files/teaching/mfe/advanced-econometrics/AFE_Week_4_presentation.pdf">Presentation</a></td>
+<td class="text-left"><a href="../../../files/teaching/mfe/advanced-econometrics/AFE_Week_4_handout.pdf">Handout</a></td>
+<td class="text-left"><a href="../../../files/teaching/mfe/advanced-econometrics/lecture4.m">Lecture 4 Demonstration</a></td>
+</tr>
+<tr>
+<td class="text-left">5</td>
+<td class="text-left"><a href="../../../files/teaching/mfe/advanced-econometrics/AFE_Week_5_presentation.pdf">Presentation</a></td>
+<td class="text-left"><a href="../../../files/teaching/mfe/advanced-econometrics/AFE_Week_5_handout.pdf">Handout</a></td>
+<td class="text-left"><a href="../../../files/teaching/mfe/advanced-econometrics/AFE_Week_5_markup.pdf">Markup</a></td>
+</tr>
+<tr>
+<td class="text-left">6</td>
+<td class="text-left"><a href="../../../files/teaching/mfe/advanced-econometrics/AFE_Week_6_presentation.pdf">Presentation</a></td>
+<td class="text-left"><a href="../../../files/teaching/mfe/advanced-econometrics/AFE_Week_6_handout.pdf">Handout</a></td>
+<td class="text-left"><a href="../../../files/teaching/mfe/advanced-econometrics/AFE_Week_6_markup.pdf">Markup</a></td>
+</tr>
+<tr>
+<td class="text-left">7</td>
+<td class="text-left"><a href="../../../files/teaching/mfe/advanced-econometrics/AFE_Week_7_presentation.pdf">Presentation</a></td>
+<td class="text-left"><a href="../../../files/teaching/mfe/advanced-econometrics/AFE_Week_7_handout.pdf">Handout</a></td>
+<td class="text-left"><a href="../../../files/teaching/mfe/advanced-econometrics/AFE_Week_7_markup.pdf">Markup</a></td>
+</tr>
+<tr>
+<td class="text-left">8</td>
+<td class="text-left"><a href="../../../files/teaching/mfe/advanced-econometrics/AFE_Week_8_presentation.pdf">Presentation</a></td>
+<td class="text-left"><a href="../../../files/teaching/mfe/advanced-econometrics/AFE_Week_8_handout.pdf">Handout</a></td>
+<td class="text-left"><a href="../../../files/teaching/mfe/advanced-econometrics/AFE_Week_8_markup.pdf">Markup</a></td>
+</tr>
+</tbody>
+</table></div>
+<h6 id="readings">Readings<a class="headerlink" href="#readings" title="Permanent link">¶</a></h6>
+<h6 id="week-1_1">Week 1<a class="headerlink" href="#week-1_1" title="Permanent link">¶</a></h6>
+<ul>
+<li><a href="../../../files/teaching/mfe/advanced-econometrics/Chernick_ch2.pdf">Chernick Ch 2</a></li>
+<li><a href="../../../files/teaching/mfe/advanced-econometrics/Chernick_ch3.pdf">Chernick Ch 3</a></li>
+<li><a href="../../../files/teaching/mfe/advanced-econometrics/Chernick_ch4-5.pdf">Chernick Ch 4 and 5</a></li>
+<li><a href="../../../files/teaching/mfe/advanced-econometrics/Lahiri_2and7.pdf">Lahiri Chs 2 and 7</a></li>
+<li><a href="../../../files/teaching/mfe/advanced-econometrics/Politiswhite.pdf">Politis and White</a></li>
+<li><a href="../../../files/teaching/mfe/advanced-econometrics/Pattonpolitiswhite.pdf">Patton, Politis and White</a></li>
+<li><a href="../../../files/teaching/mfe/advanced-econometrics/Kreiss_and_lahiri.pdf">Kreiss and Lahiri</a></li>
+</ul>
+<h6 id="week-2">Week 2<a class="headerlink" href="#week-2" title="Permanent link">¶</a></h6>
+<ul>
+<li><a href="../../../files/teaching/mfe/advanced-econometrics/Brown_Jennings.pdf">Brown &amp; Jennings (1989)</a></li>
+<li><a href="../../../files/teaching/mfe/advanced-econometrics/Brock_Lakonishok_LeBaron.pdf">Brock, Lakonishok &amp; LeBaron (1992)</a></li>
+<li><a href="../../../files/teaching/mfe/advanced-econometrics/Blume_Easley_O%E2%80%99Hara.pdf">Blume, Easley &amp; O’Hara (1994)</a></li>
+<li><a href="../../../files/teaching/mfe/advanced-econometrics/Sullivan_Timmermann_White.pdf">Sullivan, Timmermann &amp; White (1999)</a></li>
+<li><a href="../../../files/teaching/mfe/advanced-econometrics/Lo_Mamaysky_Wang.pdf">Lo, Mamaysky &amp; Wang (2000)</a></li>
+<li><a href="../../../files/teaching/mfe/advanced-econometrics/Neely_Rapach_Tu_Zhou.pdf">Neely, Rapach, Tu &amp; Zhou (2010)</a></li>
+<li><a href="../../../files/teaching/mfe/advanced-econometrics/Han_Yang_Zhou.pdf">Han, Yang &amp; Zhou (2010)</a></li>
+<li><a href="../../../files/teaching/mfe/advanced-econometrics/Bajgrowicz_Scaillet.pdf">Bajgrowicz &amp; Scaillet (2012)</a></li>
+</ul>
+<h6 id="week-3">Week 3<a class="headerlink" href="#week-3" title="Permanent link">¶</a></h6>
+<ul>
+<li><a href="../../../files/teaching/mfe/advanced-econometrics/Elliott_Timmermann.pdf">Elliott &amp; Timmermann (2008)</a></li>
+<li><a href="../../../files/teaching/mfe/advanced-econometrics/White.pdf">White (2000)</a></li>
+<li><a href="../../../files/teaching/mfe/advanced-econometrics/Hansen.pdf">Hansen (2005)</a></li>
+</ul>
+<h6 id="week-4">Week 4<a class="headerlink" href="#week-4" title="Permanent link">¶</a></h6>
+<ul>
+<li><a href="../../../files/teaching/mfe/advanced-econometrics/Romano_Wolf.pdf">Romano &amp; Wolf (2005)</a></li>
+<li><a href="../../../files/teaching/mfe/advanced-econometrics/Hansen_Lunde_Nason.pdf">Hansen, Lunde &amp; Nason (2010)</a></li>
+<li><a href="../../../files/teaching/mfe/advanced-econometrics/Bajgrowicz_Scaillet.pdf">Bajgrowicz &amp; Scaillet (2012)</a></li>
+</ul>
+<h6 id="week-8">Week 8<a class="headerlink" href="#week-8" title="Permanent link">¶</a></h6>
+<ul>
+<li><a href="../../../files/teaching/mfe/advanced-econometrics/rrrr_demo.m">Reduced Rank Regression Demonstration Code</a> - Shows how to compute reduced rank regression and the spectral version of regularized reduced rank regression in simulated data.</li>
+</ul>
+</div>
+</div>
+</article>
+</div>
+<div class="col-xl-1"></div>
+</div>
+</div>
+</main>
+<footer class="w-100 text-light py-4 mt-4 bg-footer">
+<div class="container-fluid">
+<div class="container">
+<div class="row">
+<div class="col-lg-8 col-md-10 mx-auto">
+<ul class="list-inline text-center">
+<li class="list-inline-item"><a aria-label="Contact me using email" class="contact" href="mailto:kevin.k.sheppard@gmail.com"><span class="fa-stack fa-lg"><i class="far fa-circle fa-stack-2x"></i> <i class="far fa-envelope fa-stack-1x"></i></span></a></li>
+<li class="list-inline-item"><a aria-label="Visit my github repositories" class="contact" href="https://github.com/bashtage"><span class="fa-stack fa-lg"><i class="far fa-circle fa-stack-2x"></i> <i class="fab fa-github fa-stack-1x"></i></span></a></li>
+<li class="list-inline-item"><a aria-label="View my LinkedIn profile" class="contact" href="https://www.linkedin.com/in/kevinsheppard/"><span class="fa-stack fa-lg"><i class="far fa-circle fa-stack-2x"></i> <i class="fab fa-linkedin fa-stack-1x"></i></span></a></li>
+<li class="list-inline-item"><a aria-label="Read about the content license used on this site" class="contact" href="https://creativecommons.org/licenses/by-nc-nd/4.0/"><span class="fa-stack fa-lg"><i class="fab fa-creative-commons fa-stack-2x"></i></span></a></li>
+</ul>
+<!--<p class="copyright text-muted">Copyright © Your Website 2018</p>--></div>
+</div>
+</div>
+</div>
+<div class="container-fluid">
+<div class="container d-flex justify-content-center">
+<div class="row">
+<p>© 2021 <a href="mailto:kevin.k.sheppard@gmail.com">Kevin Sheppard</a> - Content licensed <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" rel="license">CC-BY-NC-ND</a> except code blocks which are <a href="https://opensource.org/licenses/NCSA/" rel="license">NCSA</a> licensed.</p>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<!-- wrapper -->
+<script src="../../../assets/js/jquery.min.js"></script>
+<script src="../../../assets/js/popper.min.js"></script>
+<script src="../../../assets/js/bootstrap.min.js"></script>
+<script src="../../../assets/js/baguetteBox.min.js"></script>
+<script>
+
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function (element) {
+            return element.getElementsByTagName('img')[0].alt;
+        }
+    });
+</script>
+</body>
+</html>

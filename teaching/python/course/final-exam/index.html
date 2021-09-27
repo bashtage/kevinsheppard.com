@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+<head>
+<meta charset="utf-8"/><!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-2701681-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-2701681-1');
+</script>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Final exam | Kevin Sheppard</title>
+<link href="https://fonts.googleapis.com/css?family=Roboto+Mono%7CRoboto:300,400,500,700&amp;display=fallback" rel="stylesheet"/>
+<link href="../../../../assets/css/bootstrap-material-design.css" rel="stylesheet" type="text/css"/>
+<link href="../../../../assets/css/baguetteBox.min.css" rel="stylesheet" type="text/css"/>
+<link href="../../../../assets/css/rst.css" rel="stylesheet" type="text/css"/>
+<link href="../../../../assets/css/code.css" rel="stylesheet" type="text/css"/>
+<link href="../../../../assets/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../../../../assets/css/ipython.min.css" rel="stylesheet" type="text/css"/>
+<link href="../../../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" rel="stylesheet" type="text/css"/>
+<link href="../../../../assets/css/tipuesearch.css" rel="stylesheet" type="text/css"/>
+<link href="../../../../assets/css/kevinsheppard.css" rel="stylesheet" type="text/css"/>
+<link href="../../../../rss.xml" rel="alternate" title="RSS" type="application/rss+xml"/>
+<link href="https://www.kevinsheppard.com/teaching/python/course/final-exam/" rel="canonical"/>
+<link href="../../../../apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="../../../../favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="../../../../favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="../../../../favicon.png" rel="icon"/>
+<link href="../../../../site.webmanifest" rel="manifest"/>
+<link color="#07689f" href="../../../../safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#07689F" name="msapplication-TileColor"/>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  jax: ["input/TeX","output/HTML-CSS"],
+  extensions: ["tex2jax.js","MathMenu.js","MathZoom.js"],
+  TeX: {
+    extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]
+  },
+  tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: false,
+  }
+});
+</script><!--[if lt IE 9]><script src="../../../../assets/js/html5.js"></script><![endif]-->
+<meta content="#07689F" name="theme-color"/>
+<style>
+  html, body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #fafafa;
+  }
+</style>
+<meta content="Kevin Sheppard" name="author"/>
+<meta content="Kevin Sheppard" property="og:site_name"/>
+<meta content="Final exam" property="og:title"/>
+<meta content="https://www.kevinsheppard.com/teaching/python/course/final-exam/" property="og:url"/>
+<meta content="Final Exam¶This self-grading notebook serves as a final exam for the introductory course. If you have grasped the contents of the course, you should be able to complete this exam. It is essential that" property="og:description"/>
+<meta content="article" property="og:type"/>
+<meta content="2019-09-04T17:18:32+01:00" property="article:published_time"/>
+</head>
+<body>
+<a class="sr-only sr-only-focusable" href="#content">Skip to main content</a> <!-- Menubar -->
+<div class="wrapper d-flex flex-column">
+<nav class="navbar navbar-expand-sm fixed-top-sm justify-content-start flex-nowrap py-2 pl-1 nav-color-override navbar-primary">
+<div class="container"><a class="navbar-brand ml-2 ml-sm-0 mr-auto" href="https://www.kevinsheppard.com/"><span id="blog-title">Kevin Sheppard</span></a> <button aria-controls="bs-navbar1 bs-navbar2" aria-expanded="false" aria-label="Toggle navigation" class="custom-toggler navbar-toggler order-first" data-target="#bs-navbar1, #bs-navbar2" data-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button>
+<div class="navbar-collapse collapse" id="bs-navbar1">
+<ul class="navbar-nav blog-nav ml-auto my-2 my-lg-0">
+<li class="nav-item"><a class="nav-link" href="../../../../blog/">Blog</a></li>
+</ul>
+<form action="../../../../search/" class="form-inline my-2 my-lg-0" role="search">
+<div class="input-group"><input aria-label="Search" autocomplete="off" class="form-control mr-sm-2 bg-light text-dark pl-2" id="tipue_search_input" name="q" placeholder="Search..." type="search"/><button aria-label="Submit search" class="btn btn-primary py-1" type="submit"><i class="fa fa-search"></i></button></div>
+</form>
+</div>
+</div>
+</nav>
+<nav class="navbar navbar-expand-sm nav-color-override navbar-primary pb-1">
+<div class="navbar-collapse collapse pt-2 pt-sm-0" id="bs-navbar2">
+<div class="container">
+<ul class="navbar-nav mr-auto">
+<li class="nav-item dropdown"><a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Research</a>
+<div class="dropdown-menu"><a class="dropdown-item" href="../../../../research/cv/">CV</a> <a class="dropdown-item" href="../../../../research/publications/">Publications</a> <a class="dropdown-item" href="../../../../research/working-papers/">Working Papers</a></div>
+</li>
+<li class="nav-item dropdown"><a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Teaching</a>
+<div class="dropdown-menu"><a class="dropdown-item" href="../../../mfe/">MFE</a> <a class="dropdown-item" href="../../">Python</a> <a class="dropdown-item" href="../../../matlab/">MATLAB</a> <a class="dropdown-item" href="../../../lyx/">LyX</a> <a class="dropdown-item" href="../../../other/">Other</a> <a class="dropdown-item" href="../../../scanning-recommendations/">Document Scanning</a></div>
+</li>
+<li class="nav-item dropdown"><a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Code</a>
+<div class="dropdown-menu"><a class="dropdown-item" href="../../../../code/matlab/mfe-toolbox/">MFE Toolbox</a> <a class="dropdown-item" href="https://github.com/bashtage/arch/"><span><i class="fab fa-github"></i> arch</span></a> <a class="dropdown-item" href="https://github.com/bashtage/linearmodels"><span><i class="fab fa-github"></i> linearmodels</span></a> <a class="dropdown-item" href="https://github.com/bashtage/"><span><i class="fab fa-github"></i> GitHub<span></span></span></a></div>
+</li>
+<li class="nav-item"><a class="nav-link" href="../../../../galleries/">Photos</a></li>
+<li class="nav-item"><a class="nav-link" href="../../../../blog/">Blog</a></li>
+</ul>
+</div>
+</div>
+</nav>
+<main class="flex-fill" id="content">
+<div class="container">
+<div class="row pt-4"></div>
+</div>
+<div class="container">
+<div class="row">
+<div class="col-xl-1"></div>
+<div class="col-xl-10">
+<article class="post-text storypage" itemscope="itemscope" itemtype="http://schema.org/Article">
+<header>
+<h1 class="p-name entry-title" itemprop="headline name"><a class="u-url" href=".">Final exam</a></h1>
+</header>
+<div class="e-content entry-content" itemprop="articleBody text">
+<div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt"></div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Final-Exam">Final Exam<a class="anchor-link" href="#Final-Exam">¶</a></h2>
+<p>This self-grading notebook serves as a final exam for the introductory course. If you have grasped the contents of the course, you should be able to complete this exam.</p>
+<p>It is essential that you answer each cell by assigning the solution to <code>QUESTION_#</code> where <code>#</code> is the question number.</p>
+<p>We will start with a warm-up question that is already answered.</p>
+<h3 id="Question-0">Question 0<a class="anchor-link" href="#Question-0">¶</a></h3>
+<p>Create a 3-element 1-dimensional array containing the values [1,1,1]</p>
+<p><em>Note</em>: This answer is not assessed.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3">
+<pre><span></span><span class="c1"># Setup: The solution is used as a model</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">QUESTION_0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt"></div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Question-1">Question 1<a class="anchor-link" href="#Question-1">¶</a></h3>
+<p>Construct the correlation matrix</p>
+$$\left[\begin{array}{ccc} 1 &amp; 0.2 &amp; 0.5 \\ 0.2 &amp; 1 &amp; 0.8 \\ 0.5 &amp; 0.8 &amp; 1 \end{array}\right]$$
+<p>as a NumPy array.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3">
+<pre><span></span> 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt"></div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Question-2">Question 2<a class="anchor-link" href="#Question-2">¶</a></h3>
+<p>Construct the correlation matrix</p>
+$$\left[\begin{array}{ccc} 1 &amp; 0.2 &amp; 0.5 \\ 0.2 &amp; 1 &amp; 0.8 \\ 0.5 &amp; 0.8 &amp; 1 \end{array}\right]$$
+<p>as a DataFrame with columns and index both equal to <code>['A', 'B', 'C']</code>.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3">
+<pre><span></span> 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt"></div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Question-3">Question 3<a class="anchor-link" href="#Question-3">¶</a></h3>
+<p>Load the momentum data in the CSV file <code>momentum.csv</code>, set the column <code>date</code> as the index, and ensure that <code>date</code> is a <code>DateTimeIndex</code>.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3">
+<pre><span></span> 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt"></div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Question-4">Question 4<a class="anchor-link" href="#Question-4">¶</a></h3>
+<p>Construct a DataFrame using the data loaded in the previous question that contains the returns from momentum portfolio 5 in March and April 2016.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3">
+<pre><span></span> 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt"></div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Question-5">Question 5<a class="anchor-link" href="#Question-5">¶</a></h3>
+<p>What is the standard deviation of the data:</p>
+$$ 1, 3, 1, 2,9, 4, 5, 6, 10, 4 $$
+<p><strong>Note</strong> Use 1 degree of freedom in the denominator.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3">
+<pre><span></span> 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt"></div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Question-6">Question 6<a class="anchor-link" href="#Question-6">¶</a></h3>
+<p>Compute the correlation matrix of momentum portfolios 1, 4, 6, and 10 as a DataFrame where the index and columns are the portfolio names (e.g., 'mom_01') in the order listed above.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3">
+<pre><span></span> 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt"></div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Question-7">Question 7<a class="anchor-link" href="#Question-7">¶</a></h3>
+<p>Compute the percentage of returns of each of the 10 momentum portfolios that are outside of the interval</p>
+$$ [\hat{\mu} - \hat{\sigma}, \hat{\mu} + \hat{\sigma}]$$
+<p>where $\hat{\mu}$ is the mean and $\hat{\sigma}$ is the standard deviation computed using 1 dof. The returned variable must be a <code>Series</code> where the index is the portfolio names ordered from 1 to 10.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3">
+<pre><span></span> 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt"></div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Question-8">Question 8<a class="anchor-link" href="#Question-8">¶</a></h3>
+<p>Import the data the data in the sheet <code>question 8</code> in <code>final-exam.xlsx</code> into a DataFrame where the index contains the dates and variable name is the column name.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3">
+<pre><span></span> 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt"></div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Question-9">Question 9<a class="anchor-link" href="#Question-9">¶</a></h3>
+<p>Enter the DataFrame in the table below and save it to HDF with the key 'question9'. The answer to this problem must be the full path to the hdf file. The values in index should be the DataFrame's index.</p>
+<div class="table-responsive"><table>
+<thead>
+<tr>
+<th style="text-align:left">index</th>
+<th style="text-align:left">data</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">A</td>
+<td style="text-align:left">6.0</td>
+</tr>
+<tr>
+<td style="text-align:left">E</td>
+<td style="text-align:left">2.7</td>
+</tr>
+<tr>
+<td style="text-align:left">G</td>
+<td style="text-align:left">1.6</td>
+</tr>
+<tr>
+<td style="text-align:left">P</td>
+<td style="text-align:left">3.1</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Note</strong>: If you want to get the full path to a file saved in the current directory, you can use</p>
+<div class="highlight">
+<pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+
+<span class="n">file_name</span> <span class="o">=</span> <span class="s1">'my_file_name'</span>
+<span class="n">full_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">(),</span> <span class="n">file_name</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3">
+<pre><span></span> 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt"></div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Question-10">Question 10<a class="anchor-link" href="#Question-10">¶</a></h3>
+<p>Compute the cumulative return on a portfolio the longs mom_10 and shorts mom_01. The first value should be <code>1 + mom_10.iloc[0] - mom_01.iloc[0]</code>. The second cumulative return should be the first return times <code>1 + mom_10.iloc[1] - mom_01.iloc[1]</code>, and so on. The solution must be a Series with the name 'momentum_factor' and index equal to the index of the momentum DataFrame.</p>
+<p><strong>Note</strong>: The data in the momentum return file is in percentages, i.e., a return of 4.2% is recorded as 4.2.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3">
+<pre><span></span> 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt"></div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Question-11">Question 11<a class="anchor-link" href="#Question-11">¶</a></h3>
+<p>Write a function named QUESTION_11 that take 1 numerical input <code>x</code> and returns:</p>
+<ul>
+<li>$exp(x)$ is x is less than 0</li>
+<li>$log(1+x)$ if <code>x</code> is greater than or equal to 0</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3">
+<pre><span></span> 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt"></div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Question-12">Question 12<a class="anchor-link" href="#Question-12">¶</a></h3>
+<p>Produce a scatter plot of the momentum returns of portfolios 1 (x-axis) and 10 using only data in 2016. Set the x limits and y limits to be tight so that the lower bound is the smallest return plotted and the upper bound is the largest return plotted. Use the 'darkgrid' theme from seaborn. Assign the <strong>figure</strong> handle to QUESTION_12.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3">
+<pre><span></span> 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt"></div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Question-13">Question 13<a class="anchor-link" href="#Question-13">¶</a></h3>
+<p>Compute the excess kurtosis of daily, weekly (using Friday and the end of the week) and monthly returns on the 10 momentum portfolios using the pandas function <code>kurt</code>. The solution must be a DataFrame with the portfolio names as the index ordered form 1 to 10 and the sampling frequencies, 'daily', 'weekly', or 'monthly' as the columns (in order). When computing weekly or monthly returns from daily data, use the sum of the daily returns.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3">
+<pre><span></span> 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt"></div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Question-14">Question 14<a class="anchor-link" href="#Question-14">¶</a></h3>
+<p>Simulate a random walk using 100 normal observations from a NumPy <code>RandomState</code> initialized with a seed of <code>19991231</code>.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3">
+<pre><span></span> 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt"></div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Question-15">Question 15<a class="anchor-link" href="#Question-15">¶</a></h3>
+<p>Defining</p>
+<pre><code>import numpy as np
+
+cum_momentum = np.cumprod(1 + momentum / 100)</code></pre>
+<p>compute the ratio of the high-price to the low price in each month. The solution should be a DataFrame where the index is the last date in each month and the columns are the variables names.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3">
+<pre><span></span> 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt"></div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Question-16">Question 16<a class="anchor-link" href="#Question-16">¶</a></h3>
+<p>Simulate 100 observations from the model</p>
+$$ y_i = 0.2 + 1.2 y_{i-1} - 0.2 y_{i-2} + \epsilon_i$$
+<p>where $\epsilon_i$ is a standard normal shock. Set $y_0=\epsilon_0$ and $y_1=\epsilon_0 + \epsilon_1$. The solution should be a 1-d NumPy array with 100 elements. Use a RandomState with a seed value of 19991231.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3">
+<pre><span></span> 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt"></div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Question-17">Question 17<a class="anchor-link" href="#Question-17">¶</a></h3>
+<p>What is the ratio of the largest eigenvalue to the smallest eigenvalue of the correlation matrix of the 10 momentum returns?</p>
+<p><strong>Note</strong>: This is called the condition number of a matrix and is a measure of how closely correlated the series are. You can compute the eigenvalues from the correlation matrix using <code>np.linalg.eigs</code>. See the help of this function for more details.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3">
+<pre><span></span> 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt"></div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Question-18">Question 18<a class="anchor-link" href="#Question-18">¶</a></h3>
+<p>Write a function that takes a single input 'x' and return the string "The value of x is " and the value of x. For example, if x is 3.14, then the returned value should be "The value of x is 3.14". The function name must be QUESTION_18.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3">
+<pre><span></span> 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt"></div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Question-19">Question 19<a class="anchor-link" href="#Question-19">¶</a></h3>
+<p>Compute the percentage of days where all 10 returns are positive and subtract the percentage of days where all 10 momentum returns are negative on the same day.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3">
+<pre><span></span> 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt"></div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Question-20">Question 20<a class="anchor-link" href="#Question-20">¶</a></h3>
+<p>Write the function <code>QUESTION_20</code> that will take a single input <code>s</code>, which is a string and will return a Series that counts the number of times each letter in <code>s</code> appears in <code>s</code> <em>without</em> regard to case. Do not include spaces. Ensure the Series returned as its index sorted.</p>
+<p><strong>Hints</strong>:</p>
+<ul>
+<li>Have a look at <code>value_counts</code> for a pandas <code>Series</code>.</li>
+<li>You can iterate across the letters of a string using</li>
+</ul>
+<pre><code>some_string = 'abcdefg'
+for letter in some_string:
+    do somethign with letter...</code></pre>
+<ul>
+<li><code>str.lower</code> can be used to get the lower case version of a string</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3">
+<pre><span></span> 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script crossorigin="anonymous" integrity="sha384-3lJUsx1TJHt7BA4udB5KPnDrlkO8T6J6v/op7ui0BbCjvZ9WqV4Xm6DTP6kQ/iBH" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+
+MathJax.Hub.Config({
+  jax: ["input/TeX","output/HTML-CSS"],
+  extensions: ["tex2jax.js","MathMenu.js","MathZoom.js"],
+  TeX: {
+    extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]
+  },
+  tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: false,
+  }
+});
+</script></article>
+</div>
+<div class="col-xl-1"></div>
+</div>
+</div>
+</main>
+<footer class="w-100 text-light py-4 mt-4 bg-footer">
+<div class="container-fluid">
+<div class="container">
+<div class="row">
+<div class="col-lg-8 col-md-10 mx-auto">
+<ul class="list-inline text-center">
+<li class="list-inline-item"><a aria-label="Contact me using email" class="contact" href="mailto:kevin.k.sheppard@gmail.com"><span class="fa-stack fa-lg"><i class="far fa-circle fa-stack-2x"></i> <i class="far fa-envelope fa-stack-1x"></i></span></a></li>
+<li class="list-inline-item"><a aria-label="Visit my github repositories" class="contact" href="https://github.com/bashtage"><span class="fa-stack fa-lg"><i class="far fa-circle fa-stack-2x"></i> <i class="fab fa-github fa-stack-1x"></i></span></a></li>
+<li class="list-inline-item"><a aria-label="View my LinkedIn profile" class="contact" href="https://www.linkedin.com/in/kevinsheppard/"><span class="fa-stack fa-lg"><i class="far fa-circle fa-stack-2x"></i> <i class="fab fa-linkedin fa-stack-1x"></i></span></a></li>
+<li class="list-inline-item"><a aria-label="Read about the content license used on this site" class="contact" href="https://creativecommons.org/licenses/by-nc-nd/4.0/"><span class="fa-stack fa-lg"><i class="fab fa-creative-commons fa-stack-2x"></i></span></a></li>
+</ul>
+<!--<p class="copyright text-muted">Copyright © Your Website 2018</p>--></div>
+</div>
+</div>
+</div>
+<div class="container-fluid">
+<div class="container d-flex justify-content-center">
+<div class="row">
+<p>© 2021 <a href="mailto:kevin.k.sheppard@gmail.com">Kevin Sheppard</a> - Content licensed <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" rel="license">CC-BY-NC-ND</a> except code blocks which are <a href="https://opensource.org/licenses/NCSA/" rel="license">NCSA</a> licensed.</p>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<!-- wrapper -->
+<script src="../../../../assets/js/jquery.min.js"></script>
+<script src="../../../../assets/js/popper.min.js"></script>
+<script src="../../../../assets/js/bootstrap.min.js"></script>
+<script src="../../../../assets/js/baguetteBox.min.js"></script>
+<script>
+
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function (element) {
+            return element.getElementsByTagName('img')[0].alt;
+        }
+    });
+</script>
+</body>
+</html>

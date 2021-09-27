@@ -1,0 +1,226 @@
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Graphics:-Line-Plots">Graphics: Line Plots<a class="anchor-link" href="#Graphics:-Line-Plots">&#182;</a></h1><p>This lesson covers:</p>
+<ul>
+<li>Basic plotting </li>
+<li>Subplots </li>
+<li>Histograms </li>
+<li>Scatter Plots</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Plotting in notebooks requires using a magic command, which starts with
+<code>%</code>, to initialize the plotting backend.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Setup</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Begin by loading the data in hf.h5. This data set contains high-frequency
+price data for IBM and MSFT on a single day stored as two Series. IBM is
+stored as "IBM" in the HDF file, and MSFT is stored as "MSFT.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Problem:-Basic-Plotting">Problem: Basic Plotting<a class="anchor-link" href="#Problem:-Basic-Plotting">&#182;</a></h2><ol>
+<li>Plot the <code>ibm</code> series which contains the price of IBM. </li>
+<li>Add a title and label the axes. </li>
+<li>Add markers and remove the line. </li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Problem:-Subplot">Problem: Subplot<a class="anchor-link" href="#Problem:-Subplot">&#182;</a></h2><p>Create a 2 by 1 subplot with the price of IBM in the top subplot and the
+price of MSFT in the bottom subplot.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Problem:-Plot-with-Dates">Problem: Plot with Dates<a class="anchor-link" href="#Problem:-Plot-with-Dates">&#182;</a></h2><p>Use <code>matplotlib</code> to directly plot <code>ibm</code> against its <code>index</code>. This is a
+repeat of a previous plot but shows how to use the <code>plot</code> command directly.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Exercises">Exercises<a class="anchor-link" href="#Exercises">&#182;</a></h2><h3 id="Exercise:-Change-seaborn">Exercise: Change seaborn<a class="anchor-link" href="#Exercise:-Change-seaborn">&#182;</a></h3><p>Produce a line plot of MSFT's price using seaborn's "whitegrid" style.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Exercise:-HLOC-plot">Exercise: HLOC plot<a class="anchor-link" href="#Exercise:-HLOC-plot">&#182;</a></h3><p>Use the HLOC data to produce a plot of MSFT's 5 minute HLOC
+where the there are no lines, high is demarcated using a green triangle,
+low is demarcated using a red downward pointing triangle, open is demarcated 
+using a light grey leftward facing triangle and close is demarcated using
+a right facing triangle.</p>
+<p><strong>Note</strong> Get the axes from the first, plot, and reuse this when plotting 
+the other series.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Setup: Load data and create values</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">msft</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_hdf</span><span class="p">(</span><span class="s2">&quot;data/hf.h5&quot;</span><span class="p">,</span> <span class="s2">&quot;MSFT&quot;</span><span class="p">)</span>
+<span class="n">msft_5min</span> <span class="o">=</span> <span class="n">msft</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s2">&quot;300S&quot;</span><span class="p">)</span>
+<span class="n">high</span> <span class="o">=</span> <span class="n">msft_5min</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<span class="n">low</span> <span class="o">=</span> <span class="n">msft_5min</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+<span class="nb">open</span> <span class="o">=</span> <span class="n">msft_5min</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>
+<span class="n">close</span> <span class="o">=</span> <span class="n">msft_5min</span><span class="o">.</span><span class="n">last</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+ 
+

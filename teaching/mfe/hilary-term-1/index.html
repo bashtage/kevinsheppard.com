@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+<head>
+<meta charset="utf-8"/><!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-2701681-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-2701681-1');
+</script>
+<meta content="Teaching resources for MFE Financial Econometrics II Week 1" name="description"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Financial Econometrics II: Week 1 | Kevin Sheppard</title>
+<link href="https://fonts.googleapis.com/css?family=Roboto+Mono%7CRoboto:300,400,500,700&amp;display=fallback" rel="stylesheet"/>
+<link href="../../../assets/css/bootstrap-material-design.css" rel="stylesheet" type="text/css"/>
+<link href="../../../assets/css/baguetteBox.min.css" rel="stylesheet" type="text/css"/>
+<link href="../../../assets/css/rst.css" rel="stylesheet" type="text/css"/>
+<link href="../../../assets/css/code.css" rel="stylesheet" type="text/css"/>
+<link href="../../../assets/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../../../assets/css/ipython.min.css" rel="stylesheet" type="text/css"/>
+<link href="../../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" rel="stylesheet" type="text/css"/>
+<link href="../../../assets/css/tipuesearch.css" rel="stylesheet" type="text/css"/>
+<link href="../../../assets/css/kevinsheppard.css" rel="stylesheet" type="text/css"/>
+<link href="../../../rss.xml" rel="alternate" title="RSS" type="application/rss+xml"/>
+<link href="https://www.kevinsheppard.com/teaching/mfe/hilary-term-1/" rel="canonical"/>
+<link href="../../../apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="../../../favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="../../../favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="../../../favicon.png" rel="icon"/>
+<link href="../../../site.webmanifest" rel="manifest"/>
+<link color="#07689f" href="../../../safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#07689F" name="msapplication-TileColor"/>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  jax: ["input/TeX","output/HTML-CSS"],
+  extensions: ["tex2jax.js","MathMenu.js","MathZoom.js"],
+  TeX: {
+    extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]
+  },
+  tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: false,
+  }
+});
+</script><!--[if lt IE 9]><script src="../../../assets/js/html5.js"></script><![endif]-->
+<meta content="#07689F" name="theme-color"/>
+<style>
+  html, body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #fafafa;
+  }
+</style>
+<meta content="Kevin Sheppard" name="author"/>
+<meta content="Kevin Sheppard" property="og:site_name"/>
+<meta content="Financial Econometrics II: Week 1" property="og:title"/>
+<meta content="https://www.kevinsheppard.com/teaching/mfe/hilary-term-1/" property="og:url"/>
+<meta content="Teaching resources for MFE Financial Econometrics II Week 1" property="og:description"/>
+<meta content="article" property="og:type"/>
+<meta content="2020-11-27T17:51:04Z" property="article:published_time"/>
+<meta content="mfe" property="article:tag"/>
+<meta content="teaching" property="article:tag"/>
+</head>
+<body>
+<a class="sr-only sr-only-focusable" href="#content">Skip to main content</a> <!-- Menubar -->
+<div class="wrapper d-flex flex-column">
+<nav class="navbar navbar-expand-sm fixed-top-sm justify-content-start flex-nowrap py-2 pl-1 nav-color-override navbar-primary">
+<div class="container"><a class="navbar-brand ml-2 ml-sm-0 mr-auto" href="https://www.kevinsheppard.com/"><span id="blog-title">Kevin Sheppard</span></a> <button aria-controls="bs-navbar1 bs-navbar2" aria-expanded="false" aria-label="Toggle navigation" class="custom-toggler navbar-toggler order-first" data-target="#bs-navbar1, #bs-navbar2" data-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button>
+<div class="navbar-collapse collapse" id="bs-navbar1">
+<ul class="navbar-nav blog-nav ml-auto my-2 my-lg-0">
+<li class="nav-item"><a class="nav-link" href="../../../blog/">Blog</a></li>
+</ul>
+<form action="../../../search/" class="form-inline my-2 my-lg-0" role="search">
+<div class="input-group"><input aria-label="Search" autocomplete="off" class="form-control mr-sm-2 bg-light text-dark pl-2" id="tipue_search_input" name="q" placeholder="Search..." type="search"/><button aria-label="Submit search" class="btn btn-primary py-1" type="submit"><i class="fa fa-search"></i></button></div>
+</form>
+</div>
+</div>
+</nav>
+<nav class="navbar navbar-expand-sm nav-color-override navbar-primary pb-1">
+<div class="navbar-collapse collapse pt-2 pt-sm-0" id="bs-navbar2">
+<div class="container">
+<ul class="navbar-nav mr-auto">
+<li class="nav-item dropdown"><a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Research</a>
+<div class="dropdown-menu"><a class="dropdown-item" href="../../../research/cv/">CV</a> <a class="dropdown-item" href="../../../research/publications/">Publications</a> <a class="dropdown-item" href="../../../research/working-papers/">Working Papers</a></div>
+</li>
+<li class="nav-item dropdown"><a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Teaching</a>
+<div class="dropdown-menu"><a class="dropdown-item" href="../">MFE</a> <a class="dropdown-item" href="../../python/">Python</a> <a class="dropdown-item" href="../../matlab/">MATLAB</a> <a class="dropdown-item" href="../../lyx/">LyX</a> <a class="dropdown-item" href="../../other/">Other</a> <a class="dropdown-item" href="../../scanning-recommendations/">Document Scanning</a></div>
+</li>
+<li class="nav-item dropdown"><a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Code</a>
+<div class="dropdown-menu"><a class="dropdown-item" href="../../../code/matlab/mfe-toolbox/">MFE Toolbox</a> <a class="dropdown-item" href="https://github.com/bashtage/arch/"><span><i class="fab fa-github"></i> arch</span></a> <a class="dropdown-item" href="https://github.com/bashtage/linearmodels"><span><i class="fab fa-github"></i> linearmodels</span></a> <a class="dropdown-item" href="https://github.com/bashtage/"><span><i class="fab fa-github"></i> GitHub<span></span></span></a></div>
+</li>
+<li class="nav-item"><a class="nav-link" href="../../../galleries/">Photos</a></li>
+<li class="nav-item"><a class="nav-link" href="../../../blog/">Blog</a></li>
+</ul>
+</div>
+</div>
+</nav>
+<main class="flex-fill" id="content">
+<div class="jumbotron" style="background-color: #002147;">
+<div class="container text-light">
+<div class="row">
+<div class="col-sm-1"></div>
+<div class="col-sm-10">
+<h1 class="display-3">MFE Financial Econometrics II: Week 1</h1>
+<p>Teaching material from Week 1.</p>
+</div>
+<div class="col-sm-1"></div>
+</div>
+</div>
+</div>
+<div class="container">
+<div class="row">
+<div class="col-xl-1"></div>
+<div class="col-xl-10">
+<article class="post-text storypage" itemscope="itemscope" itemtype="http://schema.org/Article">
+<header>
+<h1 class="p-name entry-title" itemprop="headline name"><a class="u-url" href=".">Financial Econometrics II: Week 1</a></h1>
+</header>
+<div class="e-content entry-content" itemprop="articleBody text">
+<div>
+<p><em>Come back in Hilary for updated information</em></p>
+<!--
+## Slides
+
+
+[Univariate Time Series Analysis](/files/teaching/mfe/slides/time_series_slides_2020-2021.pdf) <br />
+[Univariate Time Series Analysis (Print Optimized)](/files/teaching/mfe/slides/time_series_slides_2020-2021-print.pdf)  <br />
+[In-person Slides (pdf)](/files/teaching/mfe/slides/time-series-slides-2020-21-in-person.pdf)  <br />
+[In-person Slides (web)](/files/teaching/mfe/slides/time-series-slides-2020-21-in-person.html)  <br />
+[In-person Slides (Jupyter Notebook)](/files/teaching/mfe/slides/time-series-slides-2020-21-in-person.ipynb)  <br />
+
+### Data Files
+
+[Time Series Data (pandas HDF)](/files/teaching/mfe/data/time-series-data.h5) used in the IPython notebook-based slides.
+
+#### Executing code in jupyter slides
+See [the instructions for installing](../running-notebooks) the mfe package to install some 
+function used in the slides.
+## Assignment
+
+**Due Friday 5th Week Hilary**
+
+[Computational Assignment III](/files/teaching/mfe/assignments/mfe-fe-computational-exercise-3-2020-2021.pdf) <br />
+[Demo Autograder (Jupyter Notebook)](/files/teaching/mfe/assignments/demo-autograder-pw3.ipynb) <br />
+[Demo Autograder (Python)](/files/teaching/mfe/assignments/demo-autograder-pw3.py) <br />
+[Solutions Template](/files/teaching/mfe/assignments/solutions-pw3.py)
+
+
+## Weekly Assignment
+
+[Week 1 Assignment](/files/teaching/mfe/homework/ht-week-1-assignment.pdf)
+
+### Solutions ###
+
+[Week 1 Assignment Solution](/files/teaching/mfe/homework/ht-week-1-assignment-answers.pdf)
+
+## Practice Quiz
+
+_Oxford MFE Students only (Canvas)_
+
+[Week 1 Quiz](https://canvas.sbs.ox.ac.uk/courses/1914/quizzes/2102)
+
+## Pre-lecture content
+
+### Reading
+
+_The readings listed correspond to the pre-recorded content. You should either 
+watch the pre-recorded content or read the notes prior to the Week 1 lecture._
+
+Sections 4.1-4.4 (ex 4.4.1), 4.6, and 4.7 from the [Time Series Notes](/files/teaching/mfe/notes/financial-econometrics-2020-2021-chapter-4.pdf)
+
+### Presentation
+
+_Oxford MFE Students only (Canvas)_
+
+01. [Introduction to Time Series Analysis](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=debd94f6-02af-4316-8a2a-acae011d3fa3)
+02. [Stochastic Processes](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=1d094144-2301-4ad2-b177-acae011d833c)
+03. [Autocovariance](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=c8441dfc-dc5f-4c48-ac78-acae011d691c)
+04. [Stationarity](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=6e05f055-6075-46c8-be87-acae011da5ab)
+05. [Ergodicity](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=d0a31c23-341c-499a-8454-acae011db6a6)
+06. [White Noise](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=c77fdfcb-1469-411c-bc6a-acae011dc35c)
+07. [Linear Time Series Processes](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=65346da0-79ec-4fff-a8fc-acae0126af4d)
+08. [Autoregressive-Moving Average Processes](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=72ed63f5-0600-43c0-a15f-acae013b2e64)
+09. [Conditional Moments](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=5b69270a-2d6b-4dfc-92f7-acaf007d3722)
+10. [Stationarity of AR Processes](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=c5e75632-ea6c-4c67-972f-acb10086540e)
+11. [Moments of an AR(1) Process](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=9dac0aa2-d22c-49c2-887f-acb100865b58)
+12. [Autocorrelations Structure of ARMA Processes](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=7e55cbf0-9126-4b3d-8d2b-acb100866450)
+13. [Autocorrelation Structure of ARMA Processes](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=255b0c55-c113-4da4-b331-acb100866ca4)
+14. [Estimating Autocorrelations and Partial Autocorrelations](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=935c95ee-36c6-4f19-b026-acb10086af3f)
+15. [Testing Autocorrelations and Partial Autocorrelations](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=bce2aa30-48bd-4536-bc0f-acb10086c95c)
+16. [Parameter Estimation](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=f6d10081-77e8-402d-8547-acb000a38bac)
+17. [Model Building](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=b44336f7-333d-4665-a601-acb0012feb9b)
+18. [Model Diagnostics](https://ox.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=1961f413-f991-4699-98a4-acb000f897e4)
+
+--></div>
+</div>
+</article>
+</div>
+<div class="col-xl-1"></div>
+</div>
+</div>
+</main>
+<footer class="w-100 text-light py-4 mt-4 bg-footer">
+<div class="container-fluid">
+<div class="container">
+<div class="row">
+<div class="col-lg-8 col-md-10 mx-auto">
+<ul class="list-inline text-center">
+<li class="list-inline-item"><a aria-label="Contact me using email" class="contact" href="mailto:kevin.k.sheppard@gmail.com"><span class="fa-stack fa-lg"><i class="far fa-circle fa-stack-2x"></i> <i class="far fa-envelope fa-stack-1x"></i></span></a></li>
+<li class="list-inline-item"><a aria-label="Visit my github repositories" class="contact" href="https://github.com/bashtage"><span class="fa-stack fa-lg"><i class="far fa-circle fa-stack-2x"></i> <i class="fab fa-github fa-stack-1x"></i></span></a></li>
+<li class="list-inline-item"><a aria-label="View my LinkedIn profile" class="contact" href="https://www.linkedin.com/in/kevinsheppard/"><span class="fa-stack fa-lg"><i class="far fa-circle fa-stack-2x"></i> <i class="fab fa-linkedin fa-stack-1x"></i></span></a></li>
+<li class="list-inline-item"><a aria-label="Read about the content license used on this site" class="contact" href="https://creativecommons.org/licenses/by-nc-nd/4.0/"><span class="fa-stack fa-lg"><i class="fab fa-creative-commons fa-stack-2x"></i></span></a></li>
+</ul>
+<!--<p class="copyright text-muted">Copyright © Your Website 2018</p>--></div>
+</div>
+</div>
+</div>
+<div class="container-fluid">
+<div class="container d-flex justify-content-center">
+<div class="row">
+<p>© 2021 <a href="mailto:kevin.k.sheppard@gmail.com">Kevin Sheppard</a> - Content licensed <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" rel="license">CC-BY-NC-ND</a> except code blocks which are <a href="https://opensource.org/licenses/NCSA/" rel="license">NCSA</a> licensed.</p>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<!-- wrapper -->
+<script src="../../../assets/js/jquery.min.js"></script>
+<script src="../../../assets/js/popper.min.js"></script>
+<script src="../../../assets/js/bootstrap.min.js"></script>
+<script src="../../../assets/js/baguetteBox.min.js"></script>
+<script>
+
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function (element) {
+            return element.getElementsByTagName('img')[0].alt;
+        }
+    });
+</script>
+</body>
+</html>

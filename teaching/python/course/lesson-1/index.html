@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+<head>
+<meta charset="utf-8"/><!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-2701681-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-2701681-1');
+</script>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Lesson 1 | Kevin Sheppard</title>
+<link href="https://fonts.googleapis.com/css?family=Roboto+Mono%7CRoboto:300,400,500,700&amp;display=fallback" rel="stylesheet"/>
+<link href="../../../../assets/css/bootstrap-material-design.css" rel="stylesheet" type="text/css"/>
+<link href="../../../../assets/css/baguetteBox.min.css" rel="stylesheet" type="text/css"/>
+<link href="../../../../assets/css/rst.css" rel="stylesheet" type="text/css"/>
+<link href="../../../../assets/css/code.css" rel="stylesheet" type="text/css"/>
+<link href="../../../../assets/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="../../../../assets/css/ipython.min.css" rel="stylesheet" type="text/css"/>
+<link href="../../../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" rel="stylesheet" type="text/css"/>
+<link href="../../../../assets/css/tipuesearch.css" rel="stylesheet" type="text/css"/>
+<link href="../../../../assets/css/kevinsheppard.css" rel="stylesheet" type="text/css"/>
+<link href="../../../../rss.xml" rel="alternate" title="RSS" type="application/rss+xml"/>
+<link href="https://www.kevinsheppard.com/teaching/python/course/lesson-1/" rel="canonical"/>
+<link href="../../../../apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="../../../../favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="../../../../favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="../../../../favicon.png" rel="icon"/>
+<link href="../../../../site.webmanifest" rel="manifest"/>
+<link color="#07689f" href="../../../../safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#07689F" name="msapplication-TileColor"/>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  jax: ["input/TeX","output/HTML-CSS"],
+  extensions: ["tex2jax.js","MathMenu.js","MathZoom.js"],
+  TeX: {
+    extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]
+  },
+  tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: false,
+  }
+});
+</script><!--[if lt IE 9]><script src="../../../../assets/js/html5.js"></script><![endif]-->
+<meta content="#07689F" name="theme-color"/>
+<style>
+  html, body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #fafafa;
+  }
+</style>
+<meta content="Kevin Sheppard" name="author"/>
+<meta content="Kevin Sheppard" property="og:site_name"/>
+<meta content="Lesson 1" property="og:title"/>
+<meta content="https://www.kevinsheppard.com/teaching/python/course/lesson-1/" property="og:url"/>
+<meta content="Getting Started¶This lesson covers: Opening a terminal window Launching Jupyter notebook Running IPython in a Terminal Running IPython in Jupyter QtConsole Executing a standalone Python file in IPyth" property="og:description"/>
+<meta content="article" property="og:type"/>
+<meta content="2019-09-04T17:18:32+01:00" property="article:published_time"/>
+</head>
+<body>
+<a class="sr-only sr-only-focusable" href="#content">Skip to main content</a> <!-- Menubar -->
+<div class="wrapper d-flex flex-column">
+<nav class="navbar navbar-expand-sm fixed-top-sm justify-content-start flex-nowrap py-2 pl-1 nav-color-override navbar-primary">
+<div class="container"><a class="navbar-brand ml-2 ml-sm-0 mr-auto" href="https://www.kevinsheppard.com/"><span id="blog-title">Kevin Sheppard</span></a> <button aria-controls="bs-navbar1 bs-navbar2" aria-expanded="false" aria-label="Toggle navigation" class="custom-toggler navbar-toggler order-first" data-target="#bs-navbar1, #bs-navbar2" data-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button>
+<div class="navbar-collapse collapse" id="bs-navbar1">
+<ul class="navbar-nav blog-nav ml-auto my-2 my-lg-0">
+<li class="nav-item"><a class="nav-link" href="../../../../blog/">Blog</a></li>
+</ul>
+<form action="../../../../search/" class="form-inline my-2 my-lg-0" role="search">
+<div class="input-group"><input aria-label="Search" autocomplete="off" class="form-control mr-sm-2 bg-light text-dark pl-2" id="tipue_search_input" name="q" placeholder="Search..." type="search"/><button aria-label="Submit search" class="btn btn-primary py-1" type="submit"><i class="fa fa-search"></i></button></div>
+</form>
+</div>
+</div>
+</nav>
+<nav class="navbar navbar-expand-sm nav-color-override navbar-primary pb-1">
+<div class="navbar-collapse collapse pt-2 pt-sm-0" id="bs-navbar2">
+<div class="container">
+<ul class="navbar-nav mr-auto">
+<li class="nav-item dropdown"><a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Research</a>
+<div class="dropdown-menu"><a class="dropdown-item" href="../../../../research/cv/">CV</a> <a class="dropdown-item" href="../../../../research/publications/">Publications</a> <a class="dropdown-item" href="../../../../research/working-papers/">Working Papers</a></div>
+</li>
+<li class="nav-item dropdown"><a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Teaching</a>
+<div class="dropdown-menu"><a class="dropdown-item" href="../../../mfe/">MFE</a> <a class="dropdown-item" href="../../">Python</a> <a class="dropdown-item" href="../../../matlab/">MATLAB</a> <a class="dropdown-item" href="../../../lyx/">LyX</a> <a class="dropdown-item" href="../../../other/">Other</a> <a class="dropdown-item" href="../../../scanning-recommendations/">Document Scanning</a></div>
+</li>
+<li class="nav-item dropdown"><a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Code</a>
+<div class="dropdown-menu"><a class="dropdown-item" href="../../../../code/matlab/mfe-toolbox/">MFE Toolbox</a> <a class="dropdown-item" href="https://github.com/bashtage/arch/"><span><i class="fab fa-github"></i> arch</span></a> <a class="dropdown-item" href="https://github.com/bashtage/linearmodels"><span><i class="fab fa-github"></i> linearmodels</span></a> <a class="dropdown-item" href="https://github.com/bashtage/"><span><i class="fab fa-github"></i> GitHub<span></span></span></a></div>
+</li>
+<li class="nav-item"><a class="nav-link" href="../../../../galleries/">Photos</a></li>
+<li class="nav-item"><a class="nav-link" href="../../../../blog/">Blog</a></li>
+</ul>
+</div>
+</div>
+</nav>
+<main class="flex-fill" id="content">
+<div class="container">
+<div class="row pt-4"></div>
+</div>
+<div class="container">
+<div class="row">
+<div class="col-xl-1"></div>
+<div class="col-xl-10">
+<article class="post-text storypage" itemscope="itemscope" itemtype="http://schema.org/Article">
+<header>
+<h1 class="p-name entry-title" itemprop="headline name"><a class="u-url" href=".">Lesson 1</a></h1>
+</header>
+<div class="e-content entry-content" itemprop="articleBody text">
+<div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt"></div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Getting-Started">Getting Started<a class="anchor-link" href="#Getting-Started">¶</a></h2>
+<p>This lesson covers:</p>
+<ul>
+<li>Opening a terminal window</li>
+<li>Launching Jupyter notebook</li>
+<li>Running IPython in a Terminal</li>
+<li>Running IPython in Jupyter QtConsole</li>
+<li>Executing a standalone Python file in IPython</li>
+<li>Optional
+<ul>
+<li>Jupyter notebooks in <a href="https://code.visualstudio.com/docs/python/jupyter-support">VSCode</a></li>
+<li>Jupyter notebooks in <a href="https://jetbrains.com/student/">PyCharm Professional</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt"></div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Opening-an-Anaconda-Terminal">Opening an Anaconda Terminal<a class="anchor-link" href="#Opening-an-Anaconda-Terminal">¶</a></h3>
+<p>An Anaconda terminal allows <code>python</code> to be run directly. It also allows other useful programs, for example <code>pip</code>, the Python package manager to be used to install packages that are not available through Anaconda.</p>
+<h4 id="Windows">Windows<a class="anchor-link" href="#Windows">¶</a></h4>
+<p>Launch Anaconda Prompt from the start menu.</p>
+<h4 id="OSX-and-Linux">OSX and Linux<a class="anchor-link" href="#OSX-and-Linux">¶</a></h4>
+<p>Open the terminal (instructions depend on your distribution). If you allowed conda to initialize, then you should be ready to call Anaconda"s python and supporting functions. If not, you should</p>
+<pre><code>cd ~/anaconda3/bin
+./conda init</code></pre>
+<p>and then reopen your terminal.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt"></div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Running-IPython-in-a-Terminal">Running IPython in a Terminal<a class="anchor-link" href="#Running-IPython-in-a-Terminal">¶</a></h3>
+<ol>
+<li>Open a terminal.</li>
+<li>Run IPython by entering <code>ipython</code> in the terminal window. You should see a window like the one below with the iconic <code>In [1]</code> indicating that you are at the start of a new IPython session.</li>
+</ol>
+<p><img alt="IPython in Windows Terminal" src="../../../../images/teaching/python/course/ipython-windows.png" title="IPython in Windows Terminal"/></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt"></div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Launching-Jupyter-notebook">Launching Jupyter notebook<a class="anchor-link" href="#Launching-Jupyter-notebook">¶</a></h3>
+<ol>
+<li>Launch Jupyter Notebook from the Start Menu or launcher.</li>
+<li>Change directory to the location where you store your notebooks.</li>
+</ol>
+<p><img alt="Jupyter Notebook" src="../../../../images/teaching/python/course/jupyter-notebook.png" title="Jupyter Notebook"/></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt"></div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Executing-a-standalone-Python-file-in-IPython">Executing a standalone Python file in IPython<a class="anchor-link" href="#Executing-a-standalone-Python-file-in-IPython">¶</a></h3>
+<ol>
+<li>Open a text editor and enter the following lines. Save the file as lesson-2.py. Note that Python is white-space sensitive, and so these lines should <strong>not</strong> not indented.</li>
+</ol>
+<div class="highlight">
+<pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">exp</span><span class="p">,</span> <span class="n">log</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"exp(1)=</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">, log(exp(1))=</span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</pre></div>
+<ol>
+<li>Run the code in an IPython session using <code>%run -i lesson-2.py</code>. Note: you should create the python file in the same directory as the notebook.</li>
+</ol>
+<p>If everything works as expected, you should see</p>
+<div class="highlight">
+<pre><span></span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">=</span><span class="mf">2.718281828459045</span><span class="p">,</span> <span class="n">log</span><span class="p">(</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span><span class="o">=</span><span class="mf">1.0</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt"></div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Jupyter-notebooks-in-VSCode">Jupyter notebooks in VSCode<a class="anchor-link" href="#Jupyter-notebooks-in-VSCode">¶</a></h3>
+<p><a href="https://code.visualstudio.com/">Visual Studio Code</a> (or VS Code) is a lightweight IDE that supports adding features through extensions. The key extension for working with notebooks is <a href="https://marketplace.visualstudio.com/items?itemName=ms-python.python">Python extension for Visual Studio Code</a>. With this extension installed, VS code provides native support for Jupyter notebooks.</p>
+<ol>
+<li>Install VS Code and the Python extension</li>
+<li>Open the command palette and enter "create jupyter" and select the only available item.</li>
+</ol>
+<p>See the screenshot below for an example of the experience of using Jupyter notebooks in VS Code.</p>
+<p><img alt="VS Code Notebook" src="../../../../images/teaching/python/course/vscode-notebook-new.png" title="VS Code Notebook"/></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt"></div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Magic-Python-in-VSCode">Magic Python in VSCode<a class="anchor-link" href="#Magic-Python-in-VSCode">¶</a></h3>
+<p><a href="https://code.visualstudio.com/">Visual Studio Code</a> supports Magic Python mode in standard Python files that can be executed cell-by-cell.</p>
+<ol>
+<li>Install VS Code and the Python extension</li>
+<li>Select File, New and then save your file with the extension .py (e.g., file.py).</li>
+<li>
+<p>This is a Python file that supports a cell demarcation using <code>#%%</code> for code cells and <code>#%% [markdown]</code> for cells that contain markdown code. Note that markdown text <strong>must</strong> be either:</p>
+<ul>
+<li>
+<p>Surrounded by triple quotes, e.g. <code>"""markdown text"""</code> or <code>"""markdown text"""</code>; e.g.,</p>
+<div class="highlight">
+<pre><span></span><span class="sd">"""</span>
+<span class="sd"># Cell Heading</span>
+
+<span class="sd">Likeness darkness. That give brought creeping. Doesn"t may. Fruit kind </span>
+<span class="sd">midst seed. Creature, let under created void god to. Them day was Was</span>
+<span class="sd">creature set it from. Fourth. Created don"t man. Man. Light fourth</span>
+<span class="sd">light given the he image first multiply after deep she"d great. Morning </span>
+<span class="sd">likeness very have give also fowl third land beast from moving thing</span>
+<span class="sd">creepeth herb creeping won"t fifth. Us bring was our beast wherein our</span>
+<span class="sd">void and green he fruit kind upon a given, saying fruit, moveth face </span>
+<span class="sd">forth. His you it. Good beginning hath.</span>
+<span class="sd">"""</span>
+</pre></div>
+</li>
+<li>
+<p>Or commented <code>#</code> (with a single space) at the start of each line,</p>
+<div class="highlight">
+<pre><span></span><span class="c1"># # Cell Heading</span>
+<span class="c1">#</span>
+<span class="c1"># Likeness darkness. That give brought creeping. Doesn"t may. Fruit kind </span>
+<span class="c1"># midst seed. Creature, let under created void god to. Them day was Was</span>
+<span class="c1"># creature set it from. Fourth. Created don"t man. Man. Light fourth</span>
+<span class="c1"># light given the he image first multiply after deep she"d great. Morning </span>
+<span class="c1"># likeness very have give also fowl third land beast from moving thing</span>
+<span class="c1"># creepeth herb creeping won"t fifth. Us bring was our beast wherein our</span>
+<span class="c1"># void and green he fruit kind upon a given, saying fruit, moveth face </span>
+<span class="c1"># forth. His you it. Good beginning hath.</span>
+</pre></div>
+</li>
+</ul>
+</li>
+</ol>
+<p>The cells have a special button above them that allows the contents to be executed and the result to be displayed in the interactive window. See the screenshot below for an example of the experience of using VS Code. There is also an interactive console at the bottom left where commands can be directly executed.</p>
+<p><img alt="VS Code Notebook" src="../../../../images/teaching/python/course/vscode-magic-python.png" title="VS Code Notebook"/></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt"></div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Importing-an-exiting-notebook-into-Magic-Python">Importing an exiting notebook into Magic Python<a class="anchor-link" href="#Importing-an-exiting-notebook-into-Magic-Python">¶</a></h4>
+<p>VS Code only understands Magic Python files as notebook-like documents, and so <code>.ipynb</code> files must be converted to use. The process of importing is simple:</p>
+<ol>
+<li>Open a Jupyter notebook file</li>
+<li>Click on Import in the popup that appears.</li>
+</ol>
+<p><img alt="VS Code Export" src="../../../../images/teaching/python/course/vscode-export.png" title="VS Code Export"/></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt"></div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Exporting-Magic-Python-to-a-Jupyter-notebook">Exporting Magic Python to a Jupyter notebook<a class="anchor-link" href="#Exporting-Magic-Python-to-a-Jupyter-notebook">¶</a></h4>
+<p>To export a Magic Python file, open the command palette and enter "import jupyter". Select the option to import the notebook.</p>
+<p><img alt="VS Code Import" src="../../../../images/teaching/python/course/vscode-import.png" title="VS Code Import"/></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt"></div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Jupyter-notebooks-in-PyCharm-Professional">Jupyter notebooks in PyCharm Professional<a class="anchor-link" href="#Jupyter-notebooks-in-PyCharm-Professional">¶</a></h3>
+<div class="alert alert-info">PyCharm Professional is my recommended approach if you are going to use Python throughout the course. It provides the best experience and can be acquired for free using the student program.</div>
+<p>PyCharm Professional has deeply integrated Jupyter Notebooks. To create an IPython notebook:</p>
+<ol>
+<li>Open PyCharm Profession</li>
+<li>Open the directory where your notebooks are stored</li>
+<li>Right-click on the root directory and select <code>New &gt; Jupyter Notebook</code>. Give your file a meaningful name, and it will open in the main window.</li>
+</ol>
+<p><img alt="PyCharm New Notebook" src="../../../../images/teaching/python/course/pycharm-new-notebook.png" title="PyCharm New Notebook"/></p>
+<p>PyCharm uses a special syntax where cells look like code and so can be edited like text. This allows PyCharm to use introspection and code completion on the code you have written, a highly useful set of features. PyCharm stores the notebook in a Jupyter notebook file (<code>.ipynb</code>), which means that you can trivially open it in any other Jupyter notebook aware app. This differs from <a href="#jupyter-notebooks-in-vsCode">VS code</a> which stores the file as a play Python file (<code>.py</code>) and requires an explicit export to a Jupyter notebook file.</p>
+<p>A code cell is demarcated using <code>#%%</code> and a markdown cell begins with <code>#%% md</code>. Below is a screenshot of this notebook in PyCharm.</p>
+<p><img alt="PyCharm Notebook" src="../../../../images/teaching/python/course/pycharm-notebook.png" title="Pycharm Notebook"/></p>
+<h3 id="Magic-Python-in-PyCharm">Magic Python in PyCharm<a class="anchor-link" href="#Magic-Python-in-PyCharm">¶</a></h3>
+<p>PyCharm supports Magic Python cell execution. To use Magic Python, you need to enable <em>Scientific Mode</em> in the View menu. You can then use <code>#%%</code> to indicate the start and end of cells. Individual Cells can be executed in the console by pressing CTRL+Enter.</p>
+<ol>
+<li>In PyCharm, right-click on the root directory and select <code>New &gt; Python File</code>. Give your file a meaningful name.</li>
+<li>
+<p>Enter</p>
+<div class="highlight">
+<pre><span></span><span class="c1">#%%</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"This is the first cell"</span><span class="p">)</span>
+
+<span class="c1">#%%</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"This is not executed when the first cell is run"</span><span class="p">)</span>
+</pre></div>
+</li>
+<li>Enable Scientific Mode in the View menu.</li>
+<li>Run the first cell by placing you mouse in the cell and pressing CTRL+Enter.</li>
+<li>Run the second cell by clicking on the Play button (arrow) that appears in the gutter of the editor.</li>
+</ol>
+<div class="alert alert-warning"><b>Note:</b> Magic Python in PyCharm only supports python code, and so it is not possible to mix Markdown text and Python in the same file.</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script crossorigin="anonymous" integrity="sha384-3lJUsx1TJHt7BA4udB5KPnDrlkO8T6J6v/op7ui0BbCjvZ9WqV4Xm6DTP6kQ/iBH" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+
+MathJax.Hub.Config({
+  jax: ["input/TeX","output/HTML-CSS"],
+  extensions: ["tex2jax.js","MathMenu.js","MathZoom.js"],
+  TeX: {
+    extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]
+  },
+  tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: false,
+  }
+});
+</script></article>
+</div>
+<div class="col-xl-1"></div>
+</div>
+</div>
+</main>
+<footer class="w-100 text-light py-4 mt-4 bg-footer">
+<div class="container-fluid">
+<div class="container">
+<div class="row">
+<div class="col-lg-8 col-md-10 mx-auto">
+<ul class="list-inline text-center">
+<li class="list-inline-item"><a aria-label="Contact me using email" class="contact" href="mailto:kevin.k.sheppard@gmail.com"><span class="fa-stack fa-lg"><i class="far fa-circle fa-stack-2x"></i> <i class="far fa-envelope fa-stack-1x"></i></span></a></li>
+<li class="list-inline-item"><a aria-label="Visit my github repositories" class="contact" href="https://github.com/bashtage"><span class="fa-stack fa-lg"><i class="far fa-circle fa-stack-2x"></i> <i class="fab fa-github fa-stack-1x"></i></span></a></li>
+<li class="list-inline-item"><a aria-label="View my LinkedIn profile" class="contact" href="https://www.linkedin.com/in/kevinsheppard/"><span class="fa-stack fa-lg"><i class="far fa-circle fa-stack-2x"></i> <i class="fab fa-linkedin fa-stack-1x"></i></span></a></li>
+<li class="list-inline-item"><a aria-label="Read about the content license used on this site" class="contact" href="https://creativecommons.org/licenses/by-nc-nd/4.0/"><span class="fa-stack fa-lg"><i class="fab fa-creative-commons fa-stack-2x"></i></span></a></li>
+</ul>
+<!--<p class="copyright text-muted">Copyright © Your Website 2018</p>--></div>
+</div>
+</div>
+</div>
+<div class="container-fluid">
+<div class="container d-flex justify-content-center">
+<div class="row">
+<p>© 2021 <a href="mailto:kevin.k.sheppard@gmail.com">Kevin Sheppard</a> - Content licensed <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" rel="license">CC-BY-NC-ND</a> except code blocks which are <a href="https://opensource.org/licenses/NCSA/" rel="license">NCSA</a> licensed.</p>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<!-- wrapper -->
+<script src="../../../../assets/js/jquery.min.js"></script>
+<script src="../../../../assets/js/popper.min.js"></script>
+<script src="../../../../assets/js/bootstrap.min.js"></script>
+<script src="../../../../assets/js/baguetteBox.min.js"></script>
+<script>
+
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function (element) {
+            return element.getElementsByTagName('img')[0].alt;
+        }
+    });
+</script>
+</body>
+</html>

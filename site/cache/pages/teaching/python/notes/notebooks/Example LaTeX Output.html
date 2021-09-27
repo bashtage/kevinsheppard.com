@@ -1,0 +1,238 @@
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Example:-Exporting-to-$%5CLaTeX$">Example: Exporting to $\LaTeX$<a class="anchor-link" href="#Example:-Exporting-to-$%5CLaTeX$">&#182;</a></h1><p>The first code block contains the imports needed and defines a flag which determines whether the 
+output $\LaTeX$ should be compiled.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># imports</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">subprocess</span>
+
+<span class="c1"># Flag to compile output tables</span>
+<span class="n">compileLatex</span> <span class="o">=</span> <span class="kc">False</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The next code block loads the npz file created using the output from the Fama-MacBeth example.
+The second part shows a generic method to restore all variables. The loaded data is in a dictionary,
+and so iterating over the keys and using <code>globals()</code> (a dictionary) in the main program.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Load variables</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;fama-macBeth-results.npz&#39;</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+<span class="c1"># Manually load parameters and std errors</span>
+<span class="n">arp</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;arp&#39;</span><span class="p">]</span>
+<span class="n">arpSE</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;arpSE&#39;</span><span class="p">]</span>
+<span class="n">beta</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;beta&#39;</span><span class="p">]</span>
+<span class="n">betaSE</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;betaSE&#39;</span><span class="p">]</span>
+<span class="n">J</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;J&#39;</span><span class="p">]</span>
+<span class="n">Jpval</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;Jpval&#39;</span><span class="p">]</span>
+
+<span class="c1"># Generic restore of all data in a npz file</span>
+<span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">f</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+    <span class="nb">globals</span><span class="p">()[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The document is be stored in a list. The first few lines contain the required header for a
+$\LaTeX$ document, including some packages used to improve table display and to select a custom font.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># List to hold table</span>
+<span class="n">latex</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="c1"># Initializd LaTeX document</span>
+<span class="n">latex</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\documentclass[a4paper]</span><span class="si">{article}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">latex</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\usepackage</span><span class="si">{amsmath}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">latex</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\usepackage</span><span class="si">{booktabs}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">latex</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\usepackage[adobe-utopia]</span><span class="si">{mathdesign}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">latex</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\usepackage[T1]</span><span class="si">{fontenc}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">latex</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\begin</span><span class="si">{document}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Table 1 is stored in its own list, and then extend will be used to add it to the main list.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Table 1</span>
+<span class="n">table1</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">table1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\begin</span><span class="si">{center}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">table1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\begin</span><span class="si">{tabular}{lrrr}</span><span class="s1"> \toprule&#39;</span><span class="p">)</span>
+<span class="c1"># Header</span>
+<span class="n">colNames</span> <span class="o">=</span> <span class="p">[</span><span class="sa">r</span><span class="s1">&#39;VWM$^e$&#39;</span><span class="p">,</span><span class="s1">&#39;SMB&#39;</span><span class="p">,</span><span class="s1">&#39;HML&#39;</span><span class="p">]</span>
+<span class="n">header</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+<span class="k">for</span> <span class="n">cName</span> <span class="ow">in</span> <span class="n">colNames</span><span class="p">:</span>
+    <span class="n">header</span> <span class="o">+=</span> <span class="s1">&#39; &amp; &#39;</span> <span class="o">+</span> <span class="n">cName</span>
+
+<span class="n">header</span> <span class="o">+=</span> <span class="sa">r</span><span class="s1">&#39;</span><span class="se">\\</span><span class="s1"> \cmidrule{2-4}&#39;</span>
+<span class="n">table1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">header</span><span class="p">)</span>
+<span class="c1"># Main row</span>
+<span class="n">row</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+<span class="k">for</span> <span class="n">a</span><span class="p">,</span><span class="n">se</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">arp</span><span class="p">,</span><span class="n">arpSE</span><span class="p">):</span>
+    <span class="n">row</span> <span class="o">+=</span> <span class="sa">r</span><span class="s1">&#39; &amp; $\underset{{(</span><span class="si">{0:0.3f}</span><span class="s1">)}}{{</span><span class="si">{1:0.3f}</span><span class="s1">}}$&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">se</span><span class="p">,</span><span class="n">a</span><span class="p">)</span>
+<span class="n">table1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+<span class="c1"># Blank row</span>
+<span class="n">row</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;</span><span class="se">\\</span><span class="s1">&#39;</span>
+<span class="n">table1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+<span class="c1"># J-stat row</span>
+<span class="n">row</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;J-stat: $\underset{{(</span><span class="si">{0:0.3f}</span><span class="s1">)}}{{</span><span class="si">{1:0.1f}</span><span class="s1">}}$ </span><span class="se">\\</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">Jpval</span><span class="p">),</span><span class="nb">float</span><span class="p">(</span><span class="n">J</span><span class="p">))</span>
+<span class="n">table1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+<span class="n">table1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\bottomrule \end</span><span class="si">{tabular}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">table1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\end</span><span class="si">{center}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="c1"># Extend latex with table 1</span>
+<span class="n">latex</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">table1</span><span class="p">)</span>
+<span class="n">latex</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\newpage&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Table 2 is a bit more complex, and uses loops to iterate over the rows of the arrays containing
+the $\beta$s and their standard errors.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Format information for table 2</span>
+<span class="n">sizes</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;S&#39;</span><span class="p">,</span><span class="s1">&#39;2&#39;</span><span class="p">,</span><span class="s1">&#39;3&#39;</span><span class="p">,</span><span class="s1">&#39;4&#39;</span><span class="p">,</span><span class="s1">&#39;B&#39;</span><span class="p">]</span>
+<span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;L&#39;</span><span class="p">,</span><span class="s1">&#39;2&#39;</span><span class="p">,</span><span class="s1">&#39;3&#39;</span><span class="p">,</span><span class="s1">&#39;4&#39;</span><span class="p">,</span><span class="s1">&#39;H&#39;</span><span class="p">]</span>
+<span class="c1"># Table 2 has the same header as table 1, copy with a slice</span>
+<span class="n">table2</span> <span class="o">=</span> <span class="n">table1</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">m</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">sizes</span><span class="p">)):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">values</span><span class="p">)):</span>
+        <span class="n">row</span> <span class="o">=</span> <span class="s1">&#39;Size: </span><span class="si">{:}</span><span class="s1">, Value: </span><span class="si">{:}</span><span class="s1"> &#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sizes</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">values</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="n">beta</span><span class="p">[:,</span><span class="n">m</span><span class="p">]</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="n">betaSE</span><span class="p">[</span><span class="n">m</span><span class="p">,</span><span class="mi">1</span><span class="p">:]</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">b</span><span class="p">)):</span>
+            <span class="n">row</span> <span class="o">+=</span> <span class="sa">r</span><span class="s1">&#39; &amp; $\underset{{(</span><span class="si">{0:0.3f}</span><span class="s1">)}}{{</span><span class="si">{1: .3f}</span><span class="s1">}}$&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">k</span><span class="p">],</span><span class="n">b</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
+        <span class="n">row</span> <span class="o">+=</span> <span class="sa">r</span><span class="s1">&#39;</span><span class="se">\\</span><span class="s1"> &#39;</span>
+        <span class="n">table2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+        <span class="n">m</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">i</span><span class="o">&lt;</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">sizes</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">table2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\cmidrule{2-4}&#39;</span><span class="p">)</span>
+
+<span class="n">table2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\bottomrule \end</span><span class="si">{tabular}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">table2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\end</span><span class="si">{center}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="c1"># Extend with table 2</span>
+<span class="n">latex</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">table2</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The penultimate block finished the document, and uses write to write the lines to the $\LaTeX$ file.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Finish document   </span>
+<span class="n">latex</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\end</span><span class="si">{document}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="c1"># Write to table</span>
+<span class="n">fid</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;latex.tex&#39;</span><span class="p">,</span><span class="s1">&#39;w&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">latex</span><span class="p">:</span>
+    <span class="n">fid</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">line</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">fid</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Finally, if the flag is set, subprocess is used to compile the LaTeX.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Compile if needed</span>
+<span class="k">if</span> <span class="n">compileLatex</span><span class="p">:</span>
+    <span class="n">exitStatus</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="s1">&#39;pdflatex&#39;</span><span class="p">,</span> <span class="s1">&#39;latex.tex&#39;</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+ 
+

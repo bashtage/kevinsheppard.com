@@ -1,0 +1,306 @@
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Series-and-DataFrames">Series and DataFrames<a class="anchor-link" href="#Series-and-DataFrames">&#182;</a></h1><p>This lesson covers:</p>
+<ul>
+<li>Constructing pandas Series and DataFrames </li>
+</ul>
+<p><a id="stock-data"></a></p>
+<h2 id="Data">Data<a class="anchor-link" href="#Data">&#182;</a></h2><p>September 2018 prices (adjusted closing prices) for the S&amp;P 500 EFT (SPY),
+Apple (AAPL) and Google (GOOG) are listed below:</p>
+<table>
+<thead><tr>
+<th style="text-align:left">Date</th>
+<th style="text-align:right">SPY Price</th>
+<th style="text-align:right">AAPL Price</th>
+<th style="text-align:right">GOOG Price</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Sept4</td>
+<td style="text-align:right">289.81</td>
+<td style="text-align:right">228.36</td>
+<td style="text-align:right">1197.00</td>
+</tr>
+<tr>
+<td style="text-align:left">Sept5</td>
+<td style="text-align:right">289.03</td>
+<td style="text-align:right">226.87</td>
+<td style="text-align:right">1186.48</td>
+</tr>
+<tr>
+<td style="text-align:left">Sept6</td>
+<td style="text-align:right">288.16</td>
+<td style="text-align:right">223.10</td>
+<td style="text-align:right">1171.44</td>
+</tr>
+<tr>
+<td style="text-align:left">Sept7</td>
+<td style="text-align:right">287.60</td>
+<td style="text-align:right">221.30</td>
+<td style="text-align:right">1164.83</td>
+</tr>
+<tr>
+<td style="text-align:left">Sept10</td>
+<td style="text-align:right">288.10</td>
+<td style="text-align:right">218.33</td>
+<td style="text-align:right">1164.64</td>
+</tr>
+<tr>
+<td style="text-align:left">Sept11</td>
+<td style="text-align:right">289.05</td>
+<td style="text-align:right">223.85</td>
+<td style="text-align:right">1177.36</td>
+</tr>
+<tr>
+<td style="text-align:left">Sept12</td>
+<td style="text-align:right">289.12</td>
+<td style="text-align:right">221.07</td>
+<td style="text-align:right">1162.82</td>
+</tr>
+<tr>
+<td style="text-align:left">Sept13</td>
+<td style="text-align:right">290.83</td>
+<td style="text-align:right">226.41</td>
+<td style="text-align:right">1175.33</td>
+</tr>
+<tr>
+<td style="text-align:left">Sept14</td>
+<td style="text-align:right">290.88</td>
+<td style="text-align:right">223.84</td>
+<td style="text-align:right">1172.53</td>
+</tr>
+<tr>
+<td style="text-align:left">Sept17</td>
+<td style="text-align:right">289.34</td>
+<td style="text-align:right">217.88</td>
+<td style="text-align:right">1156.05</td>
+</tr>
+<tr>
+<td style="text-align:left">Sept18</td>
+<td style="text-align:right">290.91</td>
+<td style="text-align:right">218.24</td>
+<td style="text-align:right">1161.22</td>
+</tr>
+<tr>
+<td style="text-align:left">Sept19</td>
+<td style="text-align:right">291.44</td>
+<td style="text-align:right">216.64</td>
+<td style="text-align:right">1158.78</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Prices in September 2018</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Problem:-Input-a-pandas-Series">Problem: Input a pandas Series<a class="anchor-link" href="#Problem:-Input-a-pandas-Series">&#182;</a></h2><p>Create vectors for each of the days in the <a href="#stock-data">Table</a> named <code>sep_xx</code>
+where <code>xx</code> is the numeric date. For example,</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">sep_04</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mf">289.81</span><span class="p">,</span><span class="mf">228.36</span><span class="p">,</span><span class="mf">1197.00</span><span class="p">],</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;SPY&quot;</span><span class="p">,</span><span class="s2">&quot;AAPL&quot;</span><span class="p">,</span><span class="s2">&quot;GOOG&quot;</span><span class="p">]);</span>
+</pre></div>
+<p>Using the ticker names as the <code>index</code> of each series</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Problem:-Create-a-Vector-of-Dates">Problem: Create a Vector of Dates<a class="anchor-link" href="#Problem:-Create-a-Vector-of-Dates">&#182;</a></h2><p>Use the pandas function <code>pd.to_datetime</code> to convert a list of string dates to
+a pandas <code>DateTimeIndex</code>, which can be used to set dates in other arrays.</p>
+<p>For example, the first two dates are</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">dates_2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">([</span><span class="s2">&quot;4-9-2018&quot;</span><span class="p">,</span><span class="s2">&quot;5-9-2018&quot;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dates_2</span><span class="p">)</span>
+</pre></div>
+<p>which produces</p>
+
+<pre><code>DatetimeIndex(["2018-04-09", "2018-05-09"], dtype="datetime64[ns]", freq=None)</code></pre>
+<p>Create a vector containing all of the dates in the table.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Problem:-Input-a-Series-with-Dates">Problem: Input a Series with Dates<a class="anchor-link" href="#Problem:-Input-a-Series-with-Dates">&#182;</a></h2><p>Create vectors for each of the ticker symbols in <a href="#stock-data">Table</a> named
+spy, aapl and goog, respectively. Use the variable <code>dates</code> that you created
+in the previous step as the index.</p>
+<p>For example</p>
+<div class="highlight"><pre><span></span><span class="n">goog</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mf">1197.00</span><span class="p">,</span><span class="mf">1186.48</span><span class="p">,</span><span class="mf">1171.44</span><span class="p">,</span><span class="o">...</span><span class="p">],</span> <span class="n">index</span><span class="o">=</span><span class="n">dates</span><span class="p">)</span>
+</pre></div>
+<p>Set the <code>name</code> of each series as the series" ticker.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Problem:-Create-a-DataFrame">Problem: Create a DataFrame<a class="anchor-link" href="#Problem:-Create-a-DataFrame">&#182;</a></h2><p>Create a DataFrame named <code>prices</code> containing <a href="#stock-data">Table</a>. Set the
+column names equal to the ticker and set the index to <code>dates</code>.</p>
+<div class="highlight"><pre><span></span><span class="n">prices</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([[</span><span class="mf">289.81</span><span class="p">,</span> <span class="mf">228.36</span><span class="p">,</span> <span class="mf">1197.00</span><span class="p">],</span> <span class="p">[</span><span class="mf">289.03</span><span class="p">,</span> <span class="mf">226.87</span><span class="p">,</span> <span class="mf">1186.48</span><span class="p">]],</span>
+                      <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;SPY&quot;</span><span class="p">,</span> <span class="s2">&quot;AAPL&quot;</span><span class="p">,</span> <span class="s2">&quot;GOOG&quot;</span><span class="p">],</span><span class="n">index</span><span class="o">=</span><span class="n">dates_2</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Save the price data</p>
+<p>This block saves prices to a HDF file for use in later lessons. The
+function used to save the data is covered in a later lesson.</p>
+<p>This function uses some sophisticated features of Python. Do not
+worry if it is unclear at this point.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Setup: Save prices, goog and sep_04 into a single file for use in other lessons</span>
+
+<span class="c1"># Only run if prices has been defined</span>
+<span class="k">if</span> <span class="s2">&quot;prices&quot;</span> <span class="ow">in</span> <span class="nb">globals</span><span class="p">():</span>
+    <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+    <span class="n">dates</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">dates</span><span class="p">)</span>
+    <span class="n">variables</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;sep_04&quot;</span><span class="p">,</span> <span class="s2">&quot;sep_05&quot;</span><span class="p">,</span> <span class="s2">&quot;sep_06&quot;</span><span class="p">,</span> <span class="s2">&quot;sep_07&quot;</span><span class="p">,</span> <span class="s2">&quot;sep_10&quot;</span><span class="p">,</span> <span class="s2">&quot;sep_11&quot;</span><span class="p">,</span>
+                 <span class="s2">&quot;sep_12&quot;</span><span class="p">,</span> <span class="s2">&quot;sep_13&quot;</span><span class="p">,</span> <span class="s2">&quot;sep_14&quot;</span><span class="p">,</span> <span class="s2">&quot;sep_17&quot;</span><span class="p">,</span> <span class="s2">&quot;sep_18&quot;</span><span class="p">,</span> <span class="s2">&quot;sep_19&quot;</span><span class="p">,</span>
+                 <span class="s2">&quot;spy&quot;</span><span class="p">,</span> <span class="s2">&quot;goog&quot;</span><span class="p">,</span> <span class="s2">&quot;aapl&quot;</span><span class="p">,</span> <span class="s2">&quot;prices&quot;</span><span class="p">,</span> <span class="s2">&quot;dates&quot;</span><span class="p">]</span>
+    <span class="k">with</span> <span class="n">pd</span><span class="o">.</span><span class="n">HDFStore</span><span class="p">(</span><span class="s2">&quot;data/dataframes.h5&quot;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">h5</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">var</span> <span class="ow">in</span> <span class="n">variables</span><span class="p">:</span>
+            <span class="n">h5</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">var</span><span class="p">,</span> <span class="nb">globals</span><span class="p">()[</span><span class="n">var</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Exercises">Exercises<a class="anchor-link" href="#Exercises">&#182;</a></h2><h3 id="Exercise:-Creating-DataFrames">Exercise: Creating DataFrames<a class="anchor-link" href="#Exercise:-Creating-DataFrames">&#182;</a></h3><p>Turn the table below into a DataFrame where the index is set as the index and
+the column names are used in the <code>DataFrame</code>.</p>
+<table>
+<thead><tr>
+<th style="text-align:left">index</th>
+<th style="text-align:left">Firm</th>
+<th style="text-align:right">Profit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">A</td>
+<td style="text-align:left">Alcoa</td>
+<td style="text-align:right">3,428</td>
+</tr>
+<tr>
+<td style="text-align:left">B</td>
+<td style="text-align:left">Berkshire</td>
+<td style="text-align:right">67,421</td>
+</tr>
+<tr>
+<td style="text-align:left">C</td>
+<td style="text-align:left">Coca Cola</td>
+<td style="text-align:right">197.4</td>
+</tr>
+<tr>
+<td style="text-align:left">D</td>
+<td style="text-align:left">Dannon</td>
+<td style="text-align:right">-342.1</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+ 
+

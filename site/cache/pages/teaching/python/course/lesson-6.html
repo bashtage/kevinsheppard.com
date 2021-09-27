@@ -1,0 +1,430 @@
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Methods-and-Functions">Methods and Functions<a class="anchor-link" href="#Methods-and-Functions">&#182;</a></h1><p>This lesson covers:</p>
+<ul>
+<li>Calling functions with more than one input and output </li>
+<li>Calling functions when some inputs are not used</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Read the data in momentum.csv and creating some variable. This cell uses
+some magic to automate repeated typing.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Setup: Load the momentum data</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">momentum</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/momentum.csv&quot;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="s2">&quot;date&quot;</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">momentum</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+
+<span class="n">mom_01</span> <span class="o">=</span> <span class="n">momentum</span><span class="p">[</span><span class="s2">&quot;mom_01&quot;</span><span class="p">]</span>
+<span class="n">mom_10</span> <span class="o">=</span> <span class="n">momentum</span><span class="p">[</span><span class="s2">&quot;mom_10&quot;</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This data set contains 2 years of data on the 10 momentum portfolios from
+2016–2018. The variables are named mom_XX where XX ranges from 01 (work
+return over the past 12 months) to 10 (best return over the past 12 months).</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Problem:-Calling-Methods">Problem: Calling Methods<a class="anchor-link" href="#Problem:-Calling-Methods">&#182;</a></h2><p>Get used to calling methods by computing the mean, standard deviation, skewness, kurtosis, max, and min.</p>
+<p>Use the DataFrame functions <code>mean</code>, <code>std</code>, <code>skew</code> and <code>kurt</code>, <code>min</code> and <code>max</code> to print the
+values for <code>mom_01</code>.</p>
+<p>In the second cell, call <code>describe</code>, a method that summarizes <code>Series</code> and <code>DataFrames</code> on <code>mom_01</code>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Problem:-Use-NumPy-and-SciPy-functions">Problem: Use NumPy and SciPy functions<a class="anchor-link" href="#Problem:-Use-NumPy-and-SciPy-functions">&#182;</a></h2><p>Use the NumPy functions <code>mean</code>, <code>std</code>, <code>min</code>, <code>max</code> and the SciPy <code>stats</code> functions
+<code>skew</code> and <code>kurtosis</code> to produce the same output.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Problem:-Calling-Functions-with-2-Outputs">Problem: Calling Functions with 2 Outputs<a class="anchor-link" href="#Problem:-Calling-Functions-with-2-Outputs">&#182;</a></h2><p>Some useful functions return 2 or more outputs. One example is <code>np.linalg.slogdet</code> 
+computes the signed log determinant of a square array. It returns two output,
+the sign and the log of the absolute determinant.</p>
+<p>Use this function to compute the sign and log determinant of the 2 by 2 array:</p>
+
+<pre><code>1  2
+2  9</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Problem:-Calling-Functions-with-2-Inputs">Problem: Calling Functions with 2 Inputs<a class="anchor-link" href="#Problem:-Calling-Functions-with-2-Inputs">&#182;</a></h2><p>Many functions take two or more inputs. Like outputs, the inputs are simply
+listed in order separated by commas. Use <code>np.linspace</code> to produce a series
+of 11 points evenly spaced between 0 and 1.</p>
+
+<pre><code>np.linspace(start, stop, num=50, endpoint=True, retstep=False, dtype=None, axis=0)</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Problem:-Calling-Functions-using-Keyword-Arguments">Problem: Calling Functions using Keyword Arguments<a class="anchor-link" href="#Problem:-Calling-Functions-using-Keyword-Arguments">&#182;</a></h2><p>Many functions have optional arguments. You can see these in a docstring since
+optional arguments take the form <code>variable=default</code>. For example, see
+the help for <code>scipy.special.comb</code>, which has the function signature</p>
+
+<pre><code>comb(N, k, exact=False, repetition=False)</code></pre>
+<p>This tells us that <code>N</code> and <code>k</code> are required and
+that the other 2 inputs can be omitted if you are happy with the defaults.
+However, if we want to change some of the optional inputs, then we can
+directly use the inputs name in the function call.</p>
+<p>Compute the number of distinct combinations of 5 objects from a set of 10.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Compute the total number of combinations allowing for repetition 
+using the <code>repetition=True</code> keyword argument.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Compute the number of combinations using the exact representation using 
+only positional arguments for all 3 inputs.  Repeat using the keyword
+argument for <code>exact</code>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Problem:-Function-Help">Problem: Function Help<a class="anchor-link" href="#Problem:-Function-Help">&#182;</a></h2><p>Explore the help available for calling functions <code>?</code> operator. For example,</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">stats</span>
+
+<span class="n">stats</span><span class="o">.</span><span class="n">kurtosis</span><span class="err">?</span>
+</pre></div>
+<p>opens a help window that shows the inputs and output, while</p>
+<div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">stats</span><span class="o">.</span><span class="n">kurtosis</span><span class="p">)</span>
+</pre></div>
+<p>shows the help in the console.</p>
+<p><strong>Note</strong>: VS Code does <strong>not</strong> support the <code>?</code> form of help</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Problem:-Use-help-with-a-method">Problem: Use <code>help</code> with a method<a class="anchor-link" href="#Problem:-Use-help-with-a-method">&#182;</a></h2><p>Use <code>help</code> to get the help for the <code>kurt</code> method attached to <code>momentum</code>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Exercises">Exercises<a class="anchor-link" href="#Exercises">&#182;</a></h2><h3 id="Exercise:-Use-info">Exercise: Use <code>info</code><a class="anchor-link" href="#Exercise:-Use-info">&#182;</a></h3><p>Use the <code>info</code> method on <code>momentum</code> to get information about this <code>DataFrame</code>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Exercise:-Compute-the-day-by-day-mean">Exercise: Compute the day-by-day mean<a class="anchor-link" href="#Exercise:-Compute-the-day-by-day-mean">&#182;</a></h3><p>Compute the day-by-day mean return of the portfolios in the momentum <code>DataFrame</code> using
+the <code>axis</code> keyword argument. Use <code>head</code> and <code>tail</code> to show
+the first 5 rows and last 5 rows</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Exercise:-Compute-the-standard-deviation-of-mean-returns">Exercise: Compute the standard deviation of mean returns<a class="anchor-link" href="#Exercise:-Compute-the-standard-deviation-of-mean-returns">&#182;</a></h3><p>Compute the standard deviation of the mean returns by chaining methods.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Exercise:-Compute-the-average-standard-deviation">Exercise: Compute the average standard deviation<a class="anchor-link" href="#Exercise:-Compute-the-average-standard-deviation">&#182;</a></h3><p>Compute the mean standard deviation as:</p>
+$$ \sqrt{N^{-1} \sum_{i=1}^N V[r_i]} $$<p>where $V[r_i]$ is the variance of portfolio $i$.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+ 
+

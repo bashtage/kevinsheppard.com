@@ -1,0 +1,544 @@
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Risk-Premia-Estimation-using-GMM">Risk Premia Estimation using GMM<a class="anchor-link" href="#Risk-Premia-Estimation-using-GMM">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Start by importing the modules and functions needed</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">hstack</span><span class="p">,</span> <span class="n">ones</span><span class="p">,</span> <span class="n">array</span><span class="p">,</span> <span class="n">mat</span><span class="p">,</span> <span class="n">tile</span><span class="p">,</span> <span class="n">reshape</span><span class="p">,</span> <span class="n">squeeze</span><span class="p">,</span> <span class="n">eye</span><span class="p">,</span> <span class="n">asmatrix</span>
+<span class="kn">from</span> <span class="nn">numpy.linalg</span> <span class="kn">import</span> <span class="n">inv</span>
+<span class="kn">from</span> <span class="nn">pandas</span> <span class="kn">import</span> <span class="n">read_csv</span><span class="p">,</span> <span class="n">Series</span> 
+<span class="kn">from</span> <span class="nn">scipy.linalg</span> <span class="kn">import</span> <span class="n">kron</span>
+<span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">fmin_bfgs</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Next a callable function is used to produce iteration-by-iteration output when using the non-linear optimizer.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">iteration</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">lastValue</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">functionCount</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">def</span> <span class="nf">iter_print</span><span class="p">(</span><span class="n">params</span><span class="p">):</span>
+    <span class="k">global</span> <span class="n">iteration</span><span class="p">,</span> <span class="n">lastValue</span><span class="p">,</span> <span class="n">functionCount</span>
+    <span class="n">iteration</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Func value: </span><span class="si">{0:}</span><span class="s1">, Iteration: </span><span class="si">{1:}</span><span class="s1">, Function Count: </span><span class="si">{2:}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">lastValue</span><span class="p">,</span> <span class="n">iteration</span><span class="p">,</span> <span class="n">functionCount</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The GMM objective, which is minimized, is defined next.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">gmm_objective</span><span class="p">(</span><span class="n">params</span><span class="p">,</span> <span class="n">pRets</span><span class="p">,</span> <span class="n">fRets</span><span class="p">,</span> <span class="n">Winv</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">global</span> <span class="n">lastValue</span><span class="p">,</span> <span class="n">functionCount</span>
+    <span class="n">T</span><span class="p">,</span><span class="n">N</span> <span class="o">=</span> <span class="n">pRets</span><span class="o">.</span><span class="n">shape</span>
+    <span class="n">T</span><span class="p">,</span><span class="n">K</span> <span class="o">=</span> <span class="n">fRets</span><span class="o">.</span><span class="n">shape</span>
+    <span class="n">beta</span> <span class="o">=</span> <span class="n">squeeze</span><span class="p">(</span><span class="n">array</span><span class="p">(</span><span class="n">params</span><span class="p">[:(</span><span class="n">N</span><span class="o">*</span><span class="n">K</span><span class="p">)]))</span>
+    <span class="n">lam</span> <span class="o">=</span> <span class="n">squeeze</span><span class="p">(</span><span class="n">array</span><span class="p">(</span><span class="n">params</span><span class="p">[(</span><span class="n">N</span><span class="o">*</span><span class="n">K</span><span class="p">):]))</span>
+    <span class="n">beta</span> <span class="o">=</span> <span class="n">reshape</span><span class="p">(</span><span class="n">beta</span><span class="p">,(</span><span class="n">N</span><span class="p">,</span><span class="n">K</span><span class="p">))</span>
+    <span class="n">lam</span> <span class="o">=</span> <span class="n">reshape</span><span class="p">(</span><span class="n">lam</span><span class="p">,(</span><span class="n">K</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+    <span class="n">betalam</span> <span class="o">=</span> <span class="n">beta</span> <span class="o">@</span> <span class="n">lam</span>
+    <span class="n">expectedRet</span> <span class="o">=</span> <span class="n">fRets</span> <span class="o">@</span> <span class="n">beta</span><span class="o">.</span><span class="n">T</span>
+    <span class="n">e</span> <span class="o">=</span> <span class="n">pRets</span> <span class="o">-</span> <span class="n">expectedRet</span>
+    <span class="n">instr</span> <span class="o">=</span> <span class="n">tile</span><span class="p">(</span><span class="n">fRets</span><span class="p">,</span><span class="n">N</span><span class="p">)</span>
+    <span class="n">moments1</span>  <span class="o">=</span> <span class="n">kron</span><span class="p">(</span><span class="n">e</span><span class="p">,</span><span class="n">ones</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="n">K</span><span class="p">)))</span>
+    <span class="n">moments1</span> <span class="o">=</span> <span class="n">moments1</span> <span class="o">*</span> <span class="n">instr</span>
+    <span class="n">moments2</span> <span class="o">=</span> <span class="n">pRets</span> <span class="o">-</span> <span class="n">betalam</span><span class="o">.</span><span class="n">T</span>
+    <span class="n">moments</span> <span class="o">=</span> <span class="n">hstack</span><span class="p">((</span><span class="n">moments1</span><span class="p">,</span><span class="n">moments2</span><span class="p">))</span>
+
+    <span class="n">avgMoment</span> <span class="o">=</span> <span class="n">moments</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    
+    <span class="n">J</span> <span class="o">=</span> <span class="n">T</span> <span class="o">*</span> <span class="n">mat</span><span class="p">(</span><span class="n">avgMoment</span><span class="p">)</span> <span class="o">*</span> <span class="n">mat</span><span class="p">(</span><span class="n">Winv</span><span class="p">)</span> <span class="o">*</span> <span class="n">mat</span><span class="p">(</span><span class="n">avgMoment</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
+    <span class="n">J</span> <span class="o">=</span> <span class="n">J</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">lastValue</span> <span class="o">=</span> <span class="n">J</span>
+    <span class="n">functionCount</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">out</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">J</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">J</span><span class="p">,</span> <span class="n">moments</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The <code>G</code> matrix, which is the derivative of the GMM moments with respect to the parameters, is defined.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">gmm_G</span><span class="p">(</span><span class="n">params</span><span class="p">,</span> <span class="n">pRets</span><span class="p">,</span> <span class="n">fRets</span><span class="p">):</span>
+    <span class="n">T</span><span class="p">,</span><span class="n">N</span> <span class="o">=</span> <span class="n">pRets</span><span class="o">.</span><span class="n">shape</span>
+    <span class="n">T</span><span class="p">,</span><span class="n">K</span> <span class="o">=</span> <span class="n">fRets</span><span class="o">.</span><span class="n">shape</span>
+    <span class="n">beta</span> <span class="o">=</span> <span class="n">squeeze</span><span class="p">(</span><span class="n">array</span><span class="p">(</span><span class="n">params</span><span class="p">[:(</span><span class="n">N</span><span class="o">*</span><span class="n">K</span><span class="p">)]))</span>
+    <span class="n">lam</span> <span class="o">=</span> <span class="n">squeeze</span><span class="p">(</span><span class="n">array</span><span class="p">(</span><span class="n">params</span><span class="p">[(</span><span class="n">N</span><span class="o">*</span><span class="n">K</span><span class="p">):]))</span>
+    <span class="n">beta</span> <span class="o">=</span> <span class="n">reshape</span><span class="p">(</span><span class="n">beta</span><span class="p">,(</span><span class="n">N</span><span class="p">,</span><span class="n">K</span><span class="p">))</span>
+    <span class="n">lam</span> <span class="o">=</span> <span class="n">reshape</span><span class="p">(</span><span class="n">lam</span><span class="p">,(</span><span class="n">K</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+    <span class="n">G</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">N</span><span class="o">*</span><span class="n">K</span><span class="o">+</span><span class="n">K</span><span class="p">,</span><span class="n">N</span><span class="o">*</span><span class="n">K</span><span class="o">+</span><span class="n">N</span><span class="p">))</span>
+    <span class="n">ffp</span> <span class="o">=</span> <span class="p">(</span><span class="n">fRets</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">fRets</span><span class="p">)</span> <span class="o">/</span> <span class="n">T</span>
+    <span class="n">G</span><span class="p">[:(</span><span class="n">N</span><span class="o">*</span><span class="n">K</span><span class="p">),:(</span><span class="n">N</span><span class="o">*</span><span class="n">K</span><span class="p">)]</span><span class="o">=</span><span class="n">kron</span><span class="p">(</span><span class="n">eye</span><span class="p">(</span><span class="n">N</span><span class="p">),</span><span class="n">ffp</span><span class="p">)</span>
+    <span class="n">G</span><span class="p">[:(</span><span class="n">N</span><span class="o">*</span><span class="n">K</span><span class="p">),(</span><span class="n">N</span><span class="o">*</span><span class="n">K</span><span class="p">):]</span> <span class="o">=</span> <span class="n">kron</span><span class="p">(</span><span class="n">eye</span><span class="p">(</span><span class="n">N</span><span class="p">),</span><span class="o">-</span><span class="n">lam</span><span class="p">)</span>
+    <span class="n">G</span><span class="p">[(</span><span class="n">N</span><span class="o">*</span><span class="n">K</span><span class="p">):,(</span><span class="n">N</span><span class="o">*</span><span class="n">K</span><span class="p">):]</span> <span class="o">=</span> <span class="o">-</span><span class="n">beta</span><span class="o">.</span><span class="n">T</span>
+    
+    <span class="k">return</span> <span class="n">G</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Next, the data is imported and a subset of the test portfolios is selected to make the estimation faster.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;FamaFrench.csv&#39;</span><span class="p">)</span>
+
+<span class="c1"># Split using both named colums and ix for larger blocks</span>
+<span class="n">dates</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">factors</span> <span class="o">=</span> <span class="n">data</span><span class="p">[[</span><span class="s1">&#39;VWMe&#39;</span><span class="p">,</span><span class="s1">&#39;SMB&#39;</span><span class="p">,</span><span class="s1">&#39;HML&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">riskfree</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;RF&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">portfolios</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">5</span><span class="p">:]</span><span class="o">.</span><span class="n">values</span>
+
+<span class="n">T</span><span class="p">,</span><span class="n">N</span> <span class="o">=</span> <span class="n">portfolios</span><span class="o">.</span><span class="n">shape</span>
+<span class="n">portfolios</span> <span class="o">=</span> <span class="n">portfolios</span><span class="p">[:,</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">N</span><span class="p">,</span><span class="mi">2</span><span class="p">)]</span>
+<span class="n">T</span><span class="p">,</span><span class="n">N</span> <span class="o">=</span> <span class="n">portfolios</span><span class="o">.</span><span class="n">shape</span>
+<span class="n">excessRet</span> <span class="o">=</span> <span class="n">portfolios</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">riskfree</span><span class="p">,(</span><span class="n">T</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">K</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">factors</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Starting values for the factor loadings and rick premia are estimated using OLS and simple means.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">betas</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">excessRet</span><span class="p">[:,</span><span class="n">i</span><span class="p">],</span><span class="n">sm</span><span class="o">.</span><span class="n">add_constant</span><span class="p">(</span><span class="n">factors</span><span class="p">))</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+    <span class="n">betas</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
+
+<span class="n">avgReturn</span> <span class="o">=</span> <span class="n">excessRet</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">avgReturn</span><span class="o">.</span><span class="n">shape</span> <span class="o">=</span> <span class="n">N</span><span class="p">,</span><span class="mi">1</span>
+<span class="n">betas</span> <span class="o">=</span> <span class="n">array</span><span class="p">(</span><span class="n">betas</span><span class="p">)</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">avgReturn</span><span class="p">,</span> <span class="n">betas</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="n">riskPremia</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">params</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The starting values are computed the first step estimates are found using the non-linear optimizer.  The initial weighting matrix is just the identify matrix.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">riskPremia</span><span class="o">.</span><span class="n">shape</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">startingVals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">betas</span><span class="o">.</span><span class="n">flatten</span><span class="p">(),</span><span class="n">riskPremia</span><span class="p">))</span>
+
+<span class="n">Winv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="n">N</span><span class="o">*</span><span class="p">(</span><span class="n">K</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">args</span> <span class="o">=</span> <span class="p">(</span><span class="n">excessRet</span><span class="p">,</span> <span class="n">factors</span><span class="p">,</span> <span class="n">Winv</span><span class="p">)</span>
+<span class="n">iteration</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">functionCount</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">step1opt</span> <span class="o">=</span> <span class="n">fmin_bfgs</span><span class="p">(</span><span class="n">gmm_objective</span><span class="p">,</span> <span class="n">startingVals</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="n">args</span><span class="p">,</span> <span class="n">callback</span><span class="o">=</span><span class="n">iter_print</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Func value: 1915.975414620774, Iteration: 1, Function Count: 132
+Func value: 1817.0224254364093, Iteration: 2, Function Count: 220
+Func value: 1814.9526088153193, Iteration: 3, Function Count: 308
+Func value: 1814.8636328788023, Iteration: 4, Function Count: 396
+Func value: 1814.7320075212833, Iteration: 5, Function Count: 440
+Func value: 1814.4944170296885, Iteration: 6, Function Count: 484
+Func value: 1814.4840096314288, Iteration: 7, Function Count: 572
+Func value: 1814.4835355894866, Iteration: 8, Function Count: 660
+Func value: 1814.4834334886873, Iteration: 9, Function Count: 748
+Func value: 1814.4832402214106, Iteration: 10, Function Count: 792
+Func value: 1814.483239345376, Iteration: 11, Function Count: 880
+Func value: 1814.4832044513546, Iteration: 12, Function Count: 1012
+Func value: 1814.3989963962504, Iteration: 13, Function Count: 1276
+Func value: 1814.3642859418874, Iteration: 14, Function Count: 1320
+Func value: 1814.301102018856, Iteration: 15, Function Count: 1364
+Func value: 1814.301098499327, Iteration: 16, Function Count: 1452
+Func value: 1814.3010704933515, Iteration: 17, Function Count: 1540
+Func value: 1814.296612835476, Iteration: 18, Function Count: 1716
+Func value: 1814.2538448019918, Iteration: 19, Function Count: 1804
+Func value: 1814.253749266872, Iteration: 20, Function Count: 1892
+Func value: 1814.2536217543443, Iteration: 21, Function Count: 1936
+Func value: 1814.2341819587186, Iteration: 22, Function Count: 2112
+Func value: 1814.2190046927274, Iteration: 23, Function Count: 2156
+Func value: 1814.1901664290635, Iteration: 24, Function Count: 2200
+Func value: 1814.1900618989262, Iteration: 25, Function Count: 2288
+Func value: 1814.1899629209177, Iteration: 26, Function Count: 2332
+Func value: 1814.1315029565549, Iteration: 27, Function Count: 2552
+Func value: 1814.1207160483482, Iteration: 28, Function Count: 2640
+Func value: 1814.120651593227, Iteration: 29, Function Count: 2728
+Func value: 1814.1206404952559, Iteration: 30, Function Count: 2816
+Func value: 1814.093987040505, Iteration: 31, Function Count: 3080
+Func value: 1814.0931557560025, Iteration: 32, Function Count: 3168
+Func value: 1814.0922310255569, Iteration: 33, Function Count: 3212
+Func value: 1814.0921898261458, Iteration: 34, Function Count: 3300
+Func value: 1814.092112795961, Iteration: 35, Function Count: 3344
+Func value: 1814.080248929288, Iteration: 36, Function Count: 3520
+Func value: 1814.0799729900195, Iteration: 37, Function Count: 3608
+Func value: 1814.079961881844, Iteration: 38, Function Count: 3696
+Func value: 1814.0799614793552, Iteration: 39, Function Count: 3784
+Func value: 1814.0757650935916, Iteration: 40, Function Count: 4092
+Func value: 1814.0755830705248, Iteration: 41, Function Count: 4180
+Func value: 1814.0755746091875, Iteration: 42, Function Count: 4268
+Func value: 1814.0702842972405, Iteration: 43, Function Count: 4488
+Func value: 1814.0700243731067, Iteration: 44, Function Count: 4576
+Func value: 1814.0700110352632, Iteration: 45, Function Count: 4664
+Func value: 1814.0678482400072, Iteration: 46, Function Count: 4840
+Func value: 1814.067660339931, Iteration: 47, Function Count: 4928
+Func value: 1814.067656754271, Iteration: 48, Function Count: 5016
+Func value: 1814.065377183398, Iteration: 49, Function Count: 5236
+Func value: 1814.0652521531151, Iteration: 50, Function Count: 5324
+Func value: 1814.0652503654978, Iteration: 51, Function Count: 5412
+Func value: 1814.0640861808768, Iteration: 52, Function Count: 5632
+Func value: 1814.0640022668042, Iteration: 53, Function Count: 5720
+Func value: 1814.0611488164795, Iteration: 54, Function Count: 5852
+Func value: 1814.059515832646, Iteration: 55, Function Count: 5896
+Func value: 1814.0595158325361, Iteration: 56, Function Count: 5940
+Func value: 1814.0595158325355, Iteration: 57, Function Count: 6072
+Warning: Desired error not necessarily achieved due to precision loss.
+         Current function value: 1814.059516
+         Iterations: 57
+         Function evaluations: 9031
+         Gradient evaluations: 205
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Here we look at the risk premia estimates from the first step (inefficient) estimates.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">premia</span> <span class="o">=</span> <span class="n">step1opt</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">:]</span>
+<span class="n">premia</span> <span class="o">=</span> <span class="n">Series</span><span class="p">(</span><span class="n">premia</span><span class="p">,</span><span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;VWMe&#39;</span><span class="p">,</span> <span class="s1">&#39;SMB&#39;</span><span class="p">,</span> <span class="s1">&#39;HML&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Annualized Risk Premia (First step)&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">12</span> <span class="o">*</span> <span class="n">premia</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Annualized Risk Premia (First step)
+VWMe    5.829995
+SMB     4.068224
+HML     1.680948
+dtype: float64
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Next the first step estimates are used to estimate the moment conditions which are in-turn used to estimate the optimal weighting matrix for the moment conditions.  This is then used as an input for the 2nd-step estimates.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">out</span> <span class="o">=</span> <span class="n">gmm_objective</span><span class="p">(</span><span class="n">step1opt</span><span class="p">,</span> <span class="n">excessRet</span><span class="p">,</span> <span class="n">factors</span><span class="p">,</span> <span class="n">Winv</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">S</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cov</span><span class="p">(</span><span class="n">out</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+<span class="n">Winv2</span> <span class="o">=</span> <span class="n">inv</span><span class="p">(</span><span class="n">S</span><span class="p">)</span>
+<span class="n">args</span> <span class="o">=</span> <span class="p">(</span><span class="n">excessRet</span><span class="p">,</span> <span class="n">factors</span><span class="p">,</span> <span class="n">Winv2</span><span class="p">)</span>
+
+<span class="n">iteration</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">functionCount</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">step2opt</span> <span class="o">=</span> <span class="n">fmin_bfgs</span><span class="p">(</span><span class="n">gmm_objective</span><span class="p">,</span> <span class="n">step1opt</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="n">args</span><span class="p">,</span> <span class="n">callback</span><span class="o">=</span><span class="n">iter_print</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Func value: 70.69178252370772, Iteration: 1, Function Count: 132
+Func value: 69.26303959975596, Iteration: 2, Function Count: 176
+Func value: 67.07244129650894, Iteration: 3, Function Count: 220
+Func value: 64.57443451479321, Iteration: 4, Function Count: 264
+Func value: 62.64097306083999, Iteration: 5, Function Count: 308
+Func value: 60.38315319123633, Iteration: 6, Function Count: 352
+Func value: 59.77131346063476, Iteration: 7, Function Count: 396
+Func value: 59.016700262647376, Iteration: 8, Function Count: 440
+Func value: 58.11824688768306, Iteration: 9, Function Count: 484
+Func value: 57.16139475771817, Iteration: 10, Function Count: 528
+Func value: 56.54119670206884, Iteration: 11, Function Count: 572
+Func value: 55.76261111890216, Iteration: 12, Function Count: 616
+Func value: 54.70774239263665, Iteration: 13, Function Count: 660
+Func value: 54.16273697904013, Iteration: 14, Function Count: 748
+Func value: 53.68442984106602, Iteration: 15, Function Count: 792
+Func value: 53.24912513313372, Iteration: 16, Function Count: 836
+Func value: 52.95654923541569, Iteration: 17, Function Count: 880
+Func value: 52.70763030807515, Iteration: 18, Function Count: 924
+Func value: 52.40947922763522, Iteration: 19, Function Count: 968
+Func value: 52.28025850343027, Iteration: 20, Function Count: 1012
+Func value: 52.0945930956645, Iteration: 21, Function Count: 1056
+Func value: 51.92591993694722, Iteration: 22, Function Count: 1100
+Func value: 51.69127887764556, Iteration: 23, Function Count: 1144
+Func value: 51.32800767550518, Iteration: 24, Function Count: 1188
+Func value: 50.8832556502003, Iteration: 25, Function Count: 1232
+Func value: 50.61502081122463, Iteration: 26, Function Count: 1276
+Func value: 50.3253061036018, Iteration: 27, Function Count: 1320
+Func value: 49.82326422689157, Iteration: 28, Function Count: 1364
+Func value: 49.458055584312206, Iteration: 29, Function Count: 1408
+Func value: 49.30507269503761, Iteration: 30, Function Count: 1452
+Func value: 49.080604460391186, Iteration: 31, Function Count: 1496
+Func value: 48.86937171160105, Iteration: 32, Function Count: 1540
+Func value: 48.76039718096907, Iteration: 33, Function Count: 1628
+Func value: 48.61522962324979, Iteration: 34, Function Count: 1672
+Func value: 48.43822338181308, Iteration: 35, Function Count: 1716
+Func value: 48.223264727455955, Iteration: 36, Function Count: 1760
+Func value: 48.119297612182464, Iteration: 37, Function Count: 1804
+Func value: 47.9966953205165, Iteration: 38, Function Count: 1848
+Func value: 47.82071403838669, Iteration: 39, Function Count: 1892
+Func value: 47.59984420196816, Iteration: 40, Function Count: 1936
+Func value: 47.19190580374522, Iteration: 41, Function Count: 1980
+Func value: 46.46434101774428, Iteration: 42, Function Count: 2024
+Func value: 46.17952767128317, Iteration: 43, Function Count: 2112
+Func value: 45.64869841620502, Iteration: 44, Function Count: 2156
+Func value: 44.79178194363791, Iteration: 45, Function Count: 2200
+Func value: 44.31246192707072, Iteration: 46, Function Count: 2244
+Func value: 44.31220746711396, Iteration: 47, Function Count: 2288
+Func value: 44.31216779746252, Iteration: 48, Function Count: 2332
+Func value: 44.31216776026349, Iteration: 49, Function Count: 2376
+Func value: 44.31216775979089, Iteration: 50, Function Count: 2420
+Func value: 44.31216775977227, Iteration: 51, Function Count: 2464
+Func value: 44.31216775977222, Iteration: 52, Function Count: 3564
+Warning: Desired error not necessarily achieved due to precision loss.
+         Current function value: 44.312168
+         Iterations: 52
+         Function evaluations: 6786
+         Gradient evaluations: 154
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Finally the VCV of the parameter estimates is computed.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">out</span> <span class="o">=</span> <span class="n">gmm_objective</span><span class="p">(</span><span class="n">step2opt</span><span class="p">,</span> <span class="n">excessRet</span><span class="p">,</span> <span class="n">factors</span><span class="p">,</span> <span class="n">Winv2</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">G</span> <span class="o">=</span> <span class="n">gmm_G</span><span class="p">(</span><span class="n">step2opt</span><span class="p">,</span> <span class="n">excessRet</span><span class="p">,</span> <span class="n">factors</span><span class="p">)</span>
+<span class="n">S</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cov</span><span class="p">(</span><span class="n">out</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+<span class="n">vcv</span> <span class="o">=</span> <span class="n">inv</span><span class="p">(</span><span class="n">G</span> <span class="o">@</span> <span class="n">inv</span><span class="p">(</span><span class="n">S</span><span class="p">)</span> <span class="o">@</span> <span class="n">G</span><span class="o">.</span><span class="n">T</span><span class="p">)</span><span class="o">/</span><span class="n">T</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The annualized risk premia and their associated t-stats.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">premia</span> <span class="o">=</span> <span class="n">step2opt</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">:]</span>
+<span class="n">premia</span> <span class="o">=</span> <span class="n">Series</span><span class="p">(</span><span class="n">premia</span><span class="p">,</span><span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;VWMe&#39;</span><span class="p">,</span> <span class="s1">&#39;SMB&#39;</span><span class="p">,</span> <span class="s1">&#39;HML&#39;</span><span class="p">])</span>
+<span class="n">premia_vcv</span> <span class="o">=</span> <span class="n">vcv</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">:,</span><span class="o">-</span><span class="mi">3</span><span class="p">:]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Annualized Risk Premia&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">12</span> <span class="o">*</span> <span class="n">premia</span><span class="p">)</span>
+
+<span class="n">premia_stderr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">premia_vcv</span><span class="p">)</span>
+<span class="n">premia_stderr</span> <span class="o">=</span> <span class="n">Series</span><span class="p">(</span><span class="n">premia_stderr</span><span class="p">,</span><span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;VWMe&#39;</span><span class="p">,</span> <span class="s1">&#39;SMB&#39;</span><span class="p">,</span> <span class="s1">&#39;HML&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;T-stats&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">premia</span> <span class="o">/</span> <span class="n">premia_stderr</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Annualized Risk Premia
+VWMe    10.089708
+SMB      3.457167
+HML      7.620110
+dtype: float64
+T-stats
+VWMe    28.282294
+SMB     22.372714
+HML     43.791637
+dtype: float64
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+ 
+

@@ -1,0 +1,210 @@
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Constructing-DataFrames-from-Series">Constructing DataFrames from Series<a class="anchor-link" href="#Constructing-DataFrames-from-Series">&#182;</a></h1><p>This lesson introduced method to construct a DataFrame from multiple
+Series.</p>
+<p>This first block loads the variables created in an earlier lesson.  A
+later lesson will cover loading and saving data.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Setup: Load data created in an earlier lesson</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">hdf_file</span> <span class="o">=</span> <span class="s2">&quot;data/dataframes.h5&quot;</span>
+
+<span class="n">sep_04</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_hdf</span><span class="p">(</span><span class="n">hdf_file</span><span class="p">,</span> <span class="s2">&quot;sep_04&quot;</span><span class="p">)</span>
+<span class="n">sep_05</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_hdf</span><span class="p">(</span><span class="n">hdf_file</span><span class="p">,</span> <span class="s2">&quot;sep_05&quot;</span><span class="p">)</span>
+<span class="n">sep_06</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_hdf</span><span class="p">(</span><span class="n">hdf_file</span><span class="p">,</span> <span class="s2">&quot;sep_06&quot;</span><span class="p">)</span>
+<span class="n">sep_07</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_hdf</span><span class="p">(</span><span class="n">hdf_file</span><span class="p">,</span> <span class="s2">&quot;sep_07&quot;</span><span class="p">)</span>
+<span class="n">sep_10</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_hdf</span><span class="p">(</span><span class="n">hdf_file</span><span class="p">,</span> <span class="s2">&quot;sep_10&quot;</span><span class="p">)</span>
+<span class="n">sep_11</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_hdf</span><span class="p">(</span><span class="n">hdf_file</span><span class="p">,</span> <span class="s2">&quot;sep_11&quot;</span><span class="p">)</span>
+<span class="n">sep_12</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_hdf</span><span class="p">(</span><span class="n">hdf_file</span><span class="p">,</span> <span class="s2">&quot;sep_12&quot;</span><span class="p">)</span>
+<span class="n">sep_13</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_hdf</span><span class="p">(</span><span class="n">hdf_file</span><span class="p">,</span> <span class="s2">&quot;sep_13&quot;</span><span class="p">)</span>
+<span class="n">sep_14</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_hdf</span><span class="p">(</span><span class="n">hdf_file</span><span class="p">,</span> <span class="s2">&quot;sep_14&quot;</span><span class="p">)</span>
+<span class="n">sep_17</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_hdf</span><span class="p">(</span><span class="n">hdf_file</span><span class="p">,</span> <span class="s2">&quot;sep_17&quot;</span><span class="p">)</span>
+<span class="n">sep_18</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_hdf</span><span class="p">(</span><span class="n">hdf_file</span><span class="p">,</span> <span class="s2">&quot;sep_18&quot;</span><span class="p">)</span>
+<span class="n">sep_19</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_hdf</span><span class="p">(</span><span class="n">hdf_file</span><span class="p">,</span> <span class="s2">&quot;sep_19&quot;</span><span class="p">)</span>
+
+<span class="n">spy</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_hdf</span><span class="p">(</span><span class="n">hdf_file</span><span class="p">,</span> <span class="s2">&quot;spy&quot;</span><span class="p">)</span>
+<span class="n">aapl</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_hdf</span><span class="p">(</span><span class="n">hdf_file</span><span class="p">,</span> <span class="s2">&quot;aapl&quot;</span><span class="p">)</span>
+<span class="n">goog</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_hdf</span><span class="p">(</span><span class="n">hdf_file</span><span class="p">,</span> <span class="s2">&quot;goog&quot;</span><span class="p">)</span>
+
+<span class="n">dates</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">read_hdf</span><span class="p">(</span><span class="n">hdf_file</span><span class="p">,</span> <span class="s2">&quot;dates&quot;</span><span class="p">))</span>
+
+<span class="n">prices</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_hdf</span><span class="p">(</span><span class="n">hdf_file</span><span class="p">,</span> <span class="s2">&quot;prices&quot;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Problem:-Construct-a-DataFrame-from-rows">Problem: Construct a DataFrame from rows<a class="anchor-link" href="#Problem:-Construct-a-DataFrame-from-rows">&#182;</a></h2><p>Create a DataFrame named <code>prices_row</code> from the row vectors previously
+entered such that the results are identical to prices. For example, the first
+two days worth of data are:</p>
+<div class="highlight"><pre><span></span><span class="n">dates_2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">([</span><span class="s2">&quot;1998-09-04&quot;</span><span class="p">,</span> <span class="s2">&quot;1998-09-05&quot;</span><span class="p">])</span>
+<span class="n">prices_row</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span><span class="n">sep_04</span><span class="p">,</span> <span class="n">sep_05</span><span class="p">])</span>
+<span class="c1"># Set the index after using concat to join</span>
+<span class="n">prices_row</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">dates_2</span>
+</pre></div>
+<p>Verify that the DataFrame identical by printing the difference with
+<code>prices</code></p>
+<div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">prices_row</span> <span class="o">-</span> <span class="n">prices</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Problem:-Construct-a-DataFrame-from-columns">Problem: Construct a DataFrame from columns<a class="anchor-link" href="#Problem:-Construct-a-DataFrame-from-columns">&#182;</a></h2><p>Create a DataFrame named <code>prices_col</code> from the 3 column vectors entered
+such that the results are identical to prices.</p>
+<p><em>Note</em>: <code>.T</code> transposes a 2-d array since <code>DataFrame</code> builds the
+array by rows.</p>
+<p>Verify that the DataFrame identical by printing the difference with
+<code>prices</code></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Problem:-Construct-a-DataFrame-from-a-dictionary">Problem: Construct a DataFrame from a dictionary<a class="anchor-link" href="#Problem:-Construct-a-DataFrame-from-a-dictionary">&#182;</a></h2><p>Create a DataFrame named <code>prices_dict</code> from the 3 column vectors entered
+such that the results are identical to prices</p>
+<p>Verify that the DataFrame identical by printing the difference with
+<code>prices</code></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Exercises">Exercises<a class="anchor-link" href="#Exercises">&#182;</a></h2><h3 id="Exercise:-Create-a-DataFrame-from-rows">Exercise: Create a DataFrame from rows<a class="anchor-link" href="#Exercise:-Create-a-DataFrame-from-rows">&#182;</a></h3><p>Use the three series populated below to create a DataFrame using each
+as a row.</p>
+<p><strong>Note</strong>: Notice what happens in the resulting <code>DataFrame</code> since one of the
+<code>Series</code> has 4 elements while the others have 3.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Setup: Data for the Exercises</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">index</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Num&quot;</span><span class="p">,</span> <span class="s2">&quot;Let&quot;</span><span class="p">,</span> <span class="s2">&quot;Date&quot;</span><span class="p">]</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="mi">2018</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">31</span><span class="p">)],</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">index</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="mi">2018</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">31</span><span class="p">)],</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">index</span><span class="p">)</span>
+<span class="n">index</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Num&quot;</span><span class="p">,</span> <span class="s2">&quot;Let&quot;</span><span class="p">,</span> <span class="s2">&quot;Date&quot;</span><span class="p">,</span> <span class="s2">&quot;Float&quot;</span><span class="p">]</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="mi">2018</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">31</span><span class="p">),</span> <span class="mf">3.0</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">index</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Exercise:-Build-a-DataFrame-from-Columns">Exercise: Build a DataFrame from Columns<a class="anchor-link" href="#Exercise:-Build-a-DataFrame-from-Columns">&#182;</a></h3><p>Build a <code>DataFrame</code> from the three series where each is used as a column.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+ 
+
