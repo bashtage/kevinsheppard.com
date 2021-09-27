@@ -1,0 +1,66 @@
+<!--
+.. title: Kevin Sheppard's Photos
+.. slug: photos
+.. date: 2016-09-15 12:39:34 UTC
+.. tags:
+.. category:
+.. link:
+.. description:
+.. type: text
+.. hidetitle: True
+.. author: Kevin Sheppard
+-->
+<style>
+  body {
+    background-color: #212121 !important;
+  }
+  nav  div.dropdown-menu {
+      background-color: #212121 !important;
+  }
+  nav a.dropdown-item:hover {
+    background-color: #303030 !important;
+  }
+  nav a {
+    color: #f8f8f8 !important;
+  }
+    input.form-control, input.custom-file-control, input.form-control::placeholder, input.custom-file-control::placeholder {
+    color: #666 !important;
+  }
+   .form-control:focus {
+        border-color: #f8f8f8 !important;
+  }
+  .form-control, .custom-file-control, .is-focused .form-control, .is-focused .custom-file-control {
+    background-image: linear-gradient(to top, #f8f8f8 2px, rgba(9, 92, 159, 0) 2px), linear-gradient(to top, rgba(0, 0, 0, 0.26) 0, rgba(0, 0, 0, 0) 0);
+  }
+  input.bg-light {
+    background: transparent !important;
+  }
+.bg-page {
+    color: #f5f5f5 !important;
+    background-color: rgba(0, 0, 0, 0) !important;;
+    border-color: #f5f5f5 !important;;
+}
+</style>
+<div class="container">
+    {% set count = 0 %}
+    <div class="row">
+        {% for gallery in galleries %}
+        {% set count = count + 1 %}
+        <div class="col-sm-12 col-md-6 col-lg-3">
+            <div class="thumbnail">
+                <a href="{{ gallery.url }}">
+                    <img src="{{ gallery.thumbnail }}" class="img-fluid" alt="{{ gallery.name }}">
+                </a>
+                <div class="caption">
+                    <a href="{{ gallery.url }}" class="text-light"><h5>{{ gallery.name }}</h5></a>
+                </div>
+            </div>
+        </div>
+        {% if count == 4 %}
+            {% set count = 0 %}
+    </div>
+    <div class="row">
+        {% endif %}
+        {% endfor %}
+    </div>
+</div>
