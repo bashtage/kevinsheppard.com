@@ -21,7 +21,7 @@ although in its current form it only contains univariate routines.
 
 The latest version, including any work in progress, can be downloaded on
 the [GitHub repository for the MFE Toolbox](https://github.com/bashtage/mfe-toolbox/)
-([Direct link to zip](https://github.com/bashtage/mfe-toolbox/archive/master.zip)).
+([Direct link to zip](https://github.com/bashtage/mfe-toolbox/archive/main.zip)).
 
 ### Last Updated 
 
@@ -47,7 +47,7 @@ The next developments should include the TODO include:
 
 ## Code
 
-[Oxford MFE Toolbox](https://github.com/bashtage/mfe-toolbox/archive/master.zip)
+[Oxford MFE Toolbox](https://github.com/bashtage/mfe-toolbox/archive/main.zip)
 
 ## Documentation
 
