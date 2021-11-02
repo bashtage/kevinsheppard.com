@@ -55,18 +55,6 @@ var tipuesearch = {
       "url": "https://www.kevinsheppard.com/teaching/mfe/hilary-term-4/"
     },
     {
-      "title": "Financial Econometrics I: Week 7",
-      "text": "Come back later in Michaelmas for updated information",
-      "tags": "mfe,teaching",
-      "url": "https://www.kevinsheppard.com/teaching/mfe/michaelmas-term-7/"
-    },
-    {
-      "title": "Financial Econometrics I: Week 8",
-      "text": "Come back later in Michaelmas for updated information",
-      "tags": "mfe,teaching",
-      "url": "https://www.kevinsheppard.com/teaching/mfe/michaelmas-term-8/"
-    },
-    {
       "title": "Advanced Financial Econometrics: Forecasting",
       "text": "Reading List\u00b6\nThe reading list contains a set of papers related to the course content. \nGitHub Repository\u00b6\nThe notebooks and data are shared through the course's GitHub repository.\nAssignment\u00b6\nThe AFE group work asks you to use the method presented in the course on a subset of the M4 data.\nLectures\u00b6\nEach of the lectures is presented in small blocks. You can find the presentation\non the YouTube lecture list.\nLecture Slides and Notebooks\u00b6\n\n\n\nSlides\nNotebook\n\n\n\n\nIntroduction\n\n\n\nSARIMA: Seasonal Autoregressive Integrated Moving Average Models\nSARIMA\n\n\nExponential Smoothing\nExponential Smoothing\n\n\nThe Theta Method\nThe Theta Method\n\n\nThe CARD Method\nThe CARD Method\n\n\nForecast Combination Coming Soon\nForecast Combination Coming Soon",
       "tags": "econometrics,mfe",
@@ -91,20 +79,8 @@ var tipuesearch = {
       "url": "https://www.kevinsheppard.com/teaching/mfe/hilary-term/"
     },
     {
-      "title": "Financial Econometrics I: Week 5",
-      "text": "Come back later in Michaelmas for updated information",
-      "tags": "mfe,teaching",
-      "url": "https://www.kevinsheppard.com/teaching/mfe/michaelmas-term-5/"
-    },
-    {
-      "title": "Financial Econometrics I: Week 6",
-      "text": "Come back later in Michaelmas for updated information",
-      "tags": "mfe,teaching",
-      "url": "https://www.kevinsheppard.com/teaching/mfe/michaelmas-term-6/"
-    },
-    {
       "title": "Financial Econometrics I",
-      "text": "Weekly Pages\u00b6\n\nWeek 5  \nWeek 6\nWeek 7\nWeek 8\n\nNotes\u00b6\nSee the notes page for standard and tablet optimized versions of the course notes.\nComputation\u00b6\nSee the Python introduction and the\nPython companion course page for\ncode, data and links to video presentations.\nArchived\u00b6\nThe MFE course has standardized on Python. The MATLAB course page remains\navailable for anyone who wishes to use MATLAB. It has  assignments and data for the MATLAB introduction\nand companion course.",
+      "text": "Cross Sectional Analysis\u00b6\nSlides\u00b6\nPresentation \nPrint Optimized with Notes Area \nPrint Optimized\nWeekly Assignments\u00b6\nWeek 5 Assignment\nNotes\u00b6\nSee the notes page for standard and tablet optimized versions of the course notes.\nComputation\u00b6\nSee the Python introduction and the\nPython companion course page for\ncode, data and links to video presentations.\nArchived\u00b6\nThe MFE course has standardized on Python. The MATLAB course page remains\navailable for anyone who wishes to use MATLAB. It has  assignments and data for the MATLAB introduction\nand companion course.",
       "tags": "mfe,teaching",
       "url": "https://www.kevinsheppard.com/teaching/mfe/michaelmas-term/"
     },
@@ -194,7 +170,7 @@ var tipuesearch = {
     },
     {
       "title": "MFE Financial Econometrics Notes",
-      "text": "These notes are used in Financial Econometrics I & II in the M.Sc. in Financial Economics at the \nUniversity of Oxford.  Comments and corrections are welcome. \nNotes\u00b6\nTablet Optimized\u00b6\nThese files contain the same content as the print optimized version but are built with a \ntemplate that makes them more friendly for reading on a tablet or iPad.\n\n\n\nChapter\nPrint Optimized\nTablet Optimized\n\n\n\n\nComplete\nFinancial Econometrics\nTBD \n\n\n1\nChapter 1\nTBD \n\n\n2\nChapter 2\nTBD \n\n\n3\nChapter 3\nTBD \n\n\n4\nChapter 4\nTBD \n\n\n5\nChapter 5\nTBD \n\n\n6\nTBD \nTBD \n\n\n7\nChapter 7\nTBD \n\n\n8\nChapter 8\nTBD \n\n\n9\nTBD \nTBD \n\n\nFront Matter\nFront matter\nTBD \n\n\nBibliography\nBibliography\nTBD",
+      "text": "These notes are used in Financial Econometrics I & II in the M.Sc. in Financial Economics at the \nUniversity of Oxford.  Comments and corrections are welcome. \nNotes\u00b6\nTablet Optimized\u00b6\nThese files contain the same content as the print optimized version but are built with a \ntemplate that makes them more friendly for reading on a tablet or iPad.\n\n\n\nChapter\nPrint Optimized\nTablet Optimized\n\n\n\n\nComplete\nFinancial Econometrics\nTBD \n\n\n1\nChapter 1\nTBD \n\n\n2\nChapter 2\nTBD \n\n\n3\nChapter 3\nTBD \n\n\n4\nChapter 4\nTBD \n\n\n5\nChapter 5\nTBD \n\n\n6\nTBD \nTBD \n\n\n7\nChapter 7\nTBD \n\n\n8\nChapter 8\nTBD \n\n\n9\nTBD \nTBD",
       "tags": "mfe",
       "url": "https://www.kevinsheppard.com/teaching/mfe/notes/"
     },
