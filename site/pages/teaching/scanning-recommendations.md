@@ -11,8 +11,6 @@
 
 _You can also download a_ _[pdf version of this recommendation](/files/teaching/scanning-recommendations.pdf)_.
 
-**Trinity Term 2020 test takers**, please see the [dedicated section below](#trinty-term-test-takers).
-
 [TOC]
 
 This document describes how you can use your phone or tablet to produce clear scans of
@@ -239,43 +237,4 @@ two or more PDFs can be done by:
 * select the output pdf file; and
 * click on Run. 
 
-<a id="trinty-term-test-takers"></a>
-# Trinity Term 2020 Test Takers
-
-### Moving your PDF
-
-You will most likely want to move your scan onto your laptop before uploading it to the
-submission server. You must have a good, reliable, and quick method for moving your file
-out of your scanning software. I almost always upload to Dropbox (Google Drive and
-OneDrive are also good choices) and use email as a backup if Dropbox fails. You can also
-save the file locally and then use a free service like
-[Firefox Send](https://send.firefox.com/)
-([https://send.firefox.com/](https://send.firefox.com/)) to move the file if needed.
-
-### Practice, Practice, and Practice Again
-
-If you are preparing for exams, you must practice with whatever method you are going to
-use. You need to practice scanning documents that have sizes that you expect to have for
-your exam, i.e., 10 – 15 pages, depending on your handwriting. You should practice until
-scanning and getting the document off of your device until it is second nature. The last
-thing you want is to be stressed in the final minutes of an open -book exam. You
-should: 
-
-* know which app you are going to use; 
-* know where you will be scanning your paper; 
-* know how you will get your PDF off of your device; 
-* have a backup method to get it off your device (e.g., a USB cable to your laptop or
-using a temporary upload service like [Firefox Send](https://send.firefox.com/))
-
-You should practice the entire process during the University dry-runs. Be sure to check
-the size of the file produced using your preferred method. Larger files are more likely
-may cause difficulties uploading, all things equal.
-
-### <span style="color:#ff0000">ALWAYS UPLOAD SOMETHING</span>
-
-If you are pressed for time and are having any difficulties, you must upload any copy,
-no matter how poor, of your exams before the deadline. Your uploaded copy will be
-inspected, and if it is illegible, then you will be asked to upload a better version
-later. The improved copy will be compared to the original submission to verify that it
-contains the same material.
 
