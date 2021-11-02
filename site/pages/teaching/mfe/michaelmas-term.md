@@ -13,11 +13,16 @@
 .. jumbotron_text: The most-up-to-date information on MFE Financial Econometrics I
 -->
 
-# Weekly Pages
-* [Week 5](/teaching/mfe/michaelmas-term-5/)  
-* [Week 6](/teaching/mfe/michaelmas-term-6/)
-* [Week 7](/teaching/mfe/michaelmas-term-7/)
-* [Week 8](/teaching/mfe/michaelmas-term-8/)
+## Cross Sectional Analysis
+
+### Slides
+[Presentation](/files/teaching/mfe/slides/cross_section_slides_2021-22-presentation.pdf) <br/>
+[Print Optimized with Notes Area](/files/teaching/mfe/slides/cross_section_slides_2021-22-notes.pdf) <br/>
+[Print Optimized](/files/teaching/mfe/slides/cross_section_slides_2021-22-dense.pdf)
+
+### Weekly Assignments
+[Week 5 Assignment](/files/teaching/mfe/assignments/assignment-mt-5.pdf)
+
 
 ## Notes
 

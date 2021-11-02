@@ -36,5 +36,3 @@ Complete | [Financial Econometrics](/files/teaching/mfe/notes/financial-economet
 7 | [Chapter 7](/files/teaching/mfe/notes/financial-econometrics-2020-2021-chapter-7.pdf)               | TBD <!--[Chapter 4](/files/teaching/mfe/notes/chapter-7-tablet.pdf)-->                                     |
 8 | [Chapter 8](/files/teaching/mfe/notes/financial-econometrics-2020-2021-chapter-8.pdf)               | TBD <!--[Chapter 4](/files/teaching/mfe/notes/chapter-8-tablet.pdf)-->                                     |
 9 | TBD <!--[Chapter 9](/files/teaching/mfe/notes/chapter-9.pdf)-->                                            | TBD <!--[Chapter 9](/files/teaching/mfe/notes/chapter-9-tablet.pdf)-->                              |
-Front Matter | [Front matter](/files/teaching/mfe/notes/front-matter.pdf)                           | TBD <!--[Front matter](/files/teaching/mfe/notes/front-matter-tablet.pdf)-->                        |
-Bibliography | [Bibliography](/files/teaching/mfe/notes/bibliography.pdf)                           | TBD <!--[Bibliography](/files/teaching/mfe/notes/bibliography-tablet.pdf)-->                        |
