@@ -37,6 +37,7 @@ jobs:
         sudo apt install -qq -y tidy
     - name: Build site
       run: |
+        git clean -xfd
         pushd site
         python generate_index.py
         nikola build
