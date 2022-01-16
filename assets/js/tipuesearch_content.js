@@ -74,7 +74,7 @@ var tipuesearch = {
     },
     {
       "title": "Financial Econometrics II",
-      "text": "Weekly Pages\u00b6\nWeek 1\nWeek 2 \nWeek 3 \nWeek 4 \nWeek 5 \nWeek 6 \nWeek 7 \nWeek 8 \nNotes\u00b6\nSee the notes page for standard and tablet optimized versions of the course notes.\nComputation\u00b6\nSee the Python introduction and the\nPython companion course page for\ncode, data and links to video presentations.\nArchived\u00b6\nThe MFE course has standardized on Python. The MATLAB course page remains\navailable for anyone who wishes to use MATLAB. It has  assignments and data for the MATLAB introduction\nand companion course.",
+      "text": "Univariate Time Series Analysis\u00b6\nSlides\u00b6\nPresentation \nPrint Optimized with Notes Area \nPrint Optimized\nWeekly Assignments\u00b6\nWeek 1 Assignment\nNotes\u00b6\nSee the notes page for standard and tablet optimized versions of the course notes.\nComputation\u00b6\nSee the Python introduction and the\nPython companion course page for\ncode, data and links to video presentations.\nArchived\u00b6\nThe MFE course has standardized on Python. The MATLAB course page remains\navailable for anyone who wishes to use MATLAB. It has  assignments and data for the MATLAB introduction\nand companion course.",
       "tags": "mfe,teaching",
       "url": "https://www.kevinsheppard.com/teaching/mfe/hilary-term/"
     },
