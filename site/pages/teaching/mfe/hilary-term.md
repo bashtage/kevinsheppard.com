@@ -13,15 +13,16 @@
 .. jumbotron_text: The most-up-to-date information on MFE Financial Econometrics II
 -->
 
-# Weekly Pages
-[Week 1](/teaching/mfe/hilary-term-1/)  
-[Week 2](/teaching/mfe/hilary-term-2/) <br />
-[Week 3](/teaching/mfe/hilary-term-3/) <br />
-[Week 4](/teaching/mfe/hilary-term-4/) <br />
-[Week 5](/teaching/mfe/hilary-term-5/) <br />
-[Week 6](/teaching/mfe/hilary-term-6/) <br />
-[Week 7](/teaching/mfe/hilary-term-7/) <br />
-[Week 8](/teaching/mfe/hilary-term-8/) 
+## Univariate Time Series Analysis
+
+### Slides
+[Presentation](/files/teaching/mfe/slides/time_series_slides_2021-2022-presentation.pdf) <br/>
+[Print Optimized with Notes Area](/files/teaching/mfe/slides/time_series_slides_2021-2022-notes.pdf) <br/>
+[Print Optimized](/files/teaching/mfe/slides/time_series_slides_2021-2022-dense.pdf)
+
+### Weekly Assignments
+[Week 1 Assignment](/files/teaching/mfe/assignments/assignment-ht-1.pdf)
+
 
 ## Notes
 
