@@ -21,7 +21,7 @@
 [Print Optimized](/files/teaching/mfe/slides/time_series_slides_2021-2022-dense.pdf)
 
 ### Weekly Assignments
-[Week 1 Assignment](/files/teaching/mfe/assignments/assignment-ht-1.pdf)
+[Week 1 Assignment](/files/teaching/mfe/assignments/assignment-h1-1.pdf)
 
 
 ## Notes
