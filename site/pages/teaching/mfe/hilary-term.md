@@ -16,12 +16,22 @@
 ## Univariate Time Series Analysis
 
 ### Slides
+
+#### Time Series
 [Presentation](/files/teaching/mfe/slides/time_series_slides_2021-2022-presentation.pdf) <br/>
 [Print Optimized with Notes Area](/files/teaching/mfe/slides/time_series_slides_2021-2022-notes.pdf) <br/>
 [Print Optimized](/files/teaching/mfe/slides/time_series_slides_2021-2022-dense.pdf)
 
+#### Volatility
+[Presentation](/files/teaching/mfe/slides/univariate_volatility_slides_2021-2022-presentation.pdf) <br/>
+[Print Optimized with Notes Area](/files/teaching/mfe/slides/univariate_volatility_slides_2021-2022-notes.pdf) <br/>
+[Print Optimized](/files/teaching/mfe/slides/univariate_volatility_slides_2021-2022-dense.pdf)
+
 ### Weekly Assignments
 [Week 1 Assignment](/files/teaching/mfe/assignments/assignment-h1-1.pdf)
+[Week 2 Assignment](/files/teaching/mfe/assignments/assignment-h1-2.pdf)
+[Week 3 Assignment](/files/teaching/mfe/assignments/assignment-h1-3.pdf)
+[Week 4 Assignment](/files/teaching/mfe/assignments/assignment-h1-4.pdf)
 
 
 ## Notes
