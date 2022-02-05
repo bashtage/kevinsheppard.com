@@ -28,10 +28,10 @@
 [Print Optimized](/files/teaching/mfe/slides/univariate_volatility_slides_2021-2022-dense.pdf)
 
 ### Weekly Assignments
-[Week 1 Assignment](/files/teaching/mfe/assignments/assignment-h1-1.pdf)
-[Week 2 Assignment](/files/teaching/mfe/assignments/assignment-h1-2.pdf)
-[Week 3 Assignment](/files/teaching/mfe/assignments/assignment-h1-3.pdf)
-[Week 4 Assignment](/files/teaching/mfe/assignments/assignment-h1-4.pdf)
+[Week 1 Assignment](/files/teaching/mfe/assignments/assignment-ht-1.pdf)
+[Week 2 Assignment](/files/teaching/mfe/assignments/assignment-ht-2.pdf)
+[Week 3 Assignment](/files/teaching/mfe/assignments/assignment-ht-3.pdf)
+[Week 4 Assignment](/files/teaching/mfe/assignments/assignment-ht-4.pdf)
 
 
 ## Notes
