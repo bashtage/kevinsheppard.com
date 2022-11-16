@@ -56,7 +56,7 @@ MathJax.Hub.Config({
 <meta content="Kevin Sheppard" property="og:site_name"/>
 <meta content="Lesson 6" property="og:title"/>
 <meta content="https://www.kevinsheppard.com/teaching/python/course/lesson-6/" property="og:url"/>
-<meta content="Methods and Functions¶This lesson covers: Calling functions with more than one input and output Calling functions when some inputs are not used Read the data in momentum.csv and creating som" property="og:description"/>
+<meta content="Methods and Functions¶This lesson covers: Calling functions with more than one input and output Calling functions when some inputs are not used Read the data in momentum.csv and creating some" property="og:description"/>
 <meta content="article" property="og:type"/>
 <meta content="2019-09-04T17:18:32+01:00" property="article:published_time"/>
 </head>
@@ -220,7 +220,8 @@ MathJax.Hub.Config({
 <p>Some useful functions return 2 or more outputs. One example is <code>np.linalg.slogdet</code> computes the signed log determinant of a square array. It returns two output, the sign and the log of the absolute determinant.</p>
 <p>Use this function to compute the sign and log determinant of the 2 by 2 array:</p>
 <pre><code>1  2
-2  9</code></pre></div>
+2  9
+</code></pre></div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
@@ -253,7 +254,8 @@ MathJax.Hub.Config({
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Problem:-Calling-Functions-with-2-Inputs">Problem: Calling Functions with 2 Inputs<a class="anchor-link" href="#Problem:-Calling-Functions-with-2-Inputs">¶</a></h3>
 <p>Many functions take two or more inputs. Like outputs, the inputs are simply listed in order separated by commas. Use <code>np.linspace</code> to produce a series of 11 points evenly spaced between 0 and 1.</p>
-<pre><code>np.linspace(start, stop, num=50, endpoint=True, retstep=False, dtype=None, axis=0)</code></pre></div>
+<pre><code>np.linspace(start, stop, num=50, endpoint=True, retstep=False, dtype=None, axis=0)
+</code></pre></div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
@@ -274,7 +276,8 @@ MathJax.Hub.Config({
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Problem:-Calling-Functions-using-Keyword-Arguments">Problem: Calling Functions using Keyword Arguments<a class="anchor-link" href="#Problem:-Calling-Functions-using-Keyword-Arguments">¶</a></h3>
 <p>Many functions have optional arguments. You can see these in a docstring since optional arguments take the form <code>variable=default</code>. For example, see the help for <code>scipy.special.comb</code>, which has the function signature</p>
-<pre><code>comb(N, k, exact=False, repetition=False)</code></pre>
+<pre><code>comb(N, k, exact=False, repetition=False)
+</code></pre>
 <p>This tells us that <code>N</code> and <code>k</code> are required and that the other 2 inputs can be omitted if you are happy with the defaults. However, if we want to change some of the optional inputs, then we can directly use the inputs name in the function call.</p>
 <p>Compute the number of distinct combinations of 5 objects from a set of 10.</p>
 </div>

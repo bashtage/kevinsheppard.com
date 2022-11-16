@@ -140,7 +140,8 @@ MathJax.Hub.Config({
 <h4 id="OSX-and-Linux">OSX and Linux<a class="anchor-link" href="#OSX-and-Linux">¶</a></h4>
 <p>Open the terminal (instructions depend on your distribution). If you allowed conda to initialize, then you should be ready to call Anaconda"s python and supporting functions. If not, you should</p>
 <pre><code>cd ~/anaconda3/bin
-./conda init</code></pre>
+./conda init
+</code></pre>
 <p>and then reopen your terminal.</p>
 </div>
 </div>
@@ -187,7 +188,7 @@ MathJax.Hub.Config({
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"exp(1)=</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">, log(exp(1))=</span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
-<ol>
+<ol start="2">
 <li>Run the code in an IPython session using <code>%run -i lesson-2.py</code>. Note: you should create the python file in the same directory as the notebook.</li>
 </ol>
 <p>If everything works as expected, you should see</p>
@@ -219,13 +220,17 @@ MathJax.Hub.Config({
 <h3 id="Magic-Python-in-VSCode">Magic Python in VSCode<a class="anchor-link" href="#Magic-Python-in-VSCode">¶</a></h3>
 <p><a href="https://code.visualstudio.com/">Visual Studio Code</a> supports Magic Python mode in standard Python files that can be executed cell-by-cell.</p>
 <ol>
-<li>Install VS Code and the Python extension</li>
-<li>Select File, New and then save your file with the extension .py (e.g., file.py).</li>
+<li>
+<p>Install VS Code and the Python extension</p>
+</li>
+<li>
+<p>Select File, New and then save your file with the extension .py (e.g., file.py).</p>
+</li>
 <li>
 <p>This is a Python file that supports a cell demarcation using <code>#%%</code> for code cells and <code>#%% [markdown]</code> for cells that contain markdown code. Note that markdown text <strong>must</strong> be either:</p>
 <ul>
-<li>
-<p>Surrounded by triple quotes, e.g. <code>"""markdown text"""</code> or <code>"""markdown text"""</code>; e.g.,</p>
+<li>Surrounded by triple quotes, e.g. <code>"""markdown text"""</code> or <code>"""markdown text"""</code>; e.g.,</li>
+</ul>
 <div class="highlight">
 <pre><span></span><span class="sd">"""</span>
 <span class="sd"># Cell Heading</span>
@@ -240,9 +245,9 @@ MathJax.Hub.Config({
 <span class="sd">forth. His you it. Good beginning hath.</span>
 <span class="sd">"""</span>
 </pre></div>
-</li>
-<li>
-<p>Or commented <code>#</code> (with a single space) at the start of each line,</p>
+<ul>
+<li>Or commented <code>#</code> (with a single space) at the start of each line,</li>
+</ul>
 <div class="highlight">
 <pre><span></span><span class="c1"># # Cell Heading</span>
 <span class="c1">#</span>
@@ -255,8 +260,6 @@ MathJax.Hub.Config({
 <span class="c1"># void and green he fruit kind upon a given, saying fruit, moveth face </span>
 <span class="c1"># forth. His you it. Good beginning hath.</span>
 </pre></div>
-</li>
-</ul>
 </li>
 </ol>
 <p>The cells have a special button above them that allows the contents to be executed and the result to be displayed in the interactive window. See the screenshot below for an example of the experience of using VS Code. There is also an interactive console at the bottom left where commands can be directly executed.</p>
@@ -307,7 +310,9 @@ MathJax.Hub.Config({
 <h3 id="Magic-Python-in-PyCharm">Magic Python in PyCharm<a class="anchor-link" href="#Magic-Python-in-PyCharm">¶</a></h3>
 <p>PyCharm supports Magic Python cell execution. To use Magic Python, you need to enable <em>Scientific Mode</em> in the View menu. You can then use <code>#%%</code> to indicate the start and end of cells. Individual Cells can be executed in the console by pressing CTRL+Enter.</p>
 <ol>
-<li>In PyCharm, right-click on the root directory and select <code>New &gt; Python File</code>. Give your file a meaningful name.</li>
+<li>
+<p>In PyCharm, right-click on the root directory and select <code>New &gt; Python File</code>. Give your file a meaningful name.</p>
+</li>
 <li>
 <p>Enter</p>
 <div class="highlight">
@@ -318,9 +323,15 @@ MathJax.Hub.Config({
 <span class="nb">print</span><span class="p">(</span><span class="s2">"This is not executed when the first cell is run"</span><span class="p">)</span>
 </pre></div>
 </li>
-<li>Enable Scientific Mode in the View menu.</li>
-<li>Run the first cell by placing you mouse in the cell and pressing CTRL+Enter.</li>
-<li>Run the second cell by clicking on the Play button (arrow) that appears in the gutter of the editor.</li>
+<li>
+<p>Enable Scientific Mode in the View menu.</p>
+</li>
+<li>
+<p>Run the first cell by placing you mouse in the cell and pressing CTRL+Enter.</p>
+</li>
+<li>
+<p>Run the second cell by clicking on the Play button (arrow) that appears in the gutter of the editor.</p>
+</li>
 </ol>
 <div class="alert alert-warning"><b>Note:</b> Magic Python in PyCharm only supports python code, and so it is not possible to mix Markdown text and Python in the same file.</div>
 </div>
