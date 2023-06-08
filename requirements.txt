@@ -4,4 +4,4 @@ beautifulsoup4==4.11.1
 lxml==4.9.1
 pybtex==0.24.0
 jupyter_contrib_nbextensions==0.7.0
-nbconvert==7.2.6
+nbconvert==7.2.9
