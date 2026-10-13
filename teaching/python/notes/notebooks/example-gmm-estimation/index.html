@@ -12,7 +12,7 @@
 </script>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>Example: GMM Estimation | Kevin Sheppard</title>
-<link href="https://fonts.googleapis.com/css?family=Roboto+Mono%7CRoboto:300,400,500,700&amp;display=fallback" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto:300,400,500,700&amp;display=fallback" rel="stylesheet"/>
 <link href="../../../../../assets/css/bootstrap-material-design.css" rel="stylesheet" type="text/css"/>
 <link href="../../../../../assets/css/baguetteBox.min.css" rel="stylesheet" type="text/css"/>
 <link href="../../../../../assets/css/rst.css" rel="stylesheet" type="text/css"/>
@@ -129,13 +129,13 @@ MathJax.Hub.Config({
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3">
-<pre><span></span><span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">hstack</span><span class="p">,</span> <span class="n">ones</span><span class="p">,</span> <span class="n">array</span><span class="p">,</span> <span class="n">mat</span><span class="p">,</span> <span class="n">tile</span><span class="p">,</span> <span class="n">reshape</span><span class="p">,</span> <span class="n">squeeze</span><span class="p">,</span> <span class="n">eye</span><span class="p">,</span> <span class="n">asmatrix</span>
-<span class="kn">from</span> <span class="nn">numpy.linalg</span> <span class="kn">import</span> <span class="n">inv</span>
-<span class="kn">from</span> <span class="nn">pandas</span> <span class="kn">import</span> <span class="n">read_csv</span><span class="p">,</span> <span class="n">Series</span> 
-<span class="kn">from</span> <span class="nn">scipy.linalg</span> <span class="kn">import</span> <span class="n">kron</span>
-<span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">fmin_bfgs</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
+<pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="kn">import</span> <span class="n">hstack</span><span class="p">,</span> <span class="n">ones</span><span class="p">,</span> <span class="n">array</span><span class="p">,</span> <span class="n">mat</span><span class="p">,</span> <span class="n">tile</span><span class="p">,</span> <span class="n">reshape</span><span class="p">,</span> <span class="n">squeeze</span><span class="p">,</span> <span class="n">eye</span><span class="p">,</span> <span class="n">asmatrix</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">numpy.linalg</span><span class="w"> </span><span class="kn">import</span> <span class="n">inv</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="kn">import</span> <span class="n">read_csv</span><span class="p">,</span> <span class="n">Series</span> 
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.linalg</span><span class="w"> </span><span class="kn">import</span> <span class="n">kron</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.optimize</span><span class="w"> </span><span class="kn">import</span> <span class="n">fmin_bfgs</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">statsmodels.api</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sm</span>
 </pre></div>
 </div>
 </div>
@@ -159,7 +159,7 @@ MathJax.Hub.Config({
 <span class="n">lastValue</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">functionCount</span> <span class="o">=</span> <span class="mi">0</span>
 
-<span class="k">def</span> <span class="nf">iter_print</span><span class="p">(</span><span class="n">params</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">iter_print</span><span class="p">(</span><span class="n">params</span><span class="p">):</span>
     <span class="k">global</span> <span class="n">iteration</span><span class="p">,</span> <span class="n">lastValue</span><span class="p">,</span> <span class="n">functionCount</span>
     <span class="n">iteration</span> <span class="o">+=</span> <span class="mi">1</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">'Func value: </span><span class="si">{0:}</span><span class="s1">, Iteration: </span><span class="si">{1:}</span><span class="s1">, Function Count: </span><span class="si">{2:}</span><span class="s1">'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">lastValue</span><span class="p">,</span> <span class="n">iteration</span><span class="p">,</span> <span class="n">functionCount</span><span class="p">))</span>
@@ -182,7 +182,7 @@ MathJax.Hub.Config({
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3">
-<pre><span></span><span class="k">def</span> <span class="nf">gmm_objective</span><span class="p">(</span><span class="n">params</span><span class="p">,</span> <span class="n">pRets</span><span class="p">,</span> <span class="n">fRets</span><span class="p">,</span> <span class="n">Winv</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">gmm_objective</span><span class="p">(</span><span class="n">params</span><span class="p">,</span> <span class="n">pRets</span><span class="p">,</span> <span class="n">fRets</span><span class="p">,</span> <span class="n">Winv</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
     <span class="k">global</span> <span class="n">lastValue</span><span class="p">,</span> <span class="n">functionCount</span>
     <span class="n">T</span><span class="p">,</span><span class="n">N</span> <span class="o">=</span> <span class="n">pRets</span><span class="o">.</span><span class="n">shape</span>
     <span class="n">T</span><span class="p">,</span><span class="n">K</span> <span class="o">=</span> <span class="n">fRets</span><span class="o">.</span><span class="n">shape</span>
@@ -228,7 +228,7 @@ MathJax.Hub.Config({
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3">
-<pre><span></span><span class="k">def</span> <span class="nf">gmm_G</span><span class="p">(</span><span class="n">params</span><span class="p">,</span> <span class="n">pRets</span><span class="p">,</span> <span class="n">fRets</span><span class="p">):</span>
+<pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">gmm_G</span><span class="p">(</span><span class="n">params</span><span class="p">,</span> <span class="n">pRets</span><span class="p">,</span> <span class="n">fRets</span><span class="p">):</span>
     <span class="n">T</span><span class="p">,</span><span class="n">N</span> <span class="o">=</span> <span class="n">pRets</span><span class="o">.</span><span class="n">shape</span>
     <span class="n">T</span><span class="p">,</span><span class="n">K</span> <span class="o">=</span> <span class="n">fRets</span><span class="o">.</span><span class="n">shape</span>
     <span class="n">beta</span> <span class="o">=</span> <span class="n">squeeze</span><span class="p">(</span><span class="n">array</span><span class="p">(</span><span class="n">params</span><span class="p">[:(</span><span class="n">N</span><span class="o">*</span><span class="n">K</span><span class="p">)]))</span>
@@ -646,7 +646,7 @@ MathJax.Hub.Config({
 <div class="container-fluid">
 <div class="container d-flex justify-content-center">
 <div class="row">
-<p>© 2023 <a href="mailto:kevin.k.sheppard@gmail.com">Kevin Sheppard</a> - Content licensed <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" rel="license">CC-BY-NC-ND</a> except code blocks which are <a href="https://opensource.org/licenses/NCSA/" rel="license">NCSA</a> licensed.</p>
+<p>© 2026 <a href="mailto:kevin.k.sheppard@gmail.com">Kevin Sheppard</a> - Content licensed <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" rel="license">CC-BY-NC-ND</a> except code blocks which are <a href="https://opensource.org/licenses/NCSA/" rel="license">NCSA</a> licensed.</p>
 </div>
 </div>
 </div>
